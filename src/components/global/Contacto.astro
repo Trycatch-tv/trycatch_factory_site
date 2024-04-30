@@ -1,0 +1,100 @@
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold text-center">Contacto</h1>
+
+  <p class="text-center mt-4">
+    Si estás buscando inspiración para tu página o deseas discutir requisitos
+    específicos con nosotros, por favor, déjanos tus datos y nos comunicaremos
+    contigo para brindarte la ayuda que necesitas en la construcción de tu sitio
+    web.
+  </p>
+
+  <form
+    class="mt-8 space-y-6 flex flex-col justify-center items-center w-full max-w-lg mx-auto"
+    action="#"
+    method="POST"
+  >
+    <div class="rounded-md shadow-sm -space-y-px text">
+      <div>
+        <label for="name" class="sr-only">Nombre</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Nombre"
+        />
+      </div>
+      <div>
+        <label for="lastname" class="sr-only">Apellidos</label>
+        <input
+          id="lastname"
+          name="lastname"
+          type="text"
+          autocomplete="lastname"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Apellidos"
+        />
+      </div>
+      <div>
+        <label for="company" class="sr-only">Nombre de la empresa</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          autocomplete="company"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Nombre de la empresa"
+        />
+      </div>
+      <div>
+        <label for="email" class="sr-only">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Email"
+        />
+      </div>
+      <div>
+        <label for="phone" class="sr-only">Teléfono</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Teléfono"
+        />
+      </div>
+
+      <div>
+        <label for="city" class="sr-only">Ciudad</label>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          autocomplete="city"
+          required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Ciudad"
+        />
+      </div>
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>
