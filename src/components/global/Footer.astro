@@ -1,5 +1,6 @@
 ---
-const year = new Date().getFullYear();
+import { Image } from "astro:assets";
+import nibble from "../../assets/img/nibble.png"
 const footerItems = [
   { name: "Servicios", path: "/" },
   { name: "Recursos", path: "/Recursos" },
@@ -28,28 +29,33 @@ const footerListEquipos = [
 ];
 
 
-const img = "src/assets/img/nibble.png";
 ---
+<script lang="js">
+const whatsappButton = document.querySelector('.fixed.bottom-4.right-4'); // Select the button element
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY; // Get the current scroll position
+    whatsappButton.style.transform = `translateY(${scrollY}px)`; // Update button position based on scrollY
+});
+</script>
 
-<footer class="flex flex-row bg-tcf-gray-foot fixed bottom-0 w-full h-2/5">
-  <div class="flex flex-row h-full w-6/12">
+<footer class="flex flex-row bg-tcf-gray-foot fixed bottom-0 w-full h-2/5 max-md:flex-col">
+  <div class="flex flex-row h-full w-6/12 max-md:w-full">
     <div class="flex flex-col w-full">
       <div class="flex flex-row justify-center mt-12">
-        <img src={img} class="w-[60px] h-[57px] mr-2" />
+        <Image src={nibble} class="w-[60px] h-[57px] mr-2" alt="TryCatch.tv Nibble"/>
         <h2 class="text-2xl text-center text-gray-100 mt-2">
           TryCatch Factory
         </h2>
       </div>
     </div>
   </div>
-  <div class="flex flex-row h-full w-6/12">
+  <div class="flex flex-row h-full w-6/12 mr-4 max-md:w-full">
     <div class="flex flex-col w-full">
       <div class="flex flex-col justify-evenly">
         <div class="flex flex-row justify-evenly mt-12">
           {
             footerItems.map((e, index) => (
               <div class="text-gray-100 mt-3">
-                {" "}
                 {/* Add key prop for optimization (optional) */}
                 <ul>
                   <li>{e.name}</li>
@@ -104,7 +110,7 @@ const img = "src/assets/img/nibble.png";
             }
           </div>
         </div>
-        <div class="flex flex-row justify-end mr-28  mt-3">
+        <div class="flex flex-row justify-evenly mr-28  mt-3">
           <svg
             class="mx-2"
             width="20"
@@ -117,20 +123,7 @@ const img = "src/assets/img/nibble.png";
               d="M11.5 19.888C16.311 19.164 20 15.013 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.013 3.689 19.165 8.5 19.888V13H7C6.60218 13 6.22064 12.842 5.93934 12.5607C5.65804 12.2794 5.5 11.8978 5.5 11.5C5.5 11.1022 5.65804 10.7206 5.93934 10.4393C6.22064 10.158 6.60218 10 7 10H8.5V8C8.5 7.07174 8.86875 6.1815 9.52513 5.52513C10.1815 4.86875 11.0717 4.5 12 4.5H12.5C12.8978 4.5 13.2794 4.65804 13.5607 4.93934C13.842 5.22064 14 5.60218 14 6C14 6.39782 13.842 6.77936 13.5607 7.06066C13.2794 7.34196 12.8978 7.5 12.5 7.5H12C11.8674 7.5 11.7402 7.55268 11.6464 7.64645C11.5527 7.74021 11.5 7.86739 11.5 8V10H13C13.3978 10 13.7794 10.158 14.0607 10.4393C14.342 10.7206 14.5 11.1022 14.5 11.5C14.5 11.8978 14.342 12.2794 14.0607 12.5607C13.7794 12.842 13.3978 13 13 13H11.5V19.888Z"
               fill="white"></path>
           </svg>
-          <svg
-            class="mx-2"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M10 0C4.477 0 0 4.477 0 10C0 11.89 0.525 13.66 1.438 15.168L0.546 18.2C0.494785 18.3741 0.491415 18.5587 0.536244 18.7346C0.581074 18.9104 0.672448 19.0709 0.800759 19.1992C0.929071 19.3276 1.08958 19.4189 1.26542 19.4638C1.44125 19.5086 1.62592 19.5052 1.8 19.454L4.832 18.562C6.39068 19.5051 8.17822 20.0025 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM7.738 12.263C9.761 14.285 11.692 14.552 12.374 14.577C13.411 14.615 14.421 13.823 14.814 12.904C14.8636 12.7897 14.8816 12.6641 14.8661 12.5405C14.8507 12.4168 14.8023 12.2996 14.726 12.201C14.178 11.501 13.437 10.998 12.713 10.498C12.5618 10.3935 12.3761 10.3516 12.1947 10.381C12.0133 10.4105 11.8503 10.509 11.74 10.656L11.14 11.571C11.1085 11.6202 11.0593 11.6555 11.0026 11.6696C10.9459 11.6837 10.8859 11.6756 10.835 11.647C10.428 11.414 9.835 11.018 9.409 10.592C8.983 10.166 8.611 9.6 8.402 9.219C8.37609 9.17059 8.3686 9.11444 8.38091 9.06093C8.39323 9.00743 8.42453 8.9602 8.469 8.928L9.393 8.242C9.52487 8.12734 9.60996 7.9682 9.63209 7.79486C9.65422 7.62153 9.61183 7.44611 9.513 7.302C9.065 6.646 8.543 5.812 7.786 5.259C7.68831 5.1882 7.57386 5.14406 7.45393 5.13091C7.334 5.11776 7.21271 5.13606 7.102 5.184C6.182 5.578 5.386 6.588 5.424 7.627C5.449 8.309 5.716 10.24 7.738 12.263Z"
-              fill="white"></path>
-          </svg>
+     
           <svg
             class="mx-2"
             width="18"
