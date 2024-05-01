@@ -13,7 +13,12 @@ export default {
         "tcf-yellow": "#EDF2C2",
         "tcf-gray": "#B5B5B5",
         "tcf-gray-l": "#F2F2F2",
+        "tcf-gray-foot":"#535353"
       },
+      width:{
+        "60":"60px",
+        "57":"57px"
+      }
     },
   },
   plugins: [require("flowbite/plugin")],
