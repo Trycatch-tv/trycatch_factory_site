@@ -1,0 +1,55 @@
+---
+const content = {
+  title: "Software personalizado",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  ctas: [
+    {
+      title: "Call to action",
+      link: "#",
+    },
+    {
+      title: "CTA 2",
+      link: "#",
+    },
+  ],
+  image: {
+    url: "/src/assets/img/nibble.png",
+    description: "TryCatch.tv Nibble",
+  },
+};
+---
+
+<section
+  class="max-w-screen-xl flex flex-wrap items-center justify-between md:flex-row mx-auto p-4"
+>
+  <article class="mb-4 lg:w-1/2">
+    <h2
+      class="max-w-xl mb-5 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6x lg:mb-14"
+    >
+      {content.title}
+    </h2>
+    <p class="max-w-xl text-balance font-semibold mb-5 lg:max-w-md lg:mb-14">
+      {content.description}
+    </p>
+    <div class="flex justify-center gap-2 mb-5 lg:justify-start lg:mb-14">
+      {
+        content.ctas.map((cta) => (
+          <a
+            href={cta.link}
+            class="w-40 h-10 py-2.5 px-5 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-black rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+          >
+            {cta.title}
+          </a>
+        ))
+      }
+    </div>
+  </article>
+  <div class="border rounded-xl bg-tcf-gray lg:w-1/2 lg:my-14">
+    <img
+      class="object-cover w-full h-auto"
+      src={content.image.url}
+      alt={content.image.description}
+    />
+  </div>
+</section>
