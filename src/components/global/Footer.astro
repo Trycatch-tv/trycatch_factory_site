@@ -1,64 +1,71 @@
 ---
 import { Image } from "astro:assets";
-import nibble from "../../assets/img/nibble.png"
-const footerItems = [
-  { name: "Servicios", path: "/" },
-  { name: "Recursos", path: "/Recursos" },
-  { name: "Industrias", path: "/Industrias" },
-  { name: "Equipo", path: "/Equipo" },
-];
-const footerListServices = [
-  { name: "Desarrollo Web" },
-  { name: "Desarrollo Web" },
-  { name: "Desarrollo Web" },
-];
-const footerListRecursos = [
-  { name: "Blog" },
-  { name: "Blog" },
-  { name: "Blog" },
-];
-const footerListIndustrias = [
-  { name: "Industrias 1" },
-  { name: "Industrias 1" },
-  { name: "Industrias 1" },
-];
-const footerListEquipos = [
-  { name: "Miembros" },
-  { name: "Miembros" },
-  { name: "Miembros" },
-];
-
-
+import nibble from "../../assets/img/nibble.png";
+const foiterItemsList = {
+  footerItems: [
+    { name: "Servicios", path: "/" },
+    { name: "Recursos", path: "/Recursos" },
+    { name: "Industrias", path: "/Industrias" },
+    { name: "Equipo", path: "/Equipo" },
+  ],
+  footerListServices: [
+    { name: "Desarrollo Web" },
+    { name: "Desarrollo Web" },
+    { name: "Desarrollo Web" },
+  ],
+  footerListRecursos: [{ name: "Blog" }, { name: "Blog" }, { name: "Blog" }],
+  footerListIndustrias: [
+    { name: "Industrias 1" },
+    { name: "Industrias 1" },
+    { name: "Industrias 1" },
+  ],
+  footerListEquipos: [
+    { name: "Miembros" },
+    { name: "Miembros" },
+    { name: "Miembros" },
+  ],
+};
 ---
+
 <script lang="js">
-const whatsappButton = document.querySelector('.fixed.bottom-4.right-4'); // Select the button element
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY; // Get the current scroll position
-    whatsappButton.style.transform = `translateY(${scrollY}px)`; // Update button position based on scrollY
-});
+  const whatsappButton = document.querySelector(".fixed.bottom-4.right-4"); 
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY; 
+    whatsappButton.style.transform = `translateY(${scrollY}px)`; 
+  });
 </script>
 
-<footer class="flex flex-row bg-tcf-gray-foot fixed bottom-0 w-full h-2/5 max-md:flex-col">
+<footer
+  class="flex flex-row bg-tcf-gray-foot fixed bottom-0 w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-[265px] md:h-[265px]"
+>
   <div class="flex flex-row h-full w-6/12 max-md:w-full">
-    <div class="flex flex-col w-full">
-      <div class="flex flex-row justify-center mt-12">
-        <Image src={nibble} class="w-[60px] h-[57px] mr-2" alt="TryCatch.tv Nibble"/>
-        <h2 class="text-2xl text-center text-gray-100 mt-2">
+    <div class="flex flex-col w-full xl:justify-center">
+      <div
+        class="flex flex-row justify-start mt-12 xl:pb-[102px] xl:mt-0 xl:ml-8 lg:ml-8 max-md:justify-center"
+      >
+        <Image
+          src={nibble}
+          class="w-[60px] h-[57px] mr-2"
+          alt="TryCatch.tv Nibble"
+        />
+        <h2
+          class="text-2xl text-center text-gray-100 mt-2 xl:text-[36px] lg:text-[36px]"
+        >
           TryCatch Factory
         </h2>
       </div>
     </div>
   </div>
   <div class="flex flex-row h-full w-6/12 mr-4 max-md:w-full">
-    <div class="flex flex-col w-full">
-      <div class="flex flex-col justify-evenly">
-        <div class="flex flex-row justify-evenly mt-12">
+    <div class="flex flex-col w-full xl:justify-center">
+      <div class="flex flex-col justify-evenly mr-16">
+        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0">
           {
-            footerItems.map((e, index) => (
+            foiterItemsList.footerItems.map((e:any) => (
               <div class="text-gray-100 mt-3">
                 {/* Add key prop for optimization (optional) */}
                 <ul>
-                  <li>{e.name}</li>
+                  <li class="font-bold">{e.name}</li>
                 </ul>
               </div>
             ))
@@ -67,9 +74,9 @@ window.addEventListener('scroll', () => {
         <div class="flex flex-row justify-evenly mt-10">
           <div class="flex flex-col">
             {
-              footerListServices.map((e) => (
+              foiterItemsList.footerListServices.map((e) => (
                 <div class="text-gray-100">
-                  <ul class="mt-2">
+                  <ul class="mt-2  md:text-[15px]">
                     <li>{e.name}</li>
                   </ul>
                 </div>
@@ -78,9 +85,9 @@ window.addEventListener('scroll', () => {
           </div>
           <div class="flex flex-col">
             {
-              footerListRecursos.map((e) => (
+              foiterItemsList.footerListRecursos.map((e) => (
                 <div class="text-gray-100 flex">
-                  <ul class="mt-2">
+                  <ul class="mt-2 md:text-[15px]">
                     <li>{e.name}</li>
                   </ul>
                 </div>
@@ -89,9 +96,9 @@ window.addEventListener('scroll', () => {
           </div>
           <div class="flex flex-col">
             {
-              footerListIndustrias.map((e) => (
+              foiterItemsList.footerListIndustrias.map((e) => (
                 <div class="text-gray-100 flex">
-                  <ul class="mt-2">
+                  <ul class="mt-2 md:text-[15px]">
                     <li>{e.name}</li>
                   </ul>
                 </div>
@@ -100,9 +107,9 @@ window.addEventListener('scroll', () => {
           </div>
           <div class="flex flex-col">
             {
-              footerListEquipos.map((e) => (
+              foiterItemsList.footerListEquipos.map((e) => (
                 <div class="text-gray-100 flex">
-                  <ul class="mt-2">
+                  <ul class="mt-2 md:text-[15px]">
                     <li>{e.name}</li>
                   </ul>
                 </div>
@@ -110,7 +117,7 @@ window.addEventListener('scroll', () => {
             }
           </div>
         </div>
-        <div class="flex flex-row justify-evenly mr-28  mt-3">
+        <div class="flex flex-row justify-end mr-16 space-x-16 mt-5">
           <svg
             class="mx-2"
             width="20"
@@ -123,7 +130,7 @@ window.addEventListener('scroll', () => {
               d="M11.5 19.888C16.311 19.164 20 15.013 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.013 3.689 19.165 8.5 19.888V13H7C6.60218 13 6.22064 12.842 5.93934 12.5607C5.65804 12.2794 5.5 11.8978 5.5 11.5C5.5 11.1022 5.65804 10.7206 5.93934 10.4393C6.22064 10.158 6.60218 10 7 10H8.5V8C8.5 7.07174 8.86875 6.1815 9.52513 5.52513C10.1815 4.86875 11.0717 4.5 12 4.5H12.5C12.8978 4.5 13.2794 4.65804 13.5607 4.93934C13.842 5.22064 14 5.60218 14 6C14 6.39782 13.842 6.77936 13.5607 7.06066C13.2794 7.34196 12.8978 7.5 12.5 7.5H12C11.8674 7.5 11.7402 7.55268 11.6464 7.64645C11.5527 7.74021 11.5 7.86739 11.5 8V10H13C13.3978 10 13.7794 10.158 14.0607 10.4393C14.342 10.7206 14.5 11.1022 14.5 11.5C14.5 11.8978 14.342 12.2794 14.0607 12.5607C13.7794 12.842 13.3978 13 13 13H11.5V19.888Z"
               fill="white"></path>
           </svg>
-     
+
           <svg
             class="mx-2"
             width="18"
@@ -178,12 +185,37 @@ window.addEventListener('scroll', () => {
               d="M6 0C7.5913 0 9.11742 0.632141 10.2426 1.75736C11.3679 2.88258 12 4.4087 12 6C12 7.5913 11.3679 9.11742 10.2426 10.2426C9.11742 11.3679 7.5913 12 6 12C4.4087 12 2.88258 11.3679 1.75736 10.2426C0.632141 9.11742 0 7.5913 0 6C0 4.4087 0.632141 2.88258 1.75736 1.75736C2.88258 0.632141 4.4087 0 6 0ZM15 1C16.5 1 17.5 3.239 17.5 6C17.5 8.761 16.5 11 15 11C13.5 11 12.5 8.761 12.5 6C12.5 3.239 13.5 1 15 1ZM19 1.5C19.38 1.5 19.712 2.327 19.88 3.746L19.927 4.189L19.946 4.424L19.976 4.918L19.986 5.177L19.998 5.718L20 6L19.998 6.282L19.986 6.823L19.976 7.083L19.946 7.576L19.926 7.811L19.881 8.254C19.712 9.674 19.381 10.5 19 10.5C18.62 10.5 18.288 9.673 18.12 8.254L18.073 7.811C18.0661 7.73271 18.0598 7.65438 18.054 7.576L18.024 7.082C18.0201 6.99569 18.0168 6.90935 18.014 6.823L18.002 6.282V5.718L18.014 5.177L18.024 4.917L18.054 4.424L18.074 4.189L18.119 3.746C18.288 2.326 18.619 1.5 19 1.5Z"
               fill="white"></path>
           </svg>
-         <a href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más" class="fixed bottom-4 right-4 px-6 py-3 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 48 48">
-            <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+          <a
+            href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
+            class="fixed bottom-4 right-4 px-6 py-3 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="36"
+              height="36"
+              viewBox="0 0 48 48"
+            >
+              <path
+                fill="#fff"
+                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+              ></path><path
+                fill="#fff"
+                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+              ></path><path
+                fill="#cfd8dc"
+                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+              ></path><path
+                fill="#40c351"
+                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+              ></path><path
+                fill="#fff"
+                fill-rule="evenodd"
+                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                clip-rule="evenodd"></path>
             </svg>
-
-</a>
+          </a>
         </div>
       </div>
     </div>
