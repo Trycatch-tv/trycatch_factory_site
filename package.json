@@ -16,5 +16,9 @@
     "flowbite": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.66",
+    "astro-icon": "^1.1.0"
   }
 }
