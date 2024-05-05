@@ -1,0 +1,106 @@
+---
+import { Icon } from 'astro-icon/components';
+import '@iconify-json/mdi';
+
+const props = Astro.props;
+
+const data = {
+  title: "Preguntas Frecuentes",
+  faq: [
+    {
+      question: "Pregunta 1",
+      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    },
+    {
+      question: "Pregunta 2",
+      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    },
+    {
+      question: "Pregunta 3",
+      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    },
+    {
+      question: "Pregunta 4",
+      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    }
+  ]
+};
+
+// Crear un estado reactivo para rastrear el estado de cada pregunta
+let open: { [key: string]: boolean } = {};
+
+// Inicializar los estados para cada pregunta
+data.faq.forEach((item) => {
+  open[item.question] = false;
+});
+
+---
+
+<div class="bg-[#F2F4FF] rounded-[9px]">
+  <section class="max-w-5xl mx-auto py-10 sm:py-20 mb-0">
+    <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold">{`${data.title}`}</h2>
+    </div>
+    <div class="w-full px-7 md:px-10 xl:px-2 py-4 rounded-[9px]">
+      <div class="bg-[#F2F3FF] mx-auto w-full max-w-5xl border border-slate-400/20 rounded-lg">
+        {data.faq.map((item, index) => (
+          <div class="border-b border-[#0A071B]/10">
+            <button 
+              data-toggle={`answer-${index}`}
+              class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5"
+              id={`button-${index}`}
+            >
+            {item.question}
+            {open[item.question]? (
+            <Icon name="mdi:chevron-up-circle" 
+              stroke="#a3a8b7"
+              class="chevron-up"
+              widths="24"
+              x-height="24"
+              aria-expanded="true"
+            />
+            ) : (
+            <Icon name="mdi:chevron-down-circle" 
+              stroke="#a3a8b7"
+              class="chevron-down"
+              widths="24"
+              x-height="24"
+              aria-expanded="false"
+            />
+          )}
+          </button>
+            <div
+              class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#414744] font-medium"
+              id={`answer-${index}`}
+              style={{ display: open[item.question] ? 'block' : 'none' }}
+            >
+              {item.answer}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.question-btn');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', function() { 
+          const targetId = button.getAttribute('data-toggle');
+          if (targetId!== null) {
+            const target = document.getElementById(targetId) as HTMLElement;
+            if (target) {
+              target.style.display = target.style.display === 'block'? 'none' : 'block';
+            } else {
+              console.error('Element with ID', targetId, 'not found.');
+            }
+          } else {
+            console.error('data-toggle attribute is missing.');
+          }
+        });
+      });
+    });
+</script>
