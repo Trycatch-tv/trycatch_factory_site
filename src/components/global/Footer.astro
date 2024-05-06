@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import nibble from "../../assets/img/nibble.png";
 import {Icon} from "astro-icon/components"
 const classIcon = "text-white text-xl mx-2"
-const iconWhats = "text-2xl";
 const foiterItemsList = {
   footerItems: [
     { name: "Servicios", path: "/" },
@@ -33,7 +32,7 @@ const foiterItemsList = {
 
 
 <script lang="js">
-  const whatsappButton = document.querySelector(".fixed.bottom-4.right-4"); 
+  const whatsappButton = document.querySelector("#botonWhast"); 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY; 
     whatsappButton.style.transform = `translateY(${scrollY}px)`; 
@@ -44,7 +43,7 @@ const foiterItemsList = {
   class="flex flex-row bg-tcf-gray-foot fixed bottom-0 w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-[265px] md:h-[265px] max-sm:h-[390px]"
 >
   <div class="flex flex-row h-full w-6/12 max-md:w-full max-sm:h-1/2">
-    <div class="flex flex-col w-full xl:justify-center">
+    <div class="flex flex-col w-full xl:justify-center ml-24 max-sm:ml-0">
       <div
         class="flex flex-row justify-start mt-12 xl:pb-[102px] xl:mt-0 xl:ml-8 lg:ml-8 max-md:justify-center md:ml-8"
       >
@@ -54,7 +53,7 @@ const foiterItemsList = {
           alt="TryCatch.tv Nibble"
         />
         <h2
-          class="text-2xl text-center text-gray-100 mt-2 xl:text-[36px] lg:text-[36px]"
+          class="text-2xl text-center text-gray-100 mt-2 xl:text-[36px] lg:text-[26px]"
         >
           TryCatch Factory
         </h2>
@@ -123,16 +122,16 @@ const foiterItemsList = {
           </div>
         </div>
         <div class="flex flex-row justify-end mr-16 space-x-16 mt-5 md:space-x-8">
-          <Icon name="facebook" class={classIcon} />
-          <Icon name="twitter" class={classIcon} />
-          <Icon name="youtube" class={classIcon} />
-          <Icon name="tiktok" class={classIcon} />
-          <Icon name="medium" class={classIcon} />
+          <Icon name="facebook" class="text-white text-xl mx-2" />
+          <Icon name="twitter" class="text-white text-xl mx-2" />
+          <Icon name="youtube" class="text-white text-xl mx-2" />
+          <Icon name="tiktok" class="text-white text-xl mx-2" />
+          <Icon name="medium" class="text-white text-xl mx-2"/>
           <a
-            href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
-            class="fixed bottom-4 right-4 px-6 py-3 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2"
+            href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más" id="botonWhast"
+            class="fixed bottom-4 right-4 2xl:bottom-[100px] 2xl:right-[100px] xl:bottom-[80px] xl:right-[50px] lg:bottom-[50px] lg:right-[35px] max px-6 py-6 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2 md:px-2 md:py-2"
           >
-          <Icon name="Whats" class={iconWhats}></Icon>
+          <Icon name="Whats" class="text-4xl"></Icon>
              
           </a>
         </div>
