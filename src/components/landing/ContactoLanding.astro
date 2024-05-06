@@ -1,13 +1,21 @@
-<div class="md:container md:mx-auto m-32 w-screen bg-gray-300 rounded-2xl">
-  <h1 class="text-6xl font-bold text-center p-10">Contacto</h1>
+---
+const info = {
+  title: "Llamada de exploración gratuita",
+  description:
+    "Si estás buscando inspiración para tu página o deseas discutir requisitos específicos con nosotros, por favor, déjanos tus datos y nos comunicaremos contigo para brindarte la ayuda que necesitas en la construcción de tu sitio web.",
+};
+---
 
+<div
+  class="md:container md:mx-auto m-32 w-screen bg-white rounded-none overflow-hidden"
+>
   <div class="flex w-full">
     <div class="w-1/2">
-      <p class="text-left text-2xl p-10 leading-10">
-        Si estás buscando inspiración para tu página o deseas discutir
-        requisitos específicos con nosotros, por favor, déjanos tus datos y nos
-        comunicaremos contigo para brindarte la ayuda que necesitas en la
-        construcción de tu sitio web.
+      <h1 class="text-4xl font-bold text-left p-9">
+        {info.title}
+      </h1>
+      <p class="text-left text-2xl p-11 leading-10">
+        {info.description}
       </p>
     </div>
 
@@ -16,6 +24,7 @@
     <div class="w-1/2 sm:w-1/1">
       <form class="w-full max-w-2xl p-10">
         <div class="flex flex-wrap -mx-3 mb-6">
+          <!-- Input nombre -->
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -30,6 +39,8 @@
               placeholder="Nombre"
             />
           </div>
+
+          <!-- Input apellidos -->
           <div class="w-full md:w-1/2 px-3">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -46,11 +57,11 @@
           </div>
         </div>
 
+        <!-- Input email -->
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
             >
               Email corporativo
             </label>
@@ -63,6 +74,8 @@
             <p class="text-gray-600 text-xs italic"></p>
           </div>
         </div>
+
+        <!-- Input celular -->
         <div class="flex flex-wrap -mx-3 mb-2">
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
@@ -78,6 +91,8 @@
               placeholder="+57 300 123 4567"
             />
           </div>
+
+          <!-- Input empresa -->
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -92,6 +107,8 @@
               placeholder="Nombre de la empresa"
             />
           </div>
+
+          <!-- Input ciudad -->
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -107,6 +124,26 @@
             />
           </div>
         </div>
+
+        <!-- Text area -->
+
+        <div class="flex flex-wrap -mx-3 m-6">
+          <div class="w-full p-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            >
+              Déjanos tu mensaje y pronto nos contactaremos contigo
+            </label>
+            <textarea
+              class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-password"
+              placeholder="escribe aquí"></textarea>
+            <p class="text-gray-600 text-xs italic"></p>
+          </div>
+        </div>
+
+        <!-- Boton enviar -->
+
         <div class="flex justify-end">
           <button
             class="bg-gray-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded m-8 text-xl"
