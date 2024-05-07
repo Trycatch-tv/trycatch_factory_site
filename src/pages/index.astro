@@ -1,13 +1,15 @@
 ---
+import FAQLanding from "../components/landing/FAQLanding.astro"
+import Services from "../components/landing/ServicesLanding.astro"
 import Layout from "../layouts/Layout.astro"
-import FAQLanding from "../components/landing/FAQLanding.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <div>
     <h1 class="text-3xl font-bold underline">Factory!</h1>
+    <Services />
   </div>
-    <div class="container mx-auto my-8">
-      <FAQLanding />
-    </div>
+  <div class="container mx-auto my-8">
+    <FAQLanding />
+  </div>
 </Layout>
