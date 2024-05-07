@@ -1,16 +1,21 @@
 ---
-import { getEntry } from "astro:content"
-import CallToAction from "../components/landing/CallToActionLanding.astro"
-import FAQLanding from "../components/landing/FAQLanding.astro"
-import HeroLanding from "../components/landing/HeroLanding.astro"
+import Contacto from "../components/landing/ContactoLanding.astro";
+import Layout from "../layouts/Layout.astro";
 import Services from "../components/landing/ServicesLanding.astro"
-import Layout from "../layouts/Layout.astro"
+import FAQLanding from "../components/landing/FAQLanding.astro"
+import CallToAction from "../components/landing/CallToActionLanding.astro";
+import { getEntry } from "astro:content";
+const call_to_action = await getEntry("sections", "call-to-action");
+import HeroLanding from "../components/landing/HeroLanding.astro";
+import TechStackLanding from "../components/landing/TechStackLanding.astro"
+  
 const call_to_action = await getEntry("sections", "call-to-action")
 ---
 
-<Layout title="Welcome to Astro.">
-  <HeroLanding />
-  <div>
+<Layout title="Factory">
+  <main>
+    <HeroLanding />
+    <div>
     <Services />
   </div>
   <div class="container mx-auto my-8">
@@ -19,4 +24,12 @@ const call_to_action = await getEntry("sections", "call-to-action")
   <div>
     <CallToAction call_to_action={call_to_action} />
   </div>
+    <div>
+      <TechStackLanding/>
+    </div>
+    <div>
+      <CallToAction call_to_action={call_to_action} />
+    </div>
+    <Contacto />
+  </main>
 </Layout>
