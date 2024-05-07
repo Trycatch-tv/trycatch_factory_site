@@ -1,34 +1,141 @@
 ---
-const year = new Date().getFullYear()
-const footerItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
-  { name: "Privacy", path: "/privacy" },
-  { name: "Terms", path: "/terms" },
-]
+import { Image } from "astro:assets";
+import nibble from "../../assets/img/nibble.png";
+import {Icon} from "astro-icon/components"
+
+const foiterItemsList = {
+  footerItems: [
+    { name: "Servicios", path: "/" },
+    { name: "Recursos", path: "/Recursos" },
+    { name: "Industrias", path: "/Industrias" },
+    { name: "Equipo", path: "/Equipo" },
+  ],
+  footerListServices: [
+    { name: "Desarrollo Web" },
+    { name: "Desarrollo Web" },
+    { name: "Desarrollo Web" },
+  ],
+  footerListRecursos: [{ name: "Blog" }, { name: "Blog" }, { name: "Blog" }],
+  footerListIndustrias: [
+    { name: "Industrias 1" },
+    { name: "Industrias 1" },
+    { name: "Industrias 1" },
+  ],
+  footerListEquipos: [
+    { name: "Miembros" },
+    { name: "Miembros" },
+    { name: "Miembros" },
+  ],
+};
+
 ---
 
-<footer class="bg-tc-black rounded-md shadow m-4 md:fixed md:bottom-0">
-  <div
-    class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
-  >
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      >© {year}
-      <a href="https://trycatch.tv/" class="hover:underline"> TryCatch.tv</a>
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0"
-    >
-      {
-        footerItems.map((item) => (
-          <li>
-            <a href={item.path} class="mr-4 hover:underline md:mr-6">
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+
+<script lang="js">
+  const whatsappButton = document.querySelector("#botonWhast"); 
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY; 
+    whatsappButton.style.transform = `translateY(${scrollY}px)`; 
+  });
+</script>
+
+<footer
+  class="flex flex-row bg-tcf-gray-foot w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-[265px] md:h-[265px] max-sm:h-[330px]"
+>
+  <div class="flex flex-row h-full w-6/12 max-md:w-full max-sm:h-1/2">
+    <div class="flex flex-col w-full xl:justify-center ml-24 2xl:ml-[130px] max-sm:ml-0 md:ml-0">
+      <div
+        class="flex flex-row justify-start mt-12   xl:pb-[102px] xl:mt-[55px] xl:ml-8 lg:ml-8 max-md:justify-center md:ml-8"
+      >
+        <Image
+          src={nibble}
+          class="w-[60px] h-[57px] mr-2"
+          alt="TryCatch.tv Nibble"
+        />
+        <h2
+          class="text-2xl text-center text-gray-100 mt-2 2xl:text-[46px] xl:text-[36px] lg:text-[26px]"
+        >
+          TryCatch Factory
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row h-full w-6/12 mr-4 max-md:w-full">
+    <div class="flex flex-col w-full xl:justify-center">
+      <div class="flex flex-col justify-evenly mr-16">
+        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0">
+          {
+            foiterItemsList.footerItems.map((e:any) => (
+              <div class="text-gray-100 mt-3">
+  
+                <ul>
+                  <li class="font-bold 2xl:text-[17px] lg:text-[15px] md:text-[12px]">{e.name}</li>
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+        <div class="flex flex-row justify-evenly mt-10">
+          <div class="flex flex-col">
+            {
+              foiterItemsList.footerListServices.map((e) => (
+                <div class="text-gray-100">
+                  <ul class="mt-2 2xl:text-[16px] lg:text-[14px]  md:text-[12px] max-md:text-[11px]">
+                    <li>{e.name}</li>
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex flex-col">
+            {
+              foiterItemsList.footerListRecursos.map((e) => (
+                <div class="text-gray-100 flex">
+                  <ul class="mt-2 2xl:text-[16px] lg:text-[14px] md:text-[12px] max-md:text-[11px]">
+                    <li>{e.name}</li>
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex flex-col">
+            {
+              foiterItemsList.footerListIndustrias.map((e) => (
+                <div class="text-gray-100 flex">
+                  <ul class="mt-2 2xl:text-[16px] lg:text-[14px] md:text-[12px] max-md:text-[11px]">
+                    <li>{e.name}</li>
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex flex-col">
+            {
+              foiterItemsList.footerListEquipos.map((e) => (
+                <div class="text-gray-100 flex">
+                  <ul class="mt-2 2xl:text-[16px] lg:text-[14px] md:text-[12px] max-md:text-[11px]">
+                    <li>{e.name}</li>
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="flex flex-row justify-end mr-16 space-x-16 mt-5 md:space-x-8 2xl:mr-32 max-sm:space-x-4 max-sm:ml-8">
+          <Icon name="ic:baseline-facebook" class="text-white text-xl mx-2" />
+          <Icon name="fa6-brands:x-twitter" class="text-white text-xl mx-2"></Icon>
+          <Icon name="mdi:youtube" class="text-white text-xl mx-2" />
+          <Icon name="ic:baseline-tiktok" class="text-white text-xl mx-2" />
+          <Icon name="mingcute:medium-fill" class="text-white text-xl mx-2"/>
+          <a
+            href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más" id="botonWhast"
+            class="fixed bottom-4 right-4 2xl:bottom-[50px] 2xl:right-[100px] xl:bottom-[50px] xl:right-[50px] lg:bottom-[50px] lg:right-[35px]  max-sm:bottom-[55px] max-sm:right-[25px] px-6 py-6 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2 md:px-2 md:py-2 max-sm:px-2 max-sm:py-2"
+          >
+          <Icon name="logos:whatsapp-icon" class="text-4xl max-sm:text-2xl"></Icon>
+             
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
