@@ -1,15 +1,38 @@
 ---
+import { getEntry } from "astro:content"
+import CallToAction from "../components/landing/CallToActionLanding.astro"
+import Contacto from "../components/landing/ContactoLanding.astro"
+import FAQLanding from "../components/landing/FAQLanding.astro"
+import HeroLanding from "../components/landing/HeroLanding.astro"
 import NuestroProcesoLanding from "../components/landing/NuestroProcesoLanding.astro"
+import Services from "../components/landing/ServicesLanding.astro"
+import TechStackLanding from "../components/landing/TechStackLanding.astro"
 import Layout from "../layouts/Layout.astro"
 
+const call_to_action = await getEntry("sections", "call-to-action")
 ---
 
-<Layout title="Welcome to Astro.">
-  <div>
-    <h1 class="text-3xl font-bold underline">Factory!</h1>
-    
-      
-    <NuestroProcesoLanding />
-  
+<Layout title="Factory">
+  <main>
+    <HeroLanding />
+    <div>
+      <Services />
+    </div>
+    <div>
+      <NuestroProcesoLanding />
+    </div>
+  </main>
+  <div class="container mx-auto my-8">
+    <FAQLanding />
   </div>
+  <div>
+    <CallToAction call_to_action={call_to_action} />
+  </div>
+  <div>
+    <TechStackLanding />
+  </div>
+  <div>
+    <CallToAction call_to_action={call_to_action} />
+  </div>
+  <Contacto />
 </Layout>
