@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets"
-import nibble from "./../../assets/img/nibble.png"
+import { Image } from "astro:assets";
+import nibble from "./../../assets/img/nibble.png";
 
 const navbarItems = [
   {
@@ -33,20 +33,17 @@ const navbarItems = [
     path: "/contact",
     target: "_self",
   },
-]
+];
 ---
 
 <script is:inline>
   function toggleMenu() {
-    const menu = document.getElementById("navbar-sticky")
-    menu?.classList.toggle("hidden")
+    const menu = document.getElementById("navbar-sticky");
+    menu?.classList.toggle("hidden");
   }
 </script>
 
-<nav
-  class="bg-blue-950 w-full z-20 top-0 left-0 border-b border-tc-black"
-  style="z-index: 40 ;"
->
+<nav class="bg-tcf-blue w-full z-20 top-0 left-0" style="z-index: 40 ;">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
