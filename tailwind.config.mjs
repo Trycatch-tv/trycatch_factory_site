@@ -13,7 +13,8 @@ export default {
         "tcf-yellow": "#EDF2C2",
         "tcf-gray": "#B5B5B5",
         "tcf-gray-l": "#F2F2F2",
-        "tcf-gray-foot":"#535353"
+        "tcf-gray-foot":"#535353",
+        "tcf-blue": "#172544",
       },
       width:{
         "60":"60px",
