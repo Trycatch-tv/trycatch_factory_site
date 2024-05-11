@@ -35,18 +35,18 @@ data.faq.forEach((item) => {
 });
 
 ---
-<div class="flex items-center justify-center flex-col gap-y-2 py-5">
-  <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold pb-3">{`${data.title}`}</h2>
+<div class=" flex items-center justify-center flex-col gap-y-2 py-5">
+  <h2 class="text-[#172554] text-2xl md:text-3xl lg:text-3xl font-bold pb-3">{`${data.title}`}</h2>
 </div>
-<div class="bg-[#F3F5F6] rounded-[9px]">
+<div class=" rounded-[9px]">
   <section class="max-w-5xl mx-auto py-2 sm:py-4 mb-2">
     <div class="w-full px-4 md:px-5 xl:px-2 py-4 rounded-[9px]">
-      <div class="bg-[#F3F5F6] mx-auto w-full max-w-4xl border border-slate-100/20 rounded-lg">
+      <div class="bg-[#172554] mx-auto w-full max-w-4xl  rounded-lg">
         {data.faq.map((item, index) => (
-          <div class="border-b border-[#0A071B]/10">
+          <div class="border-b bg-[#172554]/10">
             <button 
               data-toggle={`answer-${index}`}
-              class="question-btn flex w-full items-start gap-x-4 justify-between rounded-lg text-left text-lg font-bold text-slate-700 focus:outline-none p-5 border-b-4 border-white border-solid border-width-9"
+              class="question-btn flex w-full items-start gap-x-4 justify-between rounded-lg text-left text-lg font-bold text-white focus:outline-none p-5 border-b-0 border-[#172554] border-solid border-width-9"
               id={`button-${index}`}
             >
             {item.question}
@@ -69,7 +69,7 @@ data.faq.forEach((item) => {
           )}
           </button>
             <div
-              class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#414744] font-medium mb-2"
+              class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-medium mb-2"
               id={`answer-${index}`}
               style={{ display: open[item.question] ? 'block' : 'none' }}
             >
