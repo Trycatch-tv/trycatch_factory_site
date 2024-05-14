@@ -97,19 +97,19 @@ const technologyData = [
 ---
 
 <section class="max-w-screen-xl p-6 mx-auto sm:py-12 lg:py-24">
-    <h2 class="text-3xl font-bold leading-none sm:text-4xl text-center">
+    <h2 class="text-[#172554] text-3xl font-bold leading-none sm:text-4xl text-center">
         Tecnologías
     </h2>
     <div class="flex gap-10 flex-wrap justify-center mx-auto mt-12">
         {
             technologyData.map((item) => (
-                <div class="border rounded-xl py-6 px-2.5 md:px-8 max-w-xl">
-                    <h3 class="text-xl font-bold leading-none sm:text-2xl text-center">
+                <div class="border border-[#172554] rounded-xl py-6 px-2.5 md:px-8 max-w-xl">
+                    <h3 class="text-[#172554] text-xl font-bold leading-none sm:text-2xl text-center">
                         {item.title}
                     </h3>
                     <div class="flex flex-col md:flex-row gap-1 justify-center items-center my-5">
                         <strong>+{item.quantity}</strong>
-                        <p class="text-center">{item.description}</p>
+                        <p class="text-center text-[#172554]">{item.description}</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
                         {item.tecnologies.map((tech) => (
