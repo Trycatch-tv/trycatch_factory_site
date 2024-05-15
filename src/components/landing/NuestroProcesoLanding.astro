@@ -7,9 +7,9 @@ import metodology from "../../assets/img/metodology.jpg";
 <div class="flex flex-col bg-[#172554]">
   <div class="flex justify-center flex-grow max-w-screen-xl mx-auto mb-20 mt-4">
     <div class="mt-2 w-12/12 h-auto">
-      <div class="flex gap-10 flex-row flex-grow">
+      <div class="flex gap-10 flex-row flex-grow max-sm:flex-col">
         <!---Espacio para imagen o video -->
-        <div class="w-5/12 flex justify-center items-center">
+        <div class="w-5/12 flex justify-center items-center max-sm:order-2 max-sm:w-full">
           <Image
             src={process}
             class="size-96 rounded-md mr-"
@@ -17,14 +17,14 @@ import metodology from "../../assets/img/metodology.jpg";
           />
         </div>
 
-        <div class="flex flex-col gap-10 ml-10 w-1/2">
-          <h2 class="font-bold text-2xl fon-inter mt-8 text-white">Proceso</h2>
+        <div class="flex flex-col gap-10 ml-10 w-1/2 max-sm:order-1 max-sm:w-11/12">
+          <h2 class="font-bold text-2xl fon-inter mt-8 text-white max-sm:text-center">Proceso</h2>
           <div class="flex flex-row gap-2">
             <div>
               <p class="text-5xl font-bold text-white">1.</p>
             </div>
             <div>
-              <p class="text-white">
+              <p class="text-white max-sm:text-justify">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
                 beatae ipsum ex, consequuntur voluptate nemo labore alias,
                 placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum
@@ -37,7 +37,7 @@ import metodology from "../../assets/img/metodology.jpg";
               <p class="text-5xl font-bold text-white">2.</p>
             </div>
             <div>
-              <p class="text-white">
+              <p class="text-white max-sm:text-start">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
                 beatae ipsum ex, consequuntur voluptate nemo labore alias,
                 placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum
@@ -50,7 +50,7 @@ import metodology from "../../assets/img/metodology.jpg";
               <p class="text-5xl font-bold text-white">3.</p>
             </div>
             <div>
-              <p class="text-white">
+              <p class="text-white max-sm:text-start">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
                 beatae ipsum ex, consequuntur voluptate nemo labore alias,
                 placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum
@@ -60,12 +60,12 @@ import metodology from "../../assets/img/metodology.jpg";
           </div>
         </div>
       </div>
-      <div class="flex gap-10 flex-row">
-        <div class="flex flex-col gap-10 ml-10 w-1/2 mb-8">
-          <h2 class="font-bold text-2xl fon-inter mt-8 ml-2 text-white">
+      <div class="flex gap-10 flex-row max-sm:flex-col">
+        <div class="flex flex-col gap-10 ml-10 w-1/2 mb-8 max-sm:w-11/12">
+          <h2 class="font-bold text-2xl fon-inter mt-8 ml-2 text-white max-sm:text-center">
             Metodología
           </h2>
-          <div class="flex flex-row gap-2">
+          <div class="flex flex-row gap-2 ">
             <div>
               <p class="text-5xl font-bold text-white">.</p>
             </div>
@@ -106,7 +106,7 @@ import metodology from "../../assets/img/metodology.jpg";
           </div>
         </div>
         <!---Espacio para imagen o video -->
-        <div class="w-5/12 flex justify-center items-center">
+        <div class="w-5/12 flex justify-center items-center max-sm:w-full">
           <Image
             src={metodology}
             class="size-96 rounded-md mr-3"
