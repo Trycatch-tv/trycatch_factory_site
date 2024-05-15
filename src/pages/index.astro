@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 import CallToAction from "../components/landing/CallToActionLanding.astro";
-import Contacto from "../components/landing/ContactoLanding.astro";
 import FAQLanding from "../components/landing/FAQLanding.astro";
 import HeroLanding from "../components/landing/HeroLanding.astro";
 import NuestroProcesoLanding from "../components/landing/NuestroProcesoLanding.astro";
@@ -30,8 +29,5 @@ const call_to_action = await getEntry("sections", "call-to-action");
   </div>
   <div class="mx-auto my-8">
     <FAQLanding />
-  </div>
-  <div class="bg-[#172554]">
-    <Contacto />
   </div>
 </Layout>
