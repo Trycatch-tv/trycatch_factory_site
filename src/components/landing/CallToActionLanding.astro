@@ -1,6 +1,6 @@
 ---
-import { SiteMetadata } from '../../config.ts';
-import { Image } from "astro:assets"
+import { SiteMetadata } from "../../config.ts";
+import { Image } from "astro:assets";
 import action from "../../assets/img/call-to-action.png";
 
 export interface SiteMetadata {
@@ -10,8 +10,8 @@ export interface SiteMetadata {
     name: string;
     twitter: string;
     url: string;
-    email: string; 
-    whatsappNumber: string; 
+    email: string;
+    whatsappNumber: string;
   };
   org: {
     name: string;
@@ -23,34 +23,49 @@ export interface SiteMetadata {
 }
 ---
 
-<div class='dark:bg-black'>
-  <div class='mx-auto max-w-7xl px-1 py-2 sm:px-2 lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-12'>
-    <div class='lg:flex justify-center'>
-      <div class='lg:w-1/2 lg:order-1 flex justify-center'>
-        <Image 
-          src={action} 
-          alt='action' 
-          class='w-full lg:max-w-xs' 
-          loading='lazy'/>
+<div class="dark:bg-black bg-tcf-gray">
+  <div
+    class="mx-auto max-w-7xl px-1 py-2 sm:px-2 lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-12 min-h-screen"
+  >
+    <div class="lg:flex justify-center gap-32">
+      <div class="lg:order-1 flex justify-center">
+        <Image
+          src={action}
+          alt="action"
+          class="w-full lg:max-w-xs"
+          loading="lazy"
+        />
       </div>
-      <div class='lg:w-1/2 lg:order-2'>
-        <h2 class='text-2xl mt-6 font-bold justify-center text-gray-900 dark:text-gray-100 sm:text-xl'>
-          <span class='block dark:text-white text-center'>¿Tienes un proyecto en mente? Cuéntanos más sobre él y cómo podemos ayudarte. 
-            Completa el formulario a continuación y uno de nuestros expertos se pondrá en contacto contigo a la brevedad.</span>
-          <span class='block font-extrabold text-center text-blue-950 dark:text-purple-300 mt-8 mb-10'>Comienza tu proyecto hoy.</span>
+      <div class="lg:w-1/2 lg:order-2">
+        <h2
+          class="text-2xl mt-6 font-bold justify-center text-gray-900 dark:text-gray-100 sm:text-2xl"
+        >
+          <span class="block dark:text-white text-justify text-blue-950"
+            >¿Tienes un proyecto en mente? Cuéntanos más sobre él y cómo podemos
+            ayudarte. Completa el formulario a continuación y uno de nuestros
+            expertos se pondrá en contacto contigo a la brevedad.</span
+          >
+          <span
+            class="block font-extrabold text-center text-blue-950 dark:text-purple-300 mt-8 mb-10"
+            >Comienza tu proyecto hoy.</span
+          >
         </h2>
-        <div class='mt-9 flex justify-center lg:justify-center''> 
-          <div class='inline-flex rounded-md shadow'>
-            <a href={`mailto:${SiteMetadata.author.email}`} 
-               class='inline-flex items-center justify-center rounded-md border border-transparent bg-blue-950 px-5 py-3 text-base font-medium text-white hover:gray-600'>
+        <div class="mt-9 flex justify-center lg:justify-center" '>
+          <div class="inline-flex rounded-md shadow">
+            <a
+              href={`mailto:${SiteMetadata.author.email}`}
+              class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-950 px-5 py-3 text-base font-medium text-white hover:gray-600"
+            >
               ¡Contáctanos!
             </a>
           </div>
-          <div class='ml-8 inline-flex rounded-md shadow lg:ml-5'>
-            <a href={`https://wa.me/${SiteMetadata.author.whatsappNumber}`} 
-               rel='noopener noreferrer' 
-               target='_blank' 
-               class='inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-blue-950 hover:bg-purple-100'>
+          <div class="ml-8 inline-flex rounded-md shadow lg:ml-5">
+            <a
+              href={`https://wa.me/${SiteMetadata.author.whatsappNumber}`}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-blue-950 hover:bg-purple-100"
+            >
               WhatsApp 📲
             </a>
           </div>

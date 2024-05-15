@@ -1,123 +1,188 @@
-
-    <div class="Services flex flex-col items-center ">
-        <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold"> Nuestros servicios</h2>
-    <div class="container py-3 px-0 flex md:w-100 items-center justify-around m-0 ">
-        <div class=" ">
-            <svg onclick="handlePrevPage()" id="prevSVG" class="w-7 h-7 mr-10 " width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1795 3.26875C15.7889 2.87823 15.1558 2.87823 14.7652 3.26875L8.12078 9.91322C6.94952 11.0845 6.94916 12.9833 8.11996 14.155L14.6903 20.7304C15.0808 21.121 15.714 21.121 16.1045 20.7304C16.495 20.3399 16.495 19.7067 16.1045 19.3162L9.53246 12.7442C9.14194 12.3536 9.14194 11.7205 9.53246 11.33L16.1795 4.68297C16.57 4.29244 16.57 3.65928 16.1795 3.26875Z" fill="#0F0F0F"/>
-            </svg>
-        </div>
-        <div class="services-container flex flex-col w-auto h-auto md:flex-row gap-3 rounded-2xl">
-            <!-- La lista de servicios se renderizará aquí -->
-        </div>
-        <div class="">
-            <svg onclick="handleNextPage()" id="nextSVG" class="w-6 h-6 ml-10" fill="#000000" height="20px" width="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
-                <g id="next">
-                    <g>
-                        <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12"/>
-                    </g>
-                </g>
-            </svg>
-        </div>
-
+<section class="flex flex-col justify-center min-h-screen">
+  <div class="Services flex flex-col items-center">
+    <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold">
+      Nuestros servicios
+    </h2>
+    <div
+      class="container py-3 px-0 flex md:w-100 items-center justify-around m-0"
+    >
+      <div class="">
+        <svg
+          onclick="handlePrevPage()"
+          id="prevSVG"
+          class="w-7 h-7 mr-10"
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.1795 3.26875C15.7889 2.87823 15.1558 2.87823 14.7652 3.26875L8.12078 9.91322C6.94952 11.0845 6.94916 12.9833 8.11996 14.155L14.6903 20.7304C15.0808 21.121 15.714 21.121 16.1045 20.7304C16.495 20.3399 16.495 19.7067 16.1045 19.3162L9.53246 12.7442C9.14194 12.3536 9.14194 11.7205 9.53246 11.33L16.1795 4.68297C16.57 4.29244 16.57 3.65928 16.1795 3.26875Z"
+            fill="#0F0F0F"></path>
+        </svg>
+      </div>
+      <div
+        class="services-container flex flex-col w-auto h-auto md:flex-row gap-3 rounded-2xl"
+      >
+        <!-- La lista de servicios se renderizará aquí -->
+      </div>
+      <div class="">
+        <svg
+          onclick="handleNextPage()"
+          id="nextSVG"
+          class="w-6 h-6 ml-10"
+          fill="#000000"
+          height="20px"
+          width="20px"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 24 24"
+          xml:space="preserve"
+        >
+          <g id="next">
+            <g>
+              <polygon
+                points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12"
+              ></polygon>
+            </g>
+          </g>
+        </svg>
+      </div>
     </div>
     <div class="pagination-container flex w-100 justify-center mt-0 p-0">
-
-        <span class="pagination-dot ml-10 mr-10 h-4 cursor-pointer  " onclick="handlePaginationClick(1)">
-            <button id="circular-btn" class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"></button>
-        </span>
-        <span class="pagination-dot ml-10 mr-10 h-4 cursor-pointer" onclick="handlePaginationClick(2)">
-            <button id="circular-btn2" class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"></button>
-        </span>
-        <span class="pagination-dot ml-10 mr-10 h-4 cursor-pointer disable" onclick="handlePaginationClick(3)">
-            <button id="circular-btn3" class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"></button>
-        </span>
+      <span
+        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
+        onclick="handlePaginationClick(1)"
+      >
+        <button
+          id="circular-btn"
+          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
+        ></button>
+      </span>
+      <span
+        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
+        onclick="handlePaginationClick(2)"
+      >
+        <button
+          id="circular-btn2"
+          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
+        ></button>
+      </span>
+      <span
+        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer disable"
+        onclick="handlePaginationClick(3)"
+      >
+        <button
+          id="circular-btn3"
+          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
+        ></button>
+      </span>
     </div>
-</div>
+  </div>
+</section>
 
+<script is:inline>
+  const servicesItems = [
+    {
+      imageService: "public/1.jpg",
+      titleService: "Servicio uno",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/2.png",
+      titleService: "Servicio dos",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/3.png",
+      titleService: "Servicio tres",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/4.png",
+      titleService: "Servicio cuatro",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/5.png",
+      titleService: "Servicio cinco",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/6.png",
+      titleService: "Servicio seis",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/7.png",
+      titleService: "Servicio siete",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/8.png",
+      titleService: "Servicio ocho",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+    {
+      imageService: "public/9.png",
+      titleService: "Servicio nueve",
+      descriptionService:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
+    },
+  ];
 
-    <script is:inline>
-    const servicesItems = [
-  {
-            imageService: "public/1.jpg",
-            titleService: "Servicio uno",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/2.png",
-            titleService: "Servicio dos",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/3.png",
-            titleService: "Servicio tres",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/4.png",
-            titleService: "Servicio cuatro",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/5.png",
-            titleService: "Servicio cinco",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/6.png",
-            titleService: "Servicio seis",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/7.png",
-            titleService: "Servicio siete",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/8.png",
-            titleService: "Servicio ocho",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        },
-        {
-            imageService: "public/9.png",
-            titleService: "Servicio nueve",
-            descriptionService: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?"
-        }
+  let actualPage = 1;
+  const showQuantity = 3;
+  const numberPages = Math.ceil(servicesItems.length / showQuantity);
 
-    ];
-
-    let actualPage = 1;
-    const showQuantity = 3;
-    const numberPages = Math.ceil(servicesItems.length / showQuantity);
-
-    function handleNextPage() {
-        if (actualPage < numberPages) {
-            actualPage++;
-            renderServices();
-        }
-
-
+  function handleNextPage() {
+    if (actualPage < numberPages) {
+      actualPage++;
+      renderServices();
     }
+  }
 
-    function handlePrevPage() {
-        if (actualPage > 1) {
-            actualPage--;
-            renderServices();
-        }
+  function handlePrevPage() {
+    if (actualPage > 1) {
+      actualPage--;
+      renderServices();
     }
+  }
 
-    function renderServices() {
-        const valueTwoSlice = actualPage * showQuantity;
-        const valueOneSlice = valueTwoSlice - showQuantity;
-        const finalServicesArray = servicesItems.slice(valueOneSlice, valueTwoSlice);
+  function renderServices() {
+    const valueTwoSlice = actualPage * showQuantity;
+    const valueOneSlice = valueTwoSlice - showQuantity;
+    const finalServicesArray = servicesItems.slice(
+      valueOneSlice,
+      valueTwoSlice
+    );
 
-        const servicesContainer = document.querySelector('.services-container');
-        servicesContainer.innerHTML = '';
+    const servicesContainer = document.querySelector(".services-container");
+    servicesContainer.innerHTML = "";
 
-        finalServicesArray.forEach(service => {
-            const serviceElement = document.createElement('div');
-            serviceElement.classList.add('flex-1', 'md:w-100', 'md:h-50', 'bg-[#172554]','md:h-auto', 'rounded-lg', 'p-4', 'm-10');
-            serviceElement.innerHTML = `
+    finalServicesArray.forEach((service) => {
+      const serviceElement = document.createElement("div");
+      serviceElement.classList.add(
+        "flex-1",
+        "md:w-100",
+        "md:h-50",
+        "bg-[#172554]",
+        "md:h-auto",
+        "rounded-lg",
+        "p-4",
+        "m-10"
+      );
+      serviceElement.innerHTML = `
                 <div class="flex justify-center items-center">
                     <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 rounded-full mb-2">
                 </div>
@@ -127,16 +192,15 @@
                     <button class="border text-[#172554]  w-full rounded-2xl  bg-white px-6 py-2 mt-6 c-white hover:bg-[#172554] hover:text-white">Ver más</button>
                 </div>
             `;
-            servicesContainer.appendChild(serviceElement);
-        });
-    }
+      servicesContainer.appendChild(serviceElement);
+    });
+  }
 
-    function handlePaginationClick(pageNumber) {
+  function handlePaginationClick(pageNumber) {
     actualPage = pageNumber;
     renderServices();
     setActive(this); // Si `this` es necesario aquí, asegúrate de que esté definido apropiadamente.
-}
+  }
 
-    window.onload = renderServices;
-    </script>
- 
+  window.onload = renderServices;
+</script>
