@@ -1,5 +1,5 @@
 <section class="flex flex-col justify-center min-h-screen">
-  <div class="Services flex flex-col items-center">
+  <div class="Services flex flex-col items-center " >
     <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold">
       Nuestros servicios
     </h2>
@@ -142,7 +142,7 @@
   ];
 
   let actualPage = 1;
-  const showQuantity = 3;
+  let showQuantity = 3;
   const numberPages = Math.ceil(servicesItems.length / showQuantity);
 
   function handleNextPage() {
@@ -160,6 +160,12 @@
   }
 
   function renderServices() {
+    let cardsToShow = showQuantity; // Número de tarjetas a mostrar por defecto
+
+    // Si la pantalla es de tamaño móvil, mostrar solo una tarjeta a la vez
+    if (window.innerWidth < 640) {
+        showQuantity = 1;
+    }
     const valueTwoSlice = actualPage * showQuantity;
     const valueOneSlice = valueTwoSlice - showQuantity;
     const finalServicesArray = servicesItems.slice(
@@ -169,6 +175,7 @@
 
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
+   
 
     finalServicesArray.forEach((service) => {
       const serviceElement = document.createElement("div");
