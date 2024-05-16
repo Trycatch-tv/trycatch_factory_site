@@ -142,13 +142,18 @@
   ];
 
   let actualPage = 1;
-  let showQuantity = 3;
-  const numberPages = Math.ceil(servicesItems.length / showQuantity);
-
+  let showQuantity = 1;
   function handleNextPage() {
+    const showQuantity = window.innerWidth > 640 ? 3 : 1;
+
+   
+    const numberPages = Math.ceil(servicesItems.length / showQuantity);
+
+    
     if (actualPage < numberPages) {
-      actualPage++;
-      renderServices();
+     
+        actualPage++;
+        renderServices();
     }
   }
 
@@ -160,17 +165,11 @@
   }
 
   function renderServices() {
-    const cardsToShow = window.innerWidth < 640 ? 1 : 3;
-
-    // Actualizar la variable global showQuantity
+    const cardsToShow = window.innerWidth > 640 ? 3 : 1; 
     showQuantity = cardsToShow;
     const valueTwoSlice = actualPage * showQuantity;
-    const valueOneSlice = (actualPage - 1) * cardsToShow;
-    const finalServicesArray = servicesItems.slice(
-      valueOneSlice,
-      valueTwoSlice,
-    );
-
+    const valueOneSlice = (actualPage - 1) * showQuantity;
+    const finalServicesArray = servicesItems.slice(valueOneSlice, valueTwoSlice);
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
 
@@ -206,17 +205,9 @@
   }
 
   window.addEventListener("resize", handleResize);
-  // Actualizar el número de tarjetas a mostrar según el tamaño de la pantalla
-
   function handleResize() {
-    let cardsToShow = window.innerWidth < 640 ? 1 : 9; // <-- aqui deberia ir hasta el card nueve
-
-    // Actualizar el número de tarjetas a mostrar y volver a renderizar los servicios
-    showQuantity = cardsToShow;
-    // Volver a renderizar los servicios con el nuevo número de tarjetas
     renderServices();
   }
-  // Llamar a handleResize() al cargar la página para configurar el número inicial de tarjetas
   window.onload = function () {
     handleResize();
   };
