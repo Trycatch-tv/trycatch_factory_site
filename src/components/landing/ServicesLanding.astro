@@ -1,5 +1,5 @@
 <section class="flex flex-col justify-center min-h-screen">
-  <div class="Services flex flex-col items-center " >
+  <div class="Services flex flex-col items-center">
     <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold">
       Nuestros servicios
     </h2>
@@ -160,22 +160,19 @@
   }
 
   function renderServices() {
-    let cardsToShow = showQuantity; // Número de tarjetas a mostrar por defecto
+    const cardsToShow = window.innerWidth < 640 ? 1 : 3;
 
-    // Si la pantalla es de tamaño móvil, mostrar solo una tarjeta a la vez
-    if (window.innerWidth < 640) {
-        showQuantity = 1;
-    }
+    // Actualizar la variable global showQuantity
+    showQuantity = cardsToShow;
     const valueTwoSlice = actualPage * showQuantity;
-    const valueOneSlice = valueTwoSlice - showQuantity;
+    const valueOneSlice = (actualPage - 1) * cardsToShow;
     const finalServicesArray = servicesItems.slice(
       valueOneSlice,
-      valueTwoSlice
+      valueTwoSlice,
     );
 
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
-   
 
     finalServicesArray.forEach((service) => {
       const serviceElement = document.createElement("div");
@@ -187,7 +184,7 @@
         "md:h-auto",
         "rounded-lg",
         "p-4",
-        "m-10"
+        "m-10",
       );
       serviceElement.innerHTML = `
                 <div class="flex justify-center items-center">
@@ -206,8 +203,21 @@
   function handlePaginationClick(pageNumber) {
     actualPage = pageNumber;
     renderServices();
-    setActive(this); // Si `this` es necesario aquí, asegúrate de que esté definido apropiadamente.
   }
 
-  window.onload = renderServices;
+  window.addEventListener("resize", handleResize);
+  // Actualizar el número de tarjetas a mostrar según el tamaño de la pantalla
+
+  function handleResize() {
+    let cardsToShow = window.innerWidth < 640 ? 1 : 9; // <-- aqui deberia ir hasta el card nueve
+
+    // Actualizar el número de tarjetas a mostrar y volver a renderizar los servicios
+    showQuantity = cardsToShow;
+    // Volver a renderizar los servicios con el nuevo número de tarjetas
+    renderServices();
+  }
+  // Llamar a handleResize() al cargar la página para configurar el número inicial de tarjetas
+  window.onload = function () {
+    handleResize();
+  };
 </script>
