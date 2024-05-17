@@ -46,14 +46,14 @@ const foiterItemsList = {
 ---
 
 <footer
-  class="flex max-sm:max-w-screen-sm flex-row bg-[#070B18] w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-[265px] max-sm:h-full"
+  class="flex max-sm:max-w-screen-sm max-md:max-w-screen-md flex-row md:flex-col bg-[#070B18] w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-full md:w-full max-sm:h-full"
 >
-  <div class="flex flex-row h-full w-6/12 max-md:w-full max-sm:h-1/2">
+  <div class="flex flex-row h-full w-full max-sm:h-1/2 md:flex-row md:w-11/12">
     <div
-      class="flex flex-col w-full xljustify-center ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
+      class="flex flex-col w-full justify-center ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
     >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-sm:w-full max-sm:justify-start"
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-sm:w-full max-sm:justify-start md:flex-row"
       >
         <Image
           src={nibble}
@@ -69,107 +69,94 @@ const foiterItemsList = {
     </div>
   </div>
 
-  <div
-    class="flex flex-row h-full w-6/12 mr-[0.4rem] max-md:w-full max-sm:w-full lg:mr-0 max-sm:flex-col"
-  >
-    <div
-      class="flex flex-col w-full xl:justify-center md:flex-col  "
-    >
+  <div class="flex flex-row h-full w-6/12 mr-[0.4rem] max-md:w-full max-sm:w-full lg:mr-0 max-sm:flex-col md:w-full">
+    <div class="flex flex-col w-full xl:justify-center md:flex-col">
       <div class="flex flex-col justify-evenly py-1 max-sm:justify-end">
-         <div
-            class="flex flex-row justify-evenly mt-12 max-md:mt-0  max-sm:mt-8 max-sm:justify-center"
-          >
-            {
-              foiterItemsList.footerItems.map((e: any) => (
-                <>
-                  <div class="px-2 ">
-                    {e.name === "Servicios" ? (
-                      <div class="flex flex-col justify-evenly mr-3">
-                        <div class="text-white font-bold">{e.name}</div>
-                        <div class="text-white">
-                          {e.footerListServices.map((e: any) => (
-                            <div class="text-white mt-2 max-sm:text-sm">
-                              {e.name}
-                            </div>
-                          ))}
+        <!-- Servicios y Recursos -->
+        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center">
+          {
+            foiterItemsList.footerItems.map((e: any) => (
+              <>
+                {e.name === "Servicios" && (
+                  <div class="px-2 flex flex-col justify-evenly mr-3">
+                    <div class="text-white font-bold">{e.name}</div>
+                    <div class="text-white">
+                      {e.footerListServices.map((service: any) => (
+                        <div class="text-white mt-2 max-sm:text-sm">
+                          {service.name}
                         </div>
-                      </div>
-                    ) : null}
+                      ))}
+                    </div>
                   </div>
-                  <div class="">
-                    {e.name === "Recursos" ? (
-                      <div class="flex flex-col">
-                        <div class="text-white font-bold">{e.name}</div>
-                        <div class="text-white">
-                          {e.footerListRecursos.map((e: any) => (
-                            <div class="text-white mt-2 text-center max-sm:text-sm">
-                              {e.name}
-                            </div>
-                          ))}
+                )}
+                {e.name === "Recursos" && (
+                  <div class="px-2 flex flex-col">
+                    <div class="text-white font-bold">{e.name}</div>
+                    <div class="text-white">
+                      {e.footerListRecursos.map((recurso: any) => (
+                        <div class="text-white mt-2 text-center max-sm:text-sm">
+                          {recurso.name}
                         </div>
-                      </div>
-                    ) : null}
+                      ))}
+                    </div>
                   </div>
-                </>
-              ))
-            }
-          </div>
-         <div
-            class="flex flex-row justify-evenly mt-12 max-md:mt-0  max-sm:mt-8 max-sm:justify-center max-sm:mr-[86px]"
-          >
-            {
-              foiterItemsList.footerItems.map((e: any) => (
-                <>
-                  <div class="px-2">
-                    {e.name === "Industrias" ? (
-                      <div class="flex flex-col justify-evenly mr-3">
-                        <div class="text-white font-bold">{e.name}</div>
-                        <div class="text-white">
-                          {e.footerListIndustrias.map((e: any) => (
-                            <div class="text-white mt-2 max-sm:text-sm">
-                              {e.name}
-                            </div>
-                          ))}
+                )}
+              </>
+            ))
+          }
+        </div>
+        <!-- Industrias y Equipo -->
+        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center max-sm:mr-[86px]">
+          {
+            foiterItemsList.footerItems.map((e: any) => (
+              <>
+                {e.name === "Industrias" && (
+                  <div class="px-2 flex flex-col justify-evenly mr-3">
+                    <div class="text-white font-bold">{e.name}</div>
+                    <div class="text-white">
+                      {e.footerListIndustrias.map((industria: any) => (
+                        <div class="text-white mt-2 max-sm:text-sm">
+                          {industria.name}
                         </div>
-                      </div>
-                    ) : null}
+                      ))}
+                    </div>
                   </div>
-                  <div class="">
-                    {e.name === "Equipo" ? (
-                      <div class="flex flex-col">
-                        <div class="text-white font-bold">{e.name}</div>
-                        <div class="text-white">
-                          {e.footerListEquipos.map((e: any) => (
-                            <div class="text-white mt-2 text-center max-sm:text-sm">
-                              {e.name}
-                            </div>
-                          ))}
+                )}
+                {e.name === "Equipo" && (
+                  <div class="px-2 flex flex-col">
+                    <div class="text-white font-bold">{e.name}</div>
+                    <div class="text-white">
+                      {e.footerListEquipos.map((equipo: any) => (
+                        <div class="text-white mt-2 text-center max-sm:text-sm">
+                          {equipo.name}
                         </div>
-                      </div>
-                    ) : null}
+                      ))}
+                    </div>
                   </div>
-                </>
-              ))
-            }
-          </div>
+                )}
+              </>
+            ))
+          }
         </div>
       </div>
-      <div
-        class="flex flex-row justify-center mr-16 space-x-16 mt-5 md:space-x-8 2xl:mr-32 max-sm:space-x-4 max-sm:ml-8 pb-8 max-sm:justify-evenly"
+    </div>
+  </div>
+  
+    <div
+      class="flex flex-row justify-center mr-16 space-x-16 mt-5 md:space-x-8 2xl:mr-32 max-sm:space-x-4 max-sm:ml-8 pb-8 max-sm:justify-evenly"
+    >
+      <Icon name="ic:baseline-facebook" class="text-white text-xl mx-2" />
+      <Icon name="fa6-brands:x-twitter" class="text-white text-xl mx-2" />
+      <Icon name="mdi:youtube" class="text-white text-xl mx-2" />
+      <Icon name="ic:baseline-tiktok" class="text-white text-xl mx-2" />
+      <Icon name="mingcute:medium-fill" class="text-white text-xl mx-2" />
+      <a
+        href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
+        id="botonWhast"
+        class="fixed bottom-4 right-4 2xl:bottom-[50px] 2xl:right-[100px] xl:bottom-[50px] xl:right-[20px] lg:bottom-[50px] lg:right-[35px] max-sm:bottom-[55px] max-sm:right-[25px] px-6 py-6 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2 md:px-2 md:py-2 max-sm:px-2 max-sm:py-2"
       >
-        <Icon name="ic:baseline-facebook" class="text-white text-xl mx-2" />
-        <Icon name="fa6-brands:x-twitter" class="text-white text-xl mx-2" />
-        <Icon name="mdi:youtube" class="text-white text-xl mx-2" />
-        <Icon name="ic:baseline-tiktok" class="text-white text-xl mx-2" />
-        <Icon name="mingcute:medium-fill" class="text-white text-xl mx-2" />
-        <a
-          href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
-          id="botonWhast"
-          class="fixed bottom-4 right-4 2xl:bottom-[50px] 2xl:right-[100px] xl:bottom-[50px] xl:right-[20px] lg:bottom-[50px] lg:right-[35px] max-sm:bottom-[55px] max-sm:right-[25px] px-6 py-6 rounded-full bg-green-500 text-white flex items-center hover:scale-110 hover:shadow-lg transition-transform transition-duration-500 lg:px-2 lg:py-2 md:px-2 md:py-2 max-sm:px-2 max-sm:py-2"
-        >
-          <Icon name="logos:whatsapp-icon" class="text-4xl max-sm:text-2xl" />
-        </a>
-      </div>
+        <Icon name="logos:whatsapp-icon" class="text-4xl max-sm:text-2xl" />
+      </a>
     </div>
   </div>
 </footer>

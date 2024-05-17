@@ -144,16 +144,19 @@
   let actualPage = 1;
   let showQuantity = 1;
   function handleNextPage() {
-    const showQuantity = window.innerWidth > 640 ? 3 : 1;
+    if (window.innerWidth > 1024) {
+      showQuantity = 3; // Pantallas de escritorio grandes
+    } else if (window.innerWidth > 640) {
+      showQuantity = 1; // Pantallas de tablet
+    } else {
+      showQuantity = 1; // Pantallas de móvil
+    }
 
-   
     const numberPages = Math.ceil(servicesItems.length / showQuantity);
 
-    
     if (actualPage < numberPages) {
-     
-        actualPage++;
-        renderServices();
+      actualPage++;
+      renderServices();
     }
   }
 
@@ -165,11 +168,21 @@
   }
 
   function renderServices() {
-    const cardsToShow = window.innerWidth > 640 ? 3 : 1; 
-    showQuantity = cardsToShow;
+    if (window.innerWidth > 1024) {
+      showQuantity = 3; // Pantallas de escritorio grandes
+    } else if (window.innerWidth > 640) {
+      showQuantity = 1; // Pantallas de tablet
+    } else {
+      showQuantity = 1; // Pantallas de móvil
+    }
+
     const valueTwoSlice = actualPage * showQuantity;
     const valueOneSlice = (actualPage - 1) * showQuantity;
-    const finalServicesArray = servicesItems.slice(valueOneSlice, valueTwoSlice);
+
+    const finalServicesArray = servicesItems.slice(
+      valueOneSlice,
+      valueTwoSlice,
+    );
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
 
@@ -177,14 +190,14 @@
       const serviceElement = document.createElement("div");
       serviceElement.classList.add(
         "flex-1",
-        "md:w-100",
-        "md:h-50",
-        "bg-[#172554]",
+        "md:w-[300px]",
         "md:h-auto",
+        "bg-[#172554]",
         "rounded-lg",
         "p-4",
         "m-10",
-        "max-sm:m-0"
+        "max-sm:m-0",
+        "md:p-3",
       );
       serviceElement.innerHTML = `
                 <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
