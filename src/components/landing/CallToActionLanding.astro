@@ -32,7 +32,7 @@ export interface SiteMetadata {
         <Image
           src={action}
           alt="action"
-          class="w-full lg:max-w-xs max-sm:max-w-sm"
+          class="w-full lg:max-w-xs max-sm:max-w-sm max-sm:p-8"
           loading="lazy"
         />
       </div>
@@ -40,13 +40,13 @@ export interface SiteMetadata {
         <h2
           class="text-2xl mt-6 font-bold justify-center text-gray-900 dark:text-gray-100 sm:text-2xl"
         >
-          <span class="block dark:text-white text-justify text-blue-950 max-sm:text-2xl px-4"
+          <span class="block dark:text-white text-justify text-blue-950 max-sm:text-xl px-4"
             >¿Tienes un proyecto en mente? Cuéntanos más sobre él y cómo podemos
             ayudarte. Completa el formulario a continuación y uno de nuestros
             expertos se pondrá en contacto contigo a la brevedad.</span
           >
           <span
-            class="block font-extrabold text-center text-blue-950 dark:text-purple-300 mt-8 mb-10"
+            class="block font-extrabold text-center text-blue-950 dark:text-purple-300 mt-8 mb-10 max-sm:text-xl"
             >Comienza tu proyecto hoy.</span
           >
         </h2>
@@ -54,7 +54,7 @@ export interface SiteMetadata {
           <div class="inline-flex rounded-md shadow">
             <a
               href={`mailto:${SiteMetadata.author.email}`}
-              class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-950 px-5 py-3 text-base font-medium text-white hover:gray-600"
+              class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-950 px-5 py-3 text-base font-medium text-white hover:gray-600 max-sm:px-2 max-sm:py-2"
             >
               ¡Contáctanos!
             </a>

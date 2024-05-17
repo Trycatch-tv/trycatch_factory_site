@@ -115,9 +115,9 @@ const technologyData = [
             <strong>+{item.quantity}</strong>
             <p class="text-center text-[#172554]">{item.description}</p>
           </div>
-          <div class="flex flex-wrap gap-1.5">
+          <div class="flex flex-wrap gap-1.5 max-sm:justify-center">
             {item.tecnologies.map((tech) => (
-              <div class="h-24 rounded-xl border overflow-hidden place-content-between">
+              <div class="h-24 rounded-xl border overflow-hidden place-content-between max-sm:h-14">
                 <img
                   class="w-full h-full"
                   src={tech.url}
