@@ -1,57 +1,49 @@
 ---
-import { Image } from "astro:assets"
-import nibble from "./../../assets/img/nibble.png"
+import { Image } from "astro:assets";
+import nibble from "./../../assets/img/nibble.png";
 
 const navbarItems = [
   {
-    name: "Sobre Nosotros",
-    path: "/about",
+    name: "Servicios",
+    path: "/services",
     target: "_self",
   },
   {
-    name: "Proyectos",
-    path: "/projects",
+    name: "Portafolio",
+    path: "/portfolio",
     target: "_self",
   },
   {
-    name: "Tecnologías",
-    path: "/technologies",
+    name: "Recursos",
+    path: "/resources",
     target: "_self",
   },
   {
-    name: "Clientes",
-    path: "/clients",
+    name: "Equipo",
+    path: "/team",
     target: "_self",
-  },
-  {
-    name: "Blog",
-    path: "/blog",
-    target: "_self",
-  },
-  {
-    name: "Contacto",
-    path: "/contact",
-    target: "_self",
-  },
+  }
 ]
+ 
 ---
 
 <script is:inline>
   function toggleMenu() {
-    const menu = document.getElementById("navbar-sticky")
-    menu?.classList.toggle("hidden")
+    const menu = document.getElementById("navbar-sticky");
+    menu?.classList.toggle("hidden");
   }
 </script>
 
-<nav
-  class="bg-blue-950 w-full z-20 top-0 left-0 border-b border-tc-black"
-  style="z-index: 40 ;"
->
+<nav class="bg-tcf-blue w-full z-50 top-0 left-0 fixed py-2">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
     <a href="/" class="flex items-center">
-      <Image src={nibble} class="size-16 mr-3" alt="TryCatch.tv Nibble" />
+      <Image
+        src={nibble}
+        class="w-[100px] h-[100px]"
+        alt="TryCatch.tv Nibble"
+      />
       <div class="flex flex-col">
         <span
           class="self-center text-3xl font-semibold whitespace-nowrap text-white"
@@ -89,7 +81,7 @@ const navbarItems = [
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
       >
         {
           navbarItems.map((item) => (
@@ -97,13 +89,22 @@ const navbarItems = [
               <a
                 href={item.path}
                 target={item.target || "_self"}
-                class="block py-2 pl-3 pr-4 rounded hover:bg-transparent md:p-0 text-white hover:text-tc-yellow"
+                class="block py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
               >
                 {item.name}
               </a>
             </li>
           ))
         }
+        <li>
+              <a
+                href={'/contact'}
+                target={"_self"}
+                class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
+              >
+                Contacto
+              </a>
+        </li>
       </ul>
     </div>
   </div>
