@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/img/group.svg";
+---
+
+<section class="bg-tcf-blue">
+  <div class="max-w-screen-xl flex flex-col mx-auto">
+    <div
+      class="flex flex-col p-8 justify-center lg:flex-row-reverse lg:items-center"
+    >
+      <div class="col-lg-6">
+        <h1 class="display-2 text-center text-4xl text-white">
+          Nos enorgullece impulsar el talento emergente con un enfoque
+          inclusivo.
+        </h1>
+      </div>
+      <div class="col-lg-6 w-full flex justify-center">
+        <Image src={HeroImage} alt="Hero Image" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</section>
