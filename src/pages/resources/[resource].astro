@@ -1,5 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+    import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+    return [
+        { params: { resource: "blog" } },
+    ];
+}
 ---
 
 <Layout title="Recursos">

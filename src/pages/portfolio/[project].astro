@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export function getStaticPaths() {
+    return [
+        { params: { project: "proyecto1" } },
+        { params: { project: "proyecto2" } },
+        { params: { project: "proyecto3" } },
+    ];
+}
+---
+
+<Layout title="Proyectos">
+    <main class="min-h-screen max-w-screen-xl mx-auto pt-56">
+        <!-- contenido de aqui -->
+        <h1 class="text-4xl">Estas en la sección de Proyectos</h1>
+    </main>
+</Layout>

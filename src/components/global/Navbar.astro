@@ -7,21 +7,43 @@ const navbarItems = [
     name: "Servicios",
     path: "/services",
     target: "_self",
+    subItems: [
+      {
+        name: "Desarrollo Web",
+        path: "/services/desarrollo-software",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Portafolio",
     path: "/portfolio",
     target: "_self",
+    subItems: [
+      {
+        name: "Proyectos",
+        path: "/portfolio/proyecto1",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Recursos",
     path: "/resources",
     target: "_self",
+    subItems: [
+      {
+        name: "Blog",
+        path: "/resources/blog",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Equipo",
     path: "/team",
     target: "_self",
+    subItems:[]
   }
 ]
  
@@ -31,6 +53,11 @@ const navbarItems = [
   function toggleMenu() {
     const menu = document.getElementById("navbar-sticky");
     menu?.classList.toggle("hidden");
+  }
+
+  function toggleSubmenu() {
+    const submenu = document.getElementById("navbar-submenu");
+    submenu?.classList.toggle("hidden");
   }
 </script>
 
@@ -85,7 +112,7 @@ const navbarItems = [
       >
         {
           navbarItems.map((item) => (
-            <li>
+            <li onmouseover="toggleSubmenu()" class="navbar-submenu relative">
               <a
                 href={item.path}
                 target={item.target || "_self"}
@@ -93,6 +120,13 @@ const navbarItems = [
               >
                 {item.name}
               </a>
+              <div>
+                {item.subItems.length > 0 && 
+                  item.subItems.map((subItem) => (
+                    <button>{subItem.name}</button>
+                  ))
+                }
+              </div>
             </li>
           ))
         }
