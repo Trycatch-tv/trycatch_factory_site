@@ -1,6 +1,6 @@
 <section class="flex flex-col justify-center min-h-screen">
   <div class="Services flex flex-col items-center">
-    <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold">
+    <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold text-tcf-blue">
       Nuestros servicios
     </h2>
     <div
@@ -142,10 +142,18 @@
   ];
 
   let actualPage = 1;
-  const showQuantity = 3;
-  const numberPages = Math.ceil(servicesItems.length / showQuantity);
-
+  let showQuantity = 1;
   function handleNextPage() {
+    if (window.innerWidth > 1024) {
+      showQuantity = 3; // Pantallas de escritorio grandes
+    } else if (window.innerWidth > 640) {
+      showQuantity = 1; // Pantallas de tablet
+    } else {
+      showQuantity = 1; // Pantallas de móvil
+    }
+
+    const numberPages = Math.ceil(servicesItems.length / showQuantity);
+
     if (actualPage < numberPages) {
       actualPage++;
       renderServices();
@@ -160,13 +168,21 @@
   }
 
   function renderServices() {
+    if (window.innerWidth > 1024) {
+      showQuantity = 3; // Pantallas de escritorio grandes
+    } else if (window.innerWidth > 640) {
+      showQuantity = 1; // Pantallas de tablet
+    } else {
+      showQuantity = 1; // Pantallas de móvil
+    }
+
     const valueTwoSlice = actualPage * showQuantity;
-    const valueOneSlice = valueTwoSlice - showQuantity;
+    const valueOneSlice = (actualPage - 1) * showQuantity;
+
     const finalServicesArray = servicesItems.slice(
       valueOneSlice,
-      valueTwoSlice
+      valueTwoSlice,
     );
-
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
 
@@ -174,20 +190,24 @@
       const serviceElement = document.createElement("div");
       serviceElement.classList.add(
         "flex-1",
-        "md:w-100",
-        "md:h-50",
-        "bg-[#172554]",
+        "md:max-w-screen-md",
         "md:h-auto",
+        "bg-[#172554]",
         "rounded-lg",
         "p-4",
-        "m-10"
+        "m-10",
+        "max-sm:m-0",
+        "md:p-3",
+        "md:p-2",
+        "lg:max-w-screen-sm",
+        "lg:px-15"
       );
       serviceElement.innerHTML = `
-                <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
                     <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 rounded-full mb-2">
                 </div>
                 <h3 class="text-lg text-white font-semibold mt-2 mb-6 text-center font-bold">${service.titleService}</h3>
-                <p class="text-center text-white text-sm">${service.descriptionService}</p>
+                <p class="text-center text-white text-sm max-sm:text-sm">${service.descriptionService}</p>
                 <div class="flex justify-center">
                     <button class="border text-[#172554]  w-full rounded-2xl  bg-white px-6 py-2 mt-6 c-white hover:bg-[#172554] hover:text-white">Ver más</button>
                 </div>
@@ -199,8 +219,13 @@
   function handlePaginationClick(pageNumber) {
     actualPage = pageNumber;
     renderServices();
-    setActive(this); // Si `this` es necesario aquí, asegúrate de que esté definido apropiadamente.
   }
 
-  window.onload = renderServices;
+  window.addEventListener("resize", handleResize);
+  function handleResize() {
+    renderServices();
+  }
+  window.onload = function () {
+    handleResize();
+  };
 </script>
