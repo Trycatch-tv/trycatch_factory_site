@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      flexBasis: {
+        'content': 'content',
+      },
       colors: {
         "tcf-black": "#232122",
         "tcf-black-l": "#474646",

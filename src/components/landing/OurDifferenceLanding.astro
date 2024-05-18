@@ -1,0 +1,67 @@
+---
+const card = [
+  {
+    quantity: 50,
+    label: "developers",
+  },
+  {
+    quantity: 10,
+    label: "paises",
+  },
+  {
+    quantity: 15,
+    label: "capacidades",
+  },
+];
+const card2 = [
+  {
+    label: "Mujeres líderes",
+  },
+  {
+    label: "Teletrabajo",
+  },
+];
+---
+
+<section
+  class="bg-tcf-info max-w-screen min-h-screen flex flex-col justify-center"
+>
+  <div class="justify-center items-center p-8">
+    <div class="flex flex-col p-4">
+      <h1 class="text-center text-4xl text-tcf-blue font-semibold p-8">
+        Nuestro equipo ¿Qué nos hace diferentes?
+      </h1>
+    </div>
+    <div>
+      <p class="text-center mx-auto text-xl text-tcf-blue max-w-[770px] p-8">
+        LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div>
+      <div
+        class="my-8 flex flex-col gap-10 lg:flex-row justify-center items-center"
+      >
+        {
+          card.map((item) => (
+            <div class="flex  w-[250px]  gap-4 items-center justify-between bg-tcf-blue border rounded-md py-4 px-6 ">
+              <h1 class="text-center text-xl text-white font-semibold ">
+                + {item.quantity}
+              </h1>
+              <p class="text-center text-xl text-white"> {item.label}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex flex-col lg:flex-row justify-center items-center gap-8">
+        {
+          card2.map((item) => (
+            <div class="flex w-[250px] items-center justify-center bg-tcf-blue border rounded-md py-4 px-6">
+              <p class="text-center text-xl text-white">{item.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
