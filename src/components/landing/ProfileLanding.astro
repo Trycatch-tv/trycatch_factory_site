@@ -1,0 +1,98 @@
+---
+import { Github, Linkedin, Mailbox } from "lucide-astro";
+import HeroImage from "../../assets/img/worker_svgrepo.com.svg";
+import Image from "astro/components/Image.astro";
+
+const profiles = [
+  {
+    img: HeroImage,
+    name: "Julian Moreno",
+    roles: "Tech Lead",
+
+    socialMedia: [
+      {
+        icon: Linkedin,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Github,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Mailbox,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+    ],
+  },
+  {
+    img: "",
+    name: "Angel Santibañez",
+    roles: "FullStack Jr Developer",
+
+    socialMedia: [
+      {
+        icon: Linkedin,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Github,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Mailbox,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+    ],
+  },
+  {
+    img: "",
+    name: "Manuel Barrios",
+    roles: "FullStack Jr Developer",
+
+    socialMedia: [
+      {
+        icon: Linkedin,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Github,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+      {
+        icon: Mailbox,
+        url: "https://www.linkedin.com/in/johndoe",
+      },
+    ],
+  },
+];
+---
+
+<section class="py-16">
+  <h1
+    class="min-w-xl mb-5 py-10 text-center text-4xl text-tcf-blue font-extrabold tracking-tight leading-none md:text-5xl md:text-center xl:text-6x lg:mb-14 xl:min-w-screen"
+  >
+    Perfiles destacados
+  </h1>
+  <div class="flex flex-col w-full justify-center md:flex-row md:gap-16">
+    {
+      profiles.map((profile) => (
+        <div class="flex gap-4 items-center justify-center  py-6">
+          <Image class="w-36 h-36" src={HeroImage} alt={profile.name} />
+          <div class="flex flex-col gap-2 max-w-[120px] ">
+            <h2 class="font-semibold  text-2xl max-w-[120px] ">
+              {profile.name}
+            </h2>
+            <p class="max-w-[120px]">{profile.roles}</p>
+            <div class="flex gap-4">
+              {profile.socialMedia.map((social) => (
+                <a href={social.url}>
+                  <social.icon />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
