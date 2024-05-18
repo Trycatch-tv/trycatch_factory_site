@@ -1,36 +1,72 @@
 ---
 import { Image } from "astro:assets";
 import nibble from "./../../assets/img/nibble.png";
+import { ChevronDown } from "lucide-astro";
 
 const navbarItems = [
   {
     name: "Servicios",
-    path: "/services",
+    path: "#",
     target: "_self",
+    subItems: [
+      {
+        name: "Desarrollo Web",
+        path: "/services/desarrollo-software",
+        target: "_self",
+      },
+      {
+        name: "Desarrollo Web",
+        path: "/services/desarrollo-software",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Portafolio",
-    path: "/portfolio",
+    path: "#",
     target: "_self",
+    subItems: [
+      {
+        name: "Proyecto 1",
+        path: "/portfolio/proyecto1",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Recursos",
-    path: "/resources",
+    path: "#",
     target: "_self",
+    subItems: [
+      {
+        name: "Blog",
+        path: "/resources/blog",
+        target: "_self",
+      },
+    ],
   },
   {
     name: "Equipo",
     path: "/team",
     target: "_self",
-  }
-]
- 
+    subItems: [],
+  },
+];
 ---
 
 <script is:inline>
   function toggleMenu() {
+    if (!document.getElementById("navbar-sticky")) return;
+
     const menu = document.getElementById("navbar-sticky");
-    menu?.classList.toggle("hidden");
+    menu.classList.toggle("hidden");
+  }
+  function showSubmenu(submenu) {
+    submenu.classList.remove("hidden");
+  }
+
+  function hideSubmenu(submenu) {
+    submenu.classList.add("hidden");
   }
 </script>
 
@@ -55,7 +91,7 @@ const navbarItems = [
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       aria-controls="navbar-default"
       aria-expanded="false"
       onclick="toggleMenu()"
@@ -85,27 +121,51 @@ const navbarItems = [
       >
         {
           navbarItems.map((item) => (
-            <li>
+            <li class="navbar-submenu relative">
               <a
                 href={item.path}
                 target={item.target || "_self"}
-                class="block py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
+                class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
               >
                 {item.name}
+                {item.subItems.length > 0 && <ChevronDown size={15} />}
               </a>
+              {item.subItems.length > 0 && (
+                <div
+                  class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+                  onmouseover="showSubmenu(this)"
+                  onmouseout="hideSubmenu(this)"
+                >
+                  {item.subItems.map((subItem) => (
+                    <a
+                      href={subItem.path}
+                      class="block p-2 hover:bg-tcf-info  text-xs rounded"
+                    >
+                      {subItem.name}
+                    </a>
+                  ))}
+                </div>
+              )}
             </li>
           ))
         }
         <li>
-              <a
-                href={'/contact'}
-                target={"_self"}
-                class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
-              >
-                Contacto
-              </a>
+          <a
+            href={"/contact"}
+            target={"_self"}
+            class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
+          >
+            Contacto
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<style>
+  .navbar-submenu:hover .absolute,
+  .absolute:hover {
+    display: block;
+  }
+</style>
