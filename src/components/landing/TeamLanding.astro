@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/img/worker_svgrepo.com.svg";
+
+const content = {
+  title: "Conoce a nuestro equipo de trabajo",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
+  image: {
+    url: "/src/assets/img/worker_svgrepo.com.svg",
+    description: "TryCatch.tv Nibble",
+  },
+};
+---
+
+<section class="bg-tcf-blue pt-44 w-full px-12">
+  <div
+    class="flex flex-col items-center md:flex-row 2xl:text-start max-w-screen-xl mx-auto min-h-screen"
+  >
+    <article class="mb-4 w-4/5 lg:text-start">
+      <h2
+        class="max-w-2xl mb-5 text-center text-4xl text-white font-extrabold tracking-tight leading-none md:text-6xl xl:text-6x lg:mb-14 lg:text-start"
+      >
+        {content.title}
+      </h2>
+      <p
+        class="w-full text-tcf-info max-w-2xl text-center text-balance py-4 font-semibold mb-5 lg:mb-14 lg:text-start md:text-2xl"
+      >
+        {content.description}
+      </p>
+    </article>
+    <div class="lg:w-1/2">
+      <Image
+        class="w-full h-full"
+        src={HeroImage}
+        alt={content.image.description}
+      />
+    </div>
+  </div>
+</section>

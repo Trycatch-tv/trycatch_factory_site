@@ -63,7 +63,7 @@ const navbarItems = [
 
 <nav class="bg-tcf-blue w-full z-50 top-0 left-0 fixed py-2">
   <div
-    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
   >
     <a href="/" class="flex items-center">
       <Image
@@ -71,9 +71,9 @@ const navbarItems = [
         class="w-[100px] h-[100px]"
         alt="TryCatch.tv Nibble"
       />
-      <div class="flex flex-col">
+      <div class="flex flex-col md:hidden lg:flex">
         <span
-          class="self-center text-3xl font-semibold whitespace-nowrap text-white"
+          class="self-center text-3xl font-semibold whitespace-nowrap text-white md:text-xl"
           >Factory
         </span>
         <span class="text-[8px] text-white text-right">By TryCatch.tv</span>
@@ -82,7 +82,7 @@ const navbarItems = [
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       aria-controls="navbar-default"
       aria-expanded="false"
       onclick="toggleMenu()"
@@ -108,7 +108,7 @@ const navbarItems = [
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
       >
         {
           navbarItems.map((item) => (
