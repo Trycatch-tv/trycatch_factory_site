@@ -46,14 +46,14 @@ const foiterItemsList = {
 ---
 
 <footer
-  class="flex max-sm:max-w-screen-sm max-md:max-w-screen-md flex-row md:flex-col bg-[#070B18] w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-full md:w-full max-sm:h-full"
+  class="flex lg:flex-row max-sm:max-w-screen-sm max-md:max-w-screen-md flex-row md:flex-col bg-[#070B18] w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-full md:w-full max-sm:h-full"
 >
   <div class="flex flex-row h-full w-full max-sm:h-1/2 md:flex-row md:w-11/12">
     <div
-      class="flex flex-col w-full justify-center ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
+      class="flex flex-col w-full justify-center  ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
     >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-sm:w-full max-sm:justify-start md:flex-row"
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-sm:w-full max-sm:justify-start"
       >
         <Image
           src={nibble}
@@ -69,16 +69,20 @@ const foiterItemsList = {
     </div>
   </div>
 
-  <div class="flex flex-row h-full w-6/12 mr-[0.4rem] max-md:w-full max-sm:w-full lg:mr-0 max-sm:flex-col md:w-full">
+  <div
+    class="flex flex-row h-full w-6/12 mr-[0.4rem] max-md:w-full max-sm:w-full lg:mr-0 max-sm:flex-col md:w-full lg:flex-col md:flex-col"
+  >
     <div class="flex flex-col w-full xl:justify-center md:flex-col">
       <div class="flex flex-col justify-evenly py-1 max-sm:justify-end">
-        <!-- Servicios y Recursos -->
-        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center">
+        <div class="flex flex-row max-sm:flex-col md:justify-center md:gap-5 lg:flex-row">
+        <div
+          class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center sm:flex-col lg:flex-row"
+        >
           {
             foiterItemsList.footerItems.map((e: any) => (
               <>
                 {e.name === "Servicios" && (
-                  <div class="px-2 flex flex-col justify-evenly mr-3">
+                  <div class="px-2 flex flex-col justify-evenly mr-3 mb-5">
                     <div class="text-white font-bold">{e.name}</div>
                     <div class="text-white">
                       {e.footerListServices.map((service: any) => (
@@ -90,9 +94,9 @@ const foiterItemsList = {
                   </div>
                 )}
                 {e.name === "Recursos" && (
-                  <div class="px-2 flex flex-col">
-                    <div class="text-white font-bold">{e.name}</div>
-                    <div class="text-white">
+                  <div class="px-2 flex flex-col ">
+                    <div class="text-white font-bold text-center">{e.name}</div>
+                    <div class="text-white text-center">
                       {e.footerListRecursos.map((recurso: any) => (
                         <div class="text-white mt-2 text-center max-sm:text-sm">
                           {recurso.name}
@@ -106,13 +110,15 @@ const foiterItemsList = {
           }
         </div>
         <!-- Industrias y Equipo -->
-        <div class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center max-sm:mr-[86px]">
-          {
+        <div
+          class="flex flex-row justify-evenly mt-12 max-md:mt-0 max-sm:mt-8 max-sm:justify-center max-sm:mr-0 max-sm:gap-8 md:flex-col lg:flex-row"
+        >
+          { 
             foiterItemsList.footerItems.map((e: any) => (
               <>
                 {e.name === "Industrias" && (
-                  <div class="px-2 flex flex-col justify-evenly mr-3">
-                    <div class="text-white font-bold">{e.name}</div>
+                  <div class="px-2 flex flex-col justify-evenly mr-3 mb-5">
+                    <div class="text-white font-bold text-center">{e.name}</div>
                     <div class="text-white">
                       {e.footerListIndustrias.map((industria: any) => (
                         <div class="text-white mt-2 max-sm:text-sm">
@@ -124,7 +130,7 @@ const foiterItemsList = {
                 )}
                 {e.name === "Equipo" && (
                   <div class="px-2 flex flex-col">
-                    <div class="text-white font-bold">{e.name}</div>
+                    <div class="text-white font-bold text-center">{e.name}</div>
                     <div class="text-white">
                       {e.footerListEquipos.map((equipo: any) => (
                         <div class="text-white mt-2 text-center max-sm:text-sm">
@@ -138,10 +144,9 @@ const foiterItemsList = {
             ))
           }
         </div>
+        </div>
       </div>
     </div>
-  </div>
-  
     <div
       class="flex flex-row justify-center mr-16 space-x-16 mt-5 md:space-x-8 2xl:mr-32 max-sm:space-x-4 max-sm:ml-8 pb-8 max-sm:justify-evenly"
     >
