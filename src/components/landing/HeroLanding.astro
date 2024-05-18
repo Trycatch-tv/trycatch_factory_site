@@ -23,9 +23,12 @@ const content = {
 };
 ---
 
-<section class="flex flex-col justify-center  max-sm:max-w-screen-sm md:w-auto max-md:w-auto w-full min-h-screen" style="background-image: url('/src/assets/img/HeroImg.jpg'); background-size: cover; background-position: 20% 50%; opacity: 1; ">
+<section class="relative flex flex-col justify-center  max-sm:max-w-screen-sm md:w-auto max-md:w-auto w-full min-h-screen" style="background-image: url('/src/assets/img/HeroImg.jpg'); background-size: cover; background-position: 20% 50%; background-repeat: no-repeat ">
+  <div class="w-full h-full bg-black bg-opacity-50 absolute">
+
+  </div>
   <div
-    class="max-w-screen-xl  flex flex-wrap items-center justify-between md:flex-row p-4  mx-auto min-h-screen max-sm:justify-center max-sm:min-h-[900px] md:w-full md:justify-center md:min-h-0 max-md:w-full max-md:min-h-[900px] max-md:justify-center"
+    class="max-w-screen-xl relative z-10 flex flex-wrap items-center justify-between md:flex-row p-4  mx-auto min-h-screen max-sm:justify-center max-sm:min-h-[900px] md:w-full md:justify-center md:min-h-0 max-md:w-full max-md:min-h-[900px] max-md:justify-center"
   >
     <article class="mb-4 lg:w-1/2 max-sm:w-full max-sm:flex max-sm:justify-center max-sm:flex-col max-sm:mt-[8rem] max-sm:text-center md:text-center md:w-full md:mt-36 md:basis-content max-md:basis-content max-md:w-full max-md:mt-36">
       <h2
