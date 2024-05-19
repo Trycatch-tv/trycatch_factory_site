@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-bg': "url('../src/assets/img/fondo_portafolio-inventario.jpg')",
+        'como-bg':"url('../src/assets/img/ux.jpg')"
+      },
       flexBasis: {
         'content': 'content',
       },
