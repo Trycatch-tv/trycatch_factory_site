@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-bg': "url('../src/assets/img/fondo_portafolio-inventario.jpg')",
-        'como-bg':"url('../src/assets/img/ux.jpg')"
+        'custom-bg': "url('/public/fondo_portafolio-inventario.jpg')",
+        'como-bg':"url('/public/ux.jpg')"
       },
       flexBasis: {
         'content': 'content',
