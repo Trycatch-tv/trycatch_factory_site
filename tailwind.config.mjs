@@ -6,15 +6,14 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'custom-bg': "url('/public/fondo_portafolio-inventario.jpg')",
-        'como-bg':"url('/public/ux.jpg')"
-      },
+    
       flexBasis: {
         'content': 'content',
       },
       backgroundImage: {
         'heroBgImg': 'url("/public/img/HeroImg.jpg")',
+        'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
+        'como-bg':"url('/public/img/ux.jpg')"
       },
       colors: {
         "tcf-black": "#232122",
