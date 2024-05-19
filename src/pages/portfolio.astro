@@ -1,6 +1,7 @@
 ---
 import CaracteristicasLanding from "../components/landing/CaracteristicasLanding.astro";
 import ComoFuncionLanding from "../components/landing/ComoFuncionLanding.astro";
+import NombreProyecto from "../components/landing/NombreProyecto.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -29,11 +30,17 @@ import Layout from "../layouts/Layout.astro";
     </main>
     <div class="w-full">
         <div class="w-full">
-            <h1 class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2">
+            <h1
+                class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2"
+            >
                 Características
             </h1>
         </div>
+
         <CaracteristicasLanding />
         <ComoFuncionLanding />
+       
+            <NombreProyecto />
+        
     </div>
 </Layout>
