@@ -9,6 +9,9 @@ export default {
       flexBasis: {
         'content': 'content',
       },
+      backgroundImage: {
+        'heroBgImg': 'url("/public/img/HeroImg.jpg")',
+      },
       colors: {
         "tcf-black": "#232122",
         "tcf-black-l": "#474646",
