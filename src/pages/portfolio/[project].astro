@@ -1,10 +1,8 @@
 ---
-import CaracteristicasLanding from "../../components/landing/CharacteristicsLanding.astro";
-import ComoFuncionLanding from "../../components/landing/HowFunctionLanding.astro";
-import NombreProyecto from "../../components/landing/NameProject.astro";
+import CharacteristicsLanding from "../../components/landing/CharacteristicsLanding.astro";
+import HowFunctionLanding from "../../components/landing/HowFunctionLanding.astro";
+import NameProject from "../../components/landing/NameProject.astro";
 import Layout from "../../layouts/Layout.astro";
-import fondo from "../assets/img/fondo_portafolio-inventario.jpg"
-import Image from "astro/components/Image.astro";
 export function getStaticPaths() {
     return [
         { params: { project: "proyecto1" } },
@@ -48,10 +46,10 @@ export function getStaticPaths() {
             </h1>
         </div>
 
-        <CaracteristicasLanding />
-        <ComoFuncionLanding />
+        <CharacteristicsLanding />
+        <HowFunctionLanding />
 
-            <NombreProyecto />
+            <NameProject />
 
     </div>
 </Layout
