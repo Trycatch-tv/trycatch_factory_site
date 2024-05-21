@@ -25,7 +25,7 @@ const profiles = [
     ],
   },
   {
-    img: "",
+    img: HeroImage,
     name: "Angel Santibañez",
     roles: "FullStack Jr Developer",
 
@@ -45,7 +45,7 @@ const profiles = [
     ],
   },
   {
-    img: "",
+    img: HeroImage,
     name: "Manuel Barrios",
     roles: "FullStack Jr Developer",
 
@@ -77,7 +77,7 @@ const profiles = [
     {
       profiles.map((profile) => (
         <div class="flex gap-4 items-center  justify-center  py-6">
-          <Image class="w-36 h-36" src={HeroImage} alt={profile.name} />
+          <Image class="w-36 h-36" src={profile.img} alt={profile.name} />
           <div class="flex flex-col gap-2 max-w-[120px] ">
             <h2 class="font-semibold  text-2xl max-w-[120px] ">
               {profile.name}
