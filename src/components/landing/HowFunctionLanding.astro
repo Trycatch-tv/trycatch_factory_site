@@ -3,12 +3,14 @@ import Image from "astro/components/Image.astro"
 import question from "../../assets/img/question-circle-svgrepo-com.svg"
 ---
 <section class="min-h-screen  min-w-screen-2xl bg-como-bg bg-cover bg-center flex justify-center contrast-50 flex-wrap">
-<div class="flex flex-col justify-center w-[585px] h-[726px] my-10 items-center bg-[#f9f9f9] bg-opacity-80">
+   <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+<div class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#f9f9f9]">
+   
    <Image src={question} alt="question" class="w-20 h-20" />
    <h3 class="text-center">¿Como funciona?</h3>
    <p class="text-xl text-justify w-72">LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 </div>
-<div class="flex flex-col justify-center w-[585px] h-[726px] my-10 items-center bg-[#b6ebee] bg-opacity-80">
+<div class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#b6ebee] bg-opacity-80">
    <Image src={question} alt="question" class="w-20 h-20 " />
    <h3 class="text-center">¿Como funciona?</h3>
    <ul class="w-72">
