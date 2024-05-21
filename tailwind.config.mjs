@@ -13,7 +13,8 @@ export default {
       backgroundImage: {
         'heroBgImg': 'url("/public/img/HeroImg.jpg")',
         'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
-        'como-bg':"url('/public/img/ux.jpg')"
+        'como-bg':"url('/public/img/ux.jpg')",
+        'heroBgImgTeam': 'url("/public/img/team.jpg")',
       },
       colors: {
         "tcf-black": "#232122",

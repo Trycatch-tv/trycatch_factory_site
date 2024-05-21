@@ -67,16 +67,16 @@ const profiles = [
 ];
 ---
 
-<section class="py-16">
+<section class="py-16 min-h-[90vh]">
   <h1
-    class="min-w-xl mb-5 py-10 text-center text-4xl text-tcf-blue font-extrabold tracking-tight leading-none md:text-5xl md:text-center xl:text-6x lg:mb-14 xl:min-w-screen"
+    class="min-w-xl mb-5 py-10 text-center text-4xl text-tcf-blue font-extrabold tracking-tight leading-none md:text-5xl md:text-center xl:text-6x lg:mb-14"
   >
     Perfiles destacados
   </h1>
-  <div class="flex flex-col w-full justify-center md:flex-row md:gap-16">
+  <div class="flex flex-col justify-center w-full md:flex-row md:gap-16 max-w-screen-xl mx-auto">
     {
       profiles.map((profile) => (
-        <div class="flex gap-4 items-center justify-center  py-6">
+        <div class="flex gap-4 items-center  justify-center  py-6">
           <Image class="w-36 h-36" src={HeroImage} alt={profile.name} />
           <div class="flex flex-col gap-2 max-w-[120px] ">
             <h2 class="font-semibold  text-2xl max-w-[120px] ">
