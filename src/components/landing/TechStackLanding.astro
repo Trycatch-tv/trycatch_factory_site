@@ -1,23 +1,39 @@
 ---
+import Image from "astro/components/Image.astro";
+import angular from "../../assets/img/angular.svg"
+import react from "../../assets/img/react.svg"
+import vue from "../../assets/img/vue.svg"
+import svelte from "../../assets/img/svelte.svg"
+import spring from "../../assets/img/spring.svg"
+import nestjs from "../../assets/img/nestjs.svg"
+import django from "../../assets/img/django.svg"
+import laravel from "../../assets/img/laravel.svg"
+import aws from "../../assets/img/aws.svg"
+import azure from "../../assets/img/azure.svg"
+import googleCloud from "../../assets/img/google-cloud.svg"
+import oracle from "../../assets/img/oracle.svg"
+import kotlin from "../../assets/img/kotlin.svg"
+import flutter from "../../assets/img/flutter.svg"
+import swift from "../../assets/img/swift.svg"
 const technologyData = [
   {
     title: "Frontend",
     tecnologies: [
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: angular,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: react,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: vue,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: svelte,
       },
     ],
     quantity: 20,
@@ -29,19 +45,19 @@ const technologyData = [
     tecnologies: [
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: spring,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: nestjs,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: django,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: laravel,
       },
     ],
     quantity: 15,
@@ -52,19 +68,19 @@ const technologyData = [
     tecnologies: [
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: aws,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: azure,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: googleCloud,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: oracle,
       },
     ],
     quantity: 5,
@@ -77,19 +93,19 @@ const technologyData = [
     tecnologies: [
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: kotlin,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: flutter,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: react,
       },
       {
         name: "item",
-        url: "https://www.smartphonetechnology.com.ec/static/products/images/default-image.jpg",
+        url: swift,
       },
     ],
   },
@@ -118,7 +134,7 @@ const technologyData = [
           <div class="flex flex-wrap gap-1.5 max-sm:justify-center">
             {item.tecnologies.map((tech) => (
               <div class="h-24 rounded-xl border overflow-hidden place-content-between max-sm:h-14">
-                <img
+                <Image
                   class="w-full h-full"
                   src={tech.url}
                   alt={tech.name}
