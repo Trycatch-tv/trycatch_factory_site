@@ -11,6 +11,8 @@ export default {
       },
       backgroundImage: {
         'heroBgImg': 'url("/public/img/HeroImg.jpg")',
+        'heroBgImgService':'url("/public/img/heroServices.png")',
+        'weOfferBgServices':'url("/public/img/offerServiceBG.jpg")',
       },
       colors: {
         "tcf-black": "#232122",

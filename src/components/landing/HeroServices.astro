@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/img/nibble.png";
+
+const content = {
+  ctas: [
+    {
+      title: "Call to action",
+      link: "#",
+    },
+  ],
+};
+---
+
+<section
+  class="relative bg-heroBgImgService bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full min-h-screen"
+>
+  <div class="absolute bg-black/50 h-full w-full top-0 pt-8"></div>
+
+  <div
+    class="relative z-10 flex flex-col lg:flex-row lg:pt-8 justify-center items-center mt-8 gap-4"
+  >
+    <Image
+      class="object-cover object-center w-[550px] h-[550px]"
+      src={HeroImage}
+      alt="heroBgImgService"
+    />
+    <div class="flex flex-col pt-8 justify-center items-center gap-8 p-10">
+      <h1 class="text-5xl text-white">Software a la medida</h1>
+      <p class="text-white justify-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <a
+        class="max-w-[154px] min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+        >{content.ctas[0].title}
+      </a>
+    </div>
+  </div>
+</section>
