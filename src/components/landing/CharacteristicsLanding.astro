@@ -1,0 +1,32 @@
+---
+import rocket from "../../assets/img/rocket-svgrepo-com.svg";
+import checked from "../../assets/img/checked-checkmark-done-to-do-radio-icon-svgrepo-com.svg";
+import speed from "../../assets/img/speed-svgrepo-com.svg";
+import optimazation from "../../assets/img/optimization-svgrepo-com.svg";
+import Image from "astro/components/Image.astro";
+
+const content ="LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+---
+<section class="min-h-screen min-w-screen-2xl grid grid-rows-2 grid-cols-2 max-md:grids-cols-2 md:grid-cols-2 max-sm:grid-cols-1 sm:grid-cols-1">
+          </div>
+               
+                    <div class=" flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
+                        <Image src={rocket} alt="rocket" class="w-36 h-36 max-sm:w-28 max-sm:h-28" />
+                        <p class="lg:w-96 lg:text-2xl max-lg:text-2xl md:w-72 max-md:w-72 max-sm:w-64  text-xl text-center text-tcf-blue max-sm:text-sm sm:text-sm  max-sm:text-center sm:text-center max-sm:p-1">{content}</p>
+                    </div>
+                    <div class="  flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
+                        <Image src={checked} alt="checked" class="w-36 h-36 max-sm:w-28 max-sm:h-28" />
+                        <p class="lg:w-96 lg:text-2xl max-lg:text-2xl md:w-72 max-md:w-72 max-sm:w-64 text-xl text-center text-tcf-blue  max-sm:text-sm sm:text-sm  max-sm:text-center sm:text-center max-sm:p-1">{content}</p>
+                    </div>
+                    <div class="  flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
+                        <Image src={optimazation} alt="optimazation" class="w-36 h-36 max-sm:w-28 max-sm:h-28" />
+                        <p class=" lg:w-96 lg:text-2xl max-lg:text-2xl md:w-72 max-md:w-72 max-sm:w-64 text-xl text-center text-tcf-blue  max-sm:text-sm sm:text-sm  max-sm:text-center sm:text-center max-sm:p-1">{content}</p>
+                    </div>
+                    <div class=" flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
+                        <Image src={speed} alt="speed"  class="w-36 h-36 max-sm:w-28 max-sm:h-28"/>
+                        <p class="lg:w-96 lg:text-2xl max-lg:text-2xl md:w-72 max-md:w-72 max-sm:w-64 text-xl text-center text-tcf-blue  max-sm:text-sm sm:text-sm max-sm:text-center sm:text-center max-sm:p-1 md:p-1 max-md:p-1">{content}</p>
+                    </div>
+                
+           
+    </section>

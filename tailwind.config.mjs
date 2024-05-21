@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+    
       flexBasis: {
         'content': 'content',
       },
@@ -13,6 +14,10 @@ export default {
         'heroBgImg': 'url("/public/img/HeroImg.jpg")',
         'heroBgImgService':'url("/public/img/heroServices.png")',
         'weOfferBgServices':'url("/public/img/offerServiceBG.jpg")',
+        'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
+        'como-bg':"url('/public/img/ux.jpg')",
+        'heroBgImgTeam': 'url("/public/img/team.jpg")',
+
       },
       colors: {
         "tcf-black": "#232122",

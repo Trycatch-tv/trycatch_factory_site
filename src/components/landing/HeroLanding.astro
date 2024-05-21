@@ -23,42 +23,43 @@ const content = {
 };
 ---
 
-<section class="relative bg-heroBgImg bg-cover bg-center bg-no-repeat flex flex-col justify-center  max-sm:max-w-screen-sm md:w-auto max-md:w-auto w-full min-h-screen" >
-  <div class="w-full h-full bg-black bg-opacity-50 absolute">
+<section class="relative min-h-screen pt-40 bg-heroBgImg bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full" >
+  <div class="w-full h-full top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm">
 
   </div>
   <div
-    class="max-w-screen-xl relative z-10 flex flex-wrap items-center justify-between md:flex-row p-4  mx-auto min-h-screen max-sm:justify-center max-sm:min-h-[900px] md:w-full md:justify-center md:min-h-0 max-md:w-full max-md:min-h-[900px] max-md:justify-center"
+    class="flex flex-col  max-w-screen-xl relative z-10 w-full items-center  lg:flex-row px-8 mx-auto "
   >
-    <article class="mb-4 lg:w-1/2 max-sm:w-full max-sm:flex max-sm:justify-center max-sm:flex-col max-sm:mt-[8rem] max-sm:text-center md:text-center md:w-full md:mt-36 md:basis-content max-md:basis-content max-md:w-full max-md:mt-36">
+    <article class="mb-4">
       <h2
-        class="max-w-xl mb-5 text-4xl text-white font-extrabold tracking-tight leading-none md:text-3xl max-md:text-3xl max-md:text-center xl:text-6x lg:mb-14 lg:text-start"
+        class="max-w-xl mb-5 text-4xl text-white font-extrabold tracking-tight leading-none md:text-5xl text-center xl:text-6xl lg:mb-8 lg:text-start"
       >
         {content.title}
-      </h2>
+      </h1>
       <p
-        class="max-w-xl text-white text-balance font-semibold mb-5 lg:max-w-md lg:mb-14 lg:text-start max-md:text-center"
+        class="max-w-xl text-white text-balance font-semibold mb-5 lg:max-w-md lg:mb-14 lg:text-start text-center"
       >
         {content.description}
       </p>
       <div class="flex justify-center gap-2 mb-5 lg:justify-start lg:mb-14 max-sm:mt-5 md:justify-center">
         <a
-          class="max-w-[154px] min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-bold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+          class="max-w-[154px] cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-bold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
           >{content.ctas[0].title}
         </a>
         <a
-          class="max-w-[154px] min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+          class="max-w-[154px] cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
           >{content.ctas[1].title}
         </a>
       </div>
     </article>
   
-      <div class="bg-contain   lg:w-1/2 lg:my-14">
+      <div class=" lg:w-1/2">
       <Image
         src={HeroImage}
-        class="w-full h-auto mr-2 object-cover bg-transparent"
+        class="w-full object-cover"
         alt="TryCatch.tv Nibble"
       />
     </div>
   </div>
+
 </section>

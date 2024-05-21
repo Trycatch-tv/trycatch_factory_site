@@ -3,19 +3,22 @@ import { Image } from "astro:assets";
 import HeroImage from "../../assets/img/group.svg";
 ---
 
-<section class="bg-tcf-blue">
-  <div class="max-w-screen-xl flex flex-col mx-auto">
+<section class="flex items-center bg-heroBgImgTeam relative bg-cover  bg-center bg-no-repeat min-h-[60vh]">
+  <div class="w-full h-full top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm">
+
+  </div>
+  <div class="max-w-screen-xl relative mx-auto">
     <div
-      class="flex flex-col p-8 justify-center lg:flex-row-reverse lg:items-center"
+    class="p-8 flex flex-col-reverse items-center md:flex-row"
     >
-      <div class="col-lg-6">
-        <h1 class="display-2 text-center text-4xl text-white">
+    <div class="col-lg-6 w-full flex  justify-center">
+      <Image src={HeroImage} alt="Hero Image" class="img-fluid" />
+    </div>
+      <div>
+        <h1 class=" text-center font-bold text-4xl text-white">
           Nos enorgullece impulsar el talento emergente con un enfoque
           inclusivo.
         </h1>
-      </div>
-      <div class="col-lg-6 w-full flex justify-center">
-        <Image src={HeroImage} alt="Hero Image" class="img-fluid" />
       </div>
     </div>
   </div>
