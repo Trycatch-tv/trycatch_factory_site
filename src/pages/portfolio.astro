@@ -3,48 +3,44 @@ import CaracteristicasLanding from "../components/landing/CharacteristicsLanding
 import ComoFuncionLanding from "../components/landing/HowFunctionLanding.astro";
 import NombreProyecto from "../components/landing/NameProject.astro";
 import Layout from "../layouts/Layout.astro";
-import fondo from "../assets/img/fondo_portafolio-inventario.jpg"
+import fondo from "../assets/img/fondo_portafolio-inventario.jpg";
 import Image from "astro/components/Image.astro";
-
 ---
 
 <Layout title="Portafolio">
-   
-    <main
-        class="min-h-screen min-w-screen-2xl flex justify-center items-center flex-col
-         bg-custom-bg bg-cover bg-center"     >
-         
-        <h1
-            class="lg:text-6xl md:text-4xl max-md:text-4xl font-bold text-center text-tcf-info p-10 max-sm:text-xl sm:text-xl"
-        >
-            Sistema de inventario
-        </h1>
+  <main
+    class="min-h-screen min-w-screen-2xl flex justify-center items-center flex-col
+         bg-custom-bg bg-cover bg-center"
+  >
+    <h1
+      class="lg:text-6xl md:text-6xl max-md:text-6xl font-bold text-center text-tcf-info p-10 max-sm:text-xl sm:text-xl"
+    >
+      Sistema de inventario
+    </h1>
 
-        <div
-            class="flex flex-col lg:w-[29rem] md:w-72 max-md:w-72 sm:w-auto max-sm:w-auto"
-        >
-            <p
-                class="lg:text-2xl max-lg:text-2xl text-xl text-center text-tcf-info break-all max-sm:text-sm sm:text-sm"
-            >
-                LoremLorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-            </p>
-        </div>
-    </main>
-    <div class="w-full">
-        <div class="w-full">
-            <h1
-                class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2"
-            >
-                Características
-            </h1>
-        </div>
-
-        <CaracteristicasLanding />
-        <ComoFuncionLanding />
-       
-            <NombreProyecto />
-        
+    <div
+      class="flex flex-col lg:w-[29rem] md:w-72 max-md:w-72 sm:w-auto max-sm:w-auto"
+    >
+      <p
+        class="lg:text-2xl max-lg:text-2xl text-xl text-center text-tcf-info break-all max-sm:text-sm sm:text-sm"
+      >
+        LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
+  </main>
+  <div class="w-full">
+    <div class="w-full">
+      <h1
+        class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2"
+      >
+        Características
+      </h1>
+    </div>
+
+    <CaracteristicasLanding />
+    <ComoFuncionLanding />
+
+    <NombreProyecto />
+  </div>
 </Layout>
