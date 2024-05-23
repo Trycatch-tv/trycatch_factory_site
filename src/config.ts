@@ -55,8 +55,19 @@ const projectsCollections = defineCollection({
 
   })
 })
+const sectionsCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    "call-to-action": z.object({
+      title: z.string(),
+      description: z.string(),
+      // Agrega otros campos que necesites
+    })
+  })
+});
 export const collections = {
   service: serviceCollection,
-  project: projectsCollections
+  project: projectsCollections,
+  sections: sectionsCollection,
 };
 
