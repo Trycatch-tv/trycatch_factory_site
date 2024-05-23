@@ -8,7 +8,7 @@ export async function getStaticPaths() {
     const projects = await getCollection("projects");
 
     const paths = projects.flatMap((project: any) => {
-        // Obtener las claves de los proyectos
+        
         const projectKeys = Object.keys(project.data.projects[0]);
 
         const projectPathObjects = projectKeys.map((key: string) => {
