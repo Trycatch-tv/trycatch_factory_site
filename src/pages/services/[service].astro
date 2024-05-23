@@ -3,14 +3,52 @@ import Layout from "../../layouts/Layout.astro";
 import HeroServices from "../../components/landing/HeroServices.astro";
 import CallToActionLanding from "../../components/landing/CallToActionLanding.astro";
 import WeOfferServicesLanding from "../../components/landing/WeOfferServicesLanding.astro";
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  console.log(services);
 
-export function getStaticPaths() {
-  return [{ params: { service: "desarrollo-software" } }];
+  const paths = services.flatMap((service:any) => {
+    const webPath:any = service.data.services[0].namePage?.web;
+    const mobilePath:any = service.data.services[0].namePage?.mobile;
+    
+    const webPathObject = {
+      params: {
+        service: webPath 
+      },
+      props:{
+        data:service.data.services[0]
+      }
+    };
+
+    const mobilePathObject = {
+      params: {
+        service: mobilePath 
+      },
+      props:{
+        data:service.data.services[0]
+      }
+    };
+
+    // Filtra los casos donde no hay ninguna ruta definida
+    const definedPaths = [webPathObject, mobilePathObject].filter(pathObject => pathObject.params.service);
+
+    return definedPaths;
+  });
+
+  return paths;
 }
+
+
+const {data}  = Astro.props
+const {service} = Astro.params
+
+const title = data.namePage.web === service ? data.namePage.web : data.namePage.mobile;
+
 ---
 
-<Layout title="Servicios">
-  <main >
+<Layout title={title}>
+  <main>
     <!-- contenido de aqui -->
     <HeroServices />
     <CallToActionLanding />

@@ -1,0 +1,36 @@
+{
+    "services": [
+        {
+            "namePage": {
+                "web": "desarrollo-software",
+                "mobile": "desarrollo-mobile"
+            },
+            "title": {
+                "web": "Software a la medida",
+                "mobile": "Mobile a la medida"
+            },
+            "description": {
+                "web": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                "mobile": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod"
+            },
+            "levelEstructureTeam": {
+                "web": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ],
+                "mobile": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ]
+            }
+        }
+    ]
+}
