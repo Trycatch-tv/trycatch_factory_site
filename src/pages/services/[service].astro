@@ -5,33 +5,32 @@ import CallToActionLanding from "../../components/landing/CallToActionLanding.as
 import WeOfferServicesLanding from "../../components/landing/WeOfferServicesLanding.astro";
 import { getCollection } from "astro:content";
 export async function getStaticPaths() {
-  const services = await getCollection('services');
-  console.log(services);
+  const services = await getCollection("services");
 
-  const paths = services.flatMap((service:any) => {
-    const webPath:any = service.data.services[0].namePage?.web;
-    const mobilePath:any = service.data.services[0].namePage?.mobile;
-    
+  const paths = services.flatMap((service: any) => {
+    const webPath: any = service.data.services[0].namePage?.web;
+    const mobilePath: any = service.data.services[0].namePage?.mobile;
+
     const webPathObject = {
       params: {
-        service: webPath 
+        service: webPath,
       },
-      props:{
-        data:service.data.services[0]
-      }
+      props: {
+        data: service.data.services[0],
+      },
     };
 
     const mobilePathObject = {
       params: {
-        service: mobilePath 
+        service: mobilePath,
       },
-      props:{
-        data:service.data.services[0]
-      }
+      props: {
+        data: service.data.services[0],
+      },
     };
 
     // Filtra los casos donde no hay ninguna ruta definida
-    const definedPaths = [webPathObject, mobilePathObject].filter(pathObject => pathObject.params.service);
+    const definedPaths = [webPathObject, mobilePathObject];
 
     return definedPaths;
   });
@@ -39,19 +38,47 @@ export async function getStaticPaths() {
   return paths;
 }
 
+const { service } = Astro.params || {};
+const { data } = Astro.props || {};
 
-const {data}  = Astro.props
-const {service} = Astro.params
+// Verificar si service está presente en Astro.params
+const serviceValue = service ? service : "";
 
-const title = data.namePage.web === service ? data.namePage.web : data.namePage.mobile;
 
+const title = serviceValue
+  ? serviceValue === data.namePage.web
+    ? data.namePage.web
+    : data.namePage.mobile
+  : "";
+
+const titleHero = serviceValue
+  ? serviceValue === data.namePage.web
+    ? data.title.web
+    : data.title.mobile
+  : "";
+
+const descriptionHero = serviceValue
+  ? serviceValue === data.namePage.web
+    ? data.description.web
+    : data.description.mobile
+  : "";
+const levelEstructureTeam =serviceValue
+  ? serviceValue === data.namePage.web
+    ? data.levelEstructureTeam.web
+    : data.levelEstructureTeam.mobile
+  : "";
+const desarrollo = serviceValue
+  ? serviceValue === data.namePage.web
+    ? data.desarrollo.web
+    : data.desarrollo.mobile
+  : "";
+export { titleHero, descriptionHero,levelEstructureTeam,desarrollo };
 ---
 
 <Layout title={title}>
   <main>
-    <!-- contenido de aqui -->
-    <HeroServices />
+    <HeroServices titleHero={titleHero} descriptionHero={descriptionHero} />
     <CallToActionLanding />
-    <WeOfferServicesLanding />
+    <WeOfferServicesLanding levelEstructureTeam={levelEstructureTeam} desarrollo={desarrollo} />
   </main>
 </Layout>

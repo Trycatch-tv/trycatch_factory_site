@@ -1,5 +1,5 @@
 ---
-
+ const {levelEstructureTeam,desarrollo} = Astro.props
 ---
 
 <section
@@ -21,12 +21,11 @@
           A nivel estructural/equipo
         </h2>
         <ul class="list-disc p-2">
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          {
+            levelEstructureTeam.map((e:any)=>(
+              <li>{e}</li>
+            ))
+          }
         </ul>
       </div>
       <div
@@ -38,12 +37,9 @@
           Desarrollo
         </h2>
         <ul class="list-disc p-2">
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          {desarrollo.map((e:any)=>(
+            <li>{e}</li>
+          ))}
         </ul>
       </div>
     </div>

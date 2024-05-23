@@ -10,10 +10,28 @@
                 "mobile": "Mobile a la medida"
             },
             "description": {
-                "web": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
-                "mobile": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod"
+                "web": "Web ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                "mobile": "Mobil ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod"
             },
             "levelEstructureTeam": {
+                "web": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ],
+                "mobile": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ]
+            },
+            "desarrollo":{
                 "web": [
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",

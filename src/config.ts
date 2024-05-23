@@ -21,7 +21,7 @@ export const SiteMetadata = {
   },
 };
 const serviceCollection = defineCollection({
-  type:"data",
+  type: "data",
   schema: z.object({
     desarrolloWeb: z.object({
       namePage: z.string(),
@@ -37,7 +37,26 @@ const serviceCollection = defineCollection({
     })
   }),
 });
+const projectsCollections = defineCollection({
+  type: "data",
+  schema: z.object({
+    sistemaInventario: z.object({
+      title: z.string(),
+      description: z.string(),
+      characteristics: z.array(z.string())
 
+    }),
+    sistemaFacturacion: z.object({
+      title: z.string(),
+      description: z.string(),
+      characteristics: z.array(z.string())
+
+    })
+
+  })
+})
 export const collections = {
   service: serviceCollection,
+  project: projectsCollections
 };
+
