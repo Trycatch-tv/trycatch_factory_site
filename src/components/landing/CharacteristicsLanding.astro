@@ -7,7 +7,7 @@ import Image from "astro/components/Image.astro";
 const { characteristics } = Astro.props;
 ---
 
-{ characteristics.length > 0 && 
+{ Array.isArray(characteristics) && characteristics.length  > 0 && 
     
         <section class="min-h-screen min-w-screen-2xl grid grid-rows-2 grid-cols-2 max-md:grids-cols-2 md:grid-cols-2 max-sm:grid-cols-1 sm:grid-cols-1">
             <div class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">

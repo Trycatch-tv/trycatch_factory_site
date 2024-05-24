@@ -16,7 +16,8 @@ const {howContext,howItems} = Astro.props
    <Image src={question} alt="question" class="w-20 h-20 " />
    <h3 class="text-center">¿Como funciona?</h3>
    <ul class="w-72">
-      {howItems.map((e:any)=>(
+      {Array.isArray(howItems) && howItems.length > 0 &&
+      howItems.map((e:any)=>(
       <li class="list-disc text-xl">{e}</li>
       ))}
    </ul>
