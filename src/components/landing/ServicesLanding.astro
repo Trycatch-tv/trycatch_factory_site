@@ -86,55 +86,55 @@
 <script is:inline>
   const servicesItems = [
     {
-      imageService: "public/1.jpg",
+      imageService: "public/img/servicesExample.jpg ",
       titleService: "Servicio uno",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/2.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio dos",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/3.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio tres",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/4.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio cuatro",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/5.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio cinco",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/6.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio seis",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/7.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio siete",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/8.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio ocho",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
     },
     {
-      imageService: "public/9.png",
+      imageService: "public/img/servicesExample.jpg",
       titleService: "Servicio nueve",
       descriptionService:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates facere doloremque nemo odio, possimus adipisci fuga ea ut corporis ipsa ab sequi officiis, culpa aperiam ullam exercitationem cum quod?",
@@ -190,9 +190,11 @@
       const serviceElement = document.createElement("div");
       serviceElement.classList.add(
         "flex-1",
+        "shadow",
+        "border",
         "md:max-w-screen-md",
         "md:h-auto",
-        "bg-[#172554]",
+        "bg-[#f9fafb]",
         "rounded-lg",
         "p-4",
         "m-10",
@@ -204,12 +206,12 @@
       );
       serviceElement.innerHTML = `
                 <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
-                    <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 rounded-full mb-2">
+                    <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 object-cover rounded-full mb-2">
                 </div>
-                <h3 class="text-lg text-white font-semibold mt-2 mb-6 text-center font-bold">${service.titleService}</h3>
-                <p class="text-center text-white text-sm max-sm:text-sm">${service.descriptionService}</p>
+                <h3 class="text-xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${service.titleService}</h3>
+                <p class="text-center text-tcf-blue text-sm max-sm:text-sm">${service.descriptionService}</p>
                 <div class="flex justify-center">
-                    <button class="border text-[#172554]  w-full rounded-2xl  bg-white px-6 py-2 mt-6 c-white hover:bg-[#172554] hover:text-white">Ver más</button>
+                    <button class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 ">Ver más</button>
                 </div>
             `;
       servicesContainer.appendChild(serviceElement);
