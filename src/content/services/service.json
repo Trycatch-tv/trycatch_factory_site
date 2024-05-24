@@ -1,8 +1,8 @@
 {
     "services": [
         {
-            "desarrollo-software": {
-                "title": "Software a la medida",
+            "desarrollo-web": {
+                "title": "Desarrollo web a la medida",
                 "description": "Web ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
                 "levelEstructureTeam": [
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
