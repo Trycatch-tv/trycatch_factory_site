@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import "@iconify-json/mdi";
+import { ChevronDown, CircleArrowUp, CircleHelp } from "lucide-astro";
 
 const props = Astro.props;
 
@@ -44,38 +45,27 @@ data.faq.forEach((item) => {
   <div class="rounded-[9px]">
     <section class="max-w-5xl mx-auto py-2 sm:py-4 mb-2">
       <div class="w-full px-4 md:px-5 xl:px-2 py-4 rounded-[9px] max-sm:px-0">
-        <div class="bg-[#172554] mx-auto w-full max-w-4xl rounded-none sm:rounded-lg">
+        <div
+          class="border  border-gray-200 shadow-sm overflow-hidden mx-auto w-full max-w-4xl rounded-none sm:rounded-lg"
+        >
           {
             data.faq.map((item, index) => (
-              <div class="border-b bg-[#172554]/10">
+              <div class="border-b  border-gray-200 bg-gray-50 ">
                 <button
                   data-toggle={`answer-${index}`}
-                  class="question-btn flex w-full items-start gap-x-4 justify-between rounded-lg text-left text-lg font-bold text-white focus:outline-none p-5 border-b-0 border-[#172554] border-solid border-width-9"
+                  class="question-btn  flex w-full items-start gap-x-4 justify-between rounded-lg text-left text-lg font-bold text-[#172554] focus:outline-none p-5 border-b-0 border-[#172554] border-solid border-width-9"
                   id={`button-${index}`}
                 >
-                  {item.question}
-                  {open[item.question] ? (
-                    <Icon
-                      name="mdi:chevron-up-circle"
-                      stroke="#a3a8b7"
-                      class="chevron-up"
-                      widths="24"
-                      x-height="24"
-                      aria-expanded="true"
-                    />
-                  ) : (
-                    <Icon
-                      name="mdi:chevron-down-circle"
-                      stroke="#a3a8b7"
-                      class="chevron-down"
-                      widths="24"
-                      x-height="24"
-                      aria-expanded="false"
-                    />
-                  )}
+                  <div class="flex gap-2">
+                    <span class="text-[#172554] text-2xl">
+                      <CircleHelp />
+                    </span>
+                    {item.question}
+                  </div>
+                  <ChevronDown />
                 </button>
                 <div
-                  class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-medium mb-2"
+                  class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-900 sfont-medium mb-2"
                   id={`answer-${index}`}
                   style={{ display: open[item.question] ? "block" : "none" }}
                 >
