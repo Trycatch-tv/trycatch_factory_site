@@ -1,20 +1,10 @@
 {
     "services": [
         {
-            "namePage": {
-                "web": "desarrollo-software",
-                "mobile": "desarrollo-mobile"
-            },
-            "title": {
-                "web": "Software a la medida",
-                "mobile": "Mobile a la medida"
-            },
-            "description": {
-                "web": "Web ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
-                "mobile": "Mobil ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod"
-            },
-            "levelEstructureTeam": {
-                "web": [
+            "desarrollo-software": {
+                "title": "Software a la medida",
+                "description": "Web ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                "levelEstructureTeam": [
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -22,7 +12,7 @@
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit."
                 ],
-                "mobile": [
+                "desarrollo": [
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -31,24 +21,28 @@
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit."
                 ]
             },
-            "desarrollo":{
-                "web": [
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                ],
-                "mobile": [
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                ]
-            }
+            "desarrollo-mobile": 
+                {
+                    "title": "Mobile a la medida",
+                    "description": "Mobil ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                    "levelEstructureTeam": [
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    ],
+                    "desarrollo": [
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    ]
+                }
+            
         }
     ]
 }

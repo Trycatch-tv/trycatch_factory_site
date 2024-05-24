@@ -1,39 +1,40 @@
 {
-    "projects":[{
-        "sistema-inventario":{
-            "title":"Sistema de inventario",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "characteristics":{
-                "optimization":"Lorem ipsum dolor sit amet, consectetur adip",
-                "scale":"Lorem ipsum dolor sit amet, consectetur",
-                "security":"Lorem ipsum dolor sit amet, consectetur",
-                "usability":"Lorem ipsum dolor sit amet, consectetur"
+    "projects": [
+        {
+            "sistema-inventario": {
+                "title": "Sistema de inventario",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "characteristics": [
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur"
+                ],
+                "howContext": "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "howItems": [
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
+                ]
             },
-            "howContext":"LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "howItems":[
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
-            ]
-        },
-        "sistema-facturacion":{
-            "title":"Sistema de facturación",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "characteristics":{
-                "optimization":"Lorem ipsum dolor sit amet, consectetur adip",
-                "scale":"Lorem ipsum dolor sit amet, consectetur",
-                "security":"Lorem ipsum dolor sit amet, consectetur",
-                "usability":"Lorem ipsum dolor sit amet, consectetur"
-            },
-             "howContext":"LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "howItems":[
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
-            ]
+            "sistema-facturacion": {
+                "title": "Sistema de facturación",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "characteristics": [
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur",
+                    "Lorem ipsum dolor sit amet, consectetur"
+                ],
+                "howContext": "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "howItems": [
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
+                ]
+            }
         }
-    }
     ]
 }

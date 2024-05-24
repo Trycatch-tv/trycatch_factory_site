@@ -1,5 +1,6 @@
 ---
  const {levelEstructureTeam,desarrollo} = Astro.props
+ 
 ---
 
 <section
@@ -37,7 +38,7 @@
           Desarrollo
         </h2>
         <ul class="list-disc p-2">
-          {desarrollo.map((e:any)=>(
+          {desarrollo.map((e:any,index:any)=>(
             <li>{e}</li>
           ))}
         </ul>
