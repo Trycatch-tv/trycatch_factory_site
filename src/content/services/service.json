@@ -1,0 +1,48 @@
+{
+    "services": [
+        {
+            "desarrollo-web": {
+                "title": "Desarrollo web a la medida",
+                "description": "Web ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                "levelEstructureTeam": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ],
+                "desarrollo": [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                ]
+            },
+            "desarrollo-mobile": 
+                {
+                    "title": "Mobile a la medida",
+                    "description": "Mobil ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod",
+                    "levelEstructureTeam": [
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    ],
+                    "desarrollo": [
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    ]
+                }
+            
+        }
+    ]
+}

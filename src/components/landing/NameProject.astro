@@ -1,4 +1,7 @@
+---
+const{title}=Astro.props
+---
 <section class="h-[332px] max-sm:min-h-screen min-w-screen-2xl flex flex-row items-center justify-evenly bg-gradient-to-l from-blue-900 via-gray-50 to-gray-50 flex-wrap">
-<h1 class="text-4xl text-tcf-blue w-3/4 p-7 max-sm:p-0 sm:p-0">Entérese cómo [nombre del proyecto] puede ayudar a su organización</h1> 
+<h1 class="text-4xl text-tcf-blue w-3/4 p-7 max-sm:p-0 sm:p-0">Entérese cómo {title} puede ayudar a su organización</h1> 
 <button class="bg-white text-tcf-blue rounded-full  h-16 w-[372px] mx-3 font-bold max-sm:mx-0 sm:mx-0">Call To Action</button>
 </section>

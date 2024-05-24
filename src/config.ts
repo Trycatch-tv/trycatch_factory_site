@@ -1,3 +1,4 @@
+
 export const SiteMetadata = {
   title: 'Tycatch Factory Site',
   description: 'Desarrollo de Software a Medida. Creamos aplicaciones personalizadas que se adaptan perfectamente a tus necesidades.',
@@ -17,3 +18,5 @@ export const SiteMetadata = {
       'Somos una comunidad de desarrolladores apasionados y expertos dedicados a crear soluciones de software innovadoras que no solo cumplen, sino que superan las expectativas de nuestros clientes.'
   },
 };
+
+
