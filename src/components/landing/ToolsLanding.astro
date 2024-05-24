@@ -1,18 +1,21 @@
 ---
+import { Filter } from "lucide-astro";
+
 ---
-<section class="flex flex-col justify-center w-full min-h-screen px-12 py-12">
-    <div class="flex flex-col lg:flex-row ">
+<section class="flex flex-col mx-auto max-w-screen-2xl  justify-center w-full min-h-[80vh] px-4 py-20">
+  <div class="w-full flex mb-20  max-w-[400px]">
+    <select id="itemSelect" class="w-full p-2 border border-gray-300 rounded">
+      <option value="all">Todos</option>
+      <option value="blog">Blogs</option>
+      <option value="video">Videos</option>
+      <option value="articulo">Articulos</option>
+    </select>
+  </div> 
+    <div class="flex w-full h-full flex-col ">
       <!-- Select en la parte izquierda -->
-      <div class="w-full lg:w-1/4 mb-8 lg:mb-0  bg-gray-100  border-r border-solid border-gray-300 px-2">
-        <select id="itemSelect" class="w-full p-2 border border-gray-300 rounded">
-          <option value="all">Todos</option>
-          <option value="blog">Blogs</option>
-          <option value="video">Videos</option>
-          <option value="articulo">Articulos</option>
-        </select>
-      </div> 
       <!-- Tarjetas en la parte derecha -->
-      <div id="cardContainer" class="p-10 w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="cardContainer" class=" w-full h-full flex flex-wrap justify-center md:justify-start gap-14">
+
         <!-- Las tarjetas se insertarán aquí dinámicamente -->
       </div>
     </div>
@@ -35,13 +38,13 @@
   cardContainer.innerHTML = '';
   cards.forEach(card => {
     const cardElement = document.createElement('div');
-    cardElement.className = 'bg-white p-4 shadow rounded flex items-center'; // Agregamos flexbox para alinear la imagen y el contenido
+    cardElement.className = 'bg-gray-50 border p-4 shadow rounded flex items-center'; // Agregamos flexbox para alinear la imagen y el contenido
     cardElement.innerHTML = `
       <img src="${card.image}" class="w-16 h-16 mr-4" alt="Imagen recurso"> <!-- Agregamos la imagen -->
       <div>
         <h3 class="text-lg font-bold mb-2">${card.title}</h3>
         <p>${card.description}</p>
-        <a href="${card.link}" target="_blank" class="mt-4 inline-block bg-tcf-blue text-white py-2 px-4 rounded">Ver Recurso</a>
+        <a href="${card.link}" target="_blank" class="mt-4 inline-block bg-tcf-blue hover:bg-gray-500 text-white py-2 px-4 rounded-full">Ver Recurso</a>
       </div>
     `;
     cardContainer.appendChild(cardElement);
