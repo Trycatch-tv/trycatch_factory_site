@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -30,9 +31,13 @@ const { title } = Astro.props;
   <body>
     <Navbar />
     <slot />
-    <div class="bg-[#172554]">
-      <ContactoLanding />
-    </div>
+    {
+      pathname !== "/contact" && (
+        <div class="bg-[#172554]">
+          <ContactoLanding />
+        </div>
+      )
+    }
     <Footer />
   </body>
 </html>

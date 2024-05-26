@@ -67,6 +67,17 @@ const navbarItems = [
   function hideSubmenu(submenu) {
     submenu.classList.add("hidden");
   }
+  function openModal() {
+    document.getElementById("myModal").classList.remove("hidden");
+    document.getElementById("myModal").classList.add("flex");
+
+  }
+  window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  }
 </script>
 
 
@@ -151,12 +162,14 @@ const navbarItems = [
         }
         <li>
           <a
-            href={"/contact"}
-            target={"_self"}
+            href="/contact"
+            target="_self"
+            onclick="openModal()"
             class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
           >
             Contacto
-          </a>
+          </a
+             >
         </li>
       </ul>
     </div>
