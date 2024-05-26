@@ -58,16 +58,16 @@ const title = projectData.title
             </p>
         </div>
     </main>
-    <div class="w-full">
-        <div class="w-full">
+    <div class="w-full ">
+        <div class="w-full py-36">
             <h1
-                class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2"
+                class="text-tcf-blue font-bold text-center text-3xl md:text-4xl   py-2"
             >
                 Características
             </h1>
+            <CharacteristicsLanding  characteristics={characteristics}/>
         </div>
 
-        <CharacteristicsLanding  characteristics={characteristics}/>
         <HowFunctionLanding howContext={howContext} howItems={howItems}/>
 
         <NameProject title={title} />

@@ -19,6 +19,13 @@ const { pathname } = Astro.url;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
@@ -48,6 +55,8 @@ const { pathname } = Astro.url;
     );
   }
   html {
-    font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
-  }
+/*     font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
+ */ 
+    font-family: "Montserrat", system-ui, sans-serif !important;
+ }
 </style>
