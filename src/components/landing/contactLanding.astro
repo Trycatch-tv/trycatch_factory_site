@@ -1,56 +1,74 @@
 ---
-import { Image } from "astro:assets";
-import HeroImage from "../../assets/img/nibble.png";
-
 import ModalContactLanding from "./ModalContactLanding.astro";
+import {Mail, MapPin, Phone } from "lucide-astro";
+
 const content = {
   title: "Contactanos y haz que tus ideas cobren vida",
-  description: "¿Estas listo para emprender el viaje hacia la virtualización de tus ideas con soluciones a la medida y realizadas exclusivamente para que cumplas tus objetivos",
+  description:
+    "¿Estas listo para emprender el viaje hacia la virtualización de tus ideas con soluciones a la medida y realizadas exclusivamente para que cumplas tus objetivos",
   link: "",
-  buttonName: "Contactanos"
-}
+  buttonName: "Contactanos",
+};
+const cardSInfo = [
+  {
+    label: "Email",
+    info: "hV8P9@example.com",
+    icon: Mail,
+  },
+  {
+    label: "Direccion",
+    info: "hV8P9@example.com",
+    icon: MapPin ,
+  },
+  {
+    label: "Celular",
+    info: "+57 312 345 6789",
+    icon: Phone,
+  },
+];
 ---
 
-<section class="relative min-h-screen pt-40 bg-contactbg bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full">
-  <div class="w-full h-full top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm"></div>
-  
-  <div class="flex flex-col max-w-screen-xl relative z-10 w-full items-center lg:flex-row px-8 mx-auto">
-    <div class="lg:w-1/2">
-      <Image
-        src={HeroImage}
-        class="w-full object-cover"
-        alt="TryCatch.tv Nibble"
-      />
-    </div>
-
-    <article class="mb-4">
-      <h1 class="max-w-xl mb-5 text-4xl text-white font-extrabold tracking-tight leading-none md:text-5xl text-center xl:text-6xl lg:mb-8 lg:text-start">
-        {content.title}
-      </h1>
-      <p class="max-w-xl text-white text-balance font-semibold mb-5 lg:max-w-md lg:mb-14 lg:text-start text-center">
-        {content.description}
-      </p>
-      <div class="flex justify-center gap-2 mb-5 lg:justify-start lg:mb-14 max-sm:mt-5 md:justify-center">
-        <a
-          class="max-w-[300px] cursor-pointer transition-all duration-500 min-w-[300px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
-          onclick="openModal()"
-        >
-          {content.buttonName}
-        </a>
-      </div>
-    </article>
+<section
+  class="relative min-h-[60vh] pt-40 pb-20 bg-contactbg bg-cover bg-right-0 bg-no-repeat flex flex-col justify-center"
+>
+  <div
+    class="w-full h-full top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm"
+  >
   </div>
-
-  <!-- Modal HTML -->
-  <div id="myModal" class="flex justify-center items-center fixed inset-0    bg-black bg-opacity-50  z-50">
-    
-    <ModalContactLanding></ModalContactLanding>
-
+  <div class="flex flex-col max-w-screen-xl relative z-10 w-full mx-auto px-4">
+    <h1
+      class="text-white text-center md:text-start max-w-screen-md font-bold text-3xl md:text-5xl mb-10"
+    >
+      {content.title}
+    </h1>
+    <p
+      class="text-white text-center md:text-start max-w-screen-md text-base md:text-lg"
+    >
+      {content.description}
+    </p>
   </div>
 </section>
-
+<section class="max-w-screen-xl py-20 mx-auto">
+  <h2 class="text-center font-bold text-3xl md:text-4xl mb-16">Contáctanos</h2>
+  <div class="flex flex-col md:flex-row justify-center gap-10 px-4">
+    {
+      cardSInfo.map((card) => (
+        <article class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center">
+          <div class="mb-4">
+            <card.icon color="#172554" class="w-10 h-10" />
+          </div>
+          <p class="font-bold mb-6">{card.label}</p>
+          <p>{card.info}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+<section class="max-w-screen-xl py-20 mx-auto">
+  <ModalContactLanding />
+</section>
 <!-- JavaScript -->
-<script is:inline>
+<!-- <script is:inline>
   function openModal() {
     document.getElementById("myModal").classList.remove("hidden");
   }
@@ -60,10 +78,10 @@ const content = {
   }
 
   // Close the modal when the user clicks anywhere outside of the modal
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     const modal = document.getElementById("myModal");
     if (event.target === modal) {
       modal.classList.add("hidden");
     }
-  }
-</script>
+  };
+</script> -->

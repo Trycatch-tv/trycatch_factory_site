@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -17,7 +19,7 @@ export default {
         'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
         'como-bg':"url('/public/img/ux.jpg')",
         'heroBgImgTeam': 'url("/public/img/team.jpg")',
-        'contactbg':'url("/public/img/contact.webp")'
+        'contactbg':'url("/public/img/contact.jpg")',
 
       },
       colors: {
@@ -34,8 +36,17 @@ export default {
       width:{
         "60":"60px",
         "57":"57px"
+      },
+      animation: {
+        'openModal': 'openModal 0.5s ease-in-out',
+      },
+      keyframes: {
+        'openModal': {
+          '0%': { opacity: 0,transform: 'translateY(-100%)' },
+          '100%': { opacity: 1,transform: 'translateY(0)' },
+        },
       }
-    },
+    }
   },
   plugins: [require("flowbite/plugin")],
   
