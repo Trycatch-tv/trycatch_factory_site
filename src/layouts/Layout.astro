@@ -3,6 +3,7 @@ import { Route } from "lucide-astro";
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
 import ContactoLanding from "../components/landing/ContactoLanding.astro";
+import ModalContactLanding from "../components/landing/ModalContactLanding.astro";
 
 interface Props {
   title: string;
@@ -32,13 +33,14 @@ const { pathname } = Astro.url;
   <body>
     <Navbar />
     <slot />
-    {
-      !pathname.includes("contact")  && (
-        <div class="bg-[#172554]">
-          <ContactoLanding />
-        </div>
-      )
-    }
+    
+    
+       
+      <section class="max-w-screen  p-20 mx-auto bg-tcf-gray-l">
+  <ModalContactLanding />
+</section>
+    
+    
     <Footer />
   </body>
 </html>
