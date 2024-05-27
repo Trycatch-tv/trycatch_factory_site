@@ -33,14 +33,11 @@ const { pathname } = Astro.url;
   <body>
     <Navbar />
     <slot />
-    
-    
-       
-      <section class="max-w-screen  p-20 mx-auto bg-tcf-gray-l">
-  <ModalContactLanding />
-</section>
-    
-    
+
+    <section class="py-20 mx-auto bg-tcf-gray-l">
+      <ModalContactLanding />
+    </section>
+
     <Footer />
   </body>
 </html>
@@ -58,8 +55,8 @@ const { pathname } = Astro.url;
     );
   }
   html {
-/*     font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
- */ 
+    /*     font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
+ */
     font-family: "Montserrat", system-ui, sans-serif !important;
- }
+  }
 </style>
