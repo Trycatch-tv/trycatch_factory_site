@@ -24,13 +24,14 @@ export interface SiteMetadata {
 ---
 
 <script>
+  
   import { gsap } from "gsap";
 
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap.fromTo(
     "#call",
@@ -51,11 +52,11 @@ export interface SiteMetadata {
   );
 </script>
 <div
-  class="dark:bg-black bg-gray-50 min-h-[70vh] flex flex-col justify-center py-12 px-2" id="call"
+  class="dark:bg-black bg-gray-50 min-h-[70vh] flex flex-col justify-center py-12 px-2" 
 >
   <div
     class="mx-auto max-w-7xl px-1 py-2 sm:px-2 lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-12"
-  >
+  id="call">
     <div class="flex flex-col gap-10 items-center md:flex-row justify-between">
       <div class="flex-1">
         <Image

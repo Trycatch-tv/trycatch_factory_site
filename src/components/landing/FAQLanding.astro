@@ -35,8 +35,34 @@ data.faq.forEach((item) => {
   open[item.question] = false;
 });
 ---
+<script>
+  import { gsap } from "gsap";
 
-<section class="flex flex-col justify-center min-h-screen w-full">
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.fromTo(
+    "#question",
+    {
+      x: -10,
+      opacity: 0,
+    },
+    {
+      y: -100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#question",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    },
+  );
+</script>
+<section class="flex flex-col justify-center min-h-screen w-full" id="question">
   <div class="flex items-center justify-center flex-col gap-y-2 py-5">
     <h2 class="text-[#172554] text-2xl md:text-4xl  font-bold pb-3">
       {`${data.title}`}
