@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { SiteMetadata } from "../../config.ts";
-import cto from  "../../assets/img/cto.svg"
-
+import cto from "../../assets/img/cto.svg";
 
 export interface SiteMetadata {
   title: string;
@@ -24,28 +23,62 @@ export interface SiteMetadata {
 }
 ---
 
-<div class="dark:bg-black bg-gray-50 min-h-[70vh] flex flex-col justify-center py-12 px-2">
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.fromTo(
+    "#call",
+    {
+      x: -10,
+      opacity: 0,
+    },
+    {
+      y: -100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#call",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    },
+  );
+</script>
+<div
+  class="dark:bg-black bg-gray-50 min-h-[70vh] flex flex-col justify-center py-12 px-2" id="call"
+>
   <div
-    class="mx-auto max-w-7xl px-1 py-2 sm:px-2 lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-12 "
+    class="mx-auto max-w-7xl px-1 py-2 sm:px-2 lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-12"
   >
     <div class="flex flex-col gap-10 items-center md:flex-row justify-between">
       <div class="flex-1">
-        <Image class=" w-[250px] md:w-[450px]" src={cto} alt="fondo" />
+        <Image
+          class="w-[250px] md:w-[450px]"
+          src={cto}
+          alt="fondo"
+          id="image"
+        />
       </div>
       <div class="flex-1 flex flex-col gap-8">
         <h2
-          class="text-3xl md:text-4xl  text-center md:text-start font-bold text-[#172554] dark:text-gray-100"
+          class="text-3xl md:text-4xl text-center md:text-start font-bold text-[#172554] dark:text-gray-100"
         >
-        Comienza tu proyecto hoy
-        
-      </h2>
-      <span class="inline-block w-full text-center md:text-start dark:text-white text-[#05000B] sm:text-lg "
-        >¿Tienes un proyecto en mente? Cuéntanos más sobre él y cómo podemos
-        ayudarte. Completa el formulario a continuación y uno de nuestros
-        expertos se pondrá en contacto contigo a la brevedad.</span
-      >
-        <div class="mt-4 flex justify-center md:justify-start" >
-          <div class="inline-flex rounded-md ">
+          Comienza tu proyecto hoy
+        </h2>
+        <span
+          class="inline-block w-full text-center md:text-start dark:text-white text-[#05000B] sm:text-lg"
+          >¿Tienes un proyecto en mente? Cuéntanos más sobre él y cómo podemos
+          ayudarte. Completa el formulario a continuación y uno de nuestros
+          expertos se pondrá en contacto contigo a la brevedad.</span
+        >
+        <div class="mt-4 flex justify-center md:justify-start">
+          <div class="inline-flex rounded-md">
             <a
               href={`mailto:${SiteMetadata.author.email}`}
               class="inline-flex items-center justify-center rounded-full border border-transparent bg-blue-950 px-5 py-3 text-base font-medium text-white hover:gray-600 max-sm:px-2 max-sm:py-2"

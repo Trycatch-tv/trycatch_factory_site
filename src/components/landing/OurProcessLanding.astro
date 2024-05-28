@@ -24,7 +24,52 @@ const data = [
   },
 ];
 ---
+<script>
+  import { gsap } from "gsap";
 
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.fromTo(
+    "#left",
+    {
+      x: -100,
+      opacity: 0,
+    },
+    {
+      x:0,
+      opacity: 1,
+      duration: 1.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: "#left",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    },
+  );
+  gsap.fromTo(
+    "#right",
+    {
+      x: 100,
+      opacity: 0,
+    },
+    {
+      x:0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#right",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    },
+  );
+</script>
 <div class="flex flex-col justify-center bg-gray-50 px-4 py-16">
   <div class="flex justify-center flex-grow max-w-screen-xl mx-auto ">
     <div class="mt-2 w-12/12 h-auto max-sm:max-w-screen-sm">
@@ -40,6 +85,7 @@ const data = [
               src={process}
               class="size-96 rounded-md max-sm:p-5 max-sm:rounded-[2rem]"
               alt="TryCatch.tv process"
+              id="left"
             />
           </div>
 
@@ -112,6 +158,7 @@ const data = [
                 src={metodology}
                 class="size-96 rounded-md mr-3 max-sm:rounded-[2rem] max-sm:p-5"
                 alt="TryCatch.tv process"
+                id="right"
               />
             </div>
         </article>

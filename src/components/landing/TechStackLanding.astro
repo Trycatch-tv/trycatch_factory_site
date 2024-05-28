@@ -1,20 +1,20 @@
 ---
 import Image from "astro/components/Image.astro";
-import angular from "../../assets/img/angular.svg"
-import react from "../../assets/img/react.svg"
-import vue from "../../assets/img/vue.svg"
-import svelte from "../../assets/img/svelte.svg"
-import spring from "../../assets/img/spring.svg"
-import nestjs from "../../assets/img/nestjs.svg"
-import django from "../../assets/img/django.svg"
-import laravel from "../../assets/img/laravel.svg"
-import aws from "../../assets/img/aws.svg"
-import azure from "../../assets/img/azure.svg"
-import googleCloud from "../../assets/img/google-cloud.svg"
-import oracle from "../../assets/img/oracle.svg"
-import kotlin from "../../assets/img/kotlin.svg"
-import flutter from "../../assets/img/flutter.svg"
-import swift from "../../assets/img/swift.svg"
+import angular from "../../assets/img/angular.svg";
+import react from "../../assets/img/react.svg";
+import vue from "../../assets/img/vue.svg";
+import svelte from "../../assets/img/svelte.svg";
+import spring from "../../assets/img/spring.svg";
+import nestjs from "../../assets/img/nestjs.svg";
+import django from "../../assets/img/django.svg";
+import laravel from "../../assets/img/laravel.svg";
+import aws from "../../assets/img/aws.svg";
+import azure from "../../assets/img/azure.svg";
+import googleCloud from "../../assets/img/google-cloud.svg";
+import oracle from "../../assets/img/oracle.svg";
+import kotlin from "../../assets/img/kotlin.svg";
+import flutter from "../../assets/img/flutter.svg";
+import swift from "../../assets/img/swift.svg";
 const technologyData = [
   {
     title: "Frontend",
@@ -112,6 +112,33 @@ const technologyData = [
 ];
 ---
 
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  ScrollTrigger.normalizeScroll(true);
+
+  // create the smooth scroller FIRST!
+  let smoother = ScrollSmoother.create({
+    smooth: 2,
+    effects: true,
+    normalizeScroll: true,
+  });
+  ScrollTrigger.create({
+  trigger: ".box-c",
+  pin: true,
+  start: "center center",
+  end: "+=300",
+  markers: true
+});
+</script>
 <section
   class="max-w-screen-xl p-6 mx-auto sm:py-12 lg:py-24 min-h-screen flex flex-col justify-center"
 >
