@@ -17,6 +17,7 @@
     "@iconify-json/ic": "^1.1.17",
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/mingcute": "^1.1.17",
+    "@supabase/supabase-js": "^2.43.4",
     "astro": "^4.7.0",
     "astro-icon": "^1.1.0",
     "class-variance-authority": "^0.7.0",
