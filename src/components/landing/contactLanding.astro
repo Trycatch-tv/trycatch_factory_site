@@ -1,6 +1,6 @@
 ---
 import ModalContactLanding from "./ModalContactLanding.astro";
-import {Mail, MapPin, Phone } from "lucide-astro";
+import { Mail, MapPin, Phone } from "lucide-astro";
 
 const content = {
   title: "Contactanos y haz que tus ideas cobren vida",
@@ -18,7 +18,7 @@ const cardSInfo = [
   {
     label: "Direccion",
     info: "hV8P9@example.com",
-    icon: MapPin ,
+    icon: MapPin,
   },
   {
     label: "Celular",
@@ -48,12 +48,12 @@ const cardSInfo = [
     </p>
   </div>
 </section>
-<section class="max-w-screen-xl py-20 mx-auto">
+<section class="max-w-screen-xl py-20 mx-auto" id="contactsection">
   <h2 class="text-center font-bold text-3xl md:text-4xl mb-16">Contáctanos</h2>
   <div class="flex flex-col md:flex-row justify-center gap-10 px-4">
     {
-      cardSInfo.map((card) => (
-        <article class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center">
+      cardSInfo.map((card,index) => (
+        <article class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center" id="contact">
           <div class="mb-4">
             <card.icon color="#172554" class="w-10 h-10" />
           </div>
@@ -64,7 +64,33 @@ const cardSInfo = [
     }
   </div>
 </section>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+      "#contact",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.3, // Añade un retardo entre cada tarjeta
+      }
+    );
 
+    // Añade el evento hover usando GSAP para un efecto de zoom
+    document.querySelectorAll("#contact").forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, duration: 0.3, ease: "power2.out" });
+      });
+    });
+</script>
 <!-- JavaScript -->
 <!-- <script is:inline>
   function openModal() {

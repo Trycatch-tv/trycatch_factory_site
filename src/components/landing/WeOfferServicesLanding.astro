@@ -1,10 +1,54 @@
 ---
- const {levelEstructureTeam,desarrollo} = Astro.props
- 
+const { levelEstructureTeam, desarrollo } = Astro.props;
 ---
 
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#divtwo",
+    {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      ease: "power2.out",
+    },
+    {
+      y: -20,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#web",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true,
+      },
+    },
+  );
+  gsap.fromTo(
+    "#divone",
+    {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      ease: "power2.out",
+    },
+    {
+      y: -20,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#web",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true,
+      },
+    },
+  );
+</script>
 <section
-  class="relative bg-weOfferBgServices bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full min-h-screen py-10"
+  class="relative bg-weOfferBgServices bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full min-h-screen py-10" id="web"
 >
   <!--div class="absolute bg-black/30 h-full w-full top-0 pt-8"></!--div> -->
 
@@ -14,7 +58,7 @@
       class="flex flex-col justify-center items-center gap-40 p-10 md:flex-row"
     >
       <div
-        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]"
+        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]" id="divone"
       >
         <h2
           class="text-tcf-blue font-extrabold items-center text-xl p-4 h-[100px]"
@@ -22,15 +66,11 @@
           A nivel estructural/equipo
         </h2>
         <ul class="list-disc p-2">
-          {
-            levelEstructureTeam.map((e:any)=>(
-              <li>{e}</li>
-            ))
-          }
+          {levelEstructureTeam.map((e: any) => <li>{e}</li>)}
         </ul>
       </div>
       <div
-        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]"
+        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]" id="divtwo"
       >
         <h2
           class="text-tcf-blue font-extrabold items-center text-xl p-4 h-[100px]"
@@ -38,9 +78,7 @@
           Desarrollo
         </h2>
         <ul class="list-disc p-2">
-          {desarrollo.map((e:any)=>(
-            <li>{e}</li>
-          ))}
+          {desarrollo.map((e: any) => <li>{e}</li>)}
         </ul>
       </div>
     </div>

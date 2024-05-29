@@ -1,7 +1,11 @@
 ---
 
 ---
+
+<div class="flex flex-col md:flex-row gap-10 px-4" id="form">
+
 <div class="flex max-w-screen-xl mx-auto flex-col md:flex-row gap-10 px-4">
+
   <article class="flex flex-col  items-center  justify-center">
     <h1 class="font-bold text-3xl inline-block w-full md:text-4xl text-start mb-8">Dejanos tus datos </h1>
     <p class="text-tcf-blue inline-block text-start text-base md:text-lg"> Nos comunicaremos contigo para brindarte la ayuda que necesitas</p>
@@ -140,3 +144,29 @@
       </div>
   </div>
 
+<script>
+   import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#form",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.3, // Añade un retardo entre cada tarjeta
+      scrollTrigger: {
+        trigger: "#form",
+        start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+        end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
+        scrub: 1, // La animación sigue el scroll de manera suave
+       
+      },
+    },
+  );
+</script>
