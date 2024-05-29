@@ -7,34 +7,69 @@ import Image from "astro/components/Image.astro";
 const { characteristics } = Astro.props;
 ---
 
-{ Array.isArray(characteristics) && characteristics.length  > 0 && 
-    
-        <section class="py-10 max-w-screen-xl mx-auto grid grid-cols-1  md:grid-cols-2 gap-y-10">
-            <div class="flex items-center justify-center h-full w-auto flex-col ">
-                <Image
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/all";
 
-                    src={rocket}
-                    alt="rocket"
-                    class="w-36 h-36"
-                />
+    // Registramos el plugin ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Seleccionamos las tarjetas por sus IDs
+    const cardOne = document.getElementById("cardOne");
+    const cardTwo = document.getElementById("cardTwo");
+    const cardThree = document.getElementById("cardThree");
+    const cardFour = document.getElementById("cardFour");
+
+    // Animación para cada tarjeta
+    const animateCard = (card: any) => {
+        gsap.from(card, {
+            duration: 1,
+            delay: 0.5,
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: true,
+            },
+        });
+    };
+
+    // Aplicamos la animación a cada tarjeta
+    animateCard(cardOne);
+    animateCard(cardTwo);
+    animateCard(cardThree);
+    animateCard(cardFour);
+</script>
+{
+    Array.isArray(characteristics) && characteristics.length > 0 && (
+        <section class="py-10 max-w-screen-xl mx-auto grid grid-cols-1  md:grid-cols-2 gap-y-10">
+            <div
+                class="flex items-center justify-center h-full w-auto flex-col "
+                id="cardOne"
+            >
+                <Image src={rocket} alt="rocket" class="w-36 h-36" />
                 <p class="lg:w-96 text-xl sm:text-2xl mt-6 md:w-72 text-center text-tcf-blue sm:text-center">
                     {characteristics[0]}
                 </p>
             </div>
-            <div class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
-                <Image
-
-                    src={checked}
-                    alt="checked"
-                    class="w-36 h-36"
-                />
+            <div
+                class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8"
+                id="cardTwo"
+            >
+                <Image src={checked} alt="checked" class="w-36 h-36" />
                 <p class="lg:w-96 text-xl sm:text-2xl mt-6 md:w-72 text-center text-tcf-blue sm:text-center">
                     {characteristics[1]}
                 </p>
             </div>
-            <div class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
+            <div
+                class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8"
+                id="cardThree"
+            >
                 <Image
-
                     src={optimazation}
                     alt="optimazation"
                     class="w-36 h-36"
@@ -43,17 +78,15 @@ const { characteristics } = Astro.props;
                     {characteristics[2]}
                 </p>
             </div>
-            <div class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8">
-                <Image
-
-                    src={speed}
-                    alt="speed"
-                    class="w-36 h-36"
-                />
+            <div
+                class="flex items-center justify-center h-full w-auto flex-col gap-y-10 max-sm:gap-y-2 max-sm:my-8"
+                id="cardFour"
+            >
+                <Image src={speed} alt="speed" class="w-36 h-36" />
                 <p class="lg:w-96 text-xl sm:text-2xl mt-6 md:w-72 text-center text-tcf-blue sm:text-center md:p-1 max-md:p-1">
                     {characteristics[3]}
                 </p>
             </div>
         </section>
-    
+    )
 }

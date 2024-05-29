@@ -67,16 +67,21 @@ const profiles = [
 ];
 ---
 
-<section class="py-16 min-h-[90vh]">
+<section class="py-16 min-h-[90vh]" id="seccionProfiles">
   <h1
-    class="min-w-xl mb-5 py-10 text-center text-3xl md:text-4xl text-[#172554] font-bold leading-none  md:text-center xl:text-6x lg:mb-14"
+    class="min-w-xl mb-5 py-10 text-center text-3xl md:text-4xl text-[#172554] font-bold leading-none md:text-center xl:text-6x lg:mb-14"
   >
     Perfiles destacados
   </h1>
-  <div class="flex flex-col justify-center w-full md:flex-row md:gap-16 max-w-screen-xl mx-auto">
+  <div
+    class="flex flex-col justify-center w-full md:flex-row md:gap-16 max-w-screen-xl mx-auto"
+  >
     {
       profiles.map((profile) => (
-        <div class="flex gap-4 items-center  justify-center  py-6">
+        <div
+          class="flex gap-4 items-center  justify-center  py-6"
+          id="profiles"
+        >
           <Image class="w-36 h-36" src={profile.img} alt={profile.name} />
           <div class="flex flex-col gap-2 max-w-[120px] ">
             <h2 class="font-semibold  text-2xl max-w-[120px] ">
@@ -96,3 +101,29 @@ const profiles = [
     }
   </div>
 </section>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#profiles",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.3, // Añade un retardo entre cada tarjeta
+      scrollTrigger: {
+        trigger: "#seccionProfiles",
+        start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+        end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
+        scrub: 1, // La animación sigue el scroll de manera suave
+       
+      },
+    },
+  );
+</script>

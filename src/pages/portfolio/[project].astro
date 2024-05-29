@@ -34,24 +34,7 @@ const characteristics = projectData.characteristics;
 const title = projectData.title;
 ---
 
-<script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#title", {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.05,
-            scrollTrigger: {
-                trigger: "#title",
-                start: "top 80%",
-                end: "top 50%",
-                scrub: 1,
-                // markers: true // Habilita esto solo para depuración
-            }
-        });
-</script>
+
 
 <Layout title="Portafolio">
     <main

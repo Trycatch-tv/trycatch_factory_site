@@ -23,18 +23,7 @@ const content = {
 };
 ---
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-   gsap.registerPlugin(ScrollTrigger)
-  gsap.to("#image", {
-    scrollTrigger: {
-      scrub: 2,
-    },
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-    ease: "none",
-  });
-</script>
+
 <section
   class="relative min-h-screen pt-40 bg-heroBgImg bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full"
   id="wrapper"
