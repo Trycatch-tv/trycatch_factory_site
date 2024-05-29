@@ -19,6 +19,7 @@ export default {
         'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
         'como-bg':"url('/public/img/ux.jpg')",
         'heroBgImgTeam': 'url("/public/img/team.jpg")',
+        'heroBgImgResources': 'url("/public/img/ToolsImage.webp")',
         'contactbg':'url("/public/img/contact.jpg")',
 
       },
