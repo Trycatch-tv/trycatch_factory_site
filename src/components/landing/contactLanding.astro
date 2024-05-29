@@ -1,0 +1,85 @@
+---
+import ModalContactLanding from "./ModalContactLanding.astro";
+import {Mail, MapPin, Phone } from "lucide-astro";
+
+const content = {
+  title: "Contactanos y haz que tus ideas cobren vida",
+  description:
+    "¿Estas listo para emprender el viaje hacia la virtualización de tus ideas con soluciones a la medida y realizadas exclusivamente para que cumplas tus objetivos",
+  link: "",
+  buttonName: "Contactanos",
+};
+const cardSInfo = [
+  {
+    label: "Email",
+    info: "hV8P9@example.com",
+    icon: Mail,
+  },
+  {
+    label: "Direccion",
+    info: "hV8P9@example.com",
+    icon: MapPin ,
+  },
+  {
+    label: "Celular",
+    info: "+57 312 345 6789",
+    icon: Phone,
+  },
+];
+---
+
+<section
+  class="relative min-h-[60vh] pt-40 pb-20 bg-contactbg bg-cover bg-right-0 bg-no-repeat flex flex-col justify-center"
+>
+  <div
+    class="w-full h-full top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm"
+  >
+  </div>
+  <div class="flex flex-col max-w-screen-xl relative z-10 w-full mx-auto px-4">
+    <h1
+      class="text-white text-center md:text-start max-w-screen-md font-bold text-3xl md:text-5xl mb-10"
+    >
+      {content.title}
+    </h1>
+    <p
+      class="text-white text-center md:text-start max-w-screen-md text-base md:text-lg"
+    >
+      {content.description}
+    </p>
+  </div>
+</section>
+<section class="max-w-screen-xl py-20 mx-auto">
+  <h2 class="text-center font-bold text-3xl md:text-4xl mb-16">Contáctanos</h2>
+  <div class="flex flex-col md:flex-row justify-center gap-10 px-4">
+    {
+      cardSInfo.map((card) => (
+        <article class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center">
+          <div class="mb-4">
+            <card.icon color="#172554" class="w-10 h-10" />
+          </div>
+          <p class="font-bold mb-6">{card.label}</p>
+          <p>{card.info}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<!-- JavaScript -->
+<!-- <script is:inline>
+  function openModal() {
+    document.getElementById("myModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("myModal").classList.add("hidden");
+  }
+
+  // Close the modal when the user clicks anywhere outside of the modal
+  window.onclick = function (event) {
+    const modal = document.getElementById("myModal");
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  };
+</script> -->

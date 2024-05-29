@@ -8,7 +8,8 @@ import Services from "../components/landing/ServicesLanding.astro";
 import TechStackLanding from "../components/landing/TechStackLanding.astro";
 import Layout from "../layouts/Layout.astro";
 
-const call_to_action = await getEntry("sections", "call-to-action");
+
+const call_to_action = await getEntry("projects","call-to-action");
 ---
 
 <Layout title="Factory">

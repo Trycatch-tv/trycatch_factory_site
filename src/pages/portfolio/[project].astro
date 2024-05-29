@@ -1,57 +1,75 @@
 ---
+import { getCollection } from "astro:content";
 import CharacteristicsLanding from "../../components/landing/CharacteristicsLanding.astro";
 import HowFunctionLanding from "../../components/landing/HowFunctionLanding.astro";
 import NameProject from "../../components/landing/NameProject.astro";
 import Layout from "../../layouts/Layout.astro";
-export function getStaticPaths() {
-    return [
-        { params: { project: "proyecto1" } },
-        { params: { project: "proyecto2" } },
-        { params: { project: "proyecto3" } },
-    ];
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+
+    const paths = projects.flatMap((project: any) => {
+        
+        const projectKeys = Object.keys(project.data.projects[0]);
+
+        const projectPathObjects = projectKeys.map((key: string) => {
+            const projectData = project.data.projects[0][key];
+            return {
+                params: {
+                    project: key,
+                },
+                props: {
+                    projectData: projectData,
+                },
+            };
+        });
+
+        return projectPathObjects;
+    });
+
+    return paths;
 }
+const { projectData } = Astro.props;
+const howContext = projectData.howContext;
+const howItems = projectData.howItems;
+const characteristics = projectData.characteristics
+const title = projectData.title
+
 ---
 
-
 <Layout title="Portafolio">
-
     <main
         class="min-h-screen min-w-screen-2xl flex justify-center items-center flex-col
-         bg-custom-bg bg-cover bg-center"     >
-       <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+         bg-custom-bg bg-cover bg-center"
+    >
+        <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm">
+        </div>
         <h1
-           class="lg:text-6xl relative md:text-4xl max-md:text-4xl max-md:p-2 font-bold text-center text-white p-10 max-sm:text-center max-sm:p-2  max-sm:text-3xl"
+            class="lg:text-6xl relative md:text-4xl max-md:text-4xl max-md:p-2 font-bold text-center text-white p-10 max-sm:text-center max-sm:p-2 max-sm:text-3xl"
         >
-            Sistema de inventario
+            {projectData.title}
         </h1>
-      <div
-           class="flex relative flex-col lg:w-[29rem] md:w-96 max-md:w-96 sm:w-auto max-sm:w-auto"
+        <div
+            class="flex relative flex-col lg:w-[29rem] md:w-96 max-md:w-96 sm:w-auto max-sm:w-auto"
         >
             <p
-               class="lg:text-2xl max-lg:text-2xl max-md:text-2xl  md:text-2xl text-xl text-center text-white break-all max-sm:text-xl sm:text-xl"
+                class="lg:text-2xl max-lg:text-2xl max-md:text-2xl md:text-2xl text-xl text-center text-white break-all max-sm:text-xl sm:text-xl"
             >
-                LoremLorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
+                {projectData.description}
             </p>
         </div>
     </main>
-    <div class="w-full">
-        <div class="w-full">
+    <div class="w-full ">
+        <div class="w-full py-36">
             <h1
-                class="text-tcf-blue font-bold text-center lg:text-4xl max-lg:text-4xl md:text-2xl max-md:text-2xl py-2"
+                class="text-tcf-blue font-bold text-center text-3xl md:text-4xl   py-2"
             >
                 Características
             </h1>
+            <CharacteristicsLanding  characteristics={characteristics}/>
         </div>
 
-        <CharacteristicsLanding />
-        <HowFunctionLanding />
+        <HowFunctionLanding howContext={howContext} howItems={howItems}/>
 
-            <NameProject />
-
+        <NameProject title={title} />
     </div>
-</Layout
->
-
-
+</Layout>
