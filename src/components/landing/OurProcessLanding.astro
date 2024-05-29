@@ -32,7 +32,7 @@ const data = [
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-  if(window.length> 768){
+  if(window.innerWidth> 768){
   gsap.fromTo(
     "#left",
     {
