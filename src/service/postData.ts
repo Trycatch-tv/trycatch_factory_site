@@ -1,13 +1,12 @@
 import { supabase } from "../DB/db";
 
-const fetchData = async (dataPost: any) => {
-  const { data, error } = await supabase.from("ContactoLanding").insert(dataPost);
+const sendData = async (dataPost: any) => {
+  const { error,status,statusText
+   } = await supabase.from("ContactoLanding").insert(dataPost);
   if (error) {
-    console.error(error);
-  } else {
-    console.log(data);
-  }
-  console.log(data);
+    throw {error,status,statusText};
+  } 
+  return {status,statusText}
 };
 
-export {fetchData};
+export {sendData};
