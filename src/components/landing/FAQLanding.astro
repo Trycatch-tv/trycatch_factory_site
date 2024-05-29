@@ -35,6 +35,7 @@ data.faq.forEach((item) => {
   open[item.question] = false;
 });
 ---
+
 <script>
   import { gsap } from "gsap";
 
@@ -64,7 +65,7 @@ data.faq.forEach((item) => {
 </script>
 <section class="flex flex-col justify-center min-h-screen w-full" id="question">
   <div class="flex items-center justify-center flex-col gap-y-2 py-5">
-    <h2 class="text-[#172554] text-2xl md:text-4xl  font-bold pb-3">
+    <h2 class="text-[#172554] text-2xl md:text-4xl font-bold pb-3">
       {`${data.title}`}
     </h2>
   </div>
@@ -72,7 +73,7 @@ data.faq.forEach((item) => {
     <section class="max-w-5xl mx-auto py-2 sm:py-4 mb-2">
       <div class="w-full px-4 md:px-5 xl:px-2 py-4 rounded-[9px] max-sm:px-0">
         <div
-          class="border  border-gray-200 shadow-sm overflow-hidden mx-auto w-full max-w-4xl rounded-none sm:rounded-lg"
+          class="border border-gray-200 shadow-sm overflow-hidden mx-auto w-full max-w-4xl rounded-none sm:rounded-lg"
         >
           {
             data.faq.map((item, index) => (
@@ -91,7 +92,7 @@ data.faq.forEach((item) => {
                   <ChevronDown />
                 </button>
                 <div
-                  class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-900 sfont-medium mb-2"
+                  class="answer max-h-0   pt-2 pb-5 px-5 text-sm lg:text-base text-gray-900 font-medium mb-2"
                   id={`answer-${index}`}
                   style={{ display: open[item.question] ? "block" : "none" }}
                 >
@@ -116,8 +117,15 @@ data.faq.forEach((item) => {
         if (targetId !== null) {
           const target = document.getElementById(targetId) as HTMLElement;
           if (target) {
-            target.style.display =
-              target.style.display === "block" ? "none" : "block";
+            const isExpanded = target.classList.contains("fade-in"); 
+            if (!isExpanded) {
+              target.style.display = "block"; 
+            }
+            target.classList.toggle("fade-in", !isExpanded); 
+            target.classList.toggle("fade-out", isExpanded); 
+            setTimeout(() => {
+              target.style.display = isExpanded ? "none" : "block"; 
+            }, 500); 
           } else {
             console.error("Element with ID", targetId, "not found.");
           }
@@ -128,3 +136,36 @@ data.faq.forEach((item) => {
     });
   });
 </script>
+<style>
+  /* Animación de apertura */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 1000px; /* Ajusta la altura máxima según sea necesario */
+    }
+  }
+
+  /* Animación de cierre */
+  .fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      max-height: 1000px; /* Ajusta la altura máxima según sea necesario */
+    }
+    to {
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+</style>
