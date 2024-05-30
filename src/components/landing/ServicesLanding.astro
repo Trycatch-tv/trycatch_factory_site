@@ -1,4 +1,8 @@
-<section class="flex flex-col justify-center min-h-screen">
+
+<section class="flex flex-col justify-center min-h-screen" id="services">
+
+<section class="flex flex-col justify-center mt-5 pt-5 sm:min-h-screen">
+
   <div class="Services flex flex-col items-center">
     <h2 class="text-2xl md:text-4xl font-bold text-tcf-blue">
       Nuestros servicios
@@ -56,6 +60,7 @@
         class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
         onclick="handlePaginationClick(1)"
       >
+      <!--
         <button
           id="circular-btn"
           class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
@@ -78,6 +83,7 @@
           id="circular-btn3"
           class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
         ></button>
+    -->
       </span>
     </div>
   </div>
@@ -186,7 +192,7 @@
     const servicesContainer = document.querySelector(".services-container");
     servicesContainer.innerHTML = "";
 
-    finalServicesArray.forEach((service) => {
+    finalServicesArray.forEach((service, index) => {
       const serviceElement = document.createElement("div");
       serviceElement.classList.add(
         "flex-1",
@@ -202,8 +208,9 @@
         "md:p-3",
         "md:p-2",
         "lg:max-w-screen-sm",
-        "lg:px-15"
+        "lg:px-15",
       );
+      serviceElement.id = "service";
       serviceElement.innerHTML = `
                 <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
                     <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 object-cover rounded-full mb-2">
@@ -230,4 +237,27 @@
   window.onload = function () {
     handleResize();
   };
+</script>
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  const card = document.querySelector("#services");
+  gsap.from(card, {
+    duration: 1,
+  opacity: 0,
+  y: 50,
+  stagger: 0.2,
+  ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#services", // Elemento que disparará la animación al entrar en la vista
+      start: "top 80%", // Punto de inicio de la animación (cuando el 80% del viewport alcanza el contenedor)
+      end: "top 20%", // Punto de fin de la animación
+      scrub: true, // La animación sigue el scroll
+    },
+  });
 </script>

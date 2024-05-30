@@ -25,14 +25,16 @@ const card2 = [
 
 <section
   class="bg-tcf-info max-w-screen min-h-screen flex flex-col justify-center px-4 py-20"
+  id="ourDiffeland"
 >
   <div class="justify-center items-center">
-      <h2 class="text-center text-3xl font-bold md:text-4xl mb-8 text-tcf-blue ">
-        Nuestro equipo ¿Qué nos hace diferentes?
-      
-    </div>
+    <h2 class="text-center text-3xl font-bold md:text-4xl mb-8 text-tcf-blue" id="textoDiff">
+      Nuestro equipo ¿Qué nos hace diferentes?
+    </h2>
     <div>
-      <p class="text-center mx-auto text-sm md:text-lg text-[#05000B] max-w-[770px] ">
+      <p
+        class="text-center mx-auto text-sm md:text-lg text-[#05000B] max-w-[770px]" id="parrDif"
+      >
         LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -43,7 +45,10 @@ const card2 = [
       >
         {
           card.map((item) => (
-            <div class="flex  w-[250px]  gap-4 items-center justify-between bg-tcf-blue border rounded-md py-4 px-6 ">
+            <div
+              class="flex  w-[250px]  gap-4 items-center justify-between bg-tcf-blue border rounded-md py-4 px-6 "
+              id="ourDiff"
+            >
               <h1 class="text-center text-xl text-white font-semibold ">
                 + {item.quantity}
               </h1>
@@ -55,7 +60,10 @@ const card2 = [
       <div class="flex flex-col lg:flex-row justify-center items-center gap-8">
         {
           card2.map((item) => (
-            <div class="flex w-[250px] items-center justify-center bg-tcf-blue border rounded-md py-4 px-6">
+            <div
+              class="flex w-[250px] items-center justify-center bg-tcf-blue border rounded-md py-4 px-6"
+              id="ourDifftwo"
+            >
               <p class="text-center text-xl text-white">{item.label}</p>
             </div>
           ))
@@ -64,3 +72,88 @@ const card2 = [
     </div>
   </div>
 </section>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#ourDiff",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#ourDiffeland",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    },
+  );
+  gsap.fromTo(
+    "#ourDifftwo",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#ourDiffeland",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    },
+  );
+  gsap.fromTo(
+    "#textoDiff",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#ourDiffeland",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    },
+  );
+  gsap.fromTo(
+    "#parrDif",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#ourDiffeland",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    },
+  );
+</script>

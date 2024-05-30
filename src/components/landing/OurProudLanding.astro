@@ -2,8 +2,37 @@
 import { Image } from "astro:assets";
 import ourProud from "../../assets/img/ourProud.svg";
 ---
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+  "#ourPro",
+  {
+    opacity: 0,
+    y: 50,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.3, 
+    scrollTrigger: {
+      trigger: "#proudaling",
+      start: "top 80%", 
+      end: "top 20%", 
+      scrub: 1,
+    
+    },
+  },
+  
+);
 
-<section class="flex items-center bg-heroBgImgTeam relative bg-cover  bg-center bg-no-repeat min-h-[60vh] px-4 py-20">
+
+</script>
+
+<section class="flex items-center bg-heroBgImgTeam relative bg-cover  bg-center bg-no-repeat min-h-[60vh] px-4 py-20" id="proudaling">
   <div class="w-full h-full left-0 top-0 bg-black bg-opacity-50 absolute backdrop-blur-sm">
 
   </div>
@@ -12,10 +41,10 @@ import ourProud from "../../assets/img/ourProud.svg";
     class=" flex flex-col-reverse items-center md:flex-row"
     >
     <div class="col-lg-6 w-full flex  justify-center">
-      <Image alt={"ourProud"} src={ourProud} />
+      <Image alt={"ourProud"} src={ourProud} id="imagepro" data-speed=".4"/>
     </div>
       <div>
-        <h1 class=" text-center font-bold text-3xl md:text-4xl text-white">
+        <h1 class=" text-center font-bold text-3xl md:text-4xl text-white" id="ourPro">
           Nos enorgullece impulsar el talento emergente con un enfoque
           inclusivo.
         </h1>

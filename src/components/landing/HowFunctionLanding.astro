@@ -1,25 +1,80 @@
 ---
-import Image from "astro/components/Image.astro"
-import question from "../../assets/img/question-circle-svgrepo-com.svg"
+import Image from "astro/components/Image.astro";
+import question from "../../assets/img/question-circle-svgrepo-com.svg";
 
-const {howContext,howItems} = Astro.props
+const { howContext, howItems } = Astro.props;
 ---
-<section class="min-h-screen  min-w-screen-2xl bg-como-bg bg-cover bg-center flex justify-center contrast-50 flex-wrap">
-   <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-<div class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#f9f9f9]">
+
+<script>
+   import { gsap } from "gsap";
+   import { Flip, ScrollTrigger } from "gsap/all";
+
    
-   <Image src={question} alt="question" class="w-20 h-20" />
-   <h3 class="text-center">¿Como funciona?</h3>
-   <p class="text-xl text-justify w-72">{howContext} </p>
-</div>
-<div class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#b6ebee] bg-opacity-80">
-   <Image src={question} alt="question" class="w-20 h-20 " />
-   <h3 class="text-center">¿Como funciona?</h3>
-   <ul class="w-72">
-      {Array.isArray(howItems) && howItems.length > 0 &&
-      howItems.map((e:any)=>(
-      <li class="list-disc text-xl">{e}</li>
-      ))}
-   </ul>
-</div>
+   gsap.registerPlugin(Flip, ScrollTrigger);
+
+   
+   const cardOne = document.getElementById("cardFirst");
+   const cardTwo = document.getElementById("cardSecond");
+
+   
+   const cards = [cardOne, cardTwo];
+
+   function doFlip() {
+     
+      const state = Flip.getState(cards);
+
+      
+      swap(cards);
+
+     
+      Flip.from(state, {
+         duration: 2,
+         ease: "power1.inOut",
+      });
+   }
+
+  
+   function swap(cards: any) {
+      const container = cards[0].parentNode;
+      for (let i = cards.length - 1; i > 0; i--) {
+         container.insertBefore(cards[i], cards[i - 1]);
+      }
+   }
+
+  
+   ScrollTrigger.create({
+      trigger: "#howfunction",
+      start: "top 80%",
+      end: "bottom 20%", 
+      onEnter: doFlip, 
+      onLeaveBack: doFlip, 
+   });
+</script>
+<section
+   class="min-h-screen min-w-screen-2xl bg-como-bg bg-cover bg-center flex justify-center contrast-50 flex-wrap"
+   id="howfunction"
+>
+   <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+   <div
+      class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#f9f9f9]"
+      id="cardFirst"
+   >
+      <Image src={question} alt="question" class="w-20 h-20" />
+      <h3 class="text-center">¿Como funciona?</h3>
+      <p class="text-xl text-justify w-72">{howContext}</p>
+   </div>
+   <div
+      class="flex flex-col relative z-10 justify-center w-[585px] h-[726px] my-10 items-center bg-[#b6ebee] bg-opacity-80"
+      id="cardSecond"
+   >
+      <Image src={question} alt="question" class="w-20 h-20" />
+      <h3 class="text-center">¿Como funciona?</h3>
+      <ul class="w-72">
+         {
+            Array.isArray(howItems) &&
+               howItems.length > 0 &&
+               howItems.map((e: any) => <li class="list-disc text-xl">{e}</li>)
+         }
+      </ul>
+   </div>
 </section>

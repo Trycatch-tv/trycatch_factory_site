@@ -1,14 +1,14 @@
+---
+
+---
+
+<div class="flex flex-col md:flex-row gap-10 px-4" id="form">
+
 <div class="flex max-w-screen-xl mx-auto flex-col md:flex-row gap-10 px-4">
-  <div class="container-alert fixed top-5 right-5 z-50"></div>
-  <article class="flex flex-col items-center justify-center">
-    <h1
-      class="font-bold text-3xl inline-block w-full md:text-4xl text-start mb-8"
-    >
-      Dejanos tus datos
-    </h1>
-    <p class="text-tcf-blue inline-block text-start text-base md:text-lg">
-      Nos comunicaremos contigo para brindarte la ayuda que necesitas
-    </p>
+
+  <article class="flex flex-col  items-center  justify-center">
+    <h1 class="font-bold text-3xl inline-block w-full md:text-4xl text-start mb-8">Dejanos tus datos </h1>
+    <p class="text-tcf-blue inline-block text-start text-base md:text-lg"> Nos comunicaremos contigo para brindarte la ayuda que necesitas</p>
   </article>
   <div
     class="relative bg-white rounded-lg border shadow-lg mx-auto px-6 py-8 max-w-screen-xl justify-center"
@@ -164,6 +164,8 @@
 <script>
   import { sendData } from "../../service/postData.js";
   const form = document.getElementById("form");
+   import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   // componentes de alerta
   const successComponent=`<div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
@@ -205,6 +207,7 @@
       let dataPost = Object.fromEntries(formData.entries());
       document.getElementsByClassName("btn-submit")[0].innerHTML = loadingComponent;
 
+
       //envio formulario
       sendData(dataPost)
         .then((response) => {
@@ -225,4 +228,31 @@
         });
     });
   }
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#form",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.3, // Añade un retardo entre cada tarjeta
+      scrollTrigger: {
+        trigger: "#form",
+        start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+        end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
+        scrub: 1, // La animación sigue el scroll de manera suave
+       
+      },
+    },
+  );
 </script>
+
+  
+ 
+
+
