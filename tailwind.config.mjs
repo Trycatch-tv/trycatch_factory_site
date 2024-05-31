@@ -13,14 +13,17 @@ export default {
         'content': 'content',
       },
       backgroundImage: {
-        'heroBgImg': 'url("/public/img/HeroImg.jpg")',
-        'heroBgImgService':'url("/public/img/heroServices.png")',
-        'weOfferBgServices':'url("/public/img/offerServiceBG.jpg")',
-        'custom-bg': "url('/public/img/fondo_portafolio-inventario.jpg')",
-        'como-bg':"url('/public/img/ux.jpg')",
-        'heroBgImgTeam': 'url("/public/img/team.jpg")',
-        'heroBgImgResources': 'url("/public/img/ToolsImage.webp")',
-        'contactbg':'url("/public/img/contact.jpg")',
+        'heroBgImg': 'url("/public/img/SLIDE.webp")',
+        'heroBgImgService':'url("/public/img/SERVICIOS.webp")',
+        'weOfferBgServices':'url("/public/img/QUEOFRECEMOS.webp")',
+        'custom-bg': "url('/public/img/PORTAFOLIO.webp')",
+        'como-bg':"url('/public/img/COMOFUNCIONA.webp')",
+        'heroBgImgTeam': 'url("/public/img/EQUIPO.webp")',
+        'heroBgImgResources': 'url("/public/img/COMOFUNCIONA.webp")',
+        'contactbg':'url("/public/img/PAGECONTACTO.webp")',
+        'contact':'url(/public/img/LLAMADA.webp)',
+        'procesos':'url(/public/img/PROCESOS.webp)',
+        'proudTeam':'url(/public/img/INCLUSION.webp)'
 
       },
       colors: {
