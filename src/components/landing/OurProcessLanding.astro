@@ -24,163 +24,135 @@ const data = [
   },
 ];
 ---
+
 <script>
   import { gsap } from "gsap";
-
 
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-  if(window.innerWidth> 768){
-  gsap.fromTo(
-    "#left",
-    {
-      x: -100,
-      opacity: 0,
-    },
-    {
-      x:0,
-      opacity: 1,
-      duration: 1.5,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: "#left",
-        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  if (window.innerWidth > 768) {
+    gsap.fromTo(
+      "#left",
+      {
+        x: -100,
+        opacity: 0,
       },
-    },
-  );
-  gsap.fromTo(
-    "#right",
-    {
-      x: 100,
-      opacity: 0,
-    },
-    {
-      x:0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#right",
-        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#left",
+          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
       },
-    },
-  );
-  }else{
-     gsap.fromTo(
-    "#left",
-    {
-      y: -100,
-      opacity: 0,
-    },
-    {
-      y:0,
-      opacity: 1,
-      duration: 1.5,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: "#left",
-        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    );
+    gsap.fromTo(
+      "#right",
+      {
+        x: 100,
+        opacity: 0,
       },
-    },
-  );
-  gsap.fromTo(
-    "#right",
-    {
-      y: -100,
-      opacity: 0,
-    },
-    {
-      y:0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#right",
-        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#right",
+          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
       },
-    },
-  );
+    );
+  } else {
+    gsap.fromTo(
+      "#left",
+      {
+        y: -100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#left",
+          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
+      },
+    );
+    gsap.fromTo(
+      "#right",
+      {
+        y: -100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#right",
+          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
+      },
+    );
   }
 </script>
-<div class="flex flex-col justify-center bg-gray-50 px-4 py-16">
-
-<div class="flex flex-col justify-center bg-gray-50 px-4 py-8 sm:py-16">
-
-  <div class="flex justify-center flex-grow max-w-screen-xl mx-auto ">
-    <div class="mt-2 w-12/12 h-auto max-sm:max-w-screen-sm">
-      <div
-        class="flex flex-col gap-10 flex-grow max-sm:flex-col max-sm:max-w-screen-sm"
-      >
-        <!---Espacio para imagen o video -->
-        <article class="flex flex-col-reverse lg:flex-row  items-center">
-          <div
-            class="w-full flex justify-center items-center "
+<div class="flex relative flex-col justify-center bg-procesos bg-no-repeat bg-cover bg-center py-16">
+  <div
+    class="w-full h-full top-0 absolute inset-0 backdrop-blur-sm"
+  >
+  </div>
+  <div
+    class="flex relative flex-col justify-center px-4 py-8 sm:py-16"
+  >
+    <div class="flex justify-center flex-grow max-w-screen-xl mx-auto">
+      <div class="mt-2 w-12/12 h-auto max-sm:max-w-screen-sm">
+        <div
+          class="flex flex-col gap-10 flex-grow max-sm:flex-col max-sm:max-w-screen-sm"
+        >
+          <!---Espacio para imagen o video -->
+          <article
+            class="flex flex-col-reverse lg:flex-row items-center bg-black/70 p-8"
           >
-            <Image
-              src={process}
-              class="size-96 rounded-md max-sm:p-5 max-sm:rounded-[2rem]"
-              alt="TryCatch.tv process"
-              id="left"
-            />
-          </div>
-
-          <div
-            class="flex flex-col gap-10 w-full md:1/2"
-          >
-            <h2
-              class="font-bold text-3xl md:text-4xl fon-inter mt-8 text-[#172554] max-sm:text-center md:text-center max-md:text-center "
-            >
-              {data[0].title}
-            </h2>
-            <div class="flex flex-col gap-10 ">
-              {
-                data[0].items.map((item, index) => (
-                  <article class="flex gap-2">
-                    <div >
-                      <p class="text-5xl font-bold text-tcf-blue">{index + 1}.</p>
-                    </div>
-                    <div >
-                      <p
-                        class="text-[#05000B] text-sm md:text-lg"
-                        transition:name=""
-                      >
-                        {item}
-                      </p>
-                    </div>
-                  </article>
-                ))
-              }
+            <div class="w-full flex justify-center items-center">
+              <Image
+                src={process}
+                class="size-96 rounded-md max-sm:p-5 max-sm:rounded-[2rem]"
+                alt="TryCatch.tv process"
+                id="left"
+              />
             </div>
-          </div>
-        </article>
-        <article class="flex flex-col lg:flex-row items-center">
-            <div
-              class="flex  flex-col gap-10 ml-10 w-1/2 mb-8 max-sm:w-full max-sm:ml-0 md:w-full max-md:w-full md:ml-0 xl:ml-0 max-md:ml-0"
-            >
+
+            <div class="flex flex-col gap-10 w-full md:1/2">
               <h2
-                class="font-bold text-3xl md:text-4xl fon-inter mt-8 ml-2 text-[#172554] max-sm:text-center md:text-center max-md:text-center"
+                class="font-bold text-3xl md:text-4xl fon-inter mt-8 text-white max-sm:text-center md:text-center max-md:text-center"
               >
-                {data[1].title}
+                {data[0].title}
               </h2>
-              <div class="flex flex-col gap-10 ">
+              <div class="flex flex-col gap-10">
                 {
-                  data[1].items.map((item, index) => (
+                  data[0].items.map((item, index) => (
                     <article class="flex gap-2">
                       <div>
-                        <p class=" text-tcf-blue">
-                          <CircleDot size="25" />
+                        <p class="text-5xl font-bold text-white">
+                          {index + 1}.
                         </p>
                       </div>
                       <div>
                         <p
-                          class="text-[#05000B] text-sm md:text-lg"
+                          class="text-white text-sm md:text-lg"
                           transition:name=""
                         >
                           {item}
@@ -190,7 +162,40 @@ const data = [
                   ))
                 }
               </div>
-             
+            </div>
+          </article>
+          <article
+            class="flex flex-col lg:flex-row items-center bg-black/70 p-8"
+          >
+            <div
+              class="flex flex-col gap-10 ml-10 w-1/2 mb-8 max-sm:w-full max-sm:ml-0 md:w-full max-md:w-full md:ml-0 xl:ml-0 max-md:ml-0"
+            >
+              <h2
+                class="font-bold text-3xl md:text-4xl fon-inter mt-8 ml-2 text-white max-sm:text-center md:text-center max-md:text-center"
+              >
+                {data[1].title}
+              </h2>
+              <div class="flex flex-col gap-10">
+                {
+                  data[1].items.map((item, index) => (
+                    <article class="flex gap-2">
+                      <div>
+                        <p class=" text-white">
+                          <CircleDot size="25" />
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-white text-sm md:text-lg"
+                          transition:name=""
+                        >
+                          {item}
+                        </p>
+                      </div>
+                    </article>
+                  ))
+                }
+              </div>
             </div>
             <!---Espacio para imagen o video -->
             <div
@@ -203,7 +208,8 @@ const data = [
                 id="right"
               />
             </div>
-        </article>
+          </article>
+        </div>
       </div>
     </div>
   </div>

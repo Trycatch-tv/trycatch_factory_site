@@ -53,32 +53,32 @@ const { levelEstructureTeam, desarrollo } = Astro.props;
   <!--div class="absolute bg-black/30 h-full w-full top-0 pt-8"></!--div> -->
 
   <div>
-    <h1 class="text-5xl text-center text-white">¿Qué podemos ofrecerte?</h1>
+    <h1 class="text-5xl text-center text-white font-bold">¿Qué podemos ofrecerte?</h1>
     <div
       class="flex flex-col justify-center items-center gap-40 p-10 md:flex-row"
     >
       <div
-        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]" id="divone"
+        class="justify-star p-4 border-4 bg-white/70 rounded-xl w-50 h-[600px]" id="divone"
       >
         <h2
           class="text-tcf-blue font-extrabold items-center text-xl p-4 h-[100px]"
         >
           A nivel estructural/equipo
         </h2>
-        <ul class="list-disc p-2">
-          {levelEstructureTeam.map((e: any) => <li>{e}</li>)}
+        <ul class="list-disc p-4">
+          {levelEstructureTeam.map((e: any) => <li class="list-disc text-xl p-2">{e}</li>)}
         </ul>
       </div>
       <div
-        class="justify-star p-4 border-4 bg-white/60 rounded-xl w-[320px] h-[600px]" id="divtwo"
+        class="justify-star p-4 border-4 bg-white/70 rounded-xl w-50 h-[600px]" id="divtwo"
       >
         <h2
           class="text-tcf-blue font-extrabold items-center text-xl p-4 h-[100px]"
         >
           Desarrollo
         </h2>
-        <ul class="list-disc p-2">
-          {desarrollo.map((e: any) => <li>{e}</li>)}
+        <ul class="list-disc p-4">
+          {desarrollo.map((e: any) => <li class="list-disc text-xl p-2">{e}</li>)}
         </ul>
       </div>
     </div>

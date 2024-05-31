@@ -34,7 +34,11 @@ const { pathname } = Astro.url;
     <Navbar />
     <slot />
 
-    <section class="py-20 mx-auto bg-tcf-gray-l">
+    <section class="py-20 relative mx-auto bg-contact bg-cover bg-no-repeat bg-center">
+      <div
+    class="w-full h-full top-0 absolute backdrop-blur-sm"
+  >
+  </div>
       <ModalContactLanding />
     </section>
 

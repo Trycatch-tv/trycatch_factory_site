@@ -5,20 +5,20 @@
 <div class="container-alert fixed top-40 left-1/2 w-full max-w-screen-md px-4 translate-x-[-50%] right-5 z-50">
   
 </div>
-<div class="flex flex-col md:flex-row gap-10 px-4" id="form">
-  <div class="flex max-w-screen-xl mx-auto flex-col md:flex-row gap-10 px-4">
-    <article class="flex flex-col items-center justify-center">
+<div class="flex flex-col  gap-10 px-4" id="form">
+  <div class="flex max-w-screen-2xl mx-auto flex-col lg:flex-row gap-10 px-4">
+    <article class="flex flex-col max-w-screen-md items-center justify-center">
       <h1
-        class="font-bold text-3xl inline-block w-full md:text-4xl text-start mb-8"
+        class="font-bold text-3xl text-white inline-block w-full md:text-4xl text-start mb-8"
       >
         Dejanos tus datos
       </h1>
-      <p class="text-tcf-blue inline-block text-start text-base md:text-lg">
+      <p class="text-white inline-block text-base text-start  md:text-3xl">
         Nos comunicaremos contigo para brindarte la ayuda que necesitas
       </p>
     </article>
     <div
-      class="relative bg-white rounded-lg border shadow-lg mx-auto px-6 py-8 max-w-screen-xl justify-center"
+      class="relative  rounded-lg shadow-lg mx-auto px-6 py-8 max-w-screen-xl bg-gray-50 justify-center"
     >
       <form id="contactForm" class="overflow-y-visible">
         <div class="flex flex-col sm:flex-row sm:gap-2">
@@ -33,7 +33,7 @@
             <input
               required
               name="nombre"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder="Nombre"
@@ -51,7 +51,7 @@
             <input
               required
               name="apellido"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
               placeholder="Apellidos"
@@ -70,7 +70,7 @@
             <input
               required
               name="email"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
               type="email"
               placeholder="example@mail.com"
@@ -80,8 +80,8 @@
         </div>
 
         <!-- Input celular -->
-        <div class="flex flex-col items-center sm:flex-row sm:gap-2">
-          <div class="w-full md:w-full mb-4 md:mb-6 lg:w-1/3">
+        <div class="w-full flex flex-col sm:flex-row sm:gap-2">
+          <div class="w-full  mb-4 md:mb-6">
             <label
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
@@ -91,7 +91,7 @@
             <input
               required
               name="celular"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               placeholder="+57 300 123 4567"
@@ -99,7 +99,7 @@
           </div>
 
           <!-- Input empresa -->
-          <div class="w-full md:w-full mb-4 md:mb-6 lg:w-1/3">
+          <div class="w-full md:w-full mb-4 md:mb-6 ">
             <label
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
@@ -109,30 +109,30 @@
             <input
               required
               name="nombre_empresa"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               placeholder="Nombre de la empresa"
             />
           </div>
 
-          <!-- Input ciudad -->
-          <div class="w-full md:w-full mb-4 md:mb-6 lg:w-1/3">
-            <label
-              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
-              for="grid-zip"
-            >
-              Ciudad
-            </label>
-            <input
-              required
-              name="ciudad"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
-              type="text"
-              placeholder="Ciudad"
-            />
-          </div>
+        </div>
+        <!-- Input ciudad -->
+        <div class="w-full md:w-full mb-4 md:mb-6">
+          <label
+            class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
+            for="grid-zip"
+          >
+            Ciudad
+          </label>
+          <input
+            required
+            name="ciudad"
+            class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-zip"
+            type="text"
+            placeholder="Ciudad"
+          />
         </div>
 
         <!-- Text area -->
@@ -147,7 +147,7 @@
             <textarea
               required
               name="comentarios"
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none resize-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
               placeholder="escribe aquí"></textarea>
             <p class="text-gray-600 text-xs italic"></p>
@@ -168,7 +168,7 @@
     </div>
   </div>
 
-  <script>
+  <script >
     import { sendData } from "../../service/postData.js";
     const form = document.getElementById("contactForm");
     import { gsap } from "gsap";
