@@ -9,106 +9,23 @@ const data = [
     title: "Proceso",
     img: "/public/assets/svg/process.svg",
     items: [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
+      "Análisis y Planificación: Evaluamos tus necesidades y desarrollamos un plan detallado para tu proyecto.",
+      "Desarrollo y Pruebas: Creamos y probamos tu software, asegurando la calidad y funcionalidad en cada etapa.",
+      "Implementación y Soporte: Desplegamos tu solución y brindamos soporte continuo para garantizar su éxito.",
     ],
   },
   {
     title: "Metodología",
     items: [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, beatae ipsum ex, consequuntur voluptate nemo labore alias, placeat aliquam ratione ab! Obcaecati, asperiores quisquam! Cum reiciendis ex quam iure nemo.",
+      "seguimos una metodología ágil para asegurar la eficiencia y flexibilidad en nuestros proyectos. Nos enfocamos en entregas incrementales, colaboración constante y mejora continua.",
+      "La comunicación es importante para nosotros, es por eso que tenemos un proceso transversal que nos permite ofrecer una experiencia única y una comunicación del estado del proceso constante con nuestros cliente.",
+      
     ],
   },
 ];
 ---
 
-<script>
-  import { gsap } from "gsap";
 
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-  if (window.innerWidth > 768) {
-    gsap.fromTo(
-      "#left",
-      {
-        x: -100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#left",
-          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        },
-      },
-    );
-    gsap.fromTo(
-      "#right",
-      {
-        x: 100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#right",
-          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        },
-      },
-    );
-  } else {
-    gsap.fromTo(
-      "#left",
-      {
-        y: -100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#left",
-          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        },
-      },
-    );
-    gsap.fromTo(
-      "#right",
-      {
-        y: -100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#right",
-          start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-          end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-          scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        },
-      },
-    );
-  }
-</script>
 <div class="flex relative flex-col justify-center bg-procesos bg-no-repeat bg-cover bg-center py-16">
   <div
     class="w-full h-full top-0 absolute inset-0 backdrop-blur-sm"
@@ -214,3 +131,42 @@ const data = [
     </div>
   </div>
 </div>
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  const animateElement = (selector:any, direction:any) => {
+  const isHorizontal = window.innerWidth > 768;
+  gsap.fromTo(
+    selector,
+    {
+      [isHorizontal ? 'x' : 'y']: direction * 100,
+      opacity: 0,
+    },
+    {
+      [isHorizontal ? 'x' : 'y']: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: selector,
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+      },
+    }
+  );
+};
+
+if (window.innerWidth > 768) {
+  animateElement("#left", -1);
+  animateElement("#right", 1);
+} else {
+  animateElement("#left", -1);
+  animateElement("#right", -1);
+}
+</script>
