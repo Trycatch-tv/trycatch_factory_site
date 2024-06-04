@@ -21,6 +21,10 @@ const card2 = [
     label: "Teletrabajo",
   },
 ];
+const content = {
+  title:"Nuestro equipo¿Qué nos hace diferentes?",
+  description:"estamos orgullosos de contar con un equipo diverso y talentoso que nos distingue en la industria. Nuestra fuerza radica en la variedad de experiencias y perspectivas que cada miembro aporta, permitiéndonos ofrecer soluciones innovadoras y efectivas a nuestros clientes.",
+}
 ---
 
 <section
@@ -29,14 +33,13 @@ const card2 = [
 >
   <div class="justify-center items-center">
     <h2 class="text-center text-3xl font-bold md:text-4xl mb-8 text-tcf-blue" id="textoDiff">
-      Nuestro equipo ¿Qué nos hace diferentes?
+     {content.title}
     </h2>
     <div>
       <p
         class="text-center mx-auto text-sm md:text-lg text-[#05000B] max-w-[770px]" id="parrDif"
       >
-        LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       {content.description}
       </p>
     </div>
     <div class="mt-24">
