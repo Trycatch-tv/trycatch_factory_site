@@ -10,13 +10,28 @@ const navbarItems = [
     target: "_self",
     subItems: [
       {
-        name: "Desarrollo Web",
-        path: "/services/desarrollo-web",
+        name: "Desarrollo web a la medida",
+        path: "/services/desarrollo-software",
         target: "_self",
       },
       {
-        name: "Desarrollo Mobile",
-        path: "/services/desarrollo-mobile",
+        name: "Consultoría Tecnológica",
+        path: "/services/consultoria-tecnologia",
+        target: "_self",
+      },
+      {
+        name: "Mantenimiento y Actualización",
+        path: "/services/mantenimiento-actualizado",
+        target: "_self",
+      },
+      {
+        name: "Integraciones",
+        path: "/services/integraciones",
+        target: "_self",
+      },
+      {
+        name: "Landing Page",
+        path: "/services/landing-page",
         target: "_self",
       },
     ],
@@ -52,33 +67,6 @@ const navbarItems = [
   },
 ];
 ---
-
-<script is:inline>
-  function toggleMenu() {
-    if (!document.getElementById("navbar-sticky")) return;
-
-    const menu = document.getElementById("navbar-sticky");
-    menu.classList.toggle("hidden");
-  }
-  function showSubmenu(submenu) {
-    submenu.classList.remove("hidden");
-  }
-
-  function hideSubmenu(submenu) {
-    submenu.classList.add("hidden");
-  }
-  function openModal() {
-    document.getElementById("myModal").classList.remove("hidden");
-    document.getElementById("myModal").classList.add("flex");
-
-  }
-  window.onclick = function(event) {
-    const modal = document.getElementById("myModal");
-    if (event.target === modal) {
-      modal.classList.add("hidden");
-    }
-  }
-</script>
 
 
 <nav class="bg-black/70 bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2">
@@ -175,6 +163,33 @@ const navbarItems = [
     </div>
   </div>
 </nav>
+
+<script is:inline>
+  function toggleMenu() {
+    if (!document.getElementById("navbar-sticky")) return;
+
+    const menu = document.getElementById("navbar-sticky");
+    menu?.classList.toggle("hidden");
+  }
+  function showSubmenu(submenu) {
+    submenu.classList.remove("hidden");
+  }
+
+  function hideSubmenu(submenu) {
+    submenu.classList.add("hidden");
+  }
+  function openModal() {
+    document.getElementById("myModal")?.classList.remove("hidden");
+    document.getElementById("myModal")?.classList.add("flex");
+
+  }
+  window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  }
+</script>
 
 <style>
   .navbar-submenu:hover .absolute,

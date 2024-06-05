@@ -1,129 +1,10 @@
+<script>
+  import data from "../../content/services/service.json";
 
-<section class="flex flex-col justify-center min-h-screen" id="services">
-
-<section class="flex flex-col justify-center mt-5 pt-5 sm:min-h-screen">
-
-  <div class="Services flex flex-col items-center">
-    <h2 class="text-2xl md:text-4xl font-bold text-tcf-blue">
-      Nuestros servicios
-    </h2>
-    <div
-      class="container py-3 px-0 flex md:w-100 items-center justify-around m-0"
-    >
-      <div class="">
-        <svg
-          onclick="handlePrevPage()"
-          id="prevSVG"
-          class="w-7 h-7 mr-10"
-          width="20px"
-          height="20px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.1795 3.26875C15.7889 2.87823 15.1558 2.87823 14.7652 3.26875L8.12078 9.91322C6.94952 11.0845 6.94916 12.9833 8.11996 14.155L14.6903 20.7304C15.0808 21.121 15.714 21.121 16.1045 20.7304C16.495 20.3399 16.495 19.7067 16.1045 19.3162L9.53246 12.7442C9.14194 12.3536 9.14194 11.7205 9.53246 11.33L16.1795 4.68297C16.57 4.29244 16.57 3.65928 16.1795 3.26875Z"
-            fill="#0F0F0F"></path>
-        </svg>
-      </div>
-      <div
-        class="services-container flex flex-col w-auto h-auto md:flex-row gap-3 rounded-2xl"
-      >
-        <!-- La lista de servicios se renderizará aquí -->
-      </div>
-      <div class="">
-        <svg
-          onclick="handleNextPage()"
-          id="nextSVG"
-          class="w-6 h-6 ml-10"
-          fill="#000000"
-          height="20px"
-          width="20px"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 24 24"
-          xml:space="preserve"
-        >
-          <g id="next">
-            <g>
-              <polygon
-                points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12"
-              ></polygon>
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div class="pagination-container flex w-100 justify-center mt-0 p-0">
-      <span
-        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
-        onclick="handlePaginationClick(1)"
-      >
-      <!--
-        <button
-          id="circular-btn"
-          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
-        ></button>
-      </span>
-      <span
-        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
-        onclick="handlePaginationClick(2)"
-      >
-        <button
-          id="circular-btn2"
-          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
-        ></button>
-      </span>
-      <span
-        class="pagination-dot ml-10 mr-10 h-4 cursor-pointer disable"
-        onclick="handlePaginationClick(3)"
-      >
-        <button
-          id="circular-btn3"
-          class="w-2 h-2 bg-gray-300 rounded-full focus:outline-none focus:bg-black"
-        ></button>
-    -->
-      </span>
-    </div>
-  </div>
-</section>
-
-<script is:inline>
-  const servicesItems = [
-    {
-      imageService: "public/img/servicesExample.jpg ",
-      titleService: "Desarrollo de Software a la Medida",
-      descriptionService:
-        "Creamos aplicaciones y sistemas personalizados que se adaptan perfectamente a tus necesidades y objetivos empresariales.",
-    },
-    {
-      imageService: "public/img/servicesExample.jpg",
-      titleService: "Consultoría Tecnológica",
-      descriptionService:
-        "Te ayudamos a tomar decisiones informadas sobre tecnología y estrategias de TI para optimizar tus operaciones y mejorar tu rendimiento.",
-    },
-    {
-      imageService: "public/img/servicesExample.jpg",
-      titleService: "Mantenimiento y Actualización",
-      descriptionService:
-        "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
-    },
-    {
-      imageService: "public/img/servicesExample.jpg",
-      titleService: "Integraciones",
-      descriptionService:
-        "Optimiza la eficiencia de tu negocio conectando tus plataformas y aplicaciones de manera fluida. Facilitamos la integración de sistemas ERP, CRM y otras aplicaciones empresariales como Salesforce y Shopify para asegurar una operación cohesiva y sin interrupciones.",
-    },
-    {
-      imageService: "public/img/servicesExample.jpg",
-      titleService: "Landing Page",
-      descriptionService:
-        "Aumenta tus conversiones y captación de clientes con landing pages diseñadas a medida. Desarrollamos páginas de aterrizaje optimizadas para maximizar tu impacto en campañas de marketing y mejorar la experiencia de usuario.",
-    },
-    
-  ];
-
+  const servicesItems = Object.values(data.services).flatMap(service => Object.values(service))
+  const buttonPrev: any = document.getElementById("prevSVG");
+  const buttonNext: any = document.getElementById("nextSVG");
+  const spanPag: any = document.getElementById("spanPag");
   let actualPage = 1;
   let showQuantity = 1;
   function handleNextPage() {
@@ -151,7 +32,7 @@
   }
 
   function renderServices() {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 1024) {
       showQuantity = 3; // Pantallas de escritorio grandes
     } else if (window.innerWidth > 640) {
       showQuantity = 1; // Pantallas de tablet
@@ -166,11 +47,15 @@
       valueOneSlice,
       valueTwoSlice,
     );
-    const servicesContainer = document.querySelector(".services-container");
+    const servicesContainer: any = document.querySelector(
+      ".services-container",
+    );
     servicesContainer.innerHTML = "";
 
-    finalServicesArray.forEach((service, index) => {
+    finalServicesArray.forEach((service:any) => {
+      const { title, imageService, path, description } = service
       const serviceElement = document.createElement("div");
+
       serviceElement.classList.add(
         "flex-1",
         "shadow",
@@ -187,28 +72,32 @@
         "lg:max-w-screen-sm",
         "lg:px-15",
         "lg:w-[294px]",
-        "sm:w-auto"
+        "sm:w-auto",
       );
       serviceElement.id = "service";
       serviceElement.innerHTML = `
                 <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
-                    <img src="${service.imageService}" alt="Imagen del servicio" class="block w-20 h-20 object-cover rounded-full mb-2">
+                    <img src="${imageService}" alt="Imagen del servicio" class="block w-20 h-20 object-cover rounded-full mb-2">
                 </div>
-                <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${service.titleService}</h3>
-                <p class="text-center text-tcf-blue text-sm">${service.descriptionService}</p>
+                <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${title}</h3>
+                <p class="text-center text-tcf-blue text-sm">${description}</p>
                 <div class="flex justify-center">
-                    <button class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 ">Ver más</button>
+                    <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${path}>Ver más</a>
                 </div>
             `;
       servicesContainer.appendChild(serviceElement);
     });
   }
 
-  function handlePaginationClick(pageNumber) {
+  function handlePaginationClick(pageNumber: any) {
     actualPage = pageNumber;
     renderServices();
   }
-
+  buttonPrev.addEventListener("click", handlePrevPage);
+  buttonNext.addEventListener("click", handleNextPage);
+  spanPag.addEventListener("click", () => {
+    handlePaginationClick(3);
+  });
   window.addEventListener("resize", handleResize);
   function handleResize() {
     renderServices();
@@ -217,26 +106,90 @@
     handleResize();
   };
 </script>
-<script>
-  import { gsap } from "gsap";
+<section class="flex flex-col justify-center min-h-screen" id="services">
+  <section class="flex flex-col justify-center mt-5 pt-5 sm:min-h-screen">
+    <div class="Services flex flex-col items-center">
+      <h2 class="text-2xl md:text-4xl font-bold text-tcf-blue">
+        Nuestros servicios
+      </h2>
+      <div
+        class="container py-3 px-0 flex md:w-100 items-center justify-around m-0"
+      >
+        <div class="">
+          <svg
+            id="prevSVG"
+            class="w-7 h-7 mr-10"
+            width="20px"
+            height="20px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.1795 3.26875C15.7889 2.87823 15.1558 2.87823 14.7652 3.26875L8.12078 9.91322C6.94952 11.0845 6.94916 12.9833 8.11996 14.155L14.6903 20.7304C15.0808 21.121 15.714 21.121 16.1045 20.7304C16.495 20.3399 16.495 19.7067 16.1045 19.3162L9.53246 12.7442C9.14194 12.3536 9.14194 11.7205 9.53246 11.33L16.1795 4.68297C16.57 4.29244 16.57 3.65928 16.1795 3.26875Z"
+              fill="#0F0F0F"></path>
+          </svg>
+        </div>
+        <div
+          class="services-container flex flex-col w-auto h-auto md:flex-row gap-3 rounded-2xl"
+        >
+          <!-- La lista de servicios se renderizará aquí -->
+        </div>
+        <div class="">
+          <svg
+            id="nextSVG"
+            class="w-6 h-6 ml-10"
+            fill="#000000"
+            height="20px"
+            width="20px"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 24 24"
+            xml:space="preserve"
+          >
+            <g id="next">
+              <g>
+                <polygon
+                  points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12"
+                ></polygon>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="pagination-container flex w-100 justify-center mt-0 p-0">
+        <span
+          class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
+          id="spanPag"
+          onclick="handlePaginationClick(1)"
+        >
+        </span>
+      </div>
+    </div>
+  </section>
 
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  <script>
+    import { gsap } from "gsap";
 
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  const card = document.querySelector("#services");
-  gsap.from(card, {
-    duration: 1,
-  opacity: 0,
-  y: 50,
-  stagger: 0.2,
-  ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#services", // Elemento que disparará la animación al entrar en la vista
-      start: "top 80%", // Punto de inicio de la animación (cuando el 80% del viewport alcanza el contenedor)
-      end: "top 20%", // Punto de fin de la animación
-      scrub: true, // La animación sigue el scroll
-    },
-  });
-</script>
+    import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    const card = document.querySelector("#services");
+    gsap.from(card, {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#services", // Elemento que disparará la animación al entrar en la vista
+        start: "top 80%", // Punto de inicio de la animación (cuando el 80% del viewport alcanza el contenedor)
+        end: "top 20%", // Punto de fin de la animación
+        scrub: true, // La animación sigue el scroll
+      },
+    });
+  </script>
+</section>
