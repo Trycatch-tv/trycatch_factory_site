@@ -9,20 +9,20 @@ const data = {
   title: "Preguntas Frecuentes",
   faq: [
     {
-      question: "Pregunta 1",
-      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+      question: "¿Qué servicios ofrece TryCatch Factory?",
+      answer: "Ofrecemos desarrollo de software a medida, consultoría tecnológica, mantenimiento y actualización, integración de sistemas y más.",
     },
     {
-      question: "Pregunta 2",
-      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+      question: "¿Cómo es el proceso de desarrollo de un proyecto?",
+      answer: "Nuestro proceso incluye análisis y planificación, desarrollo y pruebas, y finalmente, implementación y soporte.",
     },
     {
-      question: "Pregunta 3",
-      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+      question: "¿Qué tecnologías utilizan?",
+      answer: "Trabajamos con tecnologías de vanguardia como React, Node.js, Java, AWS, entre otras.",
     },
     {
-      question: "Pregunta 4",
-      answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+      question: "¿Cómo puedo ponerme en contacto para una consulta?",
+      answer: "Puedes contactarnos a través del formulario en nuestra página web o por correo electrónico a ventas@trycatchfactory.com.",
     },
   ],
 };
@@ -36,33 +36,7 @@ data.faq.forEach((item) => {
 });
 ---
 
-<script>
-  import { gsap } from "gsap";
 
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-  gsap.fromTo(
-    "#question",
-    {
-      x: -10,
-      opacity: 0,
-    },
-    {
-      y: -100,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#question",
-        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
-        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      },
-    },
-  );
-</script>
 <section class="flex flex-col justify-center min-h-screen w-full" id="question">
   <div class="flex items-center justify-center flex-col gap-y-2 py-5">
     <h2 class="text-[#172554] text-2xl md:text-4xl font-bold pb-3">
@@ -108,6 +82,31 @@ data.faq.forEach((item) => {
 </section>
 
 <script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  gsap.fromTo(
+    "#question",
+    {
+      x: -10,
+      opacity: 0,
+    },
+    {
+      y: -100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#question",
+        start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
+        end: "top 20%", // End the animation when the top of the box hits 20% from the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    },
+  );
   window.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".question-btn");
 
