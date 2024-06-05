@@ -57,6 +57,8 @@
       const serviceElement = document.createElement("div");
 
       serviceElement.classList.add(
+        "flex",
+        "flex-col",
         "flex-1",
         "shadow",
         "border",
@@ -71,16 +73,16 @@
         "md:p-2",
         "lg:max-w-screen-sm",
         "lg:px-15",
-        "lg:w-[294px]",
+        "lg:w-[370px]",
         "sm:w-auto",
       );
       serviceElement.id = "service";
       serviceElement.innerHTML = `
-                <div class="flex justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
+                <div class="flex  justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
                     <img src="${imageService}" alt="Imagen del servicio" class="block w-20 h-20 object-cover rounded-full mb-2">
                 </div>
                 <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${title}</h3>
-                <p class="text-center text-tcf-blue text-sm">${description}</p>
+                <p class="flex-grow text-center text-tcf-blue text-sm">${description}</p>
                 <div class="flex justify-center">
                     <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${path}>Ver más</a>
                 </div>
