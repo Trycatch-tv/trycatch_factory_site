@@ -1,0 +1,56 @@
+---
+const { frontmatter } = Astro.props;
+import Footer from "../components/global/Footer.astro";
+import Navbar from "../components/global/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.8, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/svg+xml" href="/nibble.png" />
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-white dark:bg-tc-black-l mt-20 font-sans">
+    <Navbar />
+    <div
+      class="max-w-4xl mx-auto bg-tc-gray-l dark:bg-white pb-16 px-8 rounded-md shadow-lg pt-28"
+    >
+      <div class="relative h-96 overflow-hidden rounded-md shadow-inner mb-8">
+        <img
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+        />
+      </div>
+
+      <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
+      <span class="block text-md text-tc-black-l mb-8"
+        >Autor {frontmatter.author} - {
+          new Date(frontmatter.date).toLocaleDateString("es-CO", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }</span
+      >
+      <div class="border-b-2 border-gray-200 mb-8"></div>
+      <div class="prose dark:prose-dark max-w-none">
+        <slot />
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+  html {
+    font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
+  }
+</style>

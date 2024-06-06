@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BlogLayoutLanding.astro";
+const allPosts = await Astro.glob("./blog/*.md");
+---
+
+<BaseLayout title={`Blog`}>
+  <div
+    class="max-w-4xl mx-auto my-20 p-8 bg-tc-black dark:bg-white rounded-md shadow-lg"
+  >
+    <h1 class="text-4xl mb-4 font-bold text-white dark:text-tc-black">
+      TryCatch.tv | Blog
+    </h1>
+    <div class="border-b-2 border-tc-black-l mb-8"></div>
+    <h2 class="text-2xl mb-8 text-white dark:text-tc-black-l">
+      Últimas entradas:
+    </h2>
+
+    <div class="space-y-6">
+      {
+        allPosts.map((post: any) => (
+          <a
+            href={post.url}
+            class="block hover:bg-tc-black-l dark:hover:bg-tc-gray bg-tc-gray dark:bg-tc-black rounded-md p-4 transition"
+          >
+            <div class="flex items-center space-x-8 hover:text-white">
+              <img
+                class="w-20 h-20 rounded-full object-cover"
+                src={post.frontmatter.image.url}
+                alt={post.frontmatter.image.alt}
+              />
+              <div class="flex flex-col text-tc-black dark:text-white">
+                <span class="text-xl font-medium">
+                  {post.frontmatter.title}
+                </span>
+                <span class="text-sm">
+                  {post.frontmatter.author} |{" "}
+                  {new Date(post.frontmatter.date).toLocaleDateString("es-CO", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
