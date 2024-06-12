@@ -1,8 +1,8 @@
 ---
-import { Route } from "lucide-astro";
+
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
-import ContactoLanding from "../components/landing/ContactoLanding.astro";
+
 import ModalContactLanding from "../components/landing/ModalContactLanding.astro";
 
 interface Props {
@@ -17,8 +17,9 @@ const { pathname } = Astro.url;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Try Factory" />
+    <meta name="keywords" content="astro, astrojs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <!-- fonts -->
