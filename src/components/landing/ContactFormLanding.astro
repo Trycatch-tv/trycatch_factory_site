@@ -1,42 +1,39 @@
 ---
-const info = {
-  title: "Llamada de exploración gratuita",
-  description:
-    "Nuestro equipo de expertos está listo para ayudarte a llevar tu proyecto al siguiente nivel. Cuéntanos tu idea y trabajaremos juntos para hacerla realidad.",
-};
+
 ---
 
+<div class="container-alert fixed top-40 left-1/2 w-full max-w-screen-md px-4 translate-x-[-50%] right-5 z-50">
   
-<div
-  class="md:container  md:mx-auto w-screen rounded-none overflow-hidden min-h-screen flex flex-col justify-center" 
->
-  <div class="flex w-full flex-col md:flex-row">
-    <div class="w-full md:w-1/2">
+</div>
+<div class="flex flex-col  gap-10 px-4" id="form">
+  <div class="flex max-w-screen-2xl mx-auto flex-col lg:flex-row gap-10 px-4">
+    <article class="flex flex-col max-w-screen-md items-center justify-center">
       <h1
-        class="text-white text-4xl font-bold text-left p-9 max-sm:text-2xl md:text-2xl lg:text-4xl"
+        class="font-bold text-3xl text-white inline-block w-full md:text-4xl text-start mb-8"
       >
-        {info.title}
+        Dejanos tus datos
       </h1>
-      <p class="text-white text-2xl p-11 leading-10 max-sm:text-xl md:text-xl">
-        {info.description}
+      <p class="text-white inline-block text-base text-start  md:text-3xl">
+        Nos comunicaremos contigo para brindarte la ayuda que necesitas
       </p>
-    </div>
-
-    <!-- Responsive en 1280 -->
-
-    <div class="w-full md:w-1/2 justify-center">
-      <form class="w-full max-w-2xl p-10 max-md:max-w-3xl">
-        <div class="flex flex-wrap -mx-3 mb-6">
+    </article>
+    <div
+      class="relative  rounded-lg shadow-lg mx-auto px-6 py-8 max-w-screen-xl bg-gray-50 justify-center"
+    >
+      <form id="contactForm" class="overflow-y-visible">
+        <div class="flex flex-col sm:flex-row sm:gap-2">
           <!-- Input nombre -->
-          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <div class="w-full md:w-1/2 mb-4 md:mb-6">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-first-name"
             >
               Nombre
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              required
+              name="nombre"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder="Nombre"
@@ -44,15 +41,17 @@ const info = {
           </div>
 
           <!-- Input apellidos -->
-          <div class="w-full md:w-1/2 px-3">
+          <div class="w-full md:w-1/2 mb-4 md:mb-6">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-last-name"
             >
               Apellidos
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+              name="apellido"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
               placeholder="Apellidos"
@@ -61,15 +60,17 @@ const info = {
         </div>
 
         <!-- Input email -->
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div class="flex flex-wrap">
+          <div class="w-full mb-4 md:mb-6">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
             >
               Email corporativo
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+              name="email"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
               type="email"
               placeholder="example@mail.com"
@@ -79,16 +80,18 @@ const info = {
         </div>
 
         <!-- Input celular -->
-        <div class="flex flex-wrap -mx-3 mb-2">
-          <div class="w-full md:w-full px-3 mb-6 md:mb-0 lg:w-1/3">
+        <div class="w-full flex flex-col sm:flex-row sm:gap-2">
+          <div class="w-full  mb-4 md:mb-6">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
             >
               Número de celular
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+              name="celular"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               placeholder="+57 300 123 4567"
@@ -96,49 +99,55 @@ const info = {
           </div>
 
           <!-- Input empresa -->
-          <div class="w-full md:w-full px-3 mb-6 md:mb-0 lg:w-1/3">
+          <div class="w-full md:w-full mb-4 md:mb-6 ">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
             >
               Nombre de la empresa
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+              name="nombre_empresa"
+              class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               placeholder="Nombre de la empresa"
             />
           </div>
 
-          <!-- Input ciudad -->
-          <div class="w-full md:w-full px-3 mb-6 md:mb-0 lg:w-1/3">
-            <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-              for="grid-zip"
-            >
-              Ciudad
-            </label>
-            <input
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
-              type="text"
-              placeholder="Ciudad"
-            />
-          </div>
+        </div>
+        <!-- Input ciudad -->
+        <div class="w-full md:w-full mb-4 md:mb-6">
+          <label
+            class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
+            for="grid-zip"
+          >
+            Ciudad
+          </label>
+          <input
+            required
+            name="ciudad"
+            class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-zip"
+            type="text"
+            placeholder="Ciudad"
+          />
         </div>
 
         <!-- Text area -->
 
-        <div class="flex flex-wrap -mx-3 m-6 max-sm:px-0">
-          <div class="w-full p-3">
+        <div class="flex flex-wrap mb-4 md:mb-6">
+          <div class="w-full">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
             >
               Déjanos tu mensaje y pronto nos contactaremos contigo
             </label>
             <textarea
-              class="appearance-none block w-full bg-gray-200 text-tcf-blue rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+              name="comentarios"
+              class="appearance-none resize-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
               placeholder="escribe aquí"></textarea>
             <p class="text-gray-600 text-xs italic"></p>
@@ -147,9 +156,10 @@ const info = {
 
         <!-- Boton enviar -->
 
-        <div class="flex justify-end max-sm:justify-center">
+        <div class="flex justify-end">
           <button
-            class="bg-white rounded-3xl hover:bg-gray-100 text-tcf-blue font-medium py-2 px-4 my-8 text-xl max-sm:px-8"
+            type="submit"
+            class="btn-submit min-w-[120px] text-white rounded-3xl hover:bg-gray-50 hover:text-tcf-blue hover:border hover:border-tcf-blue bg-tcf-blue font-bold py-2 px-4 text-xl"
           >
             Enviar
           </button>
@@ -157,5 +167,98 @@ const info = {
       </form>
     </div>
   </div>
-</div>
 
+  <script >
+    import { sendData } from "../../service/postData.js";
+    const form = document.getElementById("contactForm");
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    // componentes de alerta
+    const successComponent = `<div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
+             <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+          <span class="sr-only">Info</span>
+        <div>
+          <span class="font-medium">Success alert!</span> the form has been sent successfully
+        </div>
+      </div> `;
+    const errorComponent = function (message = " the form has not been sent.") {
+      return `
+          <div class="flex w-full items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+  <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">Alert!</span> ${message}
+  </div>
+</div>
+          `;
+    };
+    const loadingComponent = `<div role="status">
+    <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+    <span class="sr-only">Loading...</span>
+</div>`;
+
+    //valida si el form es null
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let form = event.target as HTMLFormElement;
+        let formData = new FormData(form);
+        let dataPost = Object.fromEntries(formData.entries());
+        document.getElementsByClassName("btn-submit")[0].innerHTML =
+          loadingComponent;
+
+        //envio formulario
+        sendData(dataPost)
+          .then((response) => {
+            if (response.status === 201) {
+              document.getElementsByClassName("container-alert")[0].innerHTML =
+                successComponent;
+              form.reset();
+            }
+          })
+          .catch((err) => {
+            document.getElementsByClassName("container-alert")[0].innerHTML =
+              errorComponent(err.error.details);
+            console.error(err);
+          })
+          .finally(() => {
+            document.getElementsByClassName("btn-submit")[0].innerHTML =
+              "Enviar";
+            setTimeout(() => {
+              document.getElementsByClassName("container-alert")[0].innerHTML =
+                "";
+            }, 2000);
+          });
+      });
+    }
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      "#form",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.3, // Añade un retardo entre cada tarjeta
+        scrollTrigger: {
+          trigger: "#form",
+          start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+          end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
+          scrub: 1, // La animación sigue el scroll de manera suave
+        },
+      },
+    );
+  </script>
+</div>
