@@ -2,8 +2,8 @@
 
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
+import ContactFormLanding from "../components/landing/ContactFormLanding.astro";
 
-import ModalContactLanding from "../components/landing/ModalContactLanding.astro";
 
 interface Props {
   title: string;
@@ -40,7 +40,7 @@ const { pathname } = Astro.url;
     class="w-full h-full top-0 absolute backdrop-blur-sm"
   >
   </div>
-      <ModalContactLanding />
+      <ContactFormLanding />
     </section>
 
     <Footer />
