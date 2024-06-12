@@ -1,5 +1,6 @@
 ---
 
+import { Link } from "lucide-astro";
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
 import ContactFormLanding from "../components/landing/ContactFormLanding.astro";
@@ -11,6 +12,11 @@ interface Props {
 
 const { title } = Astro.props;
 const { pathname } = Astro.url;
+const link = {
+  href:"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+  rel: "stylesheet"
+}
+
 ---
 
 <!doctype html>
@@ -25,10 +31,7 @@ const { pathname } = Astro.url;
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <Link {...link}/> 
     <title>{title}</title>
   </head>
   <body>
