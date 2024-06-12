@@ -54,35 +54,47 @@ import { Filter } from "lucide-astro";
     },
     {
       id: 3,
-      type: "articulo",
-      title: "Artículo 1",
-      description: "Descripción de la tarjeta 2.1",
-      link: "https://example.com/articulo1",
-      image: "",
+      type: "Blog",
+      title:
+        "Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊",
+      description: "Blog de softskills",
+      link: "/blog/me-aprobaron-mi-charla-de-softskills-para-el-aws-community-day-en-guatemala",
+      image: "/public/img/Conferencia.jpg",
     },
     {
       id: 4,
-      type: "articulo",
-      title: "Artículo 2",
-      description: "Descripción de la tarjeta 2.2",
-      link: "https://example.com/articulo2",
-      image: "",
+      type: "Blog",
+      title: "Aprenda diseños de sistemas, caso de estudio de Netflix",
+      description: "Diseño de sistemas",
+      link: "/blog/aprenda-dise-o-de-sistemas-caso-de-estudio-netflix",
+      image: "/public/img/diseno_software.jpg",
     },
     {
       id: 5,
       type: "blog",
-      title: "Blog 1",
-      description: "Descripción de la tarjeta 3.1",
-      link: "https://example.com/blog1",
-      image: "",
+      title: "71 proyectos para practicar Python",
+      description: "Blog Python",
+      autor: "Judlup",
+      link: "/blog/proyectos-python",
+      image: "/public/img/python.jpg",
     },
     {
       id: 6,
       type: "blog",
-      title: "Blog 2",
-      description: "Descripción de la tarjeta 3.2",
-      link: "https://example.com/blog2",
-      image: "",
+      title:
+        "Aprenda a implementar un control de acceso basado en roles en NodeJS",
+      description: "Blog de NodeJS",
+      link: "/blog/aprenda-a-implementar-un-control-de-acceso-basado-en-roles-en-nodejs",
+      image: "/public/img/imgBlog2.jpg",
+    },
+    {
+      id: 7,
+      type: "blog",
+      title:
+        "Playlist para aprender redes neuronales con Python desde cero y en español",
+      description: "Blog de Python",
+      link: "/blog/playlist-para-aprender-redes-neuronales-con-python-desde-cero-y-en-espa-ol",
+      image: "/public/img/redes_neuronales.jpg",
     },
   ];
 
@@ -114,8 +126,7 @@ import { Filter } from "lucide-astro";
           duration: 1,
           ease: "power2.out",
           stagger: 0.3, // Añade un retardo entre cada tarjeta
-          
-        },
+        }
       );
     });
   }
@@ -130,7 +141,7 @@ import { Filter } from "lucide-astro";
       renderCards(cardsData);
     } else {
       const filteredCards = cardsData.filter(
-        (card) => card.type === selectedValue,
+        (card) => card.type === selectedValue
       );
       renderCards(filteredCards);
     }
