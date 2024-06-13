@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import nibble from "./../../assets/img/nibble.png";
+import nibble from "./../../assets/img/LogoWhite.webp";
 import { ChevronDown } from "lucide-astro";
 
 const navbarItems = [
@@ -76,16 +76,10 @@ const navbarItems = [
     <a href="/" class="flex items-center">
       <Image
         src={nibble}
-        class="w-[100px] h-[100px]"
+       class="w-32 h-10 mr-3"
         alt="TryCatch.tv Nibble"
       />
-      <div class="flex flex-col md:hidden lg:flex">
-        <span
-          class="self-center text-3xl font-semibold whitespace-nowrap text-white md:text-xl"
-          >Factory
-        </span>
-        <span class="text-[8px] text-white text-right">By TryCatch.tv</span>
-      </div>
+     
     </a>
     <button
       data-collapse-toggle="navbar-default"
