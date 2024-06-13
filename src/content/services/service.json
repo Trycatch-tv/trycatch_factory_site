@@ -3,7 +3,7 @@
         {
             "desarrollo-software": {
                 "title": "Desarrollo web a la medida",
-                "imageService": "public/img/servicesExample.jpg ",
+                "imageService": "public/img/Mesadetrabajo13ICONOSSERVICIOS.png",
                 "path": "/services/desarrollo-software",
                 "description": "Creamos aplicaciones y sistemas personalizados que se adaptan perfectamente a tus necesidades y objetivos empresariales.",
                 "levelEstructureTeam": [
@@ -26,7 +26,7 @@
             "consultoria-tecnologia": 
                 {
                     "title": "Consultoría Tecnológica",
-                    "imageService": "public/img/servicesExample.jpg ",
+                    "imageService": "public/img/Mesadetrabajo15ICONOSSERVICIOS.png ",
                     "path": "/services/consultoria-tecnologia",
                     "description": "Te ayudamos a tomar decisiones informadas sobre tecnología y estrategias de TI para optimizar tus operaciones y mejorar tu rendimiento.",
                     "levelEstructureTeam": [
@@ -49,7 +49,7 @@
                 "mantenimiento-actualizado": 
                 {
                     "title": "Mantenimiento y Actualización",
-                    "imageService": "public/img/servicesExample.jpg ",
+                    "imageService": "public/img/Mesadetrabajo16ICONOSSERVICIOS.png",
                     "path": "/services/mantenimiento-actualizado",
                     "description": "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
                     "levelEstructureTeam": [
@@ -72,7 +72,7 @@
                 "integraciones": 
                 {
                     "title": "Integraciones",
-                    "imageService": "public/img/servicesExample.jpg ",
+                    "imageService": "public/img/Mesadetrabajo17ICONOSSERVICIOS.png",
                     "path": "/services/integraciones",
                     "description": "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
                     "levelEstructureTeam": [
@@ -95,7 +95,7 @@
                 "landing-page": 
                 {
                     "title": "Landing Page",
-                    "imageService": "public/img/servicesExample.jpg ",
+                    "imageService": "public/img/Mesadetrabajo18ICONOSSERVICIOS.png ",
                     "path": "/services/landing-page",
                     "description": "Aumenta tus conversiones y captación de clientes con landing pages diseñadas a medida. Desarrollamos páginas de aterrizaje optimizadas para maximizar tu impacto en campañas de marketing y mejorar la experiencia de usuario.",
                     "levelEstructureTeam": [
