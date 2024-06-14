@@ -5,117 +5,129 @@
                 "title": "Desarrollo web a la medida",
                 "imageService": "/img/Mesadetrabajo13ICONOSSERVICIOS.png",
                 "path": "/services/desarrollo-software",
-                "description": "Creamos aplicaciones y sistemas personalizados que se adaptan perfectamente a tus necesidades y objetivos empresariales.",
+                "description": "Desarrollamos soluciones tecnológicas personalizadas para satisfacer las necesidades únicas de cada cliente. Nuestro enfoque se basa en ofrecer un software adaptado perfectamente a los procesos y requisitos específicos del negocio, garantizando una mayor eficiencia operativa y una mejor experiencia del usuario. Creamos aplicaciones y sistemas que ayudan a alcanzar los objetivos comerciales y maximizar el retorno de la inversión.",
                 "levelEstructureTeam": [
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
                 ],
                 "desarrollo": [
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    "Análisis de requerimientos y diseño de arquitectura.",
+                    "Desarrollo de software personalizado.",
+                    "Pruebas y aseguramiento de calidad.",
+                    "Implementación y despliegue."
                 ]
             },
-            "consultoria-tecnologia": 
-                {
-                    "title": "Consultoría Tecnológica",
-                    "imageService": "/img/Mesadetrabajo15ICONOSSERVICIOS.png ",
-                    "path": "/services/consultoria-tecnologia",
-                    "description": "Te ayudamos a tomar decisiones informadas sobre tecnología y estrategias de TI para optimizar tus operaciones y mejorar tu rendimiento.",
-                    "levelEstructureTeam": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ],
-                    "desarrollo": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ]
-                },
-                "mantenimiento-actualizado": 
-                {
-                    "title": "Mantenimiento y Actualización",
-                    "imageService": "/img/Mesadetrabajo16ICONOSSERVICIOS.png",
-                    "path": "/services/mantenimiento-actualizado",
-                    "description": "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
-                    "levelEstructureTeam": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ],
-                    "desarrollo": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ]
-                },
-                "integraciones": 
-                {
-                    "title": "Integraciones",
-                    "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.png",
-                    "path": "/services/integraciones",
-                    "description": "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
-                    "levelEstructureTeam": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ],
-                    "desarrollo": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ]
-                },
-                "landing-page": 
-                {
-                    "title": "Landing Page",
-                    "imageService": "/img/Mesadetrabajo18ICONOSSERVICIOS.png ",
-                    "path": "/services/landing-page",
-                    "description": "Aumenta tus conversiones y captación de clientes con landing pages diseñadas a medida. Desarrollamos páginas de aterrizaje optimizadas para maximizar tu impacto en campañas de marketing y mejorar la experiencia de usuario.",
-                    "levelEstructureTeam": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ],
-                    "desarrollo": [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    ]
-                }
-            
+            "consultoria-tecnologia": {
+                "title": "Consultoría Tecnológica",
+                "imageService": "/img/Mesadetrabajo15ICONOSSERVICIOS.png ",
+                "path": "/services/consultoria-tecnologia",
+                "description": "Te frecemos un servicio de consultoría especializado en el desarrollo de software a medida, ayudando a nuestros clientes a alcanzar sus objetivos comerciales de manera efectiva y eficiente. Nuestro equipo de expertos trabaja estrechamente con cada cliente para comprender sus necesidades y desafíos específicos, proporcionando asesoramiento estratégico y técnico para optimizar procesos y mejorar rendimiento.",
+                "levelEstructureTeam": [
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
+                ],
+                "desarrollo": [
+                    "Evaluación de infraestructuras y sistemas actuales.",
+                    "Recomendaciones para optimización y modernización.",
+                    "Planificación de estrategias de transformación digital.",
+                    "Implementación de mejores prácticas.",
+                    "Consultoría en rediseño de software, arquitectura, transformación digital y modernización de servicios.",
+                    "Optimización del ciclo de vida del software.",
+                    "Refactorización de código y adopción de nuevas tecnologías.",
+                    "Implementación de CI/CD (Integración Continua / Despliegue Continuo).",
+                    "Documentación y estandarización de procesos.",
+                    "Migración a la nube y contenedorización (Docker)."
+                ]
+            },
+            "integraciones": {
+                "title": "Integraciones",
+                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.png",
+                "path": "/services/integraciones",
+                "description": "Facilitamos la mejorar eficiencia la importancia integración de la y de diversas plataformas y sistemas para la cohesión operativa. Reconocemos la interoperabilidad y la sinergia entre diferentes sistemas y plataformas en el entorno empresarial actual, y nuestro equipo está dedicado a garantizar una integración fluida y efectiva.",
+                "levelEstructureTeam": [
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
+                ],
+                "desarrollo": [
+                    "Integración de ERP, CRM y otras aplicaciones empresariales.",
+                    "Desarrollo de API y middleware.",
+                    "Sincronización de datos y automatización de flujos de trabajo",
+                    "Consultoría en arquitecturas SOA, monolito y microservicios.",
+                    "Especialización en integraciones API, ETL y desarrollo de conectores personalizados.",
+                    "Integración de APIs.",
+                    "Integraciones a Salesforce y Shopify."
+                ]
+            },
+            "integraciones-a-shopify-y-salesforce": {
+                "title": "Integraciones a Shopify / Salesforce",
+                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.png",
+                "path": "/services/integraciones-a-shopify-y-salesforce",
+                "description": "Desarrollamos y personalizamos soluciones específicas para plataformas líderes de comercio electrónico y CRM, como Shopify y Salesforce. Nos aseguramos de que estas integraciones optimicen la operatividad y faciliten la expansión de tus capacidades tecnológicas.",
+                "levelEstructureTeam": [
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
+                ],
+                "desarrollo": [
+                    "Implementación y personalización de tiendas en Shopify.",
+                    "Integración y optimización de Salesforce.",
+                    "Desarrollo de plugins y extensiones.",
+                    "Migración de datos y configuraciones avanzadas.",
+                    "Integración con otros sistemas."
+                 
+                ]
+            },
+            "mantenimiento-actualizado": {
+                "title": "Mantenimiento y Actualización",
+                "imageService": "/img/Mesadetrabajo16ICONOSSERVICIOS.png",
+                "path": "/services/mantenimiento-actualizado",
+                "description": "Proporcionamos servicios de soporte y mantenimiento continuos para asegurar que las soluciones de software permanezcan eficientes y seguras.\nReconocemos que la entrega del software es solo el primer paso, y nos comprometemos a mantener nuestras soluciones actualizadas y optimizadas a lo largo del tiempo.",
+                "levelEstructureTeam": [
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
+                ],
+                "desarrollo": [
+                    "Soporte técnico y resolución de problemas.",
+                    "Actualizaciones de software y parches de seguridad.",
+                    "Mejora continua de funcionalidades.",
+                    "onitoreo y optimización del rendimiento.",
+                    "Servicios proactivos de monitoreo y mantenimiento preventivo."
+                ]
+            },
+            "landing-page": {
+                "title": "Landing Page",
+                "imageService": "/img/Mesadetrabajo18ICONOSSERVICIOS.png ",
+                "path": "/services/landing-page",
+                "description": "Ofrecemos un servicio de templates personalizadas, diseñadas para proporcionar a nuestros clientes una presencia en línea de calidad.\nCombinamos la eficiencia de las templates pre-diseñadas con la flexibilidad y personalización de las soluciones a medida, garantizando una rápida implementación y un excelente rendimiento.",
+                "levelEstructureTeam": [
+                    "Auditoría de sistemas y procesos.",
+                    "Consultoría y estrategia tecnológica.",
+                    "Integración de sistemas ERP y CRM.",
+                    "Gestión de proyectos tecnológicos.",
+                    "Implementación de metodologías ágiles."
+                ],
+                "desarrollo": [
+                    "Diseño responsivo y adaptativo.",
+                    "Optimización para motores de búsqueda (SEO).",
+                    "mplementación de sistemas de gestión de contenidos (CMS)",
+                    "Mantenimiento y soporte técnico.",
+                    "Personalización completa para reflejar la identidad de la marca."
+                ]
+            }
         }
     ]
 }
