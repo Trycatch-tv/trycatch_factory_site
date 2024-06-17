@@ -1,4 +1,6 @@
 ---
+import { Check } from "lucide-astro";
+
 const { levelEstructureTeam, desarrollo } = Astro.props;
 ---
 
@@ -48,40 +50,57 @@ const { levelEstructureTeam, desarrollo } = Astro.props;
   );
 </script>
 <section
-  class="relative bg-weOfferBgServices bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full min-h-screen py-10" id="web"
+  class="relative bg-weOfferBgServices bg-cover bg-center bg-no-repeat flex flex-col justify-center w-full min-h-screen py-10"
+  id="web"
 >
-<div
-class="w-full h-full top-0 bg-black bg-opacity-20 absolute backdrop-blur-sm"
->
-</div>
+  <div
+    class="w-full h-full top-0 bg-black bg-opacity-20 absolute backdrop-blur-sm"
+  >
+  </div>
 
-  <div class="relative ">
-    <h1 class="text-5xl text-center text-white font-bold">¿Qué podemos ofrecerte?</h1>
-    <div
-      class="flex flex-col justify-center items-center gap-40 p-10 md:flex-row"
-    >
+  <div class="relative">
+    <h1 class="text-5xl text-center text-white font-bold">
+      ¿Qué podemos ofrecerte?
+    </h1>
+    <div class="flex flex-col justify-center gap-40 py-28 px-4 md:flex-row">
       <div
-        class="justify-star p-4 border-4 bg-white/70 rounded-xl w-50 max-h-full" id="divone"
+        class="justify-star px-4 py-8 border-4 bg-white/70 rounded-xl w-full max-w-xl max-h-full"
+        id="divone"
       >
         <h2
-          class="text-tcf-blue font-extrabold items-center text-xl p-4 max-h-full"
+          class="text-tcf-blue font-extrabold  text-xl lg:text-2xl text-center p-4 max-h-full"
         >
           A nivel estructural/equipo
         </h2>
         <ul class="list-disc p-4">
-          {levelEstructureTeam.map((e: any) => <li class="list-disc text-xl p-1">{e}</li>)}
+          {
+            levelEstructureTeam.map((e: any) => (
+              <li class="list-none flex gap-2 my-4  text-lg lg:text-xl">
+                <Check class="min-w-8" />
+                <p>{e}</p>
+                </li>
+            ))
+          }
         </ul>
       </div>
       <div
-        class="justify-start p-4 border-4 bg-white/70 rounded-xl w-50 max-h-full" id="divtwo"
+        class="justify-start px-4 py-8 border-4 bg-white/70 rounded-xl w-full max-w-2xl max-h-full"
+        id="divtwo"
       >
         <h2
-          class="text-tcf-blue font-extrabold items-center text-xl p-4 max-h-full"
+          class="text-tcf-blue font-extrabold  text-center text-xl lg:text-2xl p-4 max-h-full"
         >
           Desarrollo
         </h2>
         <ul class="list-disc p-4">
-          {desarrollo.map((e: any) => <li class="list-disc text-xl p-1">{e}</li>)}
+          {
+            desarrollo.map((e: any) => (
+              <li class="list-none flex gap-1 my-4 text-lg lg:text-xl">
+                <Check class="min-w-8 " color="" />
+                <p>{e}</p>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>

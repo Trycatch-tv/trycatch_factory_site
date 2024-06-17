@@ -35,14 +35,14 @@ const content = {
     class="flex max-sm:flex-col sm:flex-col max-w-screen-xl relative z-10 w-full items-center lg:flex-row px-8 mx-auto"
     id="content"
   >
-    <article class="mb-4">
+    <article class="mb-4 max-w-xl">
       <h1
-        class="max-w-xl mb-5 text-4xl text-white font-extrabold tracking-tight leading-none md:text-5xl text-center xl:text-6xl lg:mb-8 lg:text-start"
+        class=" mb-5 text-4xl text-white font-extrabold tracking-tight leading-none md:text-5xl text-center xl:text-6xl lg:mb-8 lg:text-start"
       >
         {content.title}
       </h1>
       <p
-        class="max-w-xl text-white text-balance text-xl font-semibold mb-5 lg:max-w-md lg:mb-14 lg:text-start text-center sm:text-center max-sm:text-center"
+        class="max-w-xl text-white text-balance text-xl lg:text-2xl font-semibold mb-5 lg:mb-14 lg:text-start text-center sm:text-center max-sm:text-center"
       >
         {content.description}
       </p>
@@ -50,13 +50,13 @@ const content = {
         class="flex justify-center gap-2 mb-5 lg:justify-start lg:mb-14 max-sm:mt-5 md:justify-center max-sm:flex-col max-sm:items-center"
       >
         <a
-          class="max-w-[244px] text-center cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-bold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+          class="max-w-[244px]  cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-bold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
           target="_blank"
           href={content.ctas[0].link}
           >{content.ctas[0].title}
         </a>
         <a
-          class="max-w-[244px] text-center cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
+          class="max-w-[244px] cursor-pointer transition-all duration-500 min-w-[154px] h-10 py-2.5 px-3 me-2 mb-2 text-sm text-center font-medium text-white focus:outline-none bg-tcf-blue rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l"
           href={content.ctas[1].link}
           >{content.ctas[1].title}
         </a>
