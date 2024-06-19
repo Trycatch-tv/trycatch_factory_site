@@ -1,5 +1,4 @@
 ---
-
 import { Mail, MapPin, Phone } from "lucide-astro";
 
 const content = {
@@ -12,17 +11,17 @@ const content = {
 const cardSInfo = [
   {
     label: "Email",
-    info: "hV8P9@example.com",
+    info: "factory@trycatch.tv",
     icon: Mail,
   },
   {
     label: "Direccion",
-    info: "hV8P9@example.com",
+    info: "Bogotá, Colombia",
     icon: MapPin,
   },
   {
     label: "Celular",
-    info: "+57 312 345 6789",
+    info: "+57 316490762",
     icon: Phone,
   },
 ];
@@ -52,8 +51,11 @@ const cardSInfo = [
   <h2 class="text-center font-bold text-3xl md:text-4xl mb-16">Contáctanos</h2>
   <div class="flex flex-col md:flex-row justify-center gap-10 px-4">
     {
-      cardSInfo.map((card,index) => (
-        <article class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center" id="contact">
+      cardSInfo.map((card, index) => (
+        <article
+          class="bg-gray-50 p-10 border rounded-lg flex flex-col shadow-sm justify-center items-center"
+          id="contact"
+        >
           <div class="mb-4">
             <card.icon color="#172554" class="w-10 h-10" />
           </div>
@@ -69,27 +71,27 @@ const cardSInfo = [
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
   gsap.fromTo(
-      "#contact",
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        stagger: 0.3, // Añade un retardo entre cada tarjeta
-      }
-    );
+    "#contact",
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.3, // Añade un retardo entre cada tarjeta
+    }
+  );
 
-    // Añade el evento hover usando GSAP para un efecto de zoom
-    document.querySelectorAll("#contact").forEach(card => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, { scale: 1.1, duration: 0.3, ease: "power2.out" });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, { scale: 1, duration: 0.3, ease: "power2.out" });
-      });
+  // Añade el evento hover usando GSAP para un efecto de zoom
+  document.querySelectorAll("#contact").forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, { scale: 1.1, duration: 0.3, ease: "power2.out" });
     });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, { scale: 1, duration: 0.3, ease: "power2.out" });
+    });
+  });
 </script>
 <!-- JavaScript -->
 <!-- <script is:inline>
