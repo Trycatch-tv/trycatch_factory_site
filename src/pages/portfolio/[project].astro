@@ -39,13 +39,13 @@ const title = projectData.title;
 <Layout title="Portafolio">
     <main
         class="min-h-screen min-w-screen-2xl flex justify-center items-center flex-col
-         bg-custom-bg bg-cover bg-center"
+         bg-custom-bg bg-cover bg-center px-4"
         id="portafolio"
     >
         <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm">
         </div>
         <h1
-            class="lg:text-6xl relative md:text-4xl max-md:text-4xl max-md:p-2 font-bold text-center text-white p-10 max-sm:text-center max-sm:p-2 max-sm:text-3xl"
+            class="relative text-4xl md:text-6xl font-extrabold text-center text-white mb-5"
             id="title"
         >
             {projectData.title}
@@ -54,7 +54,7 @@ const title = projectData.title;
             class="flex relative flex-col lg:w-[29rem] md:w-96 max-md:w-96 sm:w-auto max-sm:w-auto"
         >
             <p
-                class="lg:text-3xl max-lg:text-3xl max-md:text-3xl md:text-3xl font-semibold text-xl text-center text-white break-all max-sm:text-xl sm:text-xl"
+                class="text-xl md:text-2xl font-medium text-center text-white break-all"
             >
                 {projectData.description}
             </p>
