@@ -32,6 +32,9 @@ const url = {
   title : "Agendar ahora",
   link: "https://calendly.com/trycatchfactory-com/30min",
 }
+const redes = {
+  tiktok:"https://www.tiktok.com/@trycatchfactory"
+}
 ---
 
 <footer
@@ -72,7 +75,7 @@ const url = {
                     <div class="text-white">
                       {e.footerListServices.map((service: any) => (
                         <div class="text-white mt-2 max-sm:text-sm max-sm:text-center">
-                          <a class="hover:text-tcf-info" href={service.path}>{service.name}</a>
+                          <a class="hover:text-tcf-info" href={service.path} target="_blank">{service.name}</a>
                         </div>
                       ))}
                     </div>
@@ -113,7 +116,7 @@ const url = {
       <Icon name="ic:baseline-facebook" class="text-white text-xl mx-2" />
       <Icon name="fa6-brands:x-twitter" class="text-white text-xl mx-2" />
       <Icon name="mdi:youtube" class="text-white text-xl mx-2" />
-      <Icon name="ic:baseline-tiktok" class="text-white text-xl mx-2" />
+      <a href={redes.tiktok} target="_blank"><Icon name="ic:baseline-tiktok" class="text-white text-xl mx-2" /></a>      
       <Icon name="mingcute:medium-fill" class="text-white text-xl mx-2" />
       <a
         href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
