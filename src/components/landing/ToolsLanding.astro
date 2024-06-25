@@ -1,24 +1,25 @@
 ---
 import { Filter } from "lucide-astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <section
-  class="flex flex-col mx-auto max-w-screen-2xl justify-center w-full min-h-[80vh] px-4 py-20"
+  class="container p-8 mx-auto xl:px-5 max-w-sreen-lg py-5 lg:py-8 relative"
 >
-  <div class="w-full flex mb-20 max-w-[400px]">
+  <!-- <div class="w-full flex mb-20 max-w-[400px]">
     <select id="itemSelect" class="w-full p-2 border border-gray-300 rounded">
       <option value="all">Todos</option>
       <option value="blog">Blogs</option>
       <option value="video">Videos</option>
       <option value="articulo">Articulos</option>
     </select>
-  </div>
-  <div class="flex w-full h-full flex-col">
+  </div> -->
+  <div class="size-full md:size-auto">
     <!-- Select en la parte izquierda -->
     <!-- Tarjetas en la parte derecha -->
     <div
       id="cardContainer"
-      class="w-full h-full flex flex-wrap justify-center md:justify-start gap-14"
+      class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
     >
       <!-- Las tarjetas se insertarán aquí dinámicamente -->
     </div>
@@ -104,14 +105,15 @@ import { Filter } from "lucide-astro";
       const cardElement = document.createElement("div");
       cardElement.id = "rouserces";
       cardElement.className =
-        "bg-gray-50 border p-4 shadow rounded flex items-center"; // Agregamos flexbox para alinear la imagen y el contenido
+        "size-auto shadow-lg rounded-2xl max-w-sm rounded-xl overflow-hidden"; // Agregamos flexbox para alinear la imagen y el contenido
       cardElement.innerHTML = `
-      <img src="${card.image}" class="w-16 h-16 mr-4" alt="Imagen recurso"> <!-- Agregamos la imagen -->
-      <div>
-        <h3 class="text-lg font-bold mb-2">${card.title}</h3>
-        <p>${card.description}</p>
-        <a href="${card.link}" target="_blank" class="mt-4 inline-block bg-tcf-blue hover:bg-gray-500 text-white py-2 px-4 rounded-full">Ver Recurso</a>
-      </div>
+      <img src="${card.image}" class="size-full" alt="Imagen recurso">
+      <a href="${card.link}" target="_blank" class="absolute inset-0 bg-black/20 opacity-0 inline-block hover:opacity-100 transition-all scale-95 duration-300 text-white">
+        <div class="p-3">
+          <p class="text-700">${card.description}</p>
+          <h3 class="text-md font-bold mb-2">${card.title}</h3>
+        </div>
+      </a>
     `;
       cardContainer.appendChild(cardElement);
       gsap.fromTo(

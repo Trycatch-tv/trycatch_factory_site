@@ -2,6 +2,7 @@
 const { frontmatter } = Astro.props;
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 ---
 
 <!doctype html>
@@ -12,10 +13,12 @@ import Navbar from "../components/global/Navbar.astro";
       name="viewport"
       content="width=device-width, initial-scale=0.8, maximum-scale=1, user-scalable=no"
     />
+    <meta name="view-transistion" content="same-origin" />
     <link rel="icon" type="image/svg+xml" href="/nibble.png" />
     <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
     <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title}</title>
+    <ViewTransitions/>
   </head>
   <body class="bg-white dark:bg-tc-black-l mt-20 font-sans">
     <Navbar />
@@ -53,4 +56,6 @@ import Navbar from "../components/global/Navbar.astro";
   body {
     font-family: "JetBrains Mono", monospace, system-ui, sans-serif !important;
   }
+  
 </style>
+
