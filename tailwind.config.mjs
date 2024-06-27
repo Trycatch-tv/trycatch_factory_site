@@ -34,6 +34,8 @@ export default {
         "tcf-gray-foot":"#535353",
         "tcf-blue": "#172554",
         "tcf-info": "#D6EBEE",
+        "tcf-backg": "#3C4665",
+        "tcf-menu":"#172554"
       },
       width:{
         "60":"60px",

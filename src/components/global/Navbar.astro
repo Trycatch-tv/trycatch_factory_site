@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import nibble from "./../../assets/img/LogoWhite.webp";
 import { ChevronDown } from "lucide-astro";
 
+const colorButtonMenu = "text-tcf-menu"
 const navbarItems = [
   {
     name: "Servicios",
@@ -71,10 +72,14 @@ const navbarItems = [
     subItems: [],
   },
 ];
+const navbarLenguaje={
+  en:'English',
+  es:'Español'
+}
 ---
 
 
-<nav class="bg-black/70 bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2">
+<nav class="bg-tcf-backg bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
   >
@@ -107,7 +112,7 @@ const navbarItems = [
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"></path>
+          d="M1 1h15M1 7h15M1 13h15" ></path>
       </svg>
     </button>
     <div
@@ -126,7 +131,7 @@ const navbarItems = [
                 class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
               >
                 {item.name}
-                {item.subItems.length > 0 && <ChevronDown size={15} />}
+                {item.subItems.length > 0 && <ChevronDown size={16} class="text-tcf-menu" />}
               </a>
               {item.subItems.length > 0 && (
                 <div
@@ -144,9 +149,12 @@ const navbarItems = [
                   ))}
                 </div>
               )}
+
+
             </li>
           ))
         }
+        
         <li>
           <a
             href="/contact"
@@ -157,7 +165,30 @@ const navbarItems = [
             Contacto
           </a
              >
+             
         </li>
+        <li class="navbar-submenu relative">
+  <a
+    href="#"
+    target="_self"
+    class="flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white"
+  >
+    {navbarLenguaje.es}
+    <ChevronDown size={16} class="text-white" />
+  </a>
+  <div
+    class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+    onmouseover="showSubmenu(this)"
+    onmouseout="hideSubmenu(this)"
+  >
+    <a
+      href="#"
+      class="block p-2 hover:bg-tcf-info  text-xs rounded"
+    >
+      {navbarLenguaje.en}
+    </a>
+  </div>
+</li>
       </ul>
     </div>
   </div>
