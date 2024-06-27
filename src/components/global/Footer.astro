@@ -11,12 +11,21 @@ const foiterItemsList = {
       name: "Servicios",
       path: "/",
       footerListServices: [
-        { name: "Software a la medida",path: "/services/desarrollo-software", },
-        { name: "Consultoría tecnológica",path:"/services/consultoria-tecnologia" },
-        { name: "Integración",path: "/services/integraciones" },
-        { name: "Landing Page",path: "/services/landing-page" },
-        { name: "Mantenimiento y actualización",path: "/services/mantenimiento-actualizado" },
-        { name: "Integraciones a Shopify / Salesforce",path: "/services/integraciones-a-shopify-y-salesforce"}
+        { name: "Software a la medida", path: "/services/desarrollo-software" },
+        {
+          name: "Consultoría tecnológica",
+          path: "/services/consultoria-tecnologia",
+        },
+        { name: "Integración", path: "/services/integraciones" },
+        { name: "Landing Page", path: "/services/landing-page" },
+        {
+          name: "Mantenimiento y actualización",
+          path: "/services/mantenimiento-actualizado",
+        },
+        {
+          name: "Integraciones a Shopify / Salesforce",
+          path: "/services/integraciones-a-shopify-y-salesforce",
+        },
       ],
     },
     {
@@ -28,38 +37,51 @@ const foiterItemsList = {
         { name: "Blog" },
       ],
     },
-   
   ],
-
 };
 const urlBoton = {
-  title : "Agendar ahora",
+  title: "Agendar ahora",
   link: "https://calendly.com/trycatchfactory-com/30min",
-}
+};
 const redes = {
-  tiktok:"https://www.tiktok.com/@trycatchfactory",
-  linkedin:"https://www.linkedin.com/company/trycatch-factory/",
-  facebook:"https://www.facebook.com/trycatchfactory/",
-  instagram:"https://www.instagram.com/trycatchfactory/",
-}
+  tiktok: "https://www.tiktok.com/@trycatchfactory",
+  linkedin: "https://www.linkedin.com/company/trycatch-factory/",
+  facebook: "https://www.facebook.com/trycatchfactory/",
+  instagram: "https://www.instagram.com/trycatchfactory/",
+};
 ---
 
 <footer
-  class="flex lg:flex-row max-sm:max-w-screen-sm max-md:max-w-screen-md flex-row md:flex-col bg-[#070B18] w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-full md:w-full max-md:w-full max-sm:h-full"
+  class="flex lg:flex-row max-sm:max-w-screen-sm max-md:max-w-screen-md flex-row md:flex-col bg-slate-600 w-full h-2/5 max-md:flex-col xl:h-2/6 lg:h-full md:h-full md:w-full max-md:w-full max-sm:h-full"
 >
-  <div class="flex flex-row h-full w-full max-sm:h-1/2 md:flex-row md:w-11/12 max-sm:items-center">
+  <div
+    class="flex flex-row h-full w-full max-sm:h-1/2 md:flex-row md:w-11/12 max-sm:items-center"
+  >
     <div
-      class="flex flex-col w-full justify-center  ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
+      class="flex flex-col w-full justify-center ml-24 2xl:ml-[130px] max-sm:ml-0 max-md:ml-0 md:ml-0"
     >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-sm:w-full max-sm:justify-center"
+        class="max-w-screen-md flex flex-col justify-start mx-auto max-sm:w-full"
       >
         <Image
           src={nibble}
-          class="w-96  pt-10 mr-2 max-sm:w-32 max-sm:m-5"
+          class="w-96 pt-10 mr-2 max-sm:w-32 max-sm:m-5"
           alt="TryCatch.tv Nibble"
         />
-     
+        <div class="my-4">
+          <p class="text-white text-lg">
+            Somos tu socio Tecnológico de confianza.
+          </p>
+          <p class="text-white text-lg">
+            Nuestro equipo de experos está dedicado a ofrecer soluciones
+            innovadoras y personalizadas para impulsar tu negocio al siguiente
+            nivel.
+          </p>
+          <p class="text-white text-lg">
+            Descubre nuestros servicios diseñados para satisfacer todas tus
+            necesidades tecnológicas.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -69,63 +91,101 @@ const redes = {
   >
     <div class="flex flex-col w-full xl:justify-center md:flex-col">
       <div class="flex flex-col justify-evenly py-1">
-        <div class="flex flex-row max-sm:flex-row md:justify-center max-md:justify-center md:gap-5 lg:flex-row max-sm:flex-col ">
         <div
-          class="flex flex-row justify-evenly mt-12 max-sm:flex-col max-md:mt-0 max-md:flex-col max-sm:mt-8 max-sm:gap-y-5 lg:flex-row"
+          class="flex flex-row max-sm:flex-row md:justify-center max-md:justify-center md:gap-5 lg:flex-row"
         >
-          {
-            foiterItemsList.footerItems.map((e: any) => (
-              <>
-                {e.name === "Servicios" && (
-                  <div class="px-2 flex flex-col justify-evenly mr-3 mb-5 max-sm:items-center">
-                    <div class="text-white font-bold">{e.name}</div>
-                    <div class="text-white">
-                      {e.footerListServices.map((service: any) => (
-                        <div class="text-white mt-2 max-sm:text-sm max-sm:text-center">
-                          <a class="hover:text-tcf-info" href={service.path} target="_blank">{service.name}</a>
-                        </div>
-                      ))}
+          <div
+            class="flex flex-row justify-evenly mt-12 max-sm:flex-col max-md:mt-0 max-md:flex-col max-sm:mt-8 max-sm:gap-y-5 lg:flex-row"
+          >
+            {
+              foiterItemsList.footerItems.map((e: any) => (
+                <>
+                  {e.name === "Servicios" && (
+                    <div class="px-2 flex flex-col justify-evenly mr-3 mb-5 max-sm:items-center">
+                      <div class="text-white font-bold">{e.name}</div>
+                      <div class="text-white">
+                        {e.footerListServices.map((service: any) => (
+                          <div class="text-white mt-2 max-sm:text-sm max-sm:text-center">
+                            <a
+                              class="hover:text-tcf-info"
+                              href={service.path}
+                              target="_blank"
+                            >
+                              {service.name}
+                            </a>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-                {e.name === "Recursos" && (
-                  <div class="px-2 flex flex-col ">
-                    <div class="text-white font-bold text-center">{e.name}</div>
-                    <div class="text-white text-center">
-                      {e.footerListRecursos.map((recurso: any) => (
-                        <div class="text-white mt-2 text-center max-sm:text-sm">
-                          {recurso.name}
-                        </div>
-                      ))}
+                  )}
+                  {e.name === "Recursos" && (
+                    <div class="px-2 flex flex-col ">
+                      <div class="text-white font-bold text-center">
+                        {e.name}
+                      </div>
+                      <div class="text-white text-center">
+                        {e.footerListRecursos.map((recurso: any) => (
+                          <div class="text-white mt-2 text-center max-sm:text-sm">
+                            {recurso.name}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </>
-            ))
-          }
-        </div>
-        <!-- Industrias y Equipo -->
-        <div
-          class="flex flex-row items-center justify-evenly mt-12 max-sm:flex-col max-md:mt-0 max-md:flex-col max-sm:mt-8 max-sm:justify-center max-sm:mr-0 max-sm:gap-8 md:flex-col lg:flex-row"
-        >
-         <a target="_blank" class="flex flex-row items-center gap-1  cursor-pointer transition-all duration-500 w-[174px] py-3 px-2 justify-center me-2 mb-2 text-sm text-center font-semibold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l shadow-sm max-sm:justify-evenly" href={urlBoton.link}>
-          {urlBoton.title}
-          <span>
-          <CalendarCheck class="w-4 h-4" />
-        </span></a>
-        </div>
+                  )}
+                </>
+              ))
+            }
+          </div>
+          <!-- Industrias y Equipo -->
+          <div
+            class="flex flex-row items-center justify-evenly mt-12 max-sm:flex-col max-md:mt-0 max-md:flex-col max-sm:mt-8 max-sm:justify-center max-sm:mr-0 max-sm:gap-8 md:flex-col lg:flex-row"
+          >
+            <a
+              target="_blank"
+              class="flex flex-row items-center gap-1 cursor-pointer transition-all duration-500 w-[174px] py-3 px-2 justify-center me-2 mb-2 text-sm text-center font-semibold text-tcf-blue focus:outline-none bg-white rounded-full border border-tcf-gray hover:bg-tcf-gray-l hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-tcf-gray-l shadow-sm max-sm:justify-evenly"
+              href={urlBoton.link}
+            >
+              {urlBoton.title}
+              <span>
+                <CalendarCheck class="w-4 h-4" />
+              </span></a
+            >
+          </div>
         </div>
       </div>
     </div>
     <div
       class="flex flex-row justify-center mr-16 space-x-16 mt-5 md:space-x-8 2xl:mr-32 max-sm:space-x-4 max-sm:ml-8 pb-8 max-sm:justify-evenly"
     >
-      <a  href={redes.linkedin} target="_blank"><Icon size={25} name="mdi:linkedin" class="text-white text-xl mx-2" /></a>
-      <a href={redes.tiktok} target="_blank"><Icon size={25} name="ic:baseline-tiktok" class="text-white text-xl mx-2" /></a>
-      <a href={redes.instagram} target="_blank"><Icon size={25} name="mdi:instagram" class="text-white text-xl mx-2" /></a>      
-      <a href={redes.facebook} target="_blank"><Icon size={25} name="mdi:facebook" class="text-white text-xl mx-2" /></a>      
+      <a href={redes.linkedin} target="_blank"
+        ><Icon
+          size={25}
+          name="mdi:linkedin"
+          class="text-white text-xl mx-2"
+        /></a
+      >
+      <a href={redes.tiktok} target="_blank"
+        ><Icon
+          size={25}
+          name="ic:baseline-tiktok"
+          class="text-white text-xl mx-2"
+        /></a
+      >
+      <a href={redes.instagram} target="_blank"
+        ><Icon
+          size={25}
+          name="mdi:instagram"
+          class="text-white text-xl mx-2"
+        /></a
+      >
+      <a href={redes.facebook} target="_blank"
+        ><Icon
+          size={25}
+          name="mdi:facebook"
+          class="text-white text-xl mx-2"
+        /></a
+      >
 
-      
       <a
         href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más"
         id="botonWhast"
