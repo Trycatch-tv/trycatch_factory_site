@@ -11,7 +11,7 @@ export default {
         'content': 'content',
       },
       backgroundImage: {
-        'heroBgImg': 'url("/public/img/SLIDE.webp")',
+        'heroBgImg': 'url("/public/img/Ellipse.png")',
         'heroBgImgService':'url("/public/img/SERVICIOS.webp")',
         'weOfferBgServices':'url("/public/img/QUEOFRECEMOS.webp")',
         'custom-bg': "url('/public/img/PORTAFOLIO.webp')",
@@ -34,8 +34,8 @@ export default {
         "tcf-gray-foot":"#535353",
         "tcf-blue": "#172554",
         "tcf-info": "#D6EBEE",
-        "tcf-backg": "#3C4665",
-        "tcf-menu":"#172554"
+        "tcf-backg": "#0062FF",
+        "tcf-menu":"#FFFFFF"
       },
       width:{
         "60":"60px",
