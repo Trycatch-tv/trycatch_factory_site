@@ -21,7 +21,8 @@ export default {
         'contactbg':'url("/public/img/PAGECONTACTO.webp")',
         'contact':'url(/public/img/LLAMADA.webp)',
         'procesos':'url(/public/img/PROCESOS.webp)',
-        'proudTeam':'url(/public/img/INCLUSION.webp)'
+        'proudTeam':'url(/public/img/INCLUSION.webp)',
+        'bg-FAQLanding':'url(/public/img/bg-FAQLanding.png)',
 
       },
       colors: {
