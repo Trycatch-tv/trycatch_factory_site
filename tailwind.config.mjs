@@ -29,7 +29,7 @@ export default {
         "tcf-black-l": "#474646",
         "tcf-cyan": "#A2F2F2",
         "tcf-yellow": "#EDF2C2",
-        "tcf-gray": "#B5B5B5",
+        "tcf-gray": "#EEF0F4",
         "tcf-gray-l": "#F2F2F2",
         "tcf-gray-foot":"#535353",
         "tcf-blue": "#172554",

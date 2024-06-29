@@ -1,136 +1,114 @@
 ---
 import { Image } from "astro:assets";
-import process from "../../assets/img/process.svg";
-import metodology from "../../assets/img/methodology.svg";
-import { CircleDot } from "lucide-astro";
+import process from "../../assets/img/Rectangle.svg";
+import metodology from "../../assets/img/Ellipse.png";
 
 const data = [
   {
     title: "Proceso",
     img: "/public/assets/svg/process.svg",
     items: [
-      "Análisis y Planificación: Evaluamos tus necesidades y desarrollamos un plan detallado para tu proyecto.",
-      "Desarrollo y Pruebas: Creamos y probamos tu software, asegurando la calidad y funcionalidad en cada etapa.",
-      "Implementación y Soporte: Desplegamos tu solución y brindamos soporte continuo para garantizar su éxito.",
+      "Análisis y Planificación: Evaluamos tus necesidades y desarrollamos un plan detallado para tu proyecto, asegurando que todas las etapas estén alineadas con tus objetivos estratégicos.",
+      "Desarrollo y Pruebas: Creamos y probamos tu software, asegurando la calidad y funcionalidad en cada etapaDesarrollo y Pruebas:Creamos y probamos tu software con un enfoque riguroso en calidad y funcionalidad, utilizando metodologías ágiles para garantizar eficiencia y flexibilidad..",
+      "Implementación y Soporte: Desplegamos tu solución y brindamos soporte continuo para garantizar su éxito.mplementación y Soporte:Desplegamos tu solución de manera efectiva y brindamos soporte continuo para asegurar su éxito y funcionamiento óptimo.",
+      "Comunicación Constante: Mantenemos una comunicación constante y colaborativa, informándote sobre el estado del proyecto para ofrecer una experiencia única y alineada con tus necesidades.",
     ],
   },
   {
-    title: "Metodología",
+    title: "Proyectos-descripción",
     items: [
-      "seguimos una metodología ágil para asegurar la eficiencia y flexibilidad en nuestros proyectos. Nos enfocamos en entregas incrementales, colaboración constante y mejora continua.",
-      "La comunicación es importante para nosotros, es por eso que tenemos un proceso transversal que nos permite ofrecer una experiencia única y una comunicación del estado del proceso constante con nuestros cliente.",
-      
-    ],
+      "Cuéntanos más sobre él y cómo podemos ayudarte. Completa el formulario a continuación y uno de nuestros expertos se pondrá en contacto contigo a la brevedad."
+    ]
   },
+  {
+    title: "Proyectos-titulo",
+    items: [
+      "¿Tienes un proyecto en mente?",
+    ],
+  }
 ];
+
 ---
+<div>
+  <h2 class=" mb-10 text-center font-bold text-3xl text-tcf-blue">Proceso</h2>
+  <div class="grid grid-cols-2"> 
+    <div class="relative">
+      <Image
+        src={process}
+        class="size-9/12 rounded-md absolute z-30 top-24 left-16"
+        alt="TryCatch.tv process"
+        ="left"
+      />
 
-
-<div class="flex relative flex-col justify-center bg-procesos bg-no-repeat bg-cover bg-center py-16">
-  <div
-    class="w-full h-full top-0 absolute inset-0 backdrop-blur-sm"
-  >
-  </div>
-  <div
-    class="flex relative flex-col justify-center px-4 py-8 sm:py-16"
-  >
-    <div class="flex justify-center flex-grow max-w-screen-xl mx-auto">
-      <div class="mt-2 w-12/12 h-auto max-sm:max-w-screen-sm">
-        <div
-          class="flex flex-col gap-10 flex-grow max-sm:flex-col max-sm:max-w-screen-sm"
-        >
-          <!---Espacio para imagen o video -->
-          <article
-            class="flex flex-col-reverse lg:flex-row items-center bg-black/70 p-8"
-          >
-            <div class="w-full flex justify-center items-center">
-              <Image
-                src={process}
-                class="size-96 rounded-md max-sm:p-5 max-sm:rounded-[2rem]"
-                alt="TryCatch.tv process"
-                id="left"
-              />
-            </div>
-
-            <div class="flex flex-col gap-10 w-full md:1/2">
-              <h2
-                class="font-bold text-3xl md:text-4xl fon-inter mt-8 text-white max-sm:text-center md:text-center max-md:text-center"
-              >
-                {data[0].title}
-              </h2>
-              <div class="flex flex-col gap-10">
-                {
-                  data[0].items.map((item, index) => (
-                    <article class="flex gap-2">
-                      <div>
-                        <p class="text-5xl font-bold text-white">
-                          {index + 1}.
-                        </p>
-                      </div>
-                      <div>
-                        <p
-                          class="text-white text-sm md:text-lg"
-                          transition:name=""
-                        >
-                          {item}
-                        </p>
-                      </div>
-                    </article>
-                  ))
-                }
+      <Image
+        src={metodology}
+        class="size-full"
+        alt="TryCatch.tv process"
+        id="right"
+      />
+    </div>
+    <div class="grid grid-rows-4 gap-8 w-11/12">
+        {
+          data[0].items.map((item, index) => (
+            <article class="flex gap-4 text-tcf-blue">
+              <div>
+                <p class="text-3xl font-bold ml-10">
+                  {index + 1}
+                </p>
               </div>
-            </div>
-          </article>
-          <article
-            class="flex flex-col lg:flex-row items-center bg-black/70 p-8"
-          >
-            <div
-              class="flex flex-col gap-10 ml-10 w-1/2 mb-8 max-sm:w-full max-sm:ml-0 md:w-full max-md:w-full md:ml-0 xl:ml-0 max-md:ml-0"
-            >
-              <h2
-                class="font-bold text-3xl md:text-4xl fon-inter mt-8 ml-2 text-white max-sm:text-center md:text-center max-md:text-center"
-              >
-                {data[1].title}
-              </h2>
-              <div class="flex flex-col gap-10">
-                {
-                  data[1].items.map((item, index) => (
-                    <article class="flex gap-2">
-                      <div>
-                        <p class=" text-white">
-                          <CircleDot size="25" />
-                        </p>
-                      </div>
-                      <div>
-                        <p
-                          class="text-white text-sm md:text-lg"
-                          transition:name=""
-                        >
-                          {item}
-                        </p>
-                      </div>
-                    </article>
-                  ))
-                }
+              <div>
+                <p class="text-md font-medium">
+                  {item}
+                </p>
               </div>
-            </div>
-            <!---Espacio para imagen o video -->
-            <div
-              class="w-5/12 flex justify-center items-center max-sm:w-full md:w-full max-md:w-full"
-            >
-              <Image
-                src={metodology}
-                class="size-96 rounded-md mr-3 max-sm:rounded-[2rem] max-sm:p-5"
-                alt="TryCatch.tv process"
-                id="right"
-              />
-            </div>
-          </article>
-        </div>
-      </div>
+            </article>
+          ))
+        }
     </div>
   </div>
 </div>
+
+<div class="bg-gray-100 min-w-screen h-auto mt-14">
+  <div class="">
+    {
+      data[2].items.map((item) => (
+        <article class="text-tcf-blue">
+          <div>
+            <h1 class="text-center font-bold text-2xl pt-10">
+              {item}
+            </h1>
+          </div>
+          <div class="w-6/12 mx-auto pt-5">
+            {
+              data[1].items.map((item) => (
+                <p class="text-md font-medium">
+                  {item}
+                </p>
+              ))
+            }
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <div class="w-5/12 mx-auto grid grid-cols-2 pt-10 pb-10">
+    <a 
+      href={``}
+      rel="noopener noreferrer"
+      target="_blank" 
+      class="mx-auto w-56 h-14 rounded-3xl font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-4">
+      <span>Contactanos</span>
+    </a>
+    <a
+      href={`https://wa.me/5211234567890?text=Me%20gustaría%20saber%20más`}
+      rel="noopener noreferrer"
+      target="_blank" 
+      class="mx-auto w-56 h-14 rounded-3xl text-blue font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-4">
+      Whatssap
+    </a>
+  </div>
+</div>
+
 <script>
   import { gsap } from "gsap";
 
