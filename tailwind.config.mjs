@@ -11,7 +11,7 @@ export default {
         'content': 'content',
       },
       backgroundImage: {
-        'heroBgImg': 'url("/public/img/Ellipse.png")',
+        'heroBgImg': 'url("/public/img/SLIDE.webp")',
         'heroBgImgService':'url("/public/img/SERVICIOS.webp")',
         'weOfferBgServices':'url("/public/img/QUEOFRECEMOS.webp")',
         'custom-bg': "url('/public/img/PORTAFOLIO.webp')",
