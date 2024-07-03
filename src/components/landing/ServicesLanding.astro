@@ -1,3 +1,4 @@
+<script></script>
 <section class="flex flex-col justify-center min-h-screen" id="services">
   <section class="flex flex-col justify-center mt-5 pt-5 sm:min-h-screen">
     <div class="Services flex flex-col items-center">
@@ -5,10 +6,12 @@
         Nuestros servicios
       </h2>
       <div
-        class="container py-3 px-0 lg:max-w-screen-lg max-w-screen-sm mx-auto flex items-center"
+        class="container py-3 px-0 flex md:w-100 items-center justify-around m-0"
       >
-        <div id="prevSVG" class="w-7 h-7 mr-2 cursor-pointer">
+        <div class="">
           <svg
+            id="prevSVG"
+            class="w-7 h-7 mr-10"
             width="20px"
             height="20px"
             viewBox="0 0 24 24"
@@ -20,15 +23,15 @@
               fill="#0F0F0F"></path>
           </svg>
         </div>
-        <div class="overflow-hidden flex-1">
-          <div
-            class="services-container flex transition-transform duration-300"
-          >
-            <!-- La lista de servicios se renderizará aquí -->
-          </div>
+        <div
+          class="services-container flex flex-col w-auto h-auto md:flex-row gap-3 rounded-2xl"
+        >
+          <!-- La lista de servicios se renderizará aquí -->
         </div>
-        <div id="nextSVG" class="w-7 h-7 ml-2 cursor-pointer">
+        <div class="">
           <svg
+            id="nextSVG"
+            class="w-6 h-6 ml-10"
             fill="#000000"
             height="20px"
             width="20px"
@@ -48,90 +51,26 @@
           </svg>
         </div>
       </div>
-      <div class="pagination-container flex justify-center mt-0 p-0">
+      <div class="pagination-container flex w-100 justify-center mt-0 p-0">
         <span
           class="pagination-dot ml-10 mr-10 h-4 cursor-pointer"
           id="spanPag"
-          onclick="handlePaginationClick(1)"></span>
+          onclick="handlePaginationClick(1)"
+        >
+        </span>
       </div>
     </div>
   </section>
+
 </section>
+  <script>
+    import { gsap } from "gsap";
+    import data from "../../content/services/service.json";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-<script>
-  import { gsap } from "gsap";
-  import data from "../../content/services/service.json";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-  const card = document.querySelector("#services");
-  const servicesItems = Object.values(data.services).flatMap((service) =>
-    Object.values(service)
-  );
-  const buttonPrev: any = document.getElementById("prevSVG");
-  const buttonNext: any = document.getElementById("nextSVG");
-  const spanPag: any = document.getElementById("spanPag");
-  let actualPage = 1;
-  let showQuantity = 1;
-  function handleNextPage() {
-    if (window.innerWidth > 1024) {
-      showQuantity = 3;
-    } else if (window.innerWidth > 640) {
-      showQuantity = 1;
-    } else {
-      showQuantity = 1;
-    }
-    const numberPages = Math.ceil(servicesItems.length / showQuantity);
-    if (actualPage < numberPages) {
-      actualPage++;
-      renderServices();
-    }
-  }
-  function handlePrevPage() {
-    if (actualPage > 1) {
-      actualPage--;
-      renderServices();
-    }
-  }
-  function renderServices() {
-    if (window.innerWidth >= 1024) {
-      showQuantity = 3;
-    } else if (window.innerWidth > 640) {
-      showQuantity = 1;
-    } else {
-      showQuantity = 1;
-    }
-    const valueTwoSlice = actualPage * showQuantity;
-    const valueOneSlice = (actualPage - 1) * showQuantity;
-    const finalServicesArray = servicesItems.slice(
-      valueOneSlice,
-      valueTwoSlice
-    );
-    const servicesContainer: any = document.querySelector(
-      ".services-container"
-    );
-    servicesContainer.innerHTML = "";
-    finalServicesArray.forEach((service: any) => {
-      const { title, imageService, path, description } = service;
-      const serviceElement = document.createElement("div");
-      serviceElement.classList.add(
-        "flex",
-        "flex-col",
-        "flex-1",
-        "shadow",
-        "border",
-        "h-auto",
-        "bg-[#f9fafb]",
-        "rounded-lg",
-        "p-4",
-        "m-10",
-        "max-sm:m-0",
-        "w-[400px]"
-      );
-      serviceElement.id = "service";
-      serviceElement.innerHTML = `
-                <div class="flex  justify-center items-center   max-sm:h-auto">
+    gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);const card=document.querySelector("#services");const servicesItems=Object.values(data.services).flatMap((service)=>Object.values(service),);const buttonPrev:any=document.getElementById("prevSVG");const buttonNext:any=document.getElementById("nextSVG");const spanPag:any=document.getElementById("spanPag");let actualPage=1;let showQuantity=1;function handleNextPage(){if(window.innerWidth>1024){showQuantity=3;}else if(window.innerWidth>640){showQuantity=1;}else{showQuantity=1;}const numberPages=Math.ceil(servicesItems.length/showQuantity);if(actualPage<numberPages){actualPage++;renderServices()}}function handlePrevPage(){if(actualPage>1){actualPage--;renderServices()}}function renderServices(){if(window.innerWidth>=1024){showQuantity=3;}else if(window.innerWidth>640){showQuantity=1;}else{showQuantity=1;}const valueTwoSlice=actualPage*showQuantity;const valueOneSlice=(actualPage-1)*showQuantity;const finalServicesArray=servicesItems.slice(valueOneSlice,valueTwoSlice,);const servicesContainer:any=document.querySelector(".services-container",);servicesContainer.innerHTML="";finalServicesArray.forEach((service:any)=>{const{title,imageService,path,description}=service;const serviceElement=document.createElement("div");serviceElement.classList.add("flex","flex-col","flex-1","shadow","border","md:w-[294px]","md:h-auto","bg-[#f9fafb]","rounded-lg","p-4","m-10","max-sm:m-0","md:p-3","md:p-2","lg:max-w-screen-sm","lg:px-15","lg:w-[370px]","sm:w-auto",);serviceElement.id="service";serviceElement.innerHTML=`
+                <div class="flex  justify-center items-center max-sm:max-w-screen-sm  max-sm:h-auto">
                     <img src="${imageService}" alt="Imagen del servicio" class="block w-30 h-20 object-cover mb-2">
                 </div>
                 <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${title}</h3>
@@ -139,37 +78,5 @@
                 <div class="flex justify-center">
                     <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${path}>Ver más</a>
                 </div>
-            `;
-      servicesContainer.appendChild(serviceElement);
-    });
-  }
-  function handlePaginationClick(pageNumber: any) {
-    actualPage = pageNumber;
-    renderServices();
-  }
-  buttonPrev.addEventListener("click", handlePrevPage);
-  buttonNext.addEventListener("click", handleNextPage);
-  spanPag.addEventListener("click", () => {
-    handlePaginationClick(3);
-  });
-  window.addEventListener("resize", handleResize);
-  function handleResize() {
-    renderServices();
-  }
-  window.onload = function () {
-    handleResize();
-  };
-  gsap.from(card, {
-    duration: 1,
-    opacity: 0,
-    y: 50,
-    stagger: 0.2,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#services",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-    },
-  });
-</script>
+            `;servicesContainer.appendChild(serviceElement)})}function handlePaginationClick(pageNumber:any){actualPage=pageNumber;renderServices()}buttonPrev.addEventListener("click",handlePrevPage);buttonNext.addEventListener("click",handleNextPage);spanPag.addEventListener("click",()=>{handlePaginationClick(3)});window.addEventListener("resize",handleResize);function handleResize(){renderServices()}window.onload=function(){handleResize()};gsap.from(card,{duration:1,opacity:0,y:50,stagger:0.2,ease:"power2.out",scrollTrigger:{trigger:"#services",start:"top 80%",end:"top 20%",scrub:true,}});
+  </script>
