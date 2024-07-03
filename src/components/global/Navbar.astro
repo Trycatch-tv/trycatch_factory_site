@@ -52,10 +52,10 @@ const navbarItems = [
         target: "_self",
       },
       {
-        name:"Sistema de facturacion",
+        name: "Sistema de facturacion",
         path: "/portfolio/sistema-facturacion",
         target: "_self",
-      }
+      },
     ],
   },
   {
@@ -70,21 +70,28 @@ const navbarItems = [
     target: "_self",
     subItems: [],
   },
+  {
+    name: "Blog",
+    path: "/blog",
+    target: "_self",
+    subItems: [],
+  },
 ];
+
+const navbarLenguaje = {
+  en: "Ingles",
+  es: "Español",
+};
 ---
 
-
-<nav class="bg-black/70 bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2">
+<nav
+  class="bg-tcf-backg bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
   >
     <a href="/" class="flex items-center">
-      <Image
-        src={nibble}
-       class="w-36 h-10 mr-3"
-        alt="TryCatch.tv Nibble"
-      />
-     
+      <Image src={nibble} class="w-36 h-10 mr-3" alt="TryCatch.tv Nibble" />
     </a>
     <button
       data-collapse-toggle="navbar-default"
@@ -103,7 +110,7 @@ const navbarItems = [
         viewBox="0 0 17 14"
       >
         <path
-          stroke="currentColor"
+          stroke="#9F9F9F"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
@@ -115,38 +122,41 @@ const navbarItems = [
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col gap-2 items-center w-full p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        id="menu-main"
       >
-        {
-          navbarItems.map((item) => (
-            <li class="navbar-submenu relative">
-              <a
-                href={item.path}
-                target={item.target || "_self"}
-                class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
-              >
-                {item.name}
-                {item.subItems.length > 0 && <ChevronDown size={15} />}
-              </a>
-              {item.subItems.length > 0 && (
-                <div
-                  class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
-                  onmouseover="showSubmenu(this)"
-                  onmouseout="hideSubmenu(this)"
+          {
+            navbarItems.map((item) => (
+              <li class="navbar-submenu relative">
+                <a
+                  href={item.path}
+                  target={item.target || "_self"}
+                  class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
                 >
-                  {item.subItems.map((subItem) => (
-                    <a
-                      href={subItem.path}
-                      class="block p-2 hover:bg-tcf-info  text-xs rounded"
-                    >
-                      {subItem.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </li>
-          ))
-        }
+                  {item.name}
+                  {item.subItems.length > 0 && (
+                    <ChevronDown size={16} class="text-tcf-menu" />
+                  )}
+                </a>
+                {item.subItems.length > 0 && (
+                  <div
+                    class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+                    onmouseover="showSubmenu(this)"
+                    onmouseout="hideSubmenu(this)"
+                  >
+                    {item.subItems.map((subItem) => (
+                      <a
+                        href={subItem.path}
+                        class="block p-2 hover:bg-tcf-info  text-xs rounded"
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))
+          }
         <li>
           <a
             href="/contact"
@@ -155,15 +165,52 @@ const navbarItems = [
             class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
           >
             Contacto
-          </a
-             >
+          </a>
+        </li>
+        <li class="navbar-submenu relative">
+          <a
+            href="#"
+            id="lenguaje"
+            target="_self"
+            class="flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white"
+          >
+            <p>{navbarLenguaje.es}</p>
+            <ChevronDown size={16} class="text-white" />
+          </a>
+          <div
+            class="absolute hidden left-0 min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+            onmouseover="showSubmenu(this)"
+            onmouseout="hideSubmenu(this)"
+          >
+            {
+              Object.entries(navbarLenguaje).map(([key, value]) => (
+                <a
+                  href="/lenguaje"
+                  class="block p-2 hover:bg-tcf-info  text-xs rounded"
+                >
+                  {value}
+                </a>
+              ))
+            }
+          </div>
         </li>
       </ul>
     </div>
+    <!-- <ul
+      class="flex flex-col order-3 items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+      id="menu-lenguage"
+    >
+    </ul> -->
   </div>
 </nav>
 
 <script is:inline>
+  const menuMain = document.querySelector("#menu-main");
+
+  if (window.innerWidth < 768) {
+    menuMain.appendChild(document.querySelector("#menu-lenguage"));
+  }
+
   function toggleMenu() {
     if (!document.getElementById("navbar-sticky")) return;
 
@@ -180,14 +227,13 @@ const navbarItems = [
   function openModal() {
     document.getElementById("myModal")?.classList.remove("hidden");
     document.getElementById("myModal")?.classList.add("flex");
-
   }
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     const modal = document.getElementById("myModal");
     if (event.target === modal) {
       modal.classList.add("hidden");
     }
-  }
+  };
 </script>
 
 <style>
