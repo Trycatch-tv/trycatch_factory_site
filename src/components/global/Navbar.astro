@@ -90,7 +90,7 @@ const navbarLenguaje = {
   class="bg-tcf-backg bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2"
 >
   <div
-    class="max-w-screen-xl flex flex-wrap items-center justify-evenly mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
   >
     <a href="/" class="flex items-center">
       <Image src={nibble} class="w-36 h-10 mr-3" alt="TryCatch.tv Nibble" />
@@ -112,7 +112,7 @@ const navbarLenguaje = {
         viewBox="0 0 17 14"
       >
         <path
-          stroke="currentColor"
+          stroke="#939393"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
@@ -124,7 +124,7 @@ const navbarLenguaje = {
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col gap-2 items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
         id="menu-main"
       >
         {
@@ -170,40 +170,35 @@ const navbarLenguaje = {
             Contacto
           </a>
         </li>
+        <li class="navbar-submenu relative">
+          <a
+            href="#"
+            id="lenguaje"
+            target="_self"
+            class="flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white"
+          >
+            <p>{navbarLenguaje.es}</p>
+            <ChevronDown size={16} class="text-white" />
+          </a>
+          <div
+            class="absolute hidden left-0 min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+            onmouseover="showSubmenu(this)"
+            onmouseout="hideSubmenu(this)"
+          >
+            {
+              Object.entries(navbarLenguaje).map(([key, value]) => (
+                <a
+                  href="/lenguaje"
+                  class="block p-2 hover:bg-tcf-info  text-xs rounded"
+                >
+                  {value}
+                </a>
+              ))
+            }
+          </div>
+        </li>
       </ul>
     </div>
-    <ul
-      class="flex flex-col order-3 items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
-      id="menu-lenguage"
-    >
-      <li class="navbar-submenu relative">
-        <a
-          href="#"
-          id="lenguaje"
-          target="_self"
-          class="flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white"
-        >
-          <p>{navbarLenguaje.es}</p>
-          <ChevronDown size={16} class="text-white" />
-        </a>
-        <div
-          class="absolute hidden left-0 min-w-[200px] bg-white p-2 z-20 border rounded-lg"
-          onmouseover="showSubmenu(this)"
-          onmouseout="hideSubmenu(this)"
-        >
-          {
-            Object.entries(navbarLenguaje).map(([key, value]) => (
-              <a
-                href="/lenguaje"
-                class="block p-2 hover:bg-tcf-info  text-xs rounded"
-              >
-                {value}
-              </a>
-            ))
-          }
-        </div>
-      </li>
-    </ul>
   </div>
 </nav>
 
