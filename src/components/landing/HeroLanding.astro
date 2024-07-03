@@ -32,22 +32,22 @@ const content = {
 >
   <div class="w-full h-full top-0 bg-white"></div>
   <div
-    class="flex max-sm:flex-col sm:flex-col max-w-screen-xl relative z-10 w-full items-center lg:flex-row px-8 mx-auto"
+    class="flex overflow-hidden max-sm:flex-col sm:flex-col max-w-screen-xl relative z-10 w-full items-center lg:flex-row px-8 mx-auto"
     id="content"
   >
-    <article class="mb-4 max-w-2xl">
+    <article class="mb-4 max-w-2xl relative z-10">
       <h1
-        class="mb-5 text-start text-wrap text-2xl text-[#101F57]  font-bold tracking-tight leading-none max-sm:text-center max-sm:text-4xl md:text-5xl text-center xl:text-[40px] xl:text-left lg:mb-8 lg:text-start"
+        class="mb-5 text-wrap text-2xl text-[#101F57]  font-bold tracking-tight leading-none max-sm:text-center max-sm:text-4xl md:text-5xl text-center xl:text-[40px] xl:text-left lg:mb-8 lg:text-start"
       >
         {content.title}
       </h1>
       <p
-        class="max-w-xl text-[#101F57] text-balance text-xl lg:text-xl mb-5 lg:mb-5 lg:text-start text-center sm:text-center max-sm:text-center"
+        class="lg:max-w-xl text-[#101F57] text-balance text-xl lg:text-xl mb-5 lg:mb-5 lg:text-start text-center sm:text-center max-sm:text-center"
       >
         {content.parrafoUno}
       </p>
       <p
-        class="max-w-xl text-[#101F57]  text-xl lg:text-xl mb-5 lg:mb-14 lg:text-start text-center sm:text-center max-sm:text-center"
+        class="lg:max-w-xl text-[#101F57]  text-xl lg:text-xl mb-5 lg:mb-14 lg:text-start text-center sm:text-center max-sm:text-center"
       >
         {content.parrafoDos}
       </p>
@@ -68,15 +68,15 @@ const content = {
       </div>
     </article>
 
-    <div class="lg:w-1/2">
+    <div class="lg:w-1/2 hidden lg:block">
       <Image
         src={Background}
-        class="absolute inset-y-0 right-[-2rem]  w-[60%] h-[456px] z-0 max-sm:hidden"
+        class="absolute inset-y-0 right-[-2rem]  w-[60%] h-[456px] z-0"
         alt="Background"
       />
       <Image
         src={HeroImage}
-        class="relative w-[565px] object-cover object-center z-10 rounded-lg h-[456px] max-sm:hidden"
+        class="relative w-[565px] object-cover object-center z-10 rounded-lg h-[456px]"
         alt="TryCatch.tv Nibble"
         id="image"
       />

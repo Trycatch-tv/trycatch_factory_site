@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import nibble from "./../../assets/img/LogoWhite.webp";
 import { ChevronDown } from "lucide-astro";
 
-
 const navbarItems = [
   {
     name: "Servicios",
@@ -40,7 +39,6 @@ const navbarItems = [
         path: "/services/landing-page",
         target: "_self",
       },
-      
     ],
   },
   {
@@ -73,15 +71,15 @@ const navbarItems = [
     subItems: [],
   },
   {
-    name:"Blog",
-    path:"/blog",
-    target:"_self",
-    subItems:[]
-  }
+    name: "Blog",
+    path: "/blog",
+    target: "_self",
+    subItems: [],
+  },
 ];
 
 const navbarLenguaje = {
-  en: "Ingles" ,
+  en: "Ingles",
   es: "Español",
 };
 ---
@@ -112,7 +110,7 @@ const navbarLenguaje = {
         viewBox="0 0 17 14"
       >
         <path
-          stroke="#939393"
+          stroke="#9F9F9F"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
@@ -124,42 +122,41 @@ const navbarLenguaje = {
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col gap-2 items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col gap-2 items-center w-full p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
         id="menu-main"
       >
-        {
-          navbarItems.map((item) => (
-            <li class="navbar-submenu relative">
-              <a
-                href={item.path}
-                target={item.target || "_self"}
-                class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
-              >
-                {item.name}
-                {item.subItems.length > 0 && (
-                  <ChevronDown size={16} class="text-tcf-menu" />
-                )}
-              </a>
-              {item.subItems.length > 0 && (
-                <div
-                  class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
-                  onmouseover="showSubmenu(this)"
-                  onmouseout="hideSubmenu(this)"
+          {
+            navbarItems.map((item) => (
+              <li class="navbar-submenu relative">
+                <a
+                  href={item.path}
+                  target={item.target || "_self"}
+                  class=" flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white "
                 >
-                  {item.subItems.map((subItem) => (
-                    <a
-                      href={subItem.path}
-                      class="block p-2 hover:bg-tcf-info  text-xs rounded"
-                    >
-                      {subItem.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </li>
-          ))
-        }
-
+                  {item.name}
+                  {item.subItems.length > 0 && (
+                    <ChevronDown size={16} class="text-tcf-menu" />
+                  )}
+                </a>
+                {item.subItems.length > 0 && (
+                  <div
+                    class="absolute hidden left-0  min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+                    onmouseover="showSubmenu(this)"
+                    onmouseout="hideSubmenu(this)"
+                  >
+                    {item.subItems.map((subItem) => (
+                      <a
+                        href={subItem.path}
+                        class="block p-2 hover:bg-tcf-info  text-xs rounded"
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))
+          }
         <li>
           <a
             href="/contact"
@@ -199,16 +196,19 @@ const navbarLenguaje = {
         </li>
       </ul>
     </div>
+    <!-- <ul
+      class="flex flex-col order-3 items-center p-4 md:p-2 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+      id="menu-lenguage"
+    >
+    </ul> -->
   </div>
 </nav>
 
 <script is:inline>
-  
-  const menuMain = document.querySelector("#menu-main")
- 
+  const menuMain = document.querySelector("#menu-main");
 
-  if(window.innerWidth < 768){
-     menuMain.appendChild(document.querySelector("#menu-lenguage"))
+  if (window.innerWidth < 768) {
+    menuMain.appendChild(document.querySelector("#menu-lenguage"));
   }
 
   function toggleMenu() {
