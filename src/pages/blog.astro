@@ -1,0 +1,64 @@
+---
+import { ArrowBigRight, ChevronDown } from "lucide-astro";
+import HeroBlog from "../components/landing/HeroBlog.astro";
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("./blog/*.md");
+---
+<Layout title="Blog">
+    <HeroBlog />
+    <h2 class="text-center mx-auto mt-4 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Blogs</h2>
+    <div
+        class="grid grid-cols-3 gap-4 mx-auto my-auto max-w-screen-xl p-4 max-sm:grid-cols-1"
+        id="heroblog"
+    >
+        {
+            allPosts.map((post: any) => (
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                    id="cards-blog"
+                >
+                    <img
+                        src={post.frontmatter.image.url}
+                        alt={post.frontmatter.title}
+                        class="rounded-t-lg w-full h-48 object-cover object-center"
+                    />
+
+                    <div class="p-5">
+                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            {post.frontmatter.title}
+                        </h2>
+                        <a
+                            href={post.url}
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Saber mas
+                            <ArrowBigRight />
+                        </a>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Layout>
+<script>
+    import { gsap as r } from "gsap";
+    import { ScrollTrigger as o } from "gsap/ScrollTrigger";
+    r.registerPlugin(o),
+        r.fromTo(
+            "#heroblog",
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                stagger: 0.3,
+                scrollTrigger: {
+                    trigger: "#cards-blog",
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: 1,
+                },
+            },
+        );
+</script>

@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import ToolsImage from "../../assets/img/ToolsImage.webp";
+---
+
+<section class="relative md:pt-44 w-full md:px-12">
+  <div class="flex flex-col lg:flex-row mx-auto bg-tcf-blue h-3/4 py-44">
+    <!-- Contenido del texto -->
+    <div
+      class="flex relative z-10 flex-col justify-center px-10 py-10 bg-tcf-blue w-full lg:relative lg:z-10"
+    >
+      <h1 class="text-4xl md:text-4xl text-white font-bold">
+        Blogs digitales - TryCatch Factory
+      </h1>
+      
+    </div>
+    <!-- Contenedor de la imagen -->
+    <div
+      class="flex flex-col justify-center items-center w-full absolute inset-0 lg:justify-center"
+    >
+      <div class="w-full h-full opacity-30 z-0">
+        <Image
+          class="w-full h-full object-cover"
+          src={ToolsImage}
+          alt="tools image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
