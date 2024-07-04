@@ -5,6 +5,9 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
+    fontFamily:{
+    'sans': 'Montserrat, sans-serif'
+    },
     extend: {
     
       flexBasis: {

@@ -1,0 +1,59 @@
+---
+import { ArrowBigRight } from "lucide-astro";
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("./blog/*.md");
+---
+
+<Layout title="Blog">
+    <div
+        class="grid grid-cols-3 gap-4 mx-auto my-28 max-w-screen-xl p-4 max-sm:grid-cols-1 font-sans"
+        id="heroblog"
+    >
+        {
+            allPosts.map((post: any) => (
+                <div
+                    class="max-w-sm  flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  "
+                    id="cards-blog"
+                >
+                    <img
+                        src={post.frontmatter.image.url}
+                        alt={post.frontmatter.image.alt}
+                        class="rounded-t-lg w-full h-48 object-cover object-center"
+                    />
+
+                    <div class="p-5">
+                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-sans">
+                            {post.frontmatter.title}
+                        </h2>
+                        <a
+                            href={post.url}
+                            class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-950 rounded-3xl hover:bg-tcf-gray-l hover:text-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-sans transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"
+                        >
+                            Saber mas
+                            <ArrowBigRight />
+                        </a>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Layout>
+<script>
+    import { gsap as r } from "gsap";
+    import { ScrollTrigger as o } from "gsap/ScrollTrigger";
+    r.registerPlugin(o);
+    r.fromTo(
+        "#cards-blog",
+        {
+            opacity: 0,
+            y: 50,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.3, // Añade un retardo entre cada tarjeta
+        },
+    );
+</script>
