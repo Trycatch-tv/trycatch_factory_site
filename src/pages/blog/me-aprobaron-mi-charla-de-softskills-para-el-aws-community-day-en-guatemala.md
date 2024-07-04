@@ -3,7 +3,7 @@ layout: "../../layouts/BlogLayoutLanding.astro"
 title: "Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊"
 author: "Judlup"
 image:
-  url: "/public/img/Conferencia.jpg"
+  url: "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
   alt: "Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊"
 tags:
   [

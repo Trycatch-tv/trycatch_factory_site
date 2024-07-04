@@ -1,16 +1,18 @@
 ---
+
+
 layout: "../../layouts/BlogLayoutLanding.astro"
 title: "Aprenda a implementar un control de acceso basado en roles en NodeJS"
 author: "Judlup"
 image:
-  url: "../../../public/img/imgBlog2.jpg"
+  url: "https://images.unsplash.com/photo-1461685265823-f8d5d0b08b9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
   alt: "Aprenda a implementar un control de acceso basado en roles en NodeJS"
 tags:
   [
     '-Python \n-Aprendizaje automático \n-Analizador de sentimiento \n-Notificaciones \n-Prueba de escritura \n-Administrador de contraseña \n-Aplicación de cuestionarios \n-Detector de tarjetas de crédito fraudulentas \n-Red de contactos \n-Suscripción',
   ]
 date: 2023-10-04
-slug: "71-proyectos-para-practicar-python"
+slug: "Aprenda-a-implementar-un-control-de-acceso-basado-en-roles-en-NodeJS"
 published: true
 ---
 

@@ -3,7 +3,7 @@ layout: "../../layouts/BlogLayoutLanding.astro"
 title: "Playlist para aprender redes neuronales con Python desde cero y en español"
 author: "Judlup"
 image:
-  url: "/public/img/redes_neuronales.jpg"
+  url: "https://images.unsplash.com/photo-1667372531881-6f975b1c86db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3732&q=80"
   alt: "Playlist para aprender redes neuronales con Python desde cero y en español"
 tags:
   [

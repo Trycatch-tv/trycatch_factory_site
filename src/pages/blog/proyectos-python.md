@@ -1,9 +1,10 @@
 ---
+
 layout: "../../layouts/BlogLayoutLanding.astro"
 title: "71 proyectos para practicar Python"
 author: "Judlup"
 image:
-  url: "/public/img/python.jpg"
+  url: "https://images.unsplash.com/photo-1628853210688-acf6bfeb5daf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
   alt: "71 proyectos para practicar Python"
 tags:
   [
@@ -13,6 +14,7 @@ date: 2023-10-04
 slug: "71-proyectos-para-practicar-python"
 published: true
 ---
+
 
 ¿Estás aprendiendo Python y no sabes qué proyecto hacer? ¡No te preocupes! Acá te traemos 71 proyectos para que te diviertas y mejores tus habilidades de programación.
 
