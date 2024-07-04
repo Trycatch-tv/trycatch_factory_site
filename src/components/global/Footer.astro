@@ -15,7 +15,7 @@ const footerItems = [
         path: "/services/consultoria-tecnologia",
       },
       { name: "Integración", path: "/services/integraciones" },
-      { name: "Creación de landing Page", path: "/services/landing-page" },
+      { name: "Creación de landing page", path: "/services/landing-page" },
       {
         name: "Mantenimiento y actualización",
         path: "/services/mantenimiento-actualizado",
@@ -137,13 +137,18 @@ const redes = [
       </div>
     </section>
   </div>
-  <div class="flex w-full max-w-screen-xl mx-auto justify-center gap-5 mt-16">
-    {
-      redes.map((e) => (
-        <a class="hover:opacity-70" href={e.link} target="_blank">
-          <Icon size={28} name={e.icon} class="text-white text-xl mx-2" />
-        </a>
-      ))
-    }
+  <div class="flex flex-col items-center w-full max-w-screen-xl mx-auto justify-center gap-5 mt-16">
+    <p class="text-white font-medium">Síguenos en nuestras redes sociales</p>
+    <div class="flex gap-4">
+      {
+        redes.map((e) => (
+          <a class="hover:opacity-70" href={e.link} target="_blank">
+            <Icon size={28} name={e.icon} class="text-white text-xl mx-2" />
+          </a>
+        ))
+      }
+    </div>
+    <p class="text-gray-400 text-sm mt-10">© 2024 TryCatch 
+      Factory. Todos los derechos reservados.</p>
   </div>
 </footer>
