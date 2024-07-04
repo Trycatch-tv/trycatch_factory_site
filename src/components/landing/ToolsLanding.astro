@@ -3,25 +3,9 @@ import { Filter } from "lucide-astro";
 ---
 
 <section
-  class="flex flex-col mx-auto max-w-screen-2xl justify-center w-full min-h-[80vh] px-4 py-20"
+  class="grid grid-cols-3 gap-4 mx-auto my-28 max-w-screen-xl p-4 max-sm:grid-cols-1 font-sans"
+  id="cardContainer"
 >
-  <div class="w-full flex mb-20 max-w-[400px]">
-    <select id="itemSelect" class="w-full p-2 border border-gray-300 rounded">
-      <option value="all">Todos</option>
-      <option value="video">Videos</option>
-      <option value="articulo">Articulos</option>
-    </select>
-  </div>
-  <div class="flex w-full h-full flex-col">
-    <!-- Select en la parte izquierda -->
-    <!-- Tarjetas en la parte derecha -->
-    <div
-      id="cardContainer"
-      class="w-full h-full flex flex-wrap justify-center md:justify-start gap-14"
-    >
-      <!-- Las tarjetas se insertarán aquí dinámicamente -->
-    </div>
-  </div>
 </section>
 
 <script>
@@ -51,7 +35,6 @@ import { Filter } from "lucide-astro";
       link: "https://example.com/video2",
       image: "",
     },
-   
   ];
 
   function renderCards(cards: any) {
@@ -60,14 +43,16 @@ import { Filter } from "lucide-astro";
       const cardElement = document.createElement("div");
       cardElement.id = "rouserces";
       cardElement.className =
-        "bg-gray-50 border p-4 shadow rounded flex items-center"; // Agregamos flexbox para alinear la imagen y el contenido
+        "max-w-sm  flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"; // Agregamos flexbox para alinear la imagen y el contenido
       cardElement.innerHTML = `
-      <img src="${card.image}" class="w-16 h-16 mr-4" alt="Imagen recurso"> <!-- Agregamos la imagen -->
-      <div>
-        <h3 class="text-lg font-bold mb-2">${card.title}</h3>
+      <img src="${card.image}" class="rounded-t-lg w-full h-48 object-cover object-center" alt="Imagen recurso"> <!-- Agregamos la imagen -->
+      <div class="p-5">
+        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-sans2">${card.title}</h3>
+       
         <p>${card.description}</p>
-        <a href="${card.link}" target="_blank" class="mt-4 inline-block bg-tcf-blue hover:bg-gray-500 text-white py-2 px-4 rounded-full">Ver Recurso</a>
-      </div>
+        <a href="${card.link}" target="_blank" class="mt-2 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-950 rounded-3xl hover:bg-tcf-gray-l hover:text-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-sans transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">Ver Recurso</a>
+           
+        </div>
     `;
       cardContainer.appendChild(cardElement);
       gsap.fromTo(
@@ -82,7 +67,7 @@ import { Filter } from "lucide-astro";
           duration: 1,
           ease: "power2.out",
           stagger: 0.3, // Añade un retardo entre cada tarjeta
-        }
+        },
       );
     });
   }
@@ -97,10 +82,9 @@ import { Filter } from "lucide-astro";
       renderCards(cardsData);
     } else {
       const filteredCards = cardsData.filter(
-        (card) => card.type === selectedValue
+        (card) => card.type === selectedValue,
       );
       renderCards(filteredCards);
     }
   });
 </script>
-
