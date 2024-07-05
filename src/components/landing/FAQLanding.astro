@@ -63,7 +63,9 @@ data.faq.forEach((item) => {
                     </span>
                     {item.question}
                   </div>
-                  <ChevronDown />
+                  <span>
+                    <ChevronDown />
+                  </span>
                 </button>
                 <div
                   class="answer max-h-0   pt-2 pb-5 px-5 text-sm lg:text-base text-gray-900 font-medium mb-2"
@@ -93,7 +95,7 @@ data.faq.forEach((item) => {
   gsap.fromTo(
     "#question",
     {
-      x: -10,
+      y: 100,
       opacity: 0,
     },
     {

@@ -36,12 +36,12 @@ export interface SiteMetadata {
   gsap.fromTo(
     "#call",
     {
-      x: -10,
+      y: 100,
       opacity: 0,
     },
     {
-      y: -100,
       opacity: 1,
+      y: -100,
       scrollTrigger: {
         trigger: "#call",
         start: "top 80%", // Start the animation when the top of the box hits 80% from the top of the viewport
