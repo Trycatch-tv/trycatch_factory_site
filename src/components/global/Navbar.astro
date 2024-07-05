@@ -5,6 +5,12 @@ import { ChevronDown } from "lucide-astro";
 
 const navbarItems = [
   {
+    name:"Inicio",
+    path: "/",
+    target: "_self",
+    subItems: [],
+  },
+  {
     name: "Servicios",
     path: "#",
     target: "_self",
@@ -41,29 +47,29 @@ const navbarItems = [
       },
     ],
   },
-  {
-    name: "Portafolio",
-    path: "#",
-    target: "_self",
-    subItems: [
-      {
-        name: "Sistema inventario",
-        path: "/portfolio/sistema-inventario",
-        target: "_self",
-      },
-      {
-        name:"Sistema de facturacion",
-        path: "/portfolio/sistema-facturacion",
-        target: "_self",
-      }
-    ],
-  },
-  {
-    name: "Recursos",
-    path: "/resources",
-    target: "_self",
-    subItems: [],
-  },
+  // {
+  //   name: "Portafolio",
+  //   path: "#",
+  //   target: "_self",
+  //   subItems: [
+  //     {
+  //       name: "Sistema inventario",
+  //       path: "/portfolio/sistema-inventario",
+  //       target: "_self",
+  //     },
+  //     {
+  //       name:"Sistema de facturacion",
+  //       path: "/portfolio/sistema-facturacion",
+  //       target: "_self",
+  //     }
+  //   ],
+  // },
+  // {
+  //   name: "Recursos",
+  //   path: "/resources",
+  //   target: "_self",
+  //   subItems: [],
+  // },
   {
     name: "Equipo",
     path: "/team",
