@@ -2,21 +2,19 @@
 import Image from "astro/components/Image.astro";
 import angular from "../../assets/img/angular.svg";
 import react from "../../assets/img/react.svg";
-import vue from "../../assets/img/vue.svg";
-import svelte from "../../assets/img/svelte.svg";
+import next from "../../assets/img/nextjs.svg";
 import spring from "../../assets/img/spring.svg";
 import nestjs from "../../assets/img/nestjs.svg";
 import django from "../../assets/img/django.svg";
-import laravel from "../../assets/img/laravel.svg";
 import aws from "../../assets/img/aws.svg";
-import azure from "../../assets/img/azure.svg";
-import googleCloud from "../../assets/img/google-cloud.svg";
-import oracle from "../../assets/img/oracle.svg";
-import kotlin from "../../assets/img/kotlin.svg";
+import lambda from "../../assets/img/lambda.png";
+import postgresql from "../../assets/img/postgresql.svg";
 import flutter from "../../assets/img/flutter.svg";
-import swift from "../../assets/img/swift.svg";
-import salesForce from "../../assets/img/salesforce.svg"
-import shopify from "../../assets/img/shopify.svg"
+import mysql from "../../assets/img/mysql.svg";
+import salesForce from "../../assets/img/salesforce.svg";
+import shopify from "../../assets/img/shopify.svg";
+import mongodb from "../../assets/img/mongodb.png";
+import astro from "../../assets/img/astro.svg";
 
 const technologyData = [
   {
@@ -31,27 +29,27 @@ const technologyData = [
         url: react,
       },
       {
-        name: "Vue",
-        url: vue,
+        name: "Next.js",
+        url: next,
       },
       {
-        name: "Svelte",
-        url: svelte,
+        name: "Astro",
+        url: astro,
       },
     ],
     quantity: 20,
-    description: "Proyectos realizados.",
+    description: " Proyectos realizados.",
   },
 
   {
     title: "Backend",
     tecnologies: [
       {
-        name: "Spring boot",
+        name: "Spring Boot",
         url: spring,
       },
       {
-        name: "Nestjs",
+        name: "NestJS",
         url: nestjs,
       },
       {
@@ -59,12 +57,20 @@ const technologyData = [
         url: django,
       },
       {
-        name: "Laravel",
-        url: laravel,
+        name: "PostgreSQL",
+        url: postgresql,
+      },
+      {
+        name: "MongoDB",
+        url: mongodb,
+      },
+      {
+        name: "MySQL",
+        url: mysql,
       },
     ],
     quantity: 15,
-    description: "Años de experiencia acumulada.",
+    description: " Años de experiencia acumulada.",
   },
   {
     title: "Cloud",
@@ -73,50 +79,35 @@ const technologyData = [
         name: "Aws",
         url: aws,
       },
+
       {
-        name: "Azure",
-        url: azure,
-      },
-      {
-        name: "Google Cloud",
-        url: googleCloud,
-      },
-      {
-        name: "Oracle",
-        url: oracle,
+        name: "Serverless",
+        url: lambda,
       },
     ],
     quantity: 5,
-    description: "Especialistas AWS certified.",
+    description: " Especialistas AWS.",
   },
   {
     title: "Mobile",
     quantity: 5,
-    description: "Desarrollo de Apps",
+    description: " Desarrollo de Apps",
     tecnologies: [
-      {
-        name: "Kotlin",
-        url: kotlin,
-      },
       {
         name: "Flutter",
         url: flutter,
       },
       {
-        name: "React",
-        url: react,
-      },
-      {
-        name: "Swift",
-        url: swift,
-      },
+        name:"React Native",
+        url:react
+      }
     ],
   },
   {
-    title: "Especialistas en integraciones", 
+    title: "Especialistas en integraciones",
     quantity: 5,
-    description: "Diferentes servicios",
-    
+    description: " Diferentes servicios",
+
     tecnologies: [
       {
         name: "SalesForce",
@@ -126,11 +117,8 @@ const technologyData = [
         name: "Shopify",
         url: shopify,
       },
-    
-     
     ],
-
-  }
+  },
 ];
 ---
 
@@ -145,50 +133,60 @@ const technologyData = [
 
   gsap.from("#card", {
     duration: 1,
-      opacity: 0,
-      y: 50,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#card",
-        start: "top 80%", // Inicia la animación cuando la parte superior del grid está en el 80% de la altura del viewport
-        end: "top 20%", // Termina la animación cuando la parte superior del grid está en el 20% de la altura del viewport
-        scrub: true, // Sincroniza la animación con el desplazamiento del scroll
-       
-      }
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#card",
+      start: "top 80%", // Inicia la animación cuando la parte superior del grid está en el 80% de la altura del viewport
+      end: "top 20%", // Termina la animación cuando la parte superior del grid está en el 20% de la altura del viewport
+      scrub: true, // Sincroniza la animación con el desplazamiento del scroll
+    },
   });
 </script>
 <section
-  class="max-w-screen-xl p-6 mx-auto sm:py-12 lg:py-24 min-h-screen flex flex-col justify-center"
+  class="max-w-screen-2xl p-6 mx-auto sm:py-12 lg:py-24 min-h-screen flex flex-col justify-center"
 >
   <h2
     class="text-[#172554] text-3xl font-bold leading-none sm:text-4xl text-center"
   >
     Tecnologías
   </h2>
-  <div
-    class="flex gap-10 gap-x-20 flex-wrap justify-center mx-auto mt-12"
-    
-  >
+  <div class="flex gap-10 gap-x-20 flex-wrap justify-center mx-auto mt-12">
     {
       technologyData.map((item) => (
-        <div class="lg:w-[482px] max-lg:w-[482px] md:w-[482px] max-md:w-[482px] sm:w-auto max-sm:w-auto  border-[#172554] rounded-xl py-6 px-2.5 md:px-8 md:border"  id="card">
+        <div
+          class="max-w-md min-w-[300px] sm:min-w-[600px] sm:w-auto max-sm:w-auto md:border-[#172554] shadow-sm rounded-xl py-6 px-2.5 md:px-8 md:border"
+          id="card"
+        >
           <h3 class="text-[#172554] text-xl font-bold leading-none sm:text-2xl text-center">
             {item.title}
           </h3>
-          <div class="flex flex-col md:flex-row gap-1 justify-center items-center my-5">
-            <strong>+{item.quantity}</strong>
-            <p class="text-center text-[#172554]">{item.description}</p>
+          <div class="flex flex-col gap-2 md:flex-row justify-center items-center my-5">
+            <strong class="text-[#172554] text-lg sm:text-xl font-bold">
+              +{item.quantity}
+            </strong>
+            <p class="text-center font-medium text-[#172554]">
+              {item.description}
+            </p>
           </div>
-          <div class="flex flex-wrap gap-1.5 max-sm:justify-center">
+          <div class="min-h-auto flex flex-wrap justify-center gap-10">
             {item.tecnologies.map((tech) => (
-              <div class="h-24 rounded-xl border overflow-hidden place-content-between max-sm:h-14">
-                <Image
-                  class="w-full h-full"
-                  src={tech.url}
-                  alt={tech.name}
-                  title={tech.name}
-                />
+              <div class="size-auto flex  justify-center items-center">
+                <figure class="flex flex-col justify-center items-center">
+                  <Image
+                    class="my-5 w-8 h-8 md:h-16 md:w-16"
+                    src={tech.url}
+                    alt={tech.name}
+                    title={tech.name}
+                  />
+                  <div>
+                    <p class="text-[#172554] font-medium  text-xs sm:text-base text-center">
+                      {tech.name}
+                    </p>
+                  </div>
+                </figure>
               </div>
             ))}
           </div>
