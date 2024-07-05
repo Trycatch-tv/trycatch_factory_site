@@ -2,7 +2,7 @@
 import Image from "astro/components/Image.astro";
 import angular from "../../assets/img/angular.svg";
 import react from "../../assets/img/react.svg";
-import next from "../../assets/img/Next.png";
+import next from "../../assets/img/nextjs.svg";
 import spring from "../../assets/img/spring.svg";
 import nestjs from "../../assets/img/nestjs.svg";
 import django from "../../assets/img/django.svg";
@@ -163,19 +163,22 @@ const technologyData = [
           <h3 class="text-[#172554] text-xl font-bold leading-none sm:text-2xl text-center">
             {item.title}
           </h3>
-          <div class="flex flex-col md:flex-row gap-1 justify-center items-center my-5">
+          <div class="flex flex-col md:flex-row justify-center items-center my-5">
             <strong>+{item.quantity}</strong>
             <p class="text-center text-[#172554]">{item.description}</p>
           </div>
-          <div class="flex flex-wrap gap-1.5 max-sm:justify-center">
+          <div class="min-h-auto grid grid-flow-row grid-cols-2">
             {item.tecnologies.map((tech) => (
-              <div class="h-24 rounded-xl border overflow-hidden place-content-between max-sm:h-14">
+              <div class="size-auto flex flex-col justify-center items-center">
                 <Image
-                  class="w-full h-full"
+                  class="my-5 size-5/12"
                   src={tech.url}
                   alt={tech.name}
                   title={tech.name}
                 />
+                <div class="size-5/12">
+                  <p class="text-[#172554] font-bold text-lg text-center">{tech.name}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -183,4 +186,3 @@ const technologyData = [
       ))
     }
   </div>
-</section>
