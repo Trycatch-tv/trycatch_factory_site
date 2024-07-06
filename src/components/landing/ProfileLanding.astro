@@ -1,70 +1,67 @@
 ---
-import { Github, Linkedin, Mailbox } from "lucide-astro";
-import HeroImage from "../../assets/img/worker_svgrepo.com.svg";
-import Image from "astro/components/Image.astro";
+import CardsTeam from "./CardsTeam.astro";
+import Ceo from "../../assets/img/ceo.png";
+import Cso from "../../assets/img/juliana.png";
+import Cmo from "../../assets/img/carlos.jpeg";
+import Cpo from "../../assets/img/william.jpeg";
+import Cto from "../../assets/img/cto.jpeg";
+import Coo from "../../assets/img/coo.jpeg";
+import TeachLead from "../../assets/img/teachlead.jpeg";
+import FrontEnd from "../../assets/img/frontend.jpeg";
+import BackEnd from "../../assets/img/backend.jpeg";
+import DesignUiUx from "../../assets/img/designuiux.jpeg";
+import CardRolsTeam from "./CardRolsTeam.astro";
 
-const profiles = [
-  {
-    img: HeroImage,
-    name: "Julian Moreno",
-    roles: "Tech Lead",
-
-    socialMedia: [
-      {
-        icon: Linkedin,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Github,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Mailbox,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-    ],
+const contentCards = {
+  ceo: {
+    title: "CEO",
+    name: "Julian Luna",
+    image: Ceo,
   },
-  {
-    img: HeroImage,
-    name: "Angel Santibañez",
-    roles: "FullStack Jr Developer",
-
-    socialMedia: [
-      {
-        icon: Linkedin,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Github,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Mailbox,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-    ],
+  cso: {
+    title: "CSO",
+    name: "Juliana Arenas",
+    image: Cso,
   },
-  {
-    img: HeroImage,
-    name: "Manuel Barrios",
-    roles: "FullStack Jr Developer",
-
-    socialMedia: [
-      {
-        icon: Linkedin,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Github,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-      {
-        icon: Mailbox,
-        url: "https://www.linkedin.com/in/johndoe",
-      },
-    ],
+  cmo: {
+    title: "CMO",
+    name: "Carlos Nivia",
+    image: Cmo,
   },
-];
+  cpo: {
+    title: "CPO",
+    name: "Willian Poveda",
+    image: Cpo,
+  },
+  cto: {
+    title: "CTO",
+    name: "Andres Hernandez",
+    image: Cto,
+  },
+  coo: {
+    title: "COO",
+    name: "Daniel Luna",
+    image: Coo,
+  },
+};
+const contentRolsTeam = {
+  techlead: {
+    title: "Tech Lead +4",
+    image: TeachLead,
+  },
+  frontEnd: {
+    title: "Front End +5",
+    image: FrontEnd,
+  },
+  backEnd: {
+    title: "Back End +9",
+    image: BackEnd,
+  },
+  designUiUx: {
+    title: "Design UI/UX +2",
+    image: DesignUiUx,
+  },
+};
 ---
 
 <section class="py-16 min-h-[90vh]" id="seccionProfiles">
@@ -73,6 +70,36 @@ const profiles = [
   >
     Nuestro Equipo
   </h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-12">
+    <div class="col-span-2">
+      <CardsTeam {...contentCards.ceo} />
+    </div>
+    <div
+      class="flex flex-wrap items-center gap-4 md:gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
+    >
+      <div class="flex-1">
+        <CardsTeam {...contentCards.cso} />
+      </div>
+      <div class="flex-1">
+        <CardsTeam {...contentCards.cmo} />
+      </div>
+      <div class="flex-1">
+        <CardsTeam {...contentCards.cpo} />
+      </div>
+      <div class="flex-1">
+        <CardsTeam {...contentCards.cto} />
+      </div>
+      <div class="flex-1">
+        <CardsTeam {...contentCards.coo} />
+      </div>
+    </div>
+    <div class="grid grid-cols-1 self-center md:grid-cols-2  md:gap-8 lg:gap-12  gap-4 col-span-full lg:gap-12 w-full mx-auto place-items-center">
+    <CardRolsTeam {...contentRolsTeam.techlead} />
+    <CardRolsTeam {...contentRolsTeam.frontEnd} />
+    <CardRolsTeam {...contentRolsTeam.backEnd} />
+    <CardRolsTeam {...contentRolsTeam.designUiUx} />
+    </div>
+  </div>
   <!-- <div
     class="flex flex-col justify-center w-full md:flex-row md:gap-16 max-w-screen-xl mx-auto"
   >
@@ -122,7 +149,6 @@ const profiles = [
         start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
         end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
         scrub: 1, // La animación sigue el scroll de manera suave
-       
       },
     },
   );

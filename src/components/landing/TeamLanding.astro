@@ -5,11 +5,12 @@ import team from "../../assets/img/dev.webp";
 const content = {
   title: "Conoce a nuestro equipo de trabajo",
   description:
-"Contamos con un equipo de expertos apasionados y dedicados a entregar soluciones tecnológicas de alta calidad. Descubre quiénes somos y cómo podemos ayudarte.",
+    "Contamos con un equipo de expertos apasionados y dedicados a entregar soluciones tecnológicas de alta calidad. Descubre quiénes somos y cómo podemos ayudarte.",
   image: {
     description: "TryCatch.tv Nibble",
   },
 };
+
 ---
 
 <section
@@ -28,15 +29,11 @@ const content = {
       >
         {content.title}
       </h2>
-      <p
-        class="max-w-xl text-white text-balance text-xl sm:text-2xl font-medium mb-5 lg:max-w-md lg:mb-14 lg:text-start text-center"
-      >
-        {content.description}
-      </p>
+     
     </article>
 
     <div class="lg:w-1/2">
-     <Image src={team} alt={content.image.description}/>
+      <Image src={team} alt={content.image.description} />
     </div>
   </div>
 </section>

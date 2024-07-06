@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+const { title, name, image } = Astro.props;
+---
+<div class="flex flex-col items-center " id="profiles">
+  <Image src={image} alt={name} class="w-24 h-24 mb-3 rounded-full shadow-lg" />
+  <div class="card-body">
+    <h3 class="mb-1 text-xl font-medium text-gray-900 dark:text-white text-center">{title}</h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">{name}</p>
+  </div>
+</div>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      "#profiles",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.3, // Añade un retardo entre cada tarjeta
+        scrollTrigger: {
+          trigger: "#profiles",
+          start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+          end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
+          scrub: 1, // La animación sigue el scroll de manera suave
+        },
+      },
+    );
+  </script>
