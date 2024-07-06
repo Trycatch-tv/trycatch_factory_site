@@ -108,19 +108,17 @@ const contentRolsTeam = {
   gsap.fromTo(
     "#profiles",
     {
-      opacity: 0,
       y: 100,
     },
     {
-      opacity: 1,
       y: 0,
       duration: 1,
       ease: "power2.out",
       stagger: 0.3, // Añade un retardo entre cada tarjeta
       scrollTrigger: {
         trigger: "#seccionProfiles",
-        start: "top 70%", // Comienza cuando el contenedor está en el 80% de la ventana
-        end: "top 10%", // Termina cuando el contenedor está en el 20% de la ventana
+        start: "top 80%", // Comienza cuando el contenedor está en el 80% de la ventana
+        end: "top 20%", // Termina cuando el contenedor está en el 20% de la ventana
         scrub: 1, // La animación sigue el scroll de manera suave
       },
     },
