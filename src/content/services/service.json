@@ -3,7 +3,7 @@
         {
             "desarrollo-software": {
                 "title": "Software a la medida",
-                "imageService": "/img/Mesadetrabajo13ICONOSSERVICIOS.png",
+                "imageService": "/img/Mesadetrabajo13ICONOSSERVICIOS.webp",
                 "path": "/services/desarrollo-software",
                 "description": "Creamos aplicaciones y sistemas personalizados que se adaptan perfectamente a tus necesidades y objetivos empresariales.",
                 "levelEstructureTeam": [
@@ -22,7 +22,7 @@
             },
             "consultoria-tecnologia": {
                 "title": "Consultoría Tecnológica",
-                "imageService": "/img/Mesadetrabajo15ICONOSSERVICIOS.png ",
+                "imageService": "/img/Mesadetrabajo15ICONOSSERVICIOS.webp ",
                 "path": "/services/consultoria-tecnologia",
                 "description": "Te ayudamos a tomar decisiones informadas sobre tecnología y estrategias de TI para optimizar tus operaciones y mejorar tu rendimiento.",
                 "levelEstructureTeam": [
@@ -47,7 +47,7 @@
             },
             "integraciones": {
                 "title": "Integraciones",
-                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.png",
+                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.webp",
                 "path": "/services/integraciones",
                 "description": "Conecta y automatiza tus sistemas para mayor eficiencia Facilitamos la integración de tus plataformas y sistemas, asegurando que todos trabajen juntos de manera efectiva.",
                 "levelEstructureTeam": [
@@ -69,7 +69,7 @@
             },
             "integraciones-a-shopify-y-salesforce": {
                 "title": "Integraciones a Shopify / Salesforce",
-                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.png",
+                "imageService": "/img/Mesadetrabajo17ICONOSSERVICIOS.webp",
                 "path": "/services/integraciones-a-shopify-y-salesforce",
                 "description": "Desarrollamos soluciones personalizadas para plataformas como Shopify y Salesforce. Optimizamos la operatividad y ampliamos tus capacidades tecnológicas con nuestras integraciones.",
                 "levelEstructureTeam": [
@@ -90,7 +90,7 @@
             },
             "mantenimiento-actualizado": {
                 "title": "Mantenimiento y Actualización",
-                "imageService": "/img/Mesadetrabajo16ICONOSSERVICIOS.png",
+                "imageService": "/img/Mesadetrabajo16ICONOSSERVICIOS.webp",
                 "path": "/services/mantenimiento-actualizado",
                 "description": "Garantizamos que tus sistemas de software funcionen de manera eficiente y segura, proporcionando soporte continuo y mejoras constantes.",
                 "levelEstructureTeam": [
@@ -110,7 +110,7 @@
             },
             "landing-page": {
                 "title": "Creación de Landing Page",
-                "imageService": "/img/Mesadetrabajo18ICONOSSERVICIOS.png ",
+                "imageService": "/img/Mesadetrabajo18ICONOSSERVICIOS.webp ",
                 "path": "/services/landing-page",
                 "description": "Impulsa tu presencia en línea con páginas web impactantes Diseñamos landing pages efectivas que captan la atención de tus clientes y potencian tu presencia en línea.",
                 "levelEstructureTeam": [
