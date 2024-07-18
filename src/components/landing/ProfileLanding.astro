@@ -5,7 +5,6 @@ import Cso from "../../assets/imgTeam/juliana.webp";
 import Cmo from "../../assets/imgTeam/carlos.webp";
 import Cpo from "../../assets/imgTeam/william.webp";
 import Cto from "../../assets/imgTeam/cto.webp";
-import Coo from "../../assets/imgTeam/coo.webp";
 import TeachLead from "../../assets/img/teachlead.jpeg";
 import FrontEnd from "../../assets/img/frontend.jpeg";
 import BackEnd from "../../assets/img/backend.jpeg";
@@ -19,7 +18,7 @@ const contentCards = {
     image: Ceo,
   },
   cso: {
-    title: "CSO",
+    title: "CSO - Arquitecta",
     name: "Juliana Arenas",
     image: Cso,
   },
@@ -34,14 +33,9 @@ const contentCards = {
     image: Cpo,
   },
   cto: {
-    title: "CTO",
+    title: "Consultor TI",
     name: "Andres Hernandez",
     image: Cto,
-  },
-  coo: {
-    title: "COO",
-    name: "Daniel Luna",
-    image: Coo,
   },
 };
 const contentRolsTeam = {
@@ -70,34 +64,37 @@ const contentRolsTeam = {
   >
     Nuestro Equipo
   </h1>
-  <div class="grid max-w-screen-xl mx-auto grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-12">
+  <div
+    class="grid max-w-screen-xl mx-auto grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-12"
+  >
     <div class="col-span-2">
       <CardsTeam {...contentCards.ceo} />
     </div>
     <div
-      class="flex flex-wrap items-center gap-4 md:gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
+      class="flex flex-wrap items-center justify-around gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
     >
-      <div class="flex-1">
+      <div>
         <CardsTeam {...contentCards.cso} />
       </div>
-      <div class="flex-1">
+
+      <div>
         <CardsTeam {...contentCards.cmo} />
       </div>
-      <div class="flex-1">
+      <div>
         <CardsTeam {...contentCards.cpo} />
       </div>
-      <div class="flex-1">
+      <div>
         <CardsTeam {...contentCards.cto} />
       </div>
-      <div class="flex-1">
-        <CardsTeam {...contentCards.coo} />
-      </div>
     </div>
-    <div class="grid py-28 grid-cols-1 self-center md:grid-cols-4  md:gap-8 gap-4 col-span-full lg:gap-4 w-full mx-auto place-items-center">
-    <CardRolsTeam {...contentRolsTeam.techlead} />
-    <CardRolsTeam {...contentRolsTeam.frontEnd} />
-    <CardRolsTeam {...contentRolsTeam.backEnd} />
-    <CardRolsTeam {...contentRolsTeam.designUiUx} />
+   
+    <div
+      class="grid py-28 grid-cols-1 self-center md:grid-cols-4 md:gap-8 gap-4 col-span-full lg:gap-4 w-full mx-auto place-items-center"
+    >
+      <CardRolsTeam {...contentRolsTeam.techlead} />
+      <CardRolsTeam {...contentRolsTeam.frontEnd} />
+      <CardRolsTeam {...contentRolsTeam.backEnd} />
+      <CardRolsTeam {...contentRolsTeam.designUiUx} />
     </div>
   </div>
 </section>
