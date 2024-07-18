@@ -1,25 +1,25 @@
----
+<!-- 
 import rocket from "../../assets/img/rocket-svgrepo-com.svg";
 import checked from "../../assets/img/checked-checkmark-done-to-do-radio-icon-svgrepo-com.svg";
 import speed from "../../assets/img/speed-svgrepo-com.svg";
 import optimazation from "../../assets/img/optimization-svgrepo-com.svg";
 import Image from "astro/components/Image.astro";
 const { characteristics } = Astro.props;
----
+-->
 
+<!-- 
 <script>
     import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/all";
-
+    import { ScrollTrigger } from "gsap/
+all";
     // Registramos el plugin ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
-
     // Seleccionamos las tarjetas por sus IDs
     const cardOne = document.getElementById("cardOne");
     const cardTwo = document.getElementById("cardTwo");
-    const cardThree = document.getElementById("cardThree");
+    const cardThree =
+ document.getElementById("cardThree");
     const cardFour = document.getElementById("cardFour");
-
     // Animación para cada tarjeta
     const animateCard = (card: any) => {
         gsap.from(card, {
@@ -37,13 +37,14 @@ const { characteristics } = Astro.props;
             },
         });
     };
-
     // Aplicamos la animación a cada tarjeta
     animateCard(cardOne);
     animateCard(cardTwo);
     animateCard(cardThree);
     animateCard(cardFour);
-</script>
+</script> 
+-->
+<!-- 
 {
     Array.isArray(characteristics) && characteristics.length > 0 && (
         <section class="py-10 max-w-screen-xl mx-auto grid grid-cols-1  md:grid-cols-2 gap-y-10">
@@ -90,3 +91,4 @@ const { characteristics } = Astro.props;
         </section>
     )
 }
+-->
