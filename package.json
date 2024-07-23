@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^3.0.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@googleapis/docs": "^3.0.2",
     "@iconify-json/fa": "^1.1.8",
     "@iconify-json/fa6-brands": "^1.1.19",
     "@iconify-json/ic": "^1.1.17",
@@ -24,13 +25,17 @@
     "astro-icon": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "esm": "^3.2.25",
     "flowbite": "^2.3.0",
+    "googleapis": "^140.0.1",
     "gsap": "^3.12.5",
     "lucide-astro": "^0.378.0",
+    "node-fetch": "^2.7.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "whatwg-url": "^14.0.0"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.66",
