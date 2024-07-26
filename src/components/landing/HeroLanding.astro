@@ -2,18 +2,28 @@
 import { Image } from "astro:assets";
 import HeroImage from "../../assets/img/nibble.png";
 import { CalendarCheck, ChevronDown } from "lucide-astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const titleHeroLanding = t('titleHeroLanding');
+const descriptionHeroLanding = t('descriptionHeroLanding');
+const titleButton = t('titleButton');
+const titleButton2 = t('titleButton2');
 
 const content = {
-  title: "Transformamos tus ideas en software personalizado",
+  title: titleHeroLanding,
   description:
-    "Diseñamos y desarrollamos soluciones tecnológicas a medida para llevar tu negocio al siguiente nivel. Nuestro enfoque en la calidad, la innovación y la experiencia del cliente garantiza resultados excepcionales.",
+    descriptionHeroLanding,
   ctas: [
     {
-      title: "Contáctanos Ahora",
+      title: titleButton,
       link: "https://calendly.com/trycatchfactory-com/30min",
     },
     {
-      title: "Nuestras Soluciones",
+      title: titleButton2,
       link: "#services",
     },
   ],
@@ -22,6 +32,7 @@ const content = {
     description: "TryCatch.tv Nibble",
   },
 };
+
 ---
 
 <section

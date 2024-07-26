@@ -2,6 +2,14 @@
 import { Check } from "lucide-astro";
 
 const { levelEstructureTeam, desarrollo } = Astro.props;
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const title = t("title.webServicesStruct");
+const titleQuestion = t("title.QuestionWebServices");
+const titleDevelopment = t("title.Development");
+
 ---
 
 <script>
@@ -60,7 +68,7 @@ const { levelEstructureTeam, desarrollo } = Astro.props;
 
   <div class="relative">
     <h1 class="text-3xl md:text-4xl text-center text-white font-bold">
-      ¿Qué podemos ofrecerte?
+      {titleQuestion}
     </h1>
     <div class="flex flex-col justify-center gap-40 py-28 px-4 md:flex-row">
       <div
@@ -70,7 +78,7 @@ const { levelEstructureTeam, desarrollo } = Astro.props;
         <h2
           class="text-tcf-blue font-extrabold  text-xl lg:text-2xl text-center p-4 max-h-full"
         >
-          A nivel estructural/equipo
+          {title}
         </h2>
         <ul class="list-disc p-4">
           {
@@ -90,7 +98,7 @@ const { levelEstructureTeam, desarrollo } = Astro.props;
         <h2
           class="text-tcf-blue font-extrabold  text-center text-xl lg:text-2xl p-4 max-h-full"
         >
-          Desarrollo
+          {titleDevelopment}
         </h2>
         <ul class="list-disc p-4">
           {

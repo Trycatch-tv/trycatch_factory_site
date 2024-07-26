@@ -1,5 +1,11 @@
 ---
 const { title } = Astro.props;
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const titleProject = t("nameprojectpartOne");
+const titleProjectTwo = t("nameprojectPartTwo");
 ---
 
 <script >
@@ -33,7 +39,7 @@ const { title } = Astro.props;
         class="text-4xl text-tcf-blue w-3/4 p-7 max-sm:p-0 sm:p-0"
         id="nameproject"
     >
-        Entérese cómo {title} puede ayudar a su organización
+        {titleProject} {title} {titleProjectTwo}
     </h1>
     <button
         class="bg-white text-tcf-blue rounded-full h-16 w-[372px] mx-3 font-bold max-sm:mx-0 sm:mx-0"

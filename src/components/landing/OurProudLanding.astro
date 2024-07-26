@@ -1,6 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import ourProud from "../../assets/img/ourProud.svg";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const ourproud = t("ourProud.desc");
 ---
 <script>
   import { gsap } from "gsap";
@@ -45,8 +50,7 @@ import ourProud from "../../assets/img/ourProud.svg";
     </div>
       <div>
         <h1 class=" text-center font-bold text-3xl md:text-4xl text-white" id="ourPro">
-          Nos enorgullece impulsar el talento emergente con un enfoque
-          inclusivo.
+          {ourproud}
         </h1>
       </div>
     </div>

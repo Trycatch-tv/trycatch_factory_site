@@ -2,101 +2,142 @@
 import { Image } from "astro:assets";
 import nibble from "./../../assets/img/LogoWhite.webp";
 import { ChevronDown } from "lucide-astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const pathInicio = getRelativeLocaleUrl(lang, "/");
+const pathServicesDevSoftware = getRelativeLocaleUrl(lang, "/services/desarrollo-software/");
+const pathServicesTechnology = getRelativeLocaleUrl(lang, "/services/consultoria-tecnologia/");
+const pathServicesMaintenance = getRelativeLocaleUrl(lang, "/services/mantenimiento-actualizado/");
+const pathServicesIntegrations = getRelativeLocaleUrl(lang, "/services/integraciones/");
+const pathServicesIntegrationsShopify = getRelativeLocaleUrl(lang, "/services/integraciones-a-shopify-y-salesforce/");
+const pathServicesLandingPage = getRelativeLocaleUrl(lang, "/services/landing-page/");
+const pathPortafolioInventory = getRelativeLocaleUrl(lang, "/portfolio/sistema-inventario/");
+const pathPortafolioBilling = getRelativeLocaleUrl(lang, "/portfolio/sistema-facturacion/");
+const pathReources = getRelativeLocaleUrl(lang, "/resources/");
+const pathTeam = getRelativeLocaleUrl(lang, "/team/");
+const pathBlog = getRelativeLocaleUrl(lang, "/blog/");
+
+const t = useTranslations(lang);
+const inicio = t("nav.Home");
+const servicios = t("nav.Services");
+const portfolio = t("nav.Portfolio");
+const recursos = t("nav.Resources");
+const equipo = t("nav.Team");
+const blog = t("nav.Blog");
+const contacto = t("nav.Contact");
+const servicesSoftware = t("services.software-development");
+const servicesTechnology = t("services.technology-consulting");
+const servicesMaintenance = t("services.Maintenance-Updates");
+const servicesIntegrations = t("services.Integrations");
+const servicesIntegrationsShopify = t(
+  "services.Integrations-with-shopify-and-salesforce",
+);
+const servicesLandingPage = t("services.landing-page");
+const portfolioInventory = t("portfolio.Inventory-System");
+const portfolioBilling = t("portfolio.Billing-System");
 
 const navbarItems = [
   {
-    name:"Inicio",
-    path: "/",
+    name: inicio,
+    path: pathInicio,
     target: "_self",
     subItems: [],
   },
   {
-    name: "Servicios",
+    name: servicios,
     path: "#",
     target: "_self",
     subItems: [
       {
-        name: "Software a la medida",
-        path: "/services/desarrollo-software",
+        name: servicesSoftware,
+        path: pathServicesDevSoftware,
         target: "_self",
       },
       {
-        name: "Consultoría Tecnológica",
-        path: "/services/consultoria-tecnologia",
+        name: servicesTechnology,
+        path: pathServicesTechnology,
         target: "_self",
       },
       {
-        name: "Mantenimiento y Actualización",
-        path: "/services/mantenimiento-actualizado",
+        name: servicesMaintenance,
+        path: pathServicesMaintenance,
         target: "_self",
       },
       {
-        name: "Integraciones",
-        path: "/services/integraciones",
+        name: servicesIntegrations,
+        path: pathServicesIntegrations,
         target: "_self",
       },
       {
-        name: "Integraciones a Shopify / Salesforce",
-        path: "/services/integraciones-a-shopify-y-salesforce",
+        name: servicesIntegrationsShopify,
+        path: pathServicesIntegrationsShopify,
         target: "_self",
       },
       {
-        name: "Creación de Landing Page",
-        path: "/services/landing-page",
+        name: servicesLandingPage,
+        path: pathServicesLandingPage,
         target: "_self",
       },
     ],
   },
   {
-   name: "Portafolio",
-    path: "#",
-   target: "_self",
-  subItems: [
-   {
-       name: "Sistema inventario",
-        path: "/portfolio/sistema-inventario",
+    name: portfolio,
+    path: `#`,
+    target: "_self",
+    subItems: [
+      {
+        name: portfolioInventory,
+        path: pathPortafolioInventory,
         target: "_self",
       },
       {
-        name:"Sistema de facturacion",
-       path: "/portfolio/sistema-facturacion",
+        name: portfolioBilling,
+        path: pathPortafolioBilling,
         target: "_self",
-      }
+      },
     ],
-   },
-   {
-    name: "Recursos",
-   path: "/resources",
-   target: "_self",
-   subItems: [],
   },
+  //{
+  //  name: recursos,
+  //  path: pathReources,
+  //  target: "_self",
+  //  subItems: [],
+  //},
   {
-    name: "Equipo",
-    path: "/team",
+    name: equipo,
+    path: pathTeam,
     target: "_self",
     subItems: [],
   },
   {
-    name: "Blog",
-    path: "/blog",
+    name: blog,
+    path: pathBlog,
     target: "_self",
     subItems: [],
-  }
+  },
 ];
+const navbarLenguaje = {
+  en: {
+    name: "Ingles",
+    path: "en",
+  },
+  es: {
+    name: "Español",
+    path: "es",
+  },
+};
 ---
 
-
-<nav class="bg-black/70 bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2">
+<nav
+  class="bg-black/70 bg-blur backdrop-blur-md w-full z-50 top-0 left-0 fixed py-2"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 max-sm:max-w-screen-sm md:flex-nowrap"
   >
     <a href="/" class="flex items-center">
-      <Image
-        src={nibble}
-       class="w-36 h-10 mr-3"
-        alt="TryCatch.tv Nibble"
-      />
-     
+      <Image src={nibble} class="w-36 h-10 mr-3" alt="TryCatch.tv Nibble" />
     </a>
     <button
       data-collapse-toggle="navbar-default"
@@ -166,9 +207,40 @@ const navbarItems = [
             onclick="openModal()"
             class="block py-1.5 px-4 hover:bg-tcf-info hover:scale-105 text-tcf-blue rounded-3xl bg-white trasition duration-100"
           >
-            Contacto
-          </a
-             >
+            {contacto}
+          </a>
+        </li>
+        <li class="navbar-submenu relative">
+          <a
+            href="#"
+            id="lenguaje"
+            target="_self"
+            class="flex items-center gap-2 py-2 pl-3 pr-4 rounded hover:text-tcf-info hover:scale-105 transition duration-100 md:p-0 text-white"
+          >
+            <p>{navbarLenguaje[lang].name}</p>
+            <ChevronDown size={16} class="text-white" />
+          </a>
+          <div
+            class="absolute hidden left-0 min-w-[200px] bg-white p-2 z-20 border rounded-lg"
+            onmouseover="showSubmenu(this)"
+            onmouseout="hideSubmenu(this)"
+          >
+            {
+              Object.entries(navbarLenguaje).map(([key, value]) => (
+                <a
+                  href={
+                    lang === value.path
+                      ? "#"
+                      : getRelativeLocaleUrl(value.path, "#")
+                  }
+                  target="_self"
+                  class="block p-2 hover:bg-tcf-info text-xs rounded"
+                >
+                  {value.name}
+                </a>
+              ))
+            }
+          </div>
         </li>
       </ul>
     </div>
@@ -192,14 +264,13 @@ const navbarItems = [
   function openModal() {
     document.getElementById("myModal")?.classList.remove("hidden");
     document.getElementById("myModal")?.classList.add("flex");
-
   }
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     const modal = document.getElementById("myModal");
     if (event.target === modal) {
       modal.classList.add("hidden");
     }
-  }
+  };
 </script>
 
 <style>

@@ -15,7 +15,17 @@ import salesForce from "../../assets/img/salesforce.svg";
 import shopify from "../../assets/img/shopify.svg";
 import mongodb from "../../assets/img/mongodb.png";
 import astro from "../../assets/img/astro.svg";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const descripFronend = t("technology.frontendDescription");
+const descripBackend = t("technology.backendDescription");
+const descripCloud = t("technology.cloudDescription");
+const descripMobile = t("technology.mobileDescription");
+const descripIntegrations = t("technology.integreDescription");
+const descripTitleIntegration = t("technology.titleIntegration");
+const descripTitle = t("technology.title");
 const technologyData = [
   {
     title: "Frontend",
@@ -38,7 +48,7 @@ const technologyData = [
       },
     ],
     quantity: 20,
-    description: " Proyectos realizados.",
+    description:descripFronend,
   },
 
   {
@@ -70,7 +80,7 @@ const technologyData = [
       },
     ],
     quantity: 15,
-    description: " Años de experiencia acumulada.",
+    description: descripBackend,
   },
   {
     title: "Cloud",
@@ -86,12 +96,12 @@ const technologyData = [
       },
     ],
     quantity: 5,
-    description: " Especialistas AWS.",
+    description: descripCloud,
   },
   {
     title: "Mobile",
     quantity: 5,
-    description: " Desarrollo de Apps",
+    description: descripMobile,
     tecnologies: [
       {
         name: "Flutter",
@@ -104,9 +114,9 @@ const technologyData = [
     ],
   },
   {
-    title: "Especialistas en integraciones",
+    title: descripTitleIntegration,
     quantity: 5,
-    description: " Diferentes servicios",
+    description: descripIntegrations,
 
     tecnologies: [
       {
@@ -151,7 +161,7 @@ const technologyData = [
   <h2
     class="text-[#172554] text-3xl font-bold leading-none sm:text-4xl text-center"
   >
-    Tecnologías
+    {descripTitle}
   </h2>
   <div class="flex gap-10 gap-x-20 flex-wrap justify-center mx-auto mt-12">
     {

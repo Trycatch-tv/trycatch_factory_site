@@ -1,6 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import ToolsImage from "../../assets/img/ToolsImage.webp";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const titleHero = t("heroResourcers.head");
+const descriptionHero = t("heroResourcers.description");
 ---
 
 <section class="relative md:pt-44 w-full md:px-12">
@@ -10,10 +16,10 @@ import ToolsImage from "../../assets/img/ToolsImage.webp";
       class="flex relative z-10 flex-col justify-center px-10 py-10 bg-tcf-blue w-full lg:relative lg:z-10"
     >
       <h1 class="text-4xl md:text-4xl text-white font-bold">
-        Recursos digitales - TryCatch Factory
+        {titleHero}
       </h1>
       <h2 class="font-semibold text-2xl text-white">
-        Accede a todos nuestros cursos, guías, videos
+        {descriptionHero}
       </h2>
     </div>
     <!-- Contenedor de la imagen -->

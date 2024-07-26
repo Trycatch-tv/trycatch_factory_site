@@ -4,6 +4,7 @@
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
 import ContactFormLanding from "../components/landing/ContactFormLanding.astro";
+import { getLangFromUrl } from "../i18n/utils";
 
 
 interface Props {
@@ -13,11 +14,12 @@ interface Props {
 const { title } = Astro.props;
 const { pathname } = Astro.url;
 
+const lang = getLangFromUrl(Astro.url);
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Try Factory" />
@@ -34,7 +36,7 @@ const { pathname } = Astro.url;
   </head>
   <body>
     <Navbar />
-    holaaaaaaaa
+    
     <slot />
 
     <section class="py-20 relative mx-auto bg-contact bg-cover bg-no-repeat bg-center">

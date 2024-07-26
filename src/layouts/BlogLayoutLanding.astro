@@ -2,10 +2,14 @@
 const { frontmatter } = Astro.props;
 import Footer from "../components/global/Footer.astro";
 import Navbar from "../components/global/Navbar.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -33,7 +37,12 @@ import Navbar from "../components/global/Navbar.astro";
       <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
       <span class="block text-md text-tc-black-l mb-8"
         >Autor {frontmatter.author} - {
-          new Date(frontmatter.date).toLocaleDateString("es-CO", {
+         
+         lang =="es"? new Date(frontmatter.date).toLocaleDateString("es-CO", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }): new Date(frontmatter.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",

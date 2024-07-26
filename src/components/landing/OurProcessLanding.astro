@@ -3,24 +3,22 @@ import { Image } from "astro:assets";
 import process from "../../assets/img/process.svg";
 import metodology from "../../assets/img/methodology.svg";
 import { CircleDot } from "lucide-astro";
-
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const items:any = t("items.OurProcessing");
+const itemsTwo:any = t("items.OurPorcessingTwo");
+const title = t("title.Proccess");
+const methodology = t("title.Methodology");
 const data = [
   {
-    title: "Proceso",
+    title: title,
     img: "/public/assets/svg/process.svg",
-    items: [
-      "Análisis y Planificación: Evaluamos tus necesidades y desarrollamos un plan detallado para tu proyecto.",
-      "Desarrollo y Pruebas: Creamos y probamos tu software, asegurando la calidad y funcionalidad en cada etapa.",
-      "Implementación y Soporte: Desplegamos tu solución y brindamos soporte continuo para garantizar su éxito.",
-    ],
+    items,
   },
   {
-    title: "Metodología",
-    items: [
-      "Seguimos una metodología ágil para asegurar la eficiencia y flexibilidad en nuestros proyectos. Nos enfocamos en entregas incrementales, colaboración constante y mejora continua.",
-      "La comunicación es importante para nosotros, es por eso que tenemos un proceso transversal que nos permite ofrecer una experiencia única y una comunicación del estado del proceso constante con nuestros cliente.",
-      
-    ],
+    title: methodology,
+    items: itemsTwo,
   },
 ];
 ---
@@ -60,7 +58,8 @@ const data = [
               </h2>
               <div class="flex flex-col gap-10">
                 {
-                  data[0].items.map((item, index) => (
+                  data[0].items.map((item:any, index:any) => (
+            
                     <article class="flex gap-2">
                       <div>
                         <p class="text-5xl font-bold text-white">
@@ -94,7 +93,7 @@ const data = [
               </h2>
               <div class="flex flex-col gap-10">
                 {
-                  data[1].items.map((item, index) => (
+                  data[1].items?.map((item:any, index:any) => (
                     <article class="flex gap-2">
                       <div>
                         <p class=" text-white">

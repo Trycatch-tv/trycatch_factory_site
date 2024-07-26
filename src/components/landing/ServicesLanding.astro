@@ -1,8 +1,15 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const title = t("title.ServicesLanding");
+---
+
 <section class="flex flex-col justify-center min-h-screen" id="services">
   <section class="flex flex-col justify-center mt-5 pt-5 sm:min-h-screen">
     <div class="Services flex flex-col items-center">
       <h2 class="text-2xl md:text-4xl font-bold text-tcf-blue">
-        Nuestros servicios
+        {title}
       </h2>
       <div
         class="container py-3 px-0 lg:max-w-screen-lg max-w-screen-sm mx-auto flex items-center"
@@ -67,13 +74,20 @@
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   const card = document.querySelector("#services");
   const servicesItems = Object.values(data.services).flatMap((service) =>
-    Object.values(service)
+    Object.values(service),
   );
   const buttonPrev: any = document.getElementById("prevSVG");
   const buttonNext: any = document.getElementById("nextSVG");
   const spanPag: any = document.getElementById("spanPag");
   let actualPage = 1;
   let showQuantity = 1;
+  function getLanguageFromUrl() {
+    const path = window.location.pathname;
+    const segments = path.split("/").filter(Boolean);
+    // Suponiendo que el idioma es el primer segmento
+    return segments[0] || "es"; // 'es' es el idioma por defecto
+  }
+  const lang = getLanguageFromUrl();
   function handleNextPage() {
     if (window.innerWidth > 1024) {
       showQuantity = 3;
@@ -106,14 +120,14 @@
     const valueOneSlice = (actualPage - 1) * showQuantity;
     const finalServicesArray = servicesItems.slice(
       valueOneSlice,
-      valueTwoSlice
+      valueTwoSlice,
     );
     const servicesContainer: any = document.querySelector(
-      ".services-container"
+      ".services-container",
     );
     servicesContainer.innerHTML = "";
     finalServicesArray.forEach((service: any) => {
-      const { title, imageService, path, description } = service;
+      const { title, imageService, path, description, en } = service;
       const serviceElement = document.createElement("div");
       serviceElement.classList.add(
         "flex",
@@ -127,17 +141,17 @@
         "p-4",
         "m-10",
         "max-sm:m-0",
-        "w-[400px]"
+        "w-[400px]",
       );
       serviceElement.id = "service";
       serviceElement.innerHTML = `
                 <div class="flex  justify-center items-center max-sm:h-auto">
                     <img src="${imageService}" alt="Imagen del servicio" class="block w-30 h-20 object-cover mb-2">
                 </div>
-                <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${title}</h3>
-                <p class="flex-grow text-center text-tcf-blue text-sm">${description}</p>
+                <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${lang == en.lenguage ? en.title : title}</h3>
+                <p class="flex-grow text-center text-tcf-blue text-sm">${lang == en.lenguage ? en.description : description}</p>
                 <div class="flex justify-center">
-                    <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${path}>Ver más</a>
+                    <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${lang == en.lenguage ? "/en/"+path :path}>${lang == en.lenguage ? "more..." : "Ver más"}</a>
                 </div>
             `;
       servicesContainer.appendChild(serviceElement);
