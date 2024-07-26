@@ -13,6 +13,11 @@ const pathServicesMaintenance = getRelativeLocaleUrl(lang, "/services/mantenimie
 const pathServicesIntegrations = getRelativeLocaleUrl(lang, "/services/integraciones/");
 const pathServicesIntegrationsShopify = getRelativeLocaleUrl(lang, "/services/integraciones-a-shopify-y-salesforce/");
 const pathServicesLandingPage = getRelativeLocaleUrl(lang, "/services/landing-page/");
+const pathPortafolioInventory = getRelativeLocaleUrl(lang, "/portfolio/sistema-inventario/");
+const pathPortafolioBilling = getRelativeLocaleUrl(lang, "/portfolio/sistema-facturacion/");
+const pathReources = getRelativeLocaleUrl(lang, "/resources/");
+const pathTeam = getRelativeLocaleUrl(lang, "/team/");
+const pathBlog = getRelativeLocaleUrl(lang, "/blog/");
 
 const t = useTranslations(lang);
 const inicio = t("nav.Home");
@@ -62,17 +67,17 @@ const navbarItems = [
       },
       {
         name: servicesIntegrations,
-        path: `/services/integraciones`,
+        path: pathServicesIntegrations,
         target: "_self",
       },
       {
         name: servicesIntegrationsShopify,
-        path: `/services/integraciones-a-shopify-y-salesforce`,
+        path: pathServicesIntegrationsShopify,
         target: "_self",
       },
       {
         name: servicesLandingPage,
-        path: `/services/landing-page/`,
+        path: pathServicesLandingPage,
         target: "_self",
       },
     ],
@@ -84,31 +89,31 @@ const navbarItems = [
     subItems: [
       {
         name: portfolioInventory,
-        path: `/portfolio/sistema-inventario/`,
+        path: pathPortafolioInventory,
         target: "_self",
       },
       {
         name: portfolioBilling,
-        path: `/portfolio/sistema-facturacion/`,
+        path: pathPortafolioBilling,
         target: "_self",
       },
     ],
   },
   {
     name: recursos,
-    path: `/resources/`,
+    path: pathReources,
     target: "_self",
     subItems: [],
   },
   {
     name: equipo,
-    path: `/team/`,
+    path: pathTeam,
     target: "_self",
     subItems: [],
   },
   {
     name: blog,
-    path: `/blog/`,
+    path: pathBlog,
     target: "_self",
     subItems: [],
   },

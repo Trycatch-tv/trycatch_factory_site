@@ -4,6 +4,8 @@ import HeroServices from "../../../components/landing/HeroServices.astro";
 import CallToActionLanding from "../../../components/landing/CallToActionLanding.astro";
 import WeOfferServicesLanding from "../../../components/landing/WeOfferServicesLanding.astro";
 import { getCollection } from "astro:content";
+import { getLangFromUrl } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 export async function getStaticPaths() {
   const services = await getCollection("services");
 
@@ -30,10 +32,10 @@ export async function getStaticPaths() {
 }
 
 const { data } = Astro.props || {};
-const titleHero = data.title
-const descriptionHero = data.description
-const levelEstructureTeam = data?.levelEstructureTeam
-const desarrollo = data?.desarrollo
+const titleHero = data.en.lenguage === lang ? data.en.title : data.title
+const descriptionHero =data.en.lenguage === lang ? data.en.description : data.description
+const levelEstructureTeam = data.en.lenguage === lang ? data.en.levelEstructureTeam : data.levelEstructureTeam
+const desarrollo = data.en.lenguage === lang ? data.en.development : data.desarrollo
 
 ---
 

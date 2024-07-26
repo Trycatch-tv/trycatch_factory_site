@@ -4,6 +4,12 @@ import CharacteristicsLanding from "../../../components/landing/CharacteristicsL
 import HowFunctionLanding from "../../../components/landing/HowFunctionLanding.astro";
 import NameProject from "../../../components/landing/NameProject.astro";
 import Layout from "../../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const project = t("projects.title");
+
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
 
@@ -28,10 +34,10 @@ export async function getStaticPaths() {
     return paths;
 }
 const { projectData } = Astro.props;
-const howContext = projectData.howContext;
-const howItems = projectData.howItems;
-const characteristics = projectData.characteristics;
-const title = projectData.title;
+const howContext =projectData.en.lenguage == lang ? projectData.en.howContext :projectData.howContext;
+const howItems = projectData.en.lenguage == lang ? projectData.en.howItems :projectData.howItems;
+const characteristics = projectData.en.lenguage == lang ? projectData.en.characteristics :projectData.characteristics;
+const title = projectData.en.lenguage == lang ? projectData.en.title :projectData.title;
 ---
 
 
@@ -48,7 +54,7 @@ const title = projectData.title;
             class="relative text-4xl md:text-6xl font-extrabold text-center text-white mb-5"
             id="title"
         >
-            {projectData.title}
+            {title}
         </h1>
         <div
             class="flex relative flex-col lg:w-[29rem] md:w-96 max-md:w-96 sm:w-auto max-sm:w-auto"
@@ -65,7 +71,7 @@ const title = projectData.title;
             <h1
                 class="text-tcf-blue font-bold text-center text-3xl md:text-4xl py-2"
             >
-                Características
+                {project}
             </h1>
             <CharacteristicsLanding characteristics={characteristics} />
         </div>

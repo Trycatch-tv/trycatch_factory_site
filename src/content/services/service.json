@@ -18,8 +18,25 @@
                     "Desarrollo de software personalizado.",
                     "Pruebas y aseguramiento de calidad.",
                     "Implementación y despliegue."
-                ]
-                
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Software Development",
+                    "description": "We create customized applications and systems that perfectly fit your business needs and objectives.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Requirements analysis and architecture design.",
+                        "Custom software development.",
+                        "Quality assurance and testing.",
+                        "Implementation and deployment."
+                    ]
+                }
             },
             "consultoria-tecnologia": {
                 "title": "Consultoría Tecnológica",
@@ -44,7 +61,31 @@
                     "Implementación de CI/CD (Integración Continua / Despliegue Continuo).",
                     "Documentación y estandarización de procesos.",
                     "Migración a la nube y contenedorización (Docker)."
-                ]
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Technology Consulting",
+                    "description": "We help you make informed decisions about technology and IT strategies to optimize your operations and improve performance.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Evaluation of current infrastructure and systems.",
+                        "Recommendations for optimization and modernization.",
+                        "Planning digital transformation strategies.",
+                        "Implementation of best practices.",
+                        "Consulting on software redesign, architecture, digital transformation, and service modernization.",
+                        "Optimization of the software lifecycle.",
+                        "Code refactoring and adoption of new technologies.",
+                        "Implementation of CI/CD (Continuous Integration / Continuous Deployment).",
+                        "Documentation and process standardization.",
+                        "Cloud migration and containerization (Docker)."
+                    ]
+                }
             },
             "integraciones": {
                 "title": "Integraciones",
@@ -66,7 +107,28 @@
                     "Especialización en integraciones API, ETL y desarrollo de conectores personalizados.",
                     "Integración de APIs.",
                     "Integraciones a Salesforce y Shopify."
-                ]
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Integrations",
+                    "description": "Connect and automate your systems for greater efficiency. We facilitate the integration of your platforms and systems, ensuring they work together effectively.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Integration of ERP, CRM, and other business applications.",
+                        "API and middleware development.",
+                        "Data synchronization and workflow automation.",
+                        "Consulting on SOA, monolithic, and microservices architectures.",
+                        "Specialization in API integrations, ETL, and custom connector development.",
+                        "API integrations.",
+                        "Integrations with Salesforce and Shopify."
+                    ]
+                }
             },
             "integraciones-a-shopify-y-salesforce": {
                 "title": "Integraciones a Shopify / Salesforce",
@@ -86,8 +148,26 @@
                     "Desarrollo de plugins y extensiones.",
                     "Migración de datos y configuraciones avanzadas.",
                     "Integración con otros sistemas."
-                 
-                ]
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Integrations with Shopify / Salesforce",
+                    "description": "We develop custom solutions for platforms like Shopify and Salesforce. We optimize operations and extend your technological capabilities with our integrations.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Implementation and customization of Shopify stores.",
+                        "Integration and optimization of Salesforce.",
+                        "Development of plugins and extensions.",
+                        "Data migration and advanced configurations.",
+                        "Integration with other systems."
+                    ]
+                }
             },
             "mantenimiento-actualizado": {
                 "title": "Mantenimiento y Actualización",
@@ -107,7 +187,26 @@
                     "Mejora continua de funcionalidades.",
                     "Monitoreo y optimización del rendimiento.",
                     "Servicios proactivos de monitoreo y mantenimiento preventivo."
-                ]
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Maintenance and Updates",
+                    "description": "We ensure that your software systems operate efficiently and securely, providing continuous support and ongoing improvements.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Technical support and problem resolution.",
+                        "Software updates and security patches.",
+                        "Continuous improvement of functionalities.",
+                        "Performance monitoring and optimization.",
+                        "Proactive monitoring and preventive maintenance services."
+                    ]
+                }
             },
             "landing-page": {
                 "title": "Creación de Landing Page",
@@ -127,9 +226,27 @@
                     "mplementación de sistemas de gestión de contenidos (CMS)",
                     "Mantenimiento y soporte técnico.",
                     "Personalización completa para reflejar la identidad de la marca."
-                ]
+                ],
+                "en": {
+                    "lenguage": "en",
+                    "title": "Landing Page Creation",
+                    "description": "Boost your online presence with impactful web pages. We design effective landing pages that capture your clients' attention and enhance your online presence.",
+                    "levelEstructureTeam": [
+                        "System and process auditing.",
+                        "Technology consulting and strategy.",
+                        "ERP and CRM system integration.",
+                        "Technology project management.",
+                        "Implementation of agile methodologies."
+                    ],
+                    "development": [
+                        "Responsive and adaptive design.",
+                        "Search engine optimization (SEO).",
+                        "Implementation of content management systems (CMS).",
+                        "Maintenance and technical support.",
+                        "Complete customization to reflect brand identity."
+                    ]
+                }
             }
-
         }
     ]
 }

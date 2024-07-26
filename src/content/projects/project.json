@@ -16,7 +16,25 @@
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
-                ]
+                ],
+                "en": {
+                    "lenguage":"en",
+                    "title": "Inventory System",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "characteristics": [
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur"
+                    ],
+                    "howContext": "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "howItems": [
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
+                    ]
+                }
             },
             "sistema-facturacion": {
                 "title": "Sistema de facturación",
@@ -33,7 +51,25 @@
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
                     "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
-                ]
+                ],
+                "en": {
+                    "lenguage":"en",
+                    "title": "Billing System",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "characteristics": [
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur",
+                        "Lorem ipsum dolor sit amet, consectetur"
+                    ],
+                    "howContext": "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "howItems": [
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "LoremLorem ipsum dolor sit amet, consectetur adipiscing elit"
+                    ]
+                }
             }
         }
     ]
