@@ -151,7 +151,7 @@ const title = t("title.ServicesLanding");
                 <h3 class="text-xl sm:text-2xl text-[#172554] font-semibold mt-2 mb-6 text-center font-bold">${lang == en.lenguage ? en.title : title}</h3>
                 <p class="flex-grow text-center text-tcf-blue text-sm">${lang == en.lenguage ? en.description : description}</p>
                 <div class="flex justify-center">
-                    <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${path}>${lang == en.lenguage ? "more..." : "Ver más"}</a>
+                    <a class="border text-white w-full rounded-2xl px-6 py-2 mt-6 c-white bg-[#172554] hover:bg-gray-500 text-center" href=${lang == en.lenguage ? "/en/"+path :path}>${lang == en.lenguage ? "more..." : "Ver más"}</a>
                 </div>
             `;
       servicesContainer.appendChild(serviceElement);

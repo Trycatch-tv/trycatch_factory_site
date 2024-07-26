@@ -2,6 +2,10 @@
 import { ArrowBigRight } from "lucide-astro";
 import Layout from "../../layouts/Layout.astro";
 const allPosts = await Astro.glob("./blog/*.md");
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title="Blog">
@@ -29,7 +33,7 @@ const allPosts = await Astro.glob("./blog/*.md");
                             href={post.url}
                             class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-950 rounded-3xl hover:bg-tcf-gray-l hover:text-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-sans transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"
                         >
-                            Saber mas
+                            {lang == "es" ? "Leer más" : "Read more"}
                             <ArrowBigRight />
                         </a>
                     </div>

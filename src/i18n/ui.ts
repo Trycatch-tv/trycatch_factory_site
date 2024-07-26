@@ -88,7 +88,18 @@ export const ui = {
           "nameprojectpartOne":"Encuentra cómo",
           "nameprojectPartTwo":"puedes ayudar a tu organización",
           "heroResourcers.head":"Recursos digitales - TryCatch Factory",
-          "heroResourcers.description":"Accede a todos nuestros cursos, guías, videos"
+          "heroResourcers.description":"Accede a todos nuestros cursos, guías, videos",
+          "teamLanding.title":"Conoce a nuestro equipo de trabajo",
+          "teamDesc":"Contamos con un equipo de expertos apasionados y dedicados a entregar soluciones tecnológicas de alta calidad. Descubre quiénes somos y cómo podemos ayudarte.",
+          "profile.titleOur":"Nuestro Equipo",
+          "ourProud.desc":"Nos enorgullece impulsar el talento emergente con un enfoque inclusivo.",
+          "ourDiff.tagDev":"Desarrolladores",
+          "ourDiff.tagCountries":"Paises",
+          "ourDiff.tagCapacities":"Capacidades",
+          "ourDiff.tagWomen":"Mujeres líderes",
+          "ourDiff.tagHomework":"Teletrabajo",
+          "ourTitle":"Nuestro Equipo: ¿Qué diferencia nos hace diferentes?",
+          "ourDesc":"Estamos orgullosos de contar con un equipo diverso y talentoso que nos distingue en la industria. Nuestra fuerza radica en la variedad de experiencias y perspectivas que cada miembro aporta, permitiéndonos ofrecer soluciones innovadoras y efectivas a nuestros clientes"
 
     },
     en: {
@@ -174,7 +185,18 @@ export const ui = {
         "nameprojectpartOne":"Find out how",
         "nameprojectPartTwo":"can help your organization",
         "heroResourcers.head":"Digital Resources - TryCatch Factory",
-        "heroResourcers.description":"Access all our courses, guides, videos"
+        "heroResourcers.description":"Access all our courses, guides, videos",
+        "teamLanding.title":"Meet Our Team",
+        "teamDesc":"We have a team of passionate and dedicated experts committed to delivering high-quality technological solutions. Discover who we are and how we can help you.",
+        "profile.titleOur":"Our Team",
+        "ourProud.desc": "We take pride in fostering emerging talent with an inclusive approach.",
+        "ourDiff.tagDev":"Developers",
+        "ourDiff.tagCountries":"Countries",
+        "ourDiff.tagCapacities":"Capacities",
+        "ourDiff.tagWomen":"Women leaders",
+        "ourDiff.tagHomework":"HomeWork",
+        "ourTitle":"Our Team: What Sets Us Apart?",
+        "ourDesc":"We are proud to have a diverse and talented team that sets us apart in the industry. Our strength lies in the variety of experiences and perspectives each member brings, enabling us to offer innovative and effective solutions to our clients."
 
     },
 

@@ -2,95 +2,95 @@
 
 
 layout: "../../../layouts/BlogLayoutLanding.astro"
-title: "Aprenda a implementar un control de acceso basado en roles en NodeJS"
+title: "Learn How to Implement Role-Based Access Control in Node.js"
 author: "Judlup"
 image:
   url: "https://images.unsplash.com/photo-1461685265823-f8d5d0b08b9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
-  alt: "Aprenda a implementar un control de acceso basado en roles en NodeJS"
+  alt: "Learn How to Implement Role-Based Access Control in Node.js"
 tags:
   [
-    '-Python \n-Aprendizaje automático \n-Analizador de sentimiento \n-Notificaciones \n-Prueba de escritura \n-Administrador de contraseña \n-Aplicación de cuestionarios \n-Detector de tarjetas de crédito fraudulentas \n-Red de contactos \n-Suscripción',
+    '- Python \n- Machine Learning \n- Sentiment Analyzer \n- Notifications \n- Writing Test \n- Password Manager \n- Quiz Application \n- Credit Card Fraud Detector \n- Networking \n- Subscription',
   ]
 date: 2023-10-04
-slug: "Aprenda-a-implementar-un-control-de-acceso-basado-en-roles-en-NodeJS"
+slug: "learn-how-to-implement-role-based-access-control-in-nodejs"
 published: true
 ---
 
-La autenticación por roles es una característica clave a la hora de construir un sistema. Si todavía no has implementado un control de acceso basado en roles, este tutorial te ayudará a hacerlo fácilmente con Node.js.
+Role-based authentication is a key feature when building a system. If you haven't implemented role-based access control yet, this tutorial will help you do it easily with Node.js.
 
-En este tutorial, aprenderás a configurar y desarrollar un control de acceso basado en roles para tu aplicación Node.js. Te explicaremos cada uno de los pasos detalladamente, para que puedas seguir el proceso de manera correcta.
+In this tutorial, you will learn how to set up and develop role-based access control for your Node.js application. We will explain each step in detail, so you can follow the process correctly.
 
-### Requisitos previos
+### Prerequisites
 
-Antes de comenzar, debes tener en cuenta los siguientes requisitos:
+Before you start, you should consider the following prerequisites:
 
-- Tener un entorno de desarrollo de Node.js.
-- Conocimientos básicos de JavaScript.
-- Conocimientos básicos de Node.js.
+- A Node.js development environment.
+- Basic knowledge of JavaScript.
+- Basic knowledge of Node.js.
 
-### Librerías y configuración
+### Libraries and Configuration
 
-Para desarrollar el control de acceso basado en roles, necesitaremos instalar algunas librerías. Estas son:
+To develop role-based access control, we need to install some libraries. These are:
 
 - Express.js
 - Passport.js
 - Passport-local
 - Passport-jwt
 
-También necesitaremos configurar una base de datos para almacenar los usuarios y sus roles. Para ello, utilizaremos MongoDB.
+We will also need to configure a database to store users and their roles. For this, we will use MongoDB.
 
-### Explicación de cada uno de los pasos
+### Explanation of Each Step
 
-Uno de los primeros pasos para desarrollar un control de acceso basado en roles es la configuración de la base de datos. Para ello, necesitaremos crear una colección de usuarios y otra para los roles. Estas colecciones nos servirán para almacenar la información de los usuarios y sus respectivos roles.
+One of the first steps in developing role-based access control is setting up the database. We need to create a collection for users and another for roles. These collections will be used to store user information and their respective roles.
 
-Una vez configurada la base de datos, necesitaremos crear una ruta para el registro de usuarios. Esta ruta nos permitirá registrar nuevos usuarios en la base de datos.
+Once the database is set up, we will need to create a route for user registration. This route will allow us to register new users in the database.
 
-También necesitaremos crear una ruta para el inicio de sesión. Esta ruta nos permitirá autenticar a los usuarios en la aplicación.
+We will also need to create a route for logging in. This route will allow us to authenticate users in the application.
 
-Por último, necesitaremos crear una ruta para el control de acceso basado en roles. Esta ruta nos permitirá controlar el acceso a determinadas partes de la aplicación en función de los roles de los usuarios.
+Finally, we need to create a route for role-based access control. This route will allow us to control access to certain parts of the application based on user roles.
 
-### Distribución de las carpetas
+### Folder Structure
 
-Una vez explicado cada uno de los pasos, necesitaremos distribuir los archivos en las carpetas adecuadas. Esta es la distribución de las carpetas:
+Once we’ve explained each step, we need to organize the files into the appropriate folders. Here is the folder structure:
 
-- `config/`: Aquí almacenaremos la configuración de la base de datos.
-- `controllers/`: Aquí almacenaremos los controladores de la aplicación.
-- `models/`: Aquí almacenaremos los modelos de la aplicación.
-- `routes/`: Aquí almacenaremos las rutas de la aplicación.
-- `views/`: Aquí almacenaremos las vistas de la aplicación.
+- `config/`: Here we will store the database configuration.
+- `controllers/`: Here we will store the application controllers.
+- `models/`: Here we will store the application models.
+- `routes/`: Here we will store the application routes.
+- `views/`: Here we will store the application views.
 
-### Paso a paso
+### Step-by-Step
 
-A continuación, te explicaremos paso a paso cómo desarrollar un control de acceso basado en roles con Node.js.
+Below, we explain step by step how to develop role-based access control with Node.js.
 
-#### Configuración de la base de datos
+#### Database Configuration
 
-En primer lugar, necesitaremos configurar la base de datos. Para ello, necesitaremos crear una colección de usuarios y otra para los roles. Estas colecciones nos servirán para almacenar la información de los usuarios y sus respectivos roles.
+First, we need to set up the database. We will need to create a collection for users and another for roles. These collections will store user information and their respective roles.
 
-#### Creación de la ruta de registro
+#### Creating the Registration Route
 
-Una vez configurada la base de datos, necesitaremos crear una ruta para el registro de usuarios. Esta ruta nos permitirá registrar nuevos usuarios en la base de datos.
+Once the database is set up, we need to create a route for user registration. This route will allow us to register new users in the database.
 
-#### Creación de la ruta de inicio de sesión
+#### Creating the Login Route
 
-También necesitaremos crear una ruta para el inicio de sesión. Esta ruta nos permitirá autenticar a los usuarios en la aplicación.
+We will also need to create a route for logging in. This route will allow us to authenticate users in the application.
 
-#### Creación de la ruta de control de acceso
+#### Creating the Role-Based Access Route
 
-Por último, necesitaremos crear una ruta para el control de acceso basado en roles. Esta ruta nos permitirá controlar el acceso a determinadas partes de la aplicación en función de los roles de los usuarios.
+Finally, we need to create a route for role-based access control. This route will allow us to control access to certain parts of the application based on user roles.
 
-### Conclusión
+### Conclusion
 
-Este tutorial te ha ayudado a aprender a implementar un control de acceso basado en roles en Node.js. Te hemos explicado cada uno de los pasos detalladamente, para que puedas seguir el proceso de manera correcta.
+This tutorial has helped you learn how to implement role-based access control in Node.js. We have explained each step in detail so you can follow the process correctly.
 
-Además, te hemos mostrado cómo se distribuyen los archivos en las carpetas adecuadas. Esto te ayudará a tener una mejor organización de los archivos de tu aplicación.
+Additionally, we have shown how to organize files into the appropriate folders. This will help you have better organization of your application's files.
 
-Si quieres ver el tutorial en vídeo, puedes ver el siguiente vídeo:
+If you want to see the tutorial in video form, you can watch the following video:
 
-[![Aprenda a implementar un control de acceso basado en roles en NodeJS](https://img.youtube.com/vi/xkkuapD4y8Q/0.jpg)](https://www.youtube.com/shorts/xkkuapD4y8Q?feature=share "Aprenda a implementar un control de acceso basado en roles en NodeJS")
+[![Learn How to Implement Role-Based Access Control in NodeJS](https://img.youtube.com/vi/xkkuapD4y8Q/0.jpg)](https://www.youtube.com/shorts/xkkuapD4y8Q?feature=share "Learn How to Implement Role-Based Access Control in NodeJS")
 
-Si necesitas más contenido, puedes seguirme en mis redes sociales para estar al tanto de mis últimos tutoriales.
+If you need more content, you can follow me on my social media to stay updated with my latest tutorials.
 
 ## Link
 
-[Aprenda a implementar un control de acceso basado en roles en NodeJS](https://bit.ly/4685457)
+[Learn How to Implement Role-Based Access Control in NodeJS](https://bit.ly/4685457)

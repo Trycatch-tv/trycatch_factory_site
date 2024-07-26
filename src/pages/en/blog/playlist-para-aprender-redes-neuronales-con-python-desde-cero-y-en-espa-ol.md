@@ -1,49 +1,49 @@
 ---
 layout: "../../../layouts/BlogLayoutLanding.astro"
-title: "Playlist para aprender redes neuronales con Python desde cero y en español"
+title: "Playlist to Learn Neural Networks with Python from Scratch in Spanish"
 author: "Judlup"
 image:
   url: "https://images.unsplash.com/photo-1667372531881-6f975b1c86db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3732&q=80"
-  alt: "Playlist para aprender redes neuronales con Python desde cero y en español"
+  alt: "Playlist to Learn Neural Networks with Python from Scratch in Spanish"
 tags:
   [
-    '- Redes Neuronales\n- Python\n- Colar\n- Playlist\n- Red Neuronal desde Cero\n- Episodio\n- Capítulo\n- Video \n- Proyecto\n- Matices\n- YouTube\n- Playlist Recomendadas',
+    '- Neural Networks\n- Python\n- Color\n- Playlist\n- Neural Network from Scratch\n- Episode\n- Chapter\n- Video\n- Project\n- Nuances\n- YouTube\n- Recommended Playlists',
   ]
 date: 2023-10-04
-slug: "playlist-para-aprender-redes-neuronales-con-python-desde-cero-y-en-espa-ol"
+slug: "playlist-to-learn-neural-networks-with-python-from-scratch-in-spanish"
 published: true
 ---
 
-¿Quieres aprender Redes Neuronales con Python desde cero? Si es así, te presentamos una Playlist que te puede interesar mucho. Se trata de una Playlist titulada "Red Neuronal desde cero" con 18 vídeos publicada el 15 de agosto de 2021. Lo mejor de todo es que está en español y es completamente desde cero.
+Want to learn Neural Networks with Python from scratch? If so, we have a Playlist that might interest you. It is titled "Neural Network from Scratch" with 18 videos published on August 15, 2021. The best part is that it’s in Spanish and starts from the very basics.
 
-En este artículo te explicaremos cómo puedes encontrar esta Playlist y qué contiene.
+In this article, we will explain how you can find this Playlist and what it contains.
 
-[![Playlist para aprender redes neuronales con Python desde cero y en español](https://img.youtube.com/vi/NgwsUpvYkJ4/0.jpg)](https://www.youtube.com/shorts/NgwsUpvYkJ4?feature=share "Playlist para aprender redes neuronales con Python desde cero y en español")
+[![Playlist to Learn Neural Networks with Python from Scratch in Spanish](https://img.youtube.com/vi/NgwsUpvYkJ4/0.jpg)](https://www.youtube.com/shorts/NgwsUpvYkJ4?feature=share "Playlist to Learn Neural Networks with Python from Scratch in Spanish")
 
-### ¿Cómo encontrar la Playlist?
+### How to Find the Playlist?
 
-Para encontrar la Playlist, primero debes suscribirte a mi canal de YouTube. Una vez hecho esto, dirígete a la sección de Playlist y busca la Playlist recomendada. Allí encontrarás la Playlist que te interesa.
+To find the Playlist, you first need to subscribe to my YouTube channel. Once you have done that, go to the Playlist section and look for the recommended Playlist. There you will find the Playlist you are interested in.
 
-### ¿Qué contiene la Playlist?
+### What Does the Playlist Contain?
 
-Esta Playlist contiene 18 vídeos que van desde el primer episodio hasta el último. El primer vídeo se titula "Red Neuronal desde Cero" y en él se explica cómo crear un proyecto desde cero. Los demás vídeos son muy cortos, con el más largo de 23 minutos.
+This Playlist contains 18 videos, ranging from the first episode to the last. The first video is titled "Neural Network from Scratch," and it explains how to create a project from scratch. The other videos are very short, with the longest being 23 minutes.
 
-En estos vídeos se explica todo lo necesario para crear una red neuronal desde cero. Se explican los conceptos básicos, así como los pasos para crear una red neuronal. Además, se explican los matices y se dan consejos para que el proceso sea más sencillo.
+These videos cover everything needed to create a neural network from scratch. They explain the basic concepts as well as the steps to create a neural network. Additionally, nuances are explained and tips are provided to make the process easier.
 
-### ¿Cómo empezar?
+### How to Start?
 
-Para empezar, lo primero que debes hacer es suscribirte a mi canal de YouTube. Una vez hecho esto, dirígete a la sección de Playlist y busca la Playlist recomendada. Allí encontrarás la Playlist que te interesa.
+To get started, the first thing you need to do is subscribe to my YouTube channel. Once done, go to the Playlist section and search for the recommended Playlist. There you will find the Playlist you are interested in.
 
-Al reproducir el primer vídeo, te darás cuenta de que los vídeos son cortos y precisos. Esto te permitirá aprender los conceptos básicos de forma rápida y fácil.
+When you play the first video, you will notice that the videos are short and to the point. This will allow you to learn the basic concepts quickly and easily.
 
-### Conclusión
+### Conclusion
 
-Si quieres aprender Redes Neuronales con Python desde cero, esta Playlist es perfecta para ti. Está en español, es completamente desde cero y los vídeos son cortos y precisos.
+If you want to learn Neural Networks with Python from scratch, this Playlist is perfect for you. It’s in Spanish, starts from scratch, and the videos are short and precise.
 
-Para encontrar la Playlist, debes suscribirte a mi canal de YouTube y dirigirte a la sección de Playlist. Allí encontrarás la Playlist que te interesa.
+To find the Playlist, you need to subscribe to my YouTube channel and go to the Playlist section. There you will find the Playlist you are interested in.
 
-¡Esperamos que te sea de mucha utilidad!
+We hope you find it very useful!
 
 ## Link
 
-[Playlist para aprender redes neuronales con Python desde cero y en español](https://www.youtube.com/@TryCatch_tv/playlists?view=50&sort=dd&shelf_id=5)
+[Playlist to Learn Neural Networks with Python from Scratch in Spanish](https://www.youtube.com/@TryCatch_tv/playlists?view=50&sort=dd&shelf_id=5)

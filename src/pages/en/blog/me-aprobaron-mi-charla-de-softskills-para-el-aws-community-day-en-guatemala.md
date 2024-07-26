@@ -1,57 +1,57 @@
 ---
 layout: "../../../layouts/BlogLayoutLanding.astro"
-title: "Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊"
+title: "My Soft Skills Talk Approved for AWS Community Day in Guatemala 😊"
 author: "Judlup"
 image:
   url: "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
-  alt: "Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊"
+  alt: "My Soft Skills Talk Approved for AWS Community Day in Guatemala 😊"
 tags:
   [
-    '- Charla Internacional\n- Ponencia Internacional\n- WS Community Day Guatemala\n- Soft Skill\n- Programador GT\n- Carrera Profesional\n- Proceso\n- Festivos',
+    '- International Talk\n- International Presentation\n- AWS Community Day Guatemala\n- Soft Skills\n- Programmer GT\n- Professional Career\n- Process\n- Holidays',
   ]
 date: 2023-10-04
-slug: "me-aprobaron-mi-charla-de-softskills-para-el-aws-community-day-en-guatemala"
+slug: "my-soft-skills-talk-approved-for-aws-community-day-in-guatemala"
 published: true
 ---
 
-¡Hola a todos! Estoy muy contento de contarles que mi propuesta para dar una charla en el AWS Community Day en Guatemala fue aprobada. Estoy muy emocionado de poder compartir mis conocimientos en un evento internacional y de poder conocer a Edu del Programador GT.
+Hello everyone! I’m very happy to share that my proposal to give a talk at AWS Community Day in Guatemala has been approved. I am excited to share my knowledge at an international event and to meet Edu from Programmer GT.
 
-En esta charla abordaré un tema muy importante: las softskills. Estas habilidades son esenciales para tener éxito en cualquier proceso durante nuestra carrera profesional. Por eso, mi charla estará enfocada en mostrar cómo podemos prestar más atención a desarrollar estas habilidades.
+In this talk, I will address a very important topic: soft skills. These skills are essential for success in any process throughout our professional careers. Therefore, my talk will focus on how we can pay more attention to developing these skills.
 
-En este artículo quiero contarles un poco más sobre qué son las softskills, por qué son importantes, y cómo podemos mejorarlas.
+In this article, I want to tell you a bit more about what soft skills are, why they are important, and how we can improve them.
 
-### ¿Qué son las Softskills?
+### What Are Soft Skills?
 
-Las softskills son habilidades blandas, es decir, habilidades relacionadas con el comportamiento y la interacción con los demás. Estas incluyen habilidades como la comunicación, la colaboración, la creatividad, la empatía, la gestión de conflictos, la escucha activa, la resolución de problemas, la toma de decisiones, la liderazgo, y la resiliencia.
+Soft skills are interpersonal skills, meaning skills related to behavior and interaction with others. These include skills such as communication, collaboration, creativity, empathy, conflict management, active listening, problem-solving, decision-making, leadership, and resilience.
 
-A diferencia de las habilidades técnicas, que se pueden aprender a través de la formación, las softskills son habilidades que se desarrollan con el tiempo. Estas son esenciales para tener éxito en cualquier área de la vida.
+Unlike technical skills, which can be learned through training, soft skills are developed over time. They are essential for success in any area of life.
 
-### ¿Por qué son importantes las Softskills?
+### Why Are Soft Skills Important?
 
-Las softskills son esenciales para el éxito profesional. Estas habilidades son la clave para destacarse entre los demás y para tener éxito en nuestras carreras.
+Soft skills are essential for professional success. These skills are key to standing out from others and achieving success in our careers.
 
-Las softskills son importantes porque nos ayudan a trabajar en equipo, a desarrollar relaciones profesionales, a comunicarnos de forma efectiva, a resolver problemas de manera creativa, a tomar decisiones acertadas, y a liderar proyectos.
+Soft skills are important because they help us work as a team, develop professional relationships, communicate effectively, solve problems creatively, make sound decisions, and lead projects.
 
-Además, las softskills son importantes para la productividad. Las personas que tienen un buen conjunto de softskills son más productivas y pueden trabajar de manera más eficiente. Esto significa que pueden obtener mejores resultados en menos tiempo.
+Additionally, soft skills are important for productivity. People with a good set of soft skills are more productive and can work more efficiently. This means they can achieve better results in less time.
 
-### ¿Cómo podemos mejorar nuestras Softskills?
+### How Can We Improve Our Soft Skills?
 
-Aunque las softskills son difíciles de aprender, hay algunas cosas que podemos hacer para mejorarlas.
+Although soft skills are difficult to learn, there are some things we can do to improve them.
 
-Primero, debemos trabajar en nuestra autoestima y confianza. Esto significa que debemos trabajar en nuestra comunicación, nuestra capacidad de escucha, y nuestra habilidad de trabajar en equipo.
+First, we should work on our self-esteem and confidence. This means we need to work on our communication, listening skills, and ability to work as a team.
 
-Además, debemos trabajar en nuestra capacidad de resolución de problemas. Esto significa que debemos aprender a reconocer los problemas, identificar las soluciones, y tomar decisiones acertadas.
+Additionally, we should work on our problem-solving skills. This means learning to recognize problems, identify solutions, and make sound decisions.
 
-Por último, debemos trabajar en nuestra capacidad de liderazgo. Esto significa que debemos aprender a motivar y guiar a los demás, a delegar tareas, y a trabajar en equipo para alcanzar los objetivos.
+Finally, we should work on our leadership skills. This means learning to motivate and guide others, delegate tasks, and work as a team to achieve goals.
 
-### Conclusión
+### Conclusion
 
-Las softskills son habilidades esenciales para tener éxito en nuestras carreras. Estas habilidades no se pueden aprender de la noche a la mañana, sino que se desarrollan con el tiempo. Por eso, debemos trabajar en nuestra autoestima y confianza, en nuestra capacidad de resolución de problemas, y en nuestra capacidad de liderazgo para mejorar nuestras softskills.
+Soft skills are essential for success in our careers. These skills cannot be learned overnight; they are developed over time. Therefore, we must work on our self-esteem and confidence, problem-solving abilities, and leadership skills to improve our soft skills.
 
-Estoy muy feliz de que mi charla sobre softskills para el AWS Community Day en Guatemala fue aprobada. Estoy seguro de que será una gran experiencia, y espero que todos los que asistan aprendan algo nuevo.
+I am very pleased that my talk on soft skills for AWS Community Day in Guatemala was approved. I am sure it will be a great experience, and I hope everyone who attends will learn something new.
 
-¡Nos vemos en Guatemala!
+See you in Guatemala!
 
 ## Link
 
-[Me aprobaron mi charla de softskills para el AWS Community Day en Guatemala 😊](https://www.youtube.com/shorts/SqCzwEXrALU)
+[My Soft Skills Talk Approved for AWS Community Day in Guatemala 😊](https://www.youtube.com/shorts/SqCzwEXrALU)

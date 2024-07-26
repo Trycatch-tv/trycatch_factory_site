@@ -1,16 +1,16 @@
 ---
 layout: "../../../layouts/BlogLayoutLanding.astro"
-title: "Aprenda diseño de sistemas, caso de estudio Netflix"
+title: "Learn System Design: Netflix Case Study"
 author: "Judlup"
 image:
   url: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
-  alt: "Aprenda diseño de sistemas, caso de estudio Netflix"
+  alt: "Learn System Design: Netflix Case Study"
 tags:
   [
-    '- Diseño de sistemas\n- Experiencia\n- Conocimiento\n- Netflix\n- Requerimientos funcionales\n- Requerimientos no funcionales\n- Requerimientos extendidos\n- Limitantes de negocio\n- Consideraciones\n- Tráfico\n- Almacenamiento\n- Ancho de banda\n- Modelado de datos\n- Gr',
+    '- System Design\n- Experience\n- Knowledge\n- Netflix\n- Functional Requirements\n- Non-Functional Requirements\n- Extended Requirements\n- Business Constraints\n- Considerations\n- Traffic\n- Storage\n- Bandwidth\n- Data Modeling\n- Gr',
   ]
 date: 2023-10-04
-slug: "aprenda-dise-o-de-sistemas-caso-de-estudio-netflix"
+slug: "learn-system-design-netflix-case-study"
 published: true
 ---
 ### System Design: The Netflix Case Study

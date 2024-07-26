@@ -1,29 +1,42 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const dev = t("ourDiff.tagDev");
+const countries = t("ourDiff.tagCountries");
+const capacities = t("ourDiff.tagCapacities");
+const women = t("ourDiff.tagWomen");
+const homework = t("ourDiff.tagHomework");
+const title = t("ourTitle");
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2665221612.
+const desc = t("ourDesc");
+
 const card = [
   {
     quantity: 50,
-    label: "developers",
+    label: dev,
   },
   {
     quantity: 10,
-    label: "paises",
+    label: countries,
   },
   {
     quantity: 15,
-    label: "capacidades",
+    label: capacities,
   },
 ];
 const card2 = [
   {
-    label: "Mujeres líderes",
+    label: women,
   },
   {
-    label: "Teletrabajo",
+    label: homework,
   },
 ];
 const content = {
-  title:"Nuestro equipo ¿Qué nos hace diferentes?",
-  description:"Estamos orgullosos de contar con un equipo diverso y talentoso que nos distingue en la industria. Nuestra fuerza radica en la variedad de experiencias y perspectivas que cada miembro aporta, permitiéndonos ofrecer soluciones innovadoras y efectivas a nuestros clientes.",
+  title:title,
+  description:desc,
 }
 ---
 
