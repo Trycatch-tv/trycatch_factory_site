@@ -19,6 +19,7 @@
                     "Pruebas y aseguramiento de calidad.",
                     "Implementación y despliegue."
                 ]
+                
             },
             "consultoria-tecnologia": {
                 "title": "Consultoría Tecnológica",
@@ -128,6 +129,7 @@
                     "Personalización completa para reflejar la identidad de la marca."
                 ]
             }
+
         }
     ]
 }

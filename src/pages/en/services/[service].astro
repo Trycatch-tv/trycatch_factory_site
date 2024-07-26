@@ -1,0 +1,46 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HeroServices from "../../../components/landing/HeroServices.astro";
+import CallToActionLanding from "../../../components/landing/CallToActionLanding.astro";
+import WeOfferServicesLanding from "../../../components/landing/WeOfferServicesLanding.astro";
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+
+  const paths = services.flatMap((service: any) => {
+    const serviceKeys = Object.keys(service.data.services[0]);
+
+        const servicePathObjects = serviceKeys.map((key: string) => {
+            const serviceData = service.data.services[0][key];
+     
+            return {
+                params: {
+                    service: key,
+                },
+                props: {
+                    data: serviceData,
+                },
+            };
+        });
+
+        return servicePathObjects;
+  });
+
+  return paths;
+}
+
+const { data } = Astro.props || {};
+const titleHero = data.title
+const descriptionHero = data.description
+const levelEstructureTeam = data?.levelEstructureTeam
+const desarrollo = data?.desarrollo
+
+---
+
+<Layout title="Servicios">
+  <main>
+    <HeroServices titleHero={titleHero} descriptionHero={descriptionHero} />
+    <CallToActionLanding />
+    <WeOfferServicesLanding levelEstructureTeam={levelEstructureTeam} desarrollo={desarrollo} />
+  </main>
+</Layout>
