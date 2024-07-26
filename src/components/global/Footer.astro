@@ -3,26 +3,53 @@ import { Image } from "astro:assets";
 import nibble from "../../assets/img/LogoWhite.webp";
 import { Icon } from "astro-icon/components";
 import { CalendarCheck } from "lucide-astro"
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getRelativeLocaleUrl } from "astro/virtual-modules/i18n.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const servicesSoftware = t("services.software-development");
+const servicesTechnology = t("services.technology-consulting");
+const servicesMaintenance = t("services.Maintenance-Updates");
+const servicesIntegrations = t("services.Integrations");
+
+const servicesIntegrationsShopify = t(
+  "services.Integrations-with-shopify-and-salesforce",
+);
+const servicesLandingPage = t("services.landing-page");
+const message = t("footer.message");
+const messageSecond = t("footer.messageSecond");
+const messageThird = t("footer.messageThird");
+const foller = t("footer.foller");
+const reserverd = t("footer.reserverd");
+const titleButton = t('titleButton');
+const services = t('services');
+const pathServicesDevSoftware = getRelativeLocaleUrl(lang, "/services/desarrollo-software/");
+const pathServicesTechnology = getRelativeLocaleUrl(lang, "/services/consultoria-tecnologia/");
+const pathServicesMaintenance = getRelativeLocaleUrl(lang, "/services/mantenimiento-actualizado/");
+const pathServicesIntegrations = getRelativeLocaleUrl(lang, "/services/integraciones/");
+const pathServicesIntegrationsShopify = getRelativeLocaleUrl(lang, "/services/integraciones-a-shopify-y-salesforce/");
+const pathServicesLandingPage = getRelativeLocaleUrl(lang, "/services/landing-page/");
 
 const footerItems = [
   {
-    name: "Servicios",
+    name: services,
     path: "/",
     footerListServices: [
-      { name: "Software a la medida", path: "/services/desarrollo-software" },
+      { name: servicesSoftware, path: pathServicesDevSoftware },
       {
-        name: "Consultoría tecnológica",
-        path: "/services/consultoria-tecnologia",
+        name: servicesTechnology,
+        path: pathServicesTechnology,
       },
-      { name: "Integración", path: "/services/integraciones" },
-      { name: "Creación de landing page", path: "/services/landing-page" },
+      { name: servicesIntegrations, path: pathServicesIntegrations },
+      { name: servicesLandingPage, path: pathServicesLandingPage },
       {
-        name: "Mantenimiento y actualización",
-        path: "/services/mantenimiento-actualizado",
+        name: servicesMaintenance,
+        path: pathServicesMaintenance,
       },
       {
-        name: "Integraciones a Shopify / Salesforce",
-        path: "/services/integraciones-a-shopify-y-salesforce",
+        name: servicesIntegrationsShopify,
+        path: pathServicesIntegrationsShopify,
       },
     ],
   },
@@ -35,7 +62,7 @@ const footerItems = [
 ];
 
 const urlBoton = {
-  title: "Agendar ahora",
+  title: titleButton,
   link: "https://calendly.com/trycatchfactory-com/30min",
 };
 
@@ -79,20 +106,18 @@ const redes = [
         alt="TryCatch.tv Nibble"
       />
       <p class="text-white mt-8 text-center lg:text-start text-base">
-        Somos tu socios tecnológico de confianza. Nuestro equipo de expertos
-        está dedicado a ofrecer soluciones innovadoras y personalizadas para
-        impulsar tu negocio al siguiente nivel. <br> <br>
-        Descubre nuestros servicios
-        diseñados para satisfacer todas tus necesidades tecnológicas.
+        {message} <br> <br>
+        {messageSecond}
+        {messageThird}
       </p>
     </div>
     <section class="flex mt-10 lg:mt-0 flex-col items-center md:items-start md:flex-row justify-between gap-16">
       <div>
-        <h3 class="text-white text-center md:text-start font-semibold mb-5 text-lg">Servicios</h3>
+        <h3 class="text-white text-center md:text-start font-semibold mb-5 text-lg">{services}</h3>
         <ul class="text-center md:text-start">
           {
             footerItems
-              .filter((e) => e.name === "Servicios")[0]
+              .filter((e) => e.name === services)[0]
               .footerListServices?.map((e) => (
                 <a
                   class="text-white my-3 block hover:text-tcf-info"
@@ -138,7 +163,7 @@ const redes = [
     </section>
   </div>
   <div class="flex flex-col items-center w-full max-w-screen-xl mx-auto justify-center gap-5 mt-16">
-    <p class="text-white font-medium">Síguenos en nuestras redes sociales</p>
+    <p class="text-white font-medium">{foller}</p>
     <div class="flex gap-4">
       {
         redes.map((e) => (
@@ -149,6 +174,6 @@ const redes = [
       }
     </div>
     <p class="text-gray-400 text-sm mt-10 text-center">© 2024 TryCatch 
-      Factory. Todos los derechos reservados.</p>
+      Factory. {reserverd}</p>
   </div>
 </footer>

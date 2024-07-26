@@ -1,11 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import team from "../../assets/img/dev.webp";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const titleHero = t("teamLanding.title");
+const descriptionHero = t("teamDesc");
 const content = {
-  title: "Conoce a nuestro equipo de trabajo",
+  title: titleHero,
   description:
-    "Contamos con un equipo de expertos apasionados y dedicados a entregar soluciones tecnológicas de alta calidad. Descubre quiénes somos y cómo podemos ayudarte.",
+    descriptionHero,
   image: {
     description: "TryCatch.tv Nibble",
   },

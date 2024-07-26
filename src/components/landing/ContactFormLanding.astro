@@ -1,3 +1,20 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const name = t("form.name");
+const lastname = t("form.lastname");
+const email = t("form.email");
+const phone = t("form.phone");
+const company = t("form.company");
+const city = t("form.city");
+const message = t("form.message");
+const nameButton = t("form.nameButton");
+const title = t("form.title");
+const description = t("form.description");
+---
 
 <div
   class="container-alert fixed top-40 left-1/2 w-full max-w-screen-md px-4 translate-x-[-50%] right-5 z-50"
@@ -9,10 +26,10 @@
       <h1
         class="font-bold text-3xl text-white inline-block w-full md:text-4xl text-start mb-8"
       >
-        Dejanos tus datos
+        {title}
       </h1>
       <p class="text-white inline-block text-base text-start md:text-3xl">
-        Nos comunicaremos contigo para brindarte la ayuda que necesitas
+        {description}
       </p>
     </article>
     <div
@@ -26,7 +43,7 @@
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-first-name"
             >
-              Nombre
+              {name}
             </label>
             <input
               required
@@ -34,7 +51,7 @@
               class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
-              placeholder="Nombre"
+              placeholder={lang === "en" ? "Name" : "Nombre"}
             />
           </div>
 
@@ -44,7 +61,7 @@
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-last-name"
             >
-              Apellidos
+              {lastname}
             </label>
             <input
               required
@@ -52,7 +69,7 @@
               class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
-              placeholder="Apellidos"
+              placeholder={lang === "en" ? "Lastname" : "Apellido"}
             />
           </div>
         </div>
@@ -63,7 +80,7 @@
             <label
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
             >
-              Email corporativo
+              {email}
             </label>
             <input
               required
@@ -84,7 +101,7 @@
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
             >
-              Número de celular
+              {phone}
             </label>
             <input
               required
@@ -92,7 +109,7 @@
               class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
-              placeholder="+57 300 123 4567"
+              placeholder={lang === "en" ? "Phone number" : "Número de celular"}
             />
           </div>
 
@@ -102,7 +119,7 @@
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
               for="grid-zip"
             >
-              Nombre de la empresa
+              {company}
             </label>
             <input
               required
@@ -110,7 +127,9 @@
               class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
-              placeholder="Nombre de la empresa"
+              placeholder={lang === "en"
+                ? "Company name"
+                : "Nombre de la empresa"}
             />
           </div>
         </div>
@@ -120,7 +139,7 @@
             class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
             for="grid-zip"
           >
-            Ciudad
+            {city}
           </label>
           <input
             required
@@ -128,7 +147,7 @@
             class="appearance-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-zip"
             type="text"
-            placeholder="Ciudad"
+            placeholder={lang === "en" ? "City" : "Ciudad"}
           />
         </div>
 
@@ -139,14 +158,14 @@
             <label
               class="block uppercase tracking-wide text-tcf-blue text-xs font-bold mb-2"
             >
-              Déjanos tu mensaje y pronto nos contactaremos contigo
+              {message}
             </label>
             <textarea
               required
               name="comentarios"
               class="appearance-none resize-none block w-full bg-gray-50 text-tcf-blue rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
-              placeholder="escribe aquí"></textarea>
+              placeholder={lang === "en" ? "Message" : "Mensaje"}></textarea>
             <p class="text-gray-600 text-xs italic"></p>
           </div>
         </div>
@@ -158,14 +177,36 @@
             type="submit"
             class="btn-submit min-w-[120px] text-white rounded-3xl hover:bg-gray-50 hover:text-tcf-blue hover:border hover:border-tcf-blue bg-tcf-blue font-bold py-2 px-4 text-xl"
           >
-            Enviar
+            {nameButton}
           </button>
         </div>
       </form>
     </div>
   </div>
-
 </div>
 <script>
-    import{gsap as r}from"gsap";import{ScrollTrigger as o}from"gsap/ScrollTrigger";import{useSubmitHandler as t}from"../../hooks/useHandleSubmit";let{handleSubmit:e}=t(),form=document.getElementById("contactForm");form&&form.addEventListener("submit",e),r.registerPlugin(o),r.fromTo("#form",{opacity:0,y:50},{opacity:1,y:0,duration:1,ease:"power2.out",stagger:.3,scrollTrigger:{trigger:"#form",start:"top 80%",end:"top 20%",scrub:1}});
-  </script>
+  import { gsap as r } from "gsap";
+  import { ScrollTrigger as o } from "gsap/ScrollTrigger";
+  import { useSubmitHandler as t } from "../../hooks/useHandleSubmit";
+  let { handleSubmit: e } = t(),
+    form = document.getElementById("contactForm");
+  form && form.addEventListener("submit", e),
+    r.registerPlugin(o),
+    r.fromTo(
+      "#form",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: "#form",
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1,
+        },
+      },
+    );
+</script>

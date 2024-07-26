@@ -2,36 +2,22 @@
 import { Icon } from "astro-icon/components";
 import "@iconify-json/mdi";
 import { ChevronDown, CircleArrowUp, CircleHelp } from "lucide-astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const props = Astro.props;
-
+const faq:any = t("faqLanding");
 const data = {
-  title: "Preguntas Frecuentes",
-  faq: [
-    {
-      question: "¿Qué servicios ofrece TryCatch Factory?",
-      answer: "Ofrecemos desarrollo de software a medida, consultoría tecnológica, mantenimiento y actualización, integración de sistemas y más.",
-    },
-    {
-      question: "¿Cómo es el proceso de desarrollo de un proyecto?",
-      answer: "Nuestro proceso incluye análisis y planificación, desarrollo y pruebas, y finalmente, implementación y soporte.",
-    },
-    {
-      question: "¿Qué tecnologías utilizan?",
-      answer: "Trabajamos con tecnologías de vanguardia como React, Node.js, Java, AWS, entre otras.",
-    },
-    {
-      question: "¿Cómo puedo ponerme en contacto para una consulta?",
-      answer: "Puedes contactarnos a través del formulario en nuestra página web o por correo electrónico a factory@trycatch.tv.",
-    },
-  ],
+  title: lang === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions",
+  faq: faq
 };
 
 // Crear un estado reactivo para rastrear el estado de cada pregunta
 let open: { [key: string]: boolean } = {};
 
 // Inicializar los estados para cada pregunta
-data.faq.forEach((item) => {
+data.faq.forEach((item:any) => {
   open[item.question] = false;
 });
 ---
@@ -50,7 +36,7 @@ data.faq.forEach((item) => {
           class="border border-gray-200 shadow-sm overflow-hidden mx-auto w-full max-w-4xl rounded-none sm:rounded-lg"
         >
           {
-            data.faq.map((item, index) => (
+            data.faq.map((item:any, index:any) => (
               <div class="border-b  border-gray-200 bg-gray-50 ">
                 <button
                   data-toggle={`answer-${index}`}
