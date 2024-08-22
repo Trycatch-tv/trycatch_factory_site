@@ -2,9 +2,6 @@
 import CardsTeam from "./CardsTeam.astro";
 import Ceo from "../../assets/imgTeam/ceo.webp";
 import Cso from "../../assets/imgTeam/juliana.webp";
-import Cmo from "../../assets/imgTeam/carlos.webp";
-import Cpo from "../../assets/imgTeam/william.webp";
-import Cto from "../../assets/imgTeam/cto.webp";
 import TeachLead from "../../assets/img/teachlead.jpeg";
 import FrontEnd from "../../assets/img/frontend.jpeg";
 import BackEnd from "../../assets/img/backend.jpeg";
@@ -26,22 +23,7 @@ const contentCards = {
     title: "CSO - Arquitecta",
     name: "Juliana Arenas",
     image: Cso,
-  },
-  cmo: {
-    title: "CMO",
-    name: "Carlos Nivia",
-    image: Cmo,
-  },
-  cpo: {
-    title: "CPO",
-    name: "Willian Poveda",
-    image: Cpo,
-  },
-  cto: {
-    title: "Consultor TI",
-    name: "Andres Hernandez",
-    image: Cto,
-  },
+  }
 };
 const contentRolsTeam = {
   techlead: {
@@ -72,27 +54,15 @@ const contentRolsTeam = {
   <div
     class="grid max-w-screen-xl mx-auto grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-12"
   >
-    <div class="col-span-2">
-      <CardsTeam {...contentCards.ceo} />
-    </div>
     <div
-      class="flex flex-wrap items-center justify-around gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
+      class="flex flex-wrap items-center justify-center gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
     >
+      <CardsTeam {...contentCards.ceo} />
       <div>
         <CardsTeam {...contentCards.cso} />
       </div>
-
-      <div>
-        <CardsTeam {...contentCards.cmo} />
-      </div>
-      <div>
-        <CardsTeam {...contentCards.cpo} />
-      </div>
-      <div>
-        <CardsTeam {...contentCards.cto} />
-      </div>
     </div>
-   
+
     <div
       class="grid py-28 grid-cols-1 self-center md:grid-cols-4 md:gap-8 gap-4 col-span-full lg:gap-4 w-full mx-auto place-items-center"
     >
