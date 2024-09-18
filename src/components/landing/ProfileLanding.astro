@@ -13,18 +13,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const titleHero = t("profile.titleOur");
-const contentCards = {
-  ceo: {
-    title: "CEO",
-    name: "Julian Luna",
-    image: Ceo,
-  },
-  cso: {
-    title: "CSO - Arquitecta",
-    name: "Juliana Arenas",
-    image: Cso,
-  }
-};
+// const contentCards = {
+//   ceo: {
+//     title: "CEO",
+//     name: "Julian Luna",
+//     image: Ceo,
+//   },
+//   cso: {
+//     title: "CSO - Arquitecta",
+//     name: "Juliana Arenas",
+//     image: Cso,
+//   }
+// };
 const contentRolsTeam = {
   techlead: {
     title: "Tech Lead +4",
@@ -47,24 +47,24 @@ const contentRolsTeam = {
 
 <section class="py-16 min-h-[90vh]" id="seccionProfiles">
   <h1
-    class="min-w-xl mb-5 py-10 text-center text-3xl md:text-4xl text-[#172554] font-bold leading-none md:text-center xl:text-6x lg:mb-14"
+    class="min-w-xl mb-5 py-5 text-center text-3xl md:text-4xl text-[#172554] font-bold leading-none md:text-center xl:text-6x lg:mb-6"
   >
     {titleHero}
   </h1>
   <div
-    class="grid max-w-screen-xl mx-auto grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-12"
+    class="grid max-w-screen-xl mx-auto grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 lg:gap-12 mt-10"
   >
-    <div
+    <!-- <div
       class="flex flex-wrap items-center justify-center gap-8 lg:gap-12 w-full col-span-2 mx-auto max-sm:flex-col"
     >
       <CardsTeam {...contentCards.ceo} />
       <div>
         <CardsTeam {...contentCards.cso} />
       </div>
-    </div>
+    </div> -->
 
     <div
-      class="grid py-28 grid-cols-1 self-center md:grid-cols-4 md:gap-8 gap-4 col-span-full lg:gap-4 w-full mx-auto place-items-center"
+      class="grid py-5 grid-cols-1 self-center md:grid-cols-4 md:gap-8 gap-4 col-span-full lg:gap-4 w-full mx-auto place-items-center"
     >
       <CardRolsTeam {...contentRolsTeam.techlead} />
       <CardRolsTeam {...contentRolsTeam.frontEnd} />
